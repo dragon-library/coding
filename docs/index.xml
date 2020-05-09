@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Academic</title>
-    <link>/</link>
-      <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://dragon-library.github.io/docs/</link>
+      <atom:link href="https://dragon-library.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
     <description>Academic</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 09 May 2020 00:00:00 +0100</lastBuildDate>
     <image>
-      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>https://dragon-library.github.io/docs/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Academic</title>
-      <link>/</link>
+      <link>https://dragon-library.github.io/docs/</link>
     </image>
     
     <item>
       <title>Example Page 1</title>
-      <link>/courses/example/example1/</link>
+      <link>https://dragon-library.github.io/docs/courses/example/example1/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
-      <guid>/courses/example/example1/</guid>
+      <guid>https://dragon-library.github.io/docs/courses/example/example1/</guid>
       <description>
 
 &lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
@@ -49,9 +49,9 @@
     
     <item>
       <title>ตอนที่ 1 - กำเนิด Sapiens</title>
-      <link>/courses/homo-sapiens/sapiens-1/</link>
+      <link>https://dragon-library.github.io/docs/courses/homo-sapiens/sapiens-1/</link>
       <pubDate>Fri, 08 May 2020 00:00:00 +0100</pubDate>
-      <guid>/courses/homo-sapiens/sapiens-1/</guid>
+      <guid>https://dragon-library.github.io/docs/courses/homo-sapiens/sapiens-1/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://anontawong.files.wordpress.com/2016/12/20161210_sapiens1.png?w=676&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
@@ -126,9 +126,9 @@
     
     <item>
       <title>Example Page 2</title>
-      <link>/courses/example/example2/</link>
+      <link>https://dragon-library.github.io/docs/courses/example/example2/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
-      <guid>/courses/example/example2/</guid>
+      <guid>https://dragon-library.github.io/docs/courses/example/example2/</guid>
       <description>
 
 &lt;p&gt;Here are some more tips for getting started with Academic:&lt;/p&gt;
@@ -161,9 +161,9 @@
     
     <item>
       <title>ตอนที่ 2 - สิ่งที่ทำให้เราครองโลก</title>
-      <link>/courses/homo-sapiens/sapiens-2/</link>
+      <link>https://dragon-library.github.io/docs/courses/homo-sapiens/sapiens-2/</link>
       <pubDate>Fri, 08 May 2020 00:00:00 +0100</pubDate>
-      <guid>/courses/homo-sapiens/sapiens-2/</guid>
+      <guid>https://dragon-library.github.io/docs/courses/homo-sapiens/sapiens-2/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://anontawong.files.wordpress.com/2016/12/20161218_sapiens2.png?w=676&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
@@ -243,9 +243,9 @@
     
     <item>
       <title>ตอนที่ 3 - ยุคแห่งการล่าสัตว์เก็บพืชผล</title>
-      <link>/courses/homo-sapiens/sapiens-3/</link>
+      <link>https://dragon-library.github.io/docs/courses/homo-sapiens/sapiens-3/</link>
       <pubDate>Sat, 09 May 2020 00:00:00 +0100</pubDate>
-      <guid>/courses/homo-sapiens/sapiens-3/</guid>
+      <guid>https://dragon-library.github.io/docs/courses/homo-sapiens/sapiens-3/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://anontawong.files.wordpress.com/2016/12/20161225_sapiens31.png?w=676&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
@@ -305,9 +305,9 @@
     
     <item>
       <title>ตอนที่ 4 - การหลอกลวงครั้งยิ่งใหญ่</title>
-      <link>/courses/homo-sapiens/sapiens-4/</link>
+      <link>https://dragon-library.github.io/docs/courses/homo-sapiens/sapiens-4/</link>
       <pubDate>Sat, 09 May 2020 00:00:00 +0100</pubDate>
-      <guid>/courses/homo-sapiens/sapiens-4/</guid>
+      <guid>https://dragon-library.github.io/docs/courses/homo-sapiens/sapiens-4/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://anontawong.files.wordpress.com/2017/01/20170108_sapiens4.png?w=676&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
@@ -359,9 +359,9 @@
     
     <item>
       <title>ตอนที่ 5 - คุกที่มองไม่เห็น</title>
-      <link>/courses/homo-sapiens/sapiens-5/</link>
+      <link>https://dragon-library.github.io/docs/courses/homo-sapiens/sapiens-5/</link>
       <pubDate>Sat, 09 May 2020 00:00:00 +0100</pubDate>
-      <guid>/courses/homo-sapiens/sapiens-5/</guid>
+      <guid>https://dragon-library.github.io/docs/courses/homo-sapiens/sapiens-5/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://anontawong.files.wordpress.com/2017/01/20170115_sapiens5.png?w=676&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
@@ -429,9 +429,9 @@
     
     <item>
       <title>ตอนที่ 6 - กำเนิดภาษาเขียน</title>
-      <link>/courses/homo-sapiens/sapiens-6/</link>
+      <link>https://dragon-library.github.io/docs/courses/homo-sapiens/sapiens-6/</link>
       <pubDate>Sat, 09 May 2020 00:00:00 +0100</pubDate>
-      <guid>/courses/homo-sapiens/sapiens-6/</guid>
+      <guid>https://dragon-library.github.io/docs/courses/homo-sapiens/sapiens-6/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://anontawong.files.wordpress.com/2017/01/20170121_writing.png?w=676&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
@@ -529,9 +529,9 @@
     
     <item>
       <title>ตอนที่ 7 - ความเหลื่อมล้ำ</title>
-      <link>/courses/homo-sapiens/sapiens-7/</link>
+      <link>https://dragon-library.github.io/docs/courses/homo-sapiens/sapiens-7/</link>
       <pubDate>Sat, 09 May 2020 00:00:00 +0100</pubDate>
-      <guid>/courses/homo-sapiens/sapiens-7/</guid>
+      <guid>https://dragon-library.github.io/docs/courses/homo-sapiens/sapiens-7/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://anontawong.files.wordpress.com/2017/01/20170129_inequality.png?w=676&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
@@ -585,9 +585,9 @@
     
     <item>
       <title>ตอนที่ 8 - โลกที่ถูกหลอมรวม</title>
-      <link>/courses/homo-sapiens/sapiens-8/</link>
+      <link>https://dragon-library.github.io/docs/courses/homo-sapiens/sapiens-8/</link>
       <pubDate>Sat, 09 May 2020 00:00:00 +0100</pubDate>
-      <guid>/courses/homo-sapiens/sapiens-8/</guid>
+      <guid>https://dragon-library.github.io/docs/courses/homo-sapiens/sapiens-8/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://anontawong.files.wordpress.com/2017/02/20170205_oneworld.png?w=676&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
@@ -634,9 +634,9 @@
     
     <item>
       <title>ตอนที่ 9 - มนตราของเงินตรา</title>
-      <link>/courses/homo-sapiens/sapiens-9/</link>
+      <link>https://dragon-library.github.io/docs/courses/homo-sapiens/sapiens-9/</link>
       <pubDate>Sat, 09 May 2020 00:00:00 +0100</pubDate>
-      <guid>/courses/homo-sapiens/sapiens-9/</guid>
+      <guid>https://dragon-library.github.io/docs/courses/homo-sapiens/sapiens-9/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://anontawong.files.wordpress.com/2017/02/20170212_sapiens9.png?w=676&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
@@ -688,9 +688,9 @@
     
     <item>
       <title>ตอนที่ 10 - จักรวรรดิ</title>
-      <link>/courses/homo-sapiens/sapiens-10/</link>
+      <link>https://dragon-library.github.io/docs/courses/homo-sapiens/sapiens-10/</link>
       <pubDate>Sat, 09 May 2020 00:00:00 +0100</pubDate>
-      <guid>/courses/homo-sapiens/sapiens-10/</guid>
+      <guid>https://dragon-library.github.io/docs/courses/homo-sapiens/sapiens-10/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://anontawong.files.wordpress.com/2017/02/20170220_sapiens10.png?w=676&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
@@ -737,9 +737,9 @@
     
     <item>
       <title>Getting Stock Data</title>
-      <link>/post/notebook/</link>
+      <link>https://dragon-library.github.io/docs/post/notebook/</link>
       <pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>/post/notebook/</guid>
+      <guid>https://dragon-library.github.io/docs/post/notebook/</guid>
       <description>
 
 &lt;h2 id=&#34;install-python-and-jupyterlab&#34;&gt;Install Python and JupyterLab&lt;/h2&gt;
@@ -804,9 +804,9 @@ date: 2019-09-01
     
     <item>
       <title>Writing technical content in Academic</title>
-      <link>/post/writing-technical-content/</link>
+      <link>https://dragon-library.github.io/docs/post/writing-technical-content/</link>
       <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
-      <guid>/post/writing-technical-content/</guid>
+      <guid>https://dragon-library.github.io/docs/post/writing-technical-content/</guid>
       <description>
 
 &lt;p&gt;Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.&lt;/p&gt;
@@ -1103,9 +1103,9 @@ A Markdown aside is useful for displaying notices, hints, or definitions to your
     
     <item>
       <title>Dictionary</title>
-      <link>/post/dictionary/</link>
+      <link>https://dragon-library.github.io/docs/post/dictionary/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>/post/dictionary/</guid>
+      <guid>https://dragon-library.github.io/docs/post/dictionary/</guid>
       <description>
 
 &lt;p&gt;ในบทนี้ คุณจะได้เรียนรู้เกี่ยวกับโครงสร้างข้อมูล Dictionary ในภาษา Python เราจะแนะนำให้คุณรู้จักกับ Dictionary คืออะไร และการประกาศและใช้งานสำหรับเก็บข้อมูลในการเขียนโปรแกรม นอกจากนี้ เรายังจะพูดถึงการใช้งานเมธอดและ built-in functions ของ Dictionary และตัวอย่างการใช้งานกับการเขียนโปรแกรมใบรูปแบบต่างๆ ในภาษา Python&lt;/p&gt;
@@ -1338,9 +1338,9 @@ dict_items([(&#39;de&#39;, &#39;Germany&#39;), (&#39;ua&#39;, &#39;Ukraine&#39;)
     
     <item>
       <title>Display Jupyter Notebooks with Academic</title>
-      <link>/post/jupyter/</link>
+      <link>https://dragon-library.github.io/docs/post/jupyter/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>/post/jupyter/</guid>
+      <guid>https://dragon-library.github.io/docs/post/jupyter/</guid>
       <description>
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from IPython.core.display import Image
@@ -1405,9 +1405,9 @@ date: 2019-09-01
     
     <item>
       <title>Slides</title>
-      <link>/slides/example/</link>
+      <link>https://dragon-library.github.io/docs/slides/example/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>/slides/example/</guid>
+      <guid>https://dragon-library.github.io/docs/slides/example/</guid>
       <description>
 
 &lt;h1 id=&#34;create-slides-in-markdown-with-academic&#34;&gt;Create slides in Markdown with Academic&lt;/h1&gt;
