@@ -5,12 +5,44 @@
     <link>https://dragon-library.github.io/docs/categories/</link>
       <atom:link href="https://dragon-library.github.io/docs/categories/index.xml" rel="self" type="application/rss+xml" />
     <description>Categories</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Dragon©2020</copyright><lastBuildDate>Sat, 16 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://dragon-library.github.io/docs/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Categories</title>
       <link>https://dragon-library.github.io/docs/categories/</link>
     </image>
+    
+    <item>
+      <title>Book Review</title>
+      <link>https://dragon-library.github.io/docs/category/book-review/</link>
+      <pubDate>Sat, 16 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://dragon-library.github.io/docs/category/book-review/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>business</title>
+      <link>https://dragon-library.github.io/docs/category/business/</link>
+      <pubDate>Sat, 16 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://dragon-library.github.io/docs/category/business/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Productivity</title>
+      <link>https://dragon-library.github.io/docs/category/productivity/</link>
+      <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://dragon-library.github.io/docs/category/productivity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://dragon-library.github.io/docs/category/python/</link>
+      <pubDate>Sun, 10 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://dragon-library.github.io/docs/category/python/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
