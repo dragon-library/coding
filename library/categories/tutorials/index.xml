@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tutorials on Library</title>
-    <link>https://example.com/categories/tutorials/</link>
+    <link>https://dragon-library.github.io/docs/library/categories/tutorials/</link>
     <description>Recent content in Tutorials on Library</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 07 May 2020 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="https://example.com/categories/tutorials/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://dragon-library.github.io/docs/library/categories/tutorials/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>File Handling Functions Explained.</title>
-      <link>https://example.com/post/python/tutorials/file-handling-functions/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/file-handling-functions/</link>
       <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/python/tutorials/file-handling-functions/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/file-handling-functions/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/size/w2000/2020/05/Python-File-Handling-1.png&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
@@ -660,10 +660,10 @@ finally:
     
     <item>
       <title>Regular Expressions</title>
-      <link>https://example.com/post/python/tutorials/regular-expressions/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/regular-expressions/</link>
       <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/python/tutorials/regular-expressions/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/regular-expressions/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -946,10 +946,10 @@ else:
     
     <item>
       <title>Python List Append VS Python List Extend</title>
-      <link>https://example.com/post/python/tutorials/list_append/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/list_append/</link>
       <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/python/tutorials/list_append/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/list_append/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/size/w2000/2020/03/Image---Append-vs-Extend-1.png&#34; alt=&#34;Python List Append VS Python List Extend – The Difference Explained with Array Method Examples&#34; /&gt;&lt;/p&gt;
@@ -1336,10 +1336,10 @@ Dictionaries have a particular behavior when you pass them as arguments to  &lt;
     
     <item>
       <title>Python Lists Explained</title>
-      <link>https://example.com/post/python/tutorials/python-lists-explained/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/python-lists-explained/</link>
       <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/python/tutorials/python-lists-explained/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/python-lists-explained/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixlib=rb-1.2.1&amp;amp;q=80&amp;amp;fm=jpg&amp;amp;crop=entropy&amp;amp;cs=tinysrgb&amp;amp;w=2000&amp;amp;fit=max&amp;amp;ixid=eyJhcHBfaWQiOjExNzczfQ&#34; alt=&#34;Python Lists Explained: Len, Pop, Index, and List Comprehension&#34; /&gt;&lt;/p&gt;
@@ -1615,10 +1615,10 @@ for i in range(50):
     
     <item>
       <title>Python Virtual Environments Explained with Examples</title>
-      <link>https://example.com/post/python/tutorials/virtual-environments/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/virtual-environments/</link>
       <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/python/tutorials/virtual-environments/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/virtual-environments/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;Python Virtual Environments Explained with Examples&#34; /&gt;&lt;/p&gt;
@@ -1772,10 +1772,10 @@ pip install -r requirements.txt
     
     <item>
       <title>Python String Methods Explained with Examples.</title>
-      <link>https://example.com/post/python/tutorials/string-strip-method/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/string-strip-method/</link>
       <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/python/tutorials/string-strip-method/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/string-strip-method/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;Python String Methods Explained with Examples&#34; /&gt;&lt;/p&gt;
@@ -2023,10 +2023,10 @@ print(string.split(&amp;quot; &amp;quot;, 2))
     
     <item>
       <title>Python Function Guide</title>
-      <link>https://example.com/post/python/tutorials/python-function-guide/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/python-function-guide/</link>
       <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/python/tutorials/python-function-guide/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/python-function-guide/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-1.2.1&amp;amp;q=80&amp;amp;fm=jpg&amp;amp;crop=entropy&amp;amp;cs=tinysrgb&amp;amp;w=2000&amp;amp;fit=max&amp;amp;ixid=eyJhcHBfaWQiOjExNzczfQ&#34; alt=&#34;Python Function Guide with Examples&#34; /&gt;&lt;/p&gt;
@@ -2471,10 +2471,10 @@ Hello Bob
     
     <item>
       <title>Lambda Expressions in Python.</title>
-      <link>https://example.com/post/python/tutorials/lambda-expressions/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/lambda-expressions/</link>
       <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/python/tutorials/lambda-expressions/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/lambda-expressions/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;Lambda Expressions in Python&#34; /&gt;&lt;/p&gt;
@@ -2576,10 +2576,10 @@ list(filtered)
     
     <item>
       <title>Regular Expressions Explained</title>
-      <link>https://example.com/post/python/tutorials/regular-expressions-explained/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/regular-expressions-explained/</link>
       <pubDate>Sun, 07 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/python/tutorials/regular-expressions-explained/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/regular-expressions-explained/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -2720,10 +2720,10 @@ The match function is defined as:
     
     <item>
       <title>The CSS Handbook</title>
-      <link>https://example.com/post/css-handbook/</link>
+      <link>https://dragon-library.github.io/docs/library/post/css-handbook/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/css-handbook/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/css-handbook/</guid>
       <description>
 
 &lt;p&gt;-&lt;/p&gt;

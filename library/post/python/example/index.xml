@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python Example on Library</title>
-    <link>https://example.com/post/python/example/</link>
+    <link>https://dragon-library.github.io/docs/library/post/python/example/</link>
     <description>Recent content in Python Example on Library</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 29 Mar 2020 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="https://example.com/post/python/example/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://dragon-library.github.io/docs/library/post/python/example/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Python Web Scraping Part I</title>
-      <link>https://example.com/post/python/example/python-web-scraping-part-1/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/example/python-web-scraping-part-1/</link>
       <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/python/example/python-web-scraping-part-1/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/example/python-web-scraping-part-1/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;

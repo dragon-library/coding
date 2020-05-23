@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Library</title>
-    <link>https://example.com/authors/admin/</link>
+    <link>https://dragon-library.github.io/docs/library/authors/admin/</link>
     <description>Recent content on Library</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 07 May 2020 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="https://example.com/authors/admin/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://dragon-library.github.io/docs/library/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>File Handling Functions Explained.</title>
-      <link>https://example.com/post/python/tutorials/file-handling-functions/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/file-handling-functions/</link>
       <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/python/tutorials/file-handling-functions/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/file-handling-functions/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/size/w2000/2020/05/Python-File-Handling-1.png&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
@@ -660,10 +660,10 @@ finally:
     
     <item>
       <title>How to Go From Beginner to Pro</title>
-      <link>https://example.com/post/python/tutorials/beginner_to_pro/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/beginner_to_pro/</link>
       <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/python/tutorials/beginner_to_pro/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/beginner_to_pro/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/size/w2000/2020/05/The-Ultimate-Guide-To-Python-1.png&#34; alt=&#34;The Ultimate Guide to Python: How to Go From Beginner to Pro&#34; /&gt;&lt;/p&gt;
@@ -3182,10 +3182,10 @@ ImportError: No module named data
     
     <item>
       <title>Regular Expressions</title>
-      <link>https://example.com/post/python/tutorials/regular-expressions/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/regular-expressions/</link>
       <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/python/tutorials/regular-expressions/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/regular-expressions/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -3468,10 +3468,10 @@ else:
     
     <item>
       <title>The Ultimate Python Beginner&#39;s Handbook</title>
-      <link>https://example.com/post/python/tutorials/beginner_handbook/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/beginner_handbook/</link>
       <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/python/tutorials/beginner_handbook/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/beginner_handbook/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/size/w2000/2020/04/cover-post-smaller.png&#34; alt=&#34;The Ultimate Python Beginner&#39;s Handbook&#34; /&gt;&lt;/p&gt;
@@ -7052,10 +7052,10 @@ Finally block
     
     <item>
       <title>Python Web Scraping Part I</title>
-      <link>https://example.com/post/python/example/python-web-scraping-part-1/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/example/python-web-scraping-part-1/</link>
       <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/python/example/python-web-scraping-part-1/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/example/python-web-scraping-part-1/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -7206,10 +7206,10 @@ print(tambon_list)
     
     <item>
       <title>Python List Append VS Python List Extend</title>
-      <link>https://example.com/post/python/tutorials/list_append/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/list_append/</link>
       <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/python/tutorials/list_append/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/list_append/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/size/w2000/2020/03/Image---Append-vs-Extend-1.png&#34; alt=&#34;Python List Append VS Python List Extend – The Difference Explained with Array Method Examples&#34; /&gt;&lt;/p&gt;
@@ -7596,10 +7596,10 @@ Dictionaries have a particular behavior when you pass them as arguments to  &lt;
     
     <item>
       <title>Python Lists Explained</title>
-      <link>https://example.com/post/python/tutorials/python-lists-explained/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/python-lists-explained/</link>
       <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/python/tutorials/python-lists-explained/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/python-lists-explained/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixlib=rb-1.2.1&amp;amp;q=80&amp;amp;fm=jpg&amp;amp;crop=entropy&amp;amp;cs=tinysrgb&amp;amp;w=2000&amp;amp;fit=max&amp;amp;ixid=eyJhcHBfaWQiOjExNzczfQ&#34; alt=&#34;Python Lists Explained: Len, Pop, Index, and List Comprehension&#34; /&gt;&lt;/p&gt;
@@ -7875,10 +7875,10 @@ for i in range(50):
     
     <item>
       <title>Python Virtual Environments Explained with Examples</title>
-      <link>https://example.com/post/python/tutorials/virtual-environments/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/virtual-environments/</link>
       <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/python/tutorials/virtual-environments/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/virtual-environments/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;Python Virtual Environments Explained with Examples&#34; /&gt;&lt;/p&gt;
@@ -8032,10 +8032,10 @@ pip install -r requirements.txt
     
     <item>
       <title>Python String Methods Explained with Examples.</title>
-      <link>https://example.com/post/python/tutorials/string-strip-method/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/string-strip-method/</link>
       <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/python/tutorials/string-strip-method/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/string-strip-method/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;Python String Methods Explained with Examples&#34; /&gt;&lt;/p&gt;
@@ -8283,10 +8283,10 @@ print(string.split(&amp;quot; &amp;quot;, 2))
     
     <item>
       <title>Python Function Guide</title>
-      <link>https://example.com/post/python/tutorials/python-function-guide/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/python-function-guide/</link>
       <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/python/tutorials/python-function-guide/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/python-function-guide/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-1.2.1&amp;amp;q=80&amp;amp;fm=jpg&amp;amp;crop=entropy&amp;amp;cs=tinysrgb&amp;amp;w=2000&amp;amp;fit=max&amp;amp;ixid=eyJhcHBfaWQiOjExNzczfQ&#34; alt=&#34;Python Function Guide with Examples&#34; /&gt;&lt;/p&gt;
@@ -8731,10 +8731,10 @@ Hello Bob
     
     <item>
       <title>Lambda Expressions in Python.</title>
-      <link>https://example.com/post/python/tutorials/lambda-expressions/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/lambda-expressions/</link>
       <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/python/tutorials/lambda-expressions/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/lambda-expressions/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;Lambda Expressions in Python&#34; /&gt;&lt;/p&gt;
@@ -8836,10 +8836,10 @@ list(filtered)
     
     <item>
       <title>Regular Expressions Explained</title>
-      <link>https://example.com/post/python/tutorials/regular-expressions-explained/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/regular-expressions-explained/</link>
       <pubDate>Sun, 07 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/python/tutorials/regular-expressions-explained/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/regular-expressions-explained/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -8980,10 +8980,10 @@ The match function is defined as:
     
     <item>
       <title>The CSS Handbook</title>
-      <link>https://example.com/post/css-handbook/</link>
+      <link>https://dragon-library.github.io/docs/library/post/css-handbook/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/css-handbook/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/css-handbook/</guid>
       <description>
 
 &lt;p&gt;-&lt;/p&gt;
@@ -14029,10 +14029,10 @@ container.addEventListener(&#39;animationiteration&#39;, (e) =&amp;gt; {
     
     <item>
       <title>An example preprint / working paper</title>
-      <link>https://example.com/publication/preprint/</link>
+      <link>https://dragon-library.github.io/docs/library/publication/preprint/</link>
       <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/publication/preprint/</guid>
+      <guid>https://dragon-library.github.io/docs/library/publication/preprint/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo academia&amp;rsquo;s Markdown slides feature.
@@ -14045,10 +14045,10 @@ container.addEventListener(&#39;animationiteration&#39;, (e) =&amp;gt; {
     
     <item>
       <title>Display Jupyter Notebooks with academia</title>
-      <link>https://example.com/post/jupyter/</link>
+      <link>https://dragon-library.github.io/docs/library/post/jupyter/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/jupyter/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/jupyter/</guid>
       <description>
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from IPython.core.display import Image
@@ -14108,10 +14108,10 @@ rm Untitled.md
     
     <item>
       <title>Learning Python From Zero to Hero</title>
-      <link>https://example.com/post/python/tutorials/zero_to_hero/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/zero_to_hero/</link>
       <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/python/tutorials/zero_to_hero/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/zero_to_hero/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://cdn-media-1.freecodecamp.org/images/1*ueWmI48uuShON-hX7LwI0w.png&#34; alt=&#34;Learning Python: From Zero to Hero&#34; /&gt;&lt;/p&gt;
@@ -14793,10 +14793,10 @@ print(my_electric_car.maximum_velocity) # =&amp;gt; 250
     
     <item>
       <title>A Study of Snail Behavior</title>
-      <link>https://example.com/post/snail/</link>
+      <link>https://dragon-library.github.io/docs/library/post/snail/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/snail/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/snail/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;Create a free website with academia using Markdown, Jupyter, or RStudio. Choose a beautiful color theme and build anything with the Page Builder - over 40 &lt;em&gt;widgets&lt;/em&gt;, &lt;em&gt;themes&lt;/em&gt;, and &lt;em&gt;language packs&lt;/em&gt; included!&lt;/strong&gt;&lt;/p&gt;
@@ -14875,8 +14875,8 @@ print(my_electric_car.maximum_velocity) # =&amp;gt; 250
         
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://example.com/post/snail/gallery/theme-1950s.png&#34; data-caption=&#34;1950s&#34;&gt;
-  &lt;img src=&#34;https://example.com/post/snail/gallery/theme-1950s_huaf5482f8cea0c5a703a328640e3b7509_21614_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://dragon-library.github.io/docs/library/docs/library/post/snail/gallery/theme-1950s.png&#34; data-caption=&#34;1950s&#34;&gt;
+  &lt;img src=&#34;https://dragon-library.github.io/docs/library/docs/library/post/snail/gallery/theme-1950s_huaf5482f8cea0c5a703a328640e3b7509_21614_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
     
@@ -14888,8 +14888,8 @@ print(my_electric_car.maximum_velocity) # =&amp;gt; 250
         
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://example.com/post/snail/gallery/theme-apogee.png&#34; data-caption=&#34;Apogee&#34;&gt;
-  &lt;img src=&#34;https://example.com/post/snail/gallery/theme-apogee_hu4b45d99db97150df01464c393bfd17d4_24119_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://dragon-library.github.io/docs/library/docs/library/post/snail/gallery/theme-apogee.png&#34; data-caption=&#34;Apogee&#34;&gt;
+  &lt;img src=&#34;https://dragon-library.github.io/docs/library/docs/library/post/snail/gallery/theme-apogee_hu4b45d99db97150df01464c393bfd17d4_24119_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
     
@@ -14901,8 +14901,8 @@ print(my_electric_car.maximum_velocity) # =&amp;gt; 250
         
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://example.com/post/snail/gallery/theme-coffee-playfair.png&#34; data-caption=&#34;Coffee theme with Playfair font&#34;&gt;
-  &lt;img src=&#34;https://example.com/post/snail/gallery/theme-coffee-playfair_hu446a8f670cc5622adcc77b97ba95f6c5_22462_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://dragon-library.github.io/docs/library/docs/library/post/snail/gallery/theme-coffee-playfair.png&#34; data-caption=&#34;Coffee theme with Playfair font&#34;&gt;
+  &lt;img src=&#34;https://dragon-library.github.io/docs/library/docs/library/post/snail/gallery/theme-coffee-playfair_hu446a8f670cc5622adcc77b97ba95f6c5_22462_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
     
@@ -14914,8 +14914,8 @@ print(my_electric_car.maximum_velocity) # =&amp;gt; 250
         
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://example.com/post/snail/gallery/theme-dark.png&#34; data-caption=&#34;Dark&#34;&gt;
-  &lt;img src=&#34;https://example.com/post/snail/gallery/theme-dark_hu1e8601ecc47f58eada7743fdcd709d3d_21456_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://dragon-library.github.io/docs/library/docs/library/post/snail/gallery/theme-dark.png&#34; data-caption=&#34;Dark&#34;&gt;
+  &lt;img src=&#34;https://dragon-library.github.io/docs/library/docs/library/post/snail/gallery/theme-dark_hu1e8601ecc47f58eada7743fdcd709d3d_21456_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
     
@@ -14927,8 +14927,8 @@ print(my_electric_car.maximum_velocity) # =&amp;gt; 250
         
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://example.com/post/snail/gallery/theme-default.png&#34; data-caption=&#34;Default&#34;&gt;
-  &lt;img src=&#34;https://example.com/post/snail/gallery/theme-default_huba6228b7bdf30e2f03f12ea91b2cba0d_21751_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://dragon-library.github.io/docs/library/docs/library/post/snail/gallery/theme-default.png&#34; data-caption=&#34;Default&#34;&gt;
+  &lt;img src=&#34;https://dragon-library.github.io/docs/library/docs/library/post/snail/gallery/theme-default_huba6228b7bdf30e2f03f12ea91b2cba0d_21751_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
     
@@ -14940,8 +14940,8 @@ print(my_electric_car.maximum_velocity) # =&amp;gt; 250
         
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://example.com/post/snail/gallery/theme-forest.png&#34; data-caption=&#34;Forest&#34;&gt;
-  &lt;img src=&#34;https://example.com/post/snail/gallery/theme-forest_hu4f093a1c683134431456584193ea41ee_21797_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://dragon-library.github.io/docs/library/docs/library/post/snail/gallery/theme-forest.png&#34; data-caption=&#34;Forest&#34;&gt;
+  &lt;img src=&#34;https://dragon-library.github.io/docs/library/docs/library/post/snail/gallery/theme-forest_hu4f093a1c683134431456584193ea41ee_21797_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
     
@@ -14953,8 +14953,8 @@ print(my_electric_car.maximum_velocity) # =&amp;gt; 250
         
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://example.com/post/snail/gallery/theme-ocean.png&#34; data-caption=&#34;Ocean&#34;&gt;
-  &lt;img src=&#34;https://example.com/post/snail/gallery/theme-ocean_hu14831ccafc2219f30a7a096fa7617e01_21760_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://dragon-library.github.io/docs/library/docs/library/post/snail/gallery/theme-ocean.png&#34; data-caption=&#34;Ocean&#34;&gt;
+  &lt;img src=&#34;https://dragon-library.github.io/docs/library/docs/library/post/snail/gallery/theme-ocean_hu14831ccafc2219f30a7a096fa7617e01_21760_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
     
@@ -14966,8 +14966,8 @@ print(my_electric_car.maximum_velocity) # =&amp;gt; 250
         
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://example.com/post/snail/gallery/theme-strawberry.png&#34; data-caption=&#34;Strawberry&#34;&gt;
-  &lt;img src=&#34;https://example.com/post/snail/gallery/theme-strawberry_hu36b0b347fcca08bd39e2df22dcedbdfb_39532_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://dragon-library.github.io/docs/library/docs/library/post/snail/gallery/theme-strawberry.png&#34; data-caption=&#34;Strawberry&#34;&gt;
+  &lt;img src=&#34;https://dragon-library.github.io/docs/library/docs/library/post/snail/gallery/theme-strawberry_hu36b0b347fcca08bd39e2df22dcedbdfb_39532_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
 
@@ -15010,10 +15010,10 @@ print(my_electric_car.maximum_velocity) # =&amp;gt; 250
     
     <item>
       <title>academia: the website builder for Hugo</title>
-      <link>https://example.com/post/getting-started/</link>
+      <link>https://dragon-library.github.io/docs/library/post/getting-started/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/post/getting-started/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/getting-started/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;Create a free website with academia using Markdown, Jupyter, or RStudio. Choose a beautiful color theme and build anything with the Page Builder - over 40 &lt;em&gt;widgets&lt;/em&gt;, &lt;em&gt;themes&lt;/em&gt;, and &lt;em&gt;language packs&lt;/em&gt; included!&lt;/strong&gt;&lt;/p&gt;
@@ -15092,8 +15092,8 @@ print(my_electric_car.maximum_velocity) # =&amp;gt; 250
         
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://example.com/post/getting-started/gallery/theme-1950s.png&#34; data-caption=&#34;1950s&#34;&gt;
-  &lt;img src=&#34;https://example.com/post/getting-started/gallery/theme-1950s_huaf5482f8cea0c5a703a328640e3b7509_21614_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://dragon-library.github.io/docs/library/docs/library/post/getting-started/gallery/theme-1950s.png&#34; data-caption=&#34;1950s&#34;&gt;
+  &lt;img src=&#34;https://dragon-library.github.io/docs/library/docs/library/post/getting-started/gallery/theme-1950s_huaf5482f8cea0c5a703a328640e3b7509_21614_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
     
@@ -15105,8 +15105,8 @@ print(my_electric_car.maximum_velocity) # =&amp;gt; 250
         
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://example.com/post/getting-started/gallery/theme-apogee.png&#34; data-caption=&#34;Apogee&#34;&gt;
-  &lt;img src=&#34;https://example.com/post/getting-started/gallery/theme-apogee_hu4b45d99db97150df01464c393bfd17d4_24119_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://dragon-library.github.io/docs/library/docs/library/post/getting-started/gallery/theme-apogee.png&#34; data-caption=&#34;Apogee&#34;&gt;
+  &lt;img src=&#34;https://dragon-library.github.io/docs/library/docs/library/post/getting-started/gallery/theme-apogee_hu4b45d99db97150df01464c393bfd17d4_24119_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
     
@@ -15118,8 +15118,8 @@ print(my_electric_car.maximum_velocity) # =&amp;gt; 250
         
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://example.com/post/getting-started/gallery/theme-coffee-playfair.png&#34; data-caption=&#34;Coffee theme with Playfair font&#34;&gt;
-  &lt;img src=&#34;https://example.com/post/getting-started/gallery/theme-coffee-playfair_hu446a8f670cc5622adcc77b97ba95f6c5_22462_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://dragon-library.github.io/docs/library/docs/library/post/getting-started/gallery/theme-coffee-playfair.png&#34; data-caption=&#34;Coffee theme with Playfair font&#34;&gt;
+  &lt;img src=&#34;https://dragon-library.github.io/docs/library/docs/library/post/getting-started/gallery/theme-coffee-playfair_hu446a8f670cc5622adcc77b97ba95f6c5_22462_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
     
@@ -15131,8 +15131,8 @@ print(my_electric_car.maximum_velocity) # =&amp;gt; 250
         
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://example.com/post/getting-started/gallery/theme-dark.png&#34; data-caption=&#34;Dark&#34;&gt;
-  &lt;img src=&#34;https://example.com/post/getting-started/gallery/theme-dark_hu1e8601ecc47f58eada7743fdcd709d3d_21456_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://dragon-library.github.io/docs/library/docs/library/post/getting-started/gallery/theme-dark.png&#34; data-caption=&#34;Dark&#34;&gt;
+  &lt;img src=&#34;https://dragon-library.github.io/docs/library/docs/library/post/getting-started/gallery/theme-dark_hu1e8601ecc47f58eada7743fdcd709d3d_21456_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
     
@@ -15144,8 +15144,8 @@ print(my_electric_car.maximum_velocity) # =&amp;gt; 250
         
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://example.com/post/getting-started/gallery/theme-default.png&#34; data-caption=&#34;Default&#34;&gt;
-  &lt;img src=&#34;https://example.com/post/getting-started/gallery/theme-default_huba6228b7bdf30e2f03f12ea91b2cba0d_21751_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://dragon-library.github.io/docs/library/docs/library/post/getting-started/gallery/theme-default.png&#34; data-caption=&#34;Default&#34;&gt;
+  &lt;img src=&#34;https://dragon-library.github.io/docs/library/docs/library/post/getting-started/gallery/theme-default_huba6228b7bdf30e2f03f12ea91b2cba0d_21751_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
     
@@ -15157,8 +15157,8 @@ print(my_electric_car.maximum_velocity) # =&amp;gt; 250
         
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://example.com/post/getting-started/gallery/theme-forest.png&#34; data-caption=&#34;Forest&#34;&gt;
-  &lt;img src=&#34;https://example.com/post/getting-started/gallery/theme-forest_hu4f093a1c683134431456584193ea41ee_21797_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://dragon-library.github.io/docs/library/docs/library/post/getting-started/gallery/theme-forest.png&#34; data-caption=&#34;Forest&#34;&gt;
+  &lt;img src=&#34;https://dragon-library.github.io/docs/library/docs/library/post/getting-started/gallery/theme-forest_hu4f093a1c683134431456584193ea41ee_21797_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
     
@@ -15170,8 +15170,8 @@ print(my_electric_car.maximum_velocity) # =&amp;gt; 250
         
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://example.com/post/getting-started/gallery/theme-ocean.png&#34; data-caption=&#34;Ocean&#34;&gt;
-  &lt;img src=&#34;https://example.com/post/getting-started/gallery/theme-ocean_hu14831ccafc2219f30a7a096fa7617e01_21760_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://dragon-library.github.io/docs/library/docs/library/post/getting-started/gallery/theme-ocean.png&#34; data-caption=&#34;Ocean&#34;&gt;
+  &lt;img src=&#34;https://dragon-library.github.io/docs/library/docs/library/post/getting-started/gallery/theme-ocean_hu14831ccafc2219f30a7a096fa7617e01_21760_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
     
@@ -15183,8 +15183,8 @@ print(my_electric_car.maximum_velocity) # =&amp;gt; 250
         
       
     
-  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://example.com/post/getting-started/gallery/theme-strawberry.png&#34; data-caption=&#34;Strawberry&#34;&gt;
-  &lt;img src=&#34;https://example.com/post/getting-started/gallery/theme-strawberry_hu36b0b347fcca08bd39e2df22dcedbdfb_39532_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
+  &lt;a data-fancybox=&#34;gallery-gallery&#34; href=&#34;https://dragon-library.github.io/docs/library/docs/library/post/getting-started/gallery/theme-strawberry.png&#34; data-caption=&#34;Strawberry&#34;&gt;
+  &lt;img src=&#34;https://dragon-library.github.io/docs/library/docs/library/post/getting-started/gallery/theme-strawberry_hu36b0b347fcca08bd39e2df22dcedbdfb_39532_0x190_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;
   &lt;/a&gt;
   
 
@@ -15227,10 +15227,10 @@ print(my_electric_car.maximum_velocity) # =&amp;gt; 250
     
     <item>
       <title>An example journal article</title>
-      <link>https://example.com/publication/journal-article/</link>
+      <link>https://dragon-library.github.io/docs/library/publication/journal-article/</link>
       <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/publication/journal-article/</guid>
+      <guid>https://dragon-library.github.io/docs/library/publication/journal-article/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -15249,10 +15249,10 @@ print(my_electric_car.maximum_velocity) # =&amp;gt; 250
     
     <item>
       <title>An example conference paper</title>
-      <link>https://example.com/publication/conference-paper/</link>
+      <link>https://dragon-library.github.io/docs/library/publication/conference-paper/</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/publication/conference-paper/</guid>
+      <guid>https://dragon-library.github.io/docs/library/publication/conference-paper/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
