@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://example.com/book/deus/review-1/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/review-1/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/deus/deus-1/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/gates/</loc>
+    <lastmod>2020-04-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/</loc>
+    <lastmod>2020-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/courses/example/example1/</loc>
+    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/courses/example.1/example3/</loc>
+    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/courses/example.2/example3/</loc>
+    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/courses/example.1/</loc>
+    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/courses/example.2/</loc>
+    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/courses/example/</loc>
+    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/gates/bill-gate-1/</loc>
+    <lastmod>2020-05-10T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/gates/bill-gate-2/</loc>
+    <lastmod>2020-05-10T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/deus/review-2/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/review-2/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/deus/deus-2/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/sapiens-1/</loc>
+    <lastmod>2020-05-08T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/deus/</loc>
+    <lastmod>2020-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/courses/example.2/example4/</loc>
+    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/courses/example/example2/</loc>
+    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/courses/example.1/example4/</loc>
+    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/gates/bill-gate-3/</loc>
+    <lastmod>2020-05-10T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/review-3/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/deus/deus-3/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/sapiens-2/</loc>
+    <lastmod>2020-05-08T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/gates/bill-gate-4/</loc>
+    <lastmod>2020-05-10T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/sapiens-3/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/deus/deus-4/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/gates/bill-gate-5/</loc>
+    <lastmod>2020-05-10T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/sapiens-4/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/deus/deus-5/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/gates/bill-gate-6/</loc>
+    <lastmod>2020-05-13T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/sapiens-5/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/deus/deus-6/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/gates/bill-gate-7/</loc>
+    <lastmod>2020-05-13T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/sapiens-6/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/deus/deus-7/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/gates/bill-gate-8/</loc>
+    <lastmod>2020-05-13T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/sapiens-7/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/deus/deus-8/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/gates/bill-gate-9/</loc>
+    <lastmod>2020-05-13T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/sapiens-8/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/deus/deus-9/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/gates/bill-gate-10/</loc>
+    <lastmod>2020-05-13T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/deus/deus-10/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/sapiens-9/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/gates/bill-gate-11/</loc>
+    <lastmod>2020-05-13T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/sapiens-11/</loc>
+    <lastmod>2020-05-10T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/sapiens-10/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/deus/deus-11/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/gates/bill-gate-12/</loc>
+    <lastmod>2020-05-13T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/sapiens-12/</loc>
+    <lastmod>2020-05-10T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/deus/deus-12/</loc>
+    <lastmod>2020-05-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/sapiens-13/</loc>
+    <lastmod>2020-05-10T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/sapiens-14/</loc>
+    <lastmod>2020-05-10T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/sapiens-15/</loc>
+    <lastmod>2020-05-10T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/sapiens-16/</loc>
+    <lastmod>2020-05-10T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/sapiens-17/</loc>
+    <lastmod>2020-05-10T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/sapiens-18/</loc>
+    <lastmod>2020-05-10T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/sapiens-19/</loc>
+    <lastmod>2020-05-10T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/sapiens/sapiens-20/</loc>
+    <lastmod>2020-05-10T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/talk/coding/</loc>
+    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/</loc>
+    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/talk/qualitative/</loc>
+    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/talk/</loc>
+    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/talk/synthesizing/</loc>
+    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/authors/admin/</loc>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/authors/</loc>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/categories/</loc>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/file-handling/</loc>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/python/tutorials/file-handling-functions/</loc>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/freecodecamp/</loc>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/categories/python/</loc>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/python/tutorials/</loc>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/</loc>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/categories/tutorials/</loc>
+    <lastmod>2020-05-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/categories/articles/</loc>
+    <lastmod>2020-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/beginner/</loc>
+    <lastmod>2020-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/python/tutorials/beginner_to_pro/</loc>
+    <lastmod>2020-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/list/</loc>
+    <lastmod>2020-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/regular-expressions/</loc>
+    <lastmod>2020-04-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/python/tutorials/regular-expressions/</loc>
+    <lastmod>2020-04-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/python/tutorials/beginner_handbook/</loc>
+    <lastmod>2020-04-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/categories/example/</loc>
+    <lastmod>2020-03-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/python/example/</loc>
+    <lastmod>2020-03-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/python/example/python-web-scraping-part-1/</loc>
+    <lastmod>2020-03-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/categories/series/</loc>
+    <lastmod>2020-03-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/web-scraping/</loc>
+    <lastmod>2020-03-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/python/tutorials/list_append/</loc>
+    <lastmod>2020-03-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/python/tutorials/python-lists-explained/</loc>
+    <lastmod>2020-01-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/python/tutorials/virtual-environments/</loc>
+    <lastmod>2020-01-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/virtual-environments/</loc>
+    <lastmod>2020-01-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/python/tutorials/string-strip-method/</loc>
+    <lastmod>2020-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/string/</loc>
+    <lastmod>2020-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/function/</loc>
+    <lastmod>2020-01-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/python/tutorials/python-function-guide/</loc>
+    <lastmod>2020-01-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/lambda-expressions/</loc>
+    <lastmod>2020-01-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/python/tutorials/lambda-expressions/</loc>
+    <lastmod>2020-01-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/python/tutorials/regular-expressions-explained/</loc>
+    <lastmod>2019-07-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/categories/css/</loc>
+    <lastmod>2019-04-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/front-end/</loc>
+    <lastmod>2019-04-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/</loc>
+    <lastmod>2019-04-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/css-handbook/</loc>
+    <lastmod>2019-04-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/publication_types/3/</loc>
+    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/publication/preprint/</loc>
+    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/publication_types/</loc>
+    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/publication/</loc>
+    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/source-themes/</loc>
+    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/jupyter/</loc>
+    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/slides/</loc>
+    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/slides/example/</loc>
+    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/python/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/python/tutorials/zero_to_hero/</loc>
+    <lastmod>2017-09-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/project/artificial-intelligence/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/deep-learning/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/project/deep-learning/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/demo/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/project/external-project/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/human/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/project/internal-project/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/project/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/project/robotics/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/robotics/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/project/skin-cancer-ai/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/snail/</loc>
+    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/academia/</loc>
+    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/getting-started/</loc>
+    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/publication_types/2/</loc>
+    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/publication/journal-article/</loc>
+    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/authors/robert-ford/</loc>
+    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/publication_types/1/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/publication/conference-paper/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/book/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/courses/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/post/python/</loc>
+  </url>
+  
+</urlset>

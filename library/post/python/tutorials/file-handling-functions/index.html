@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academia 4.3.1">
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Little Dragon">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="If you want to learn how to work with files in Python, then this article is for you. Working with files is an important skill that every Python developer should learn, so let&#39;s get started.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://example.com/post/python/tutorials/file-handling-functions/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#c7254e">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:400,700|Sarabun|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academia.min.eec1e2304b02b53c7bf1ce83175981bf.css">
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://example.com/post/python/tutorials/file-handling-functions/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Library">
+  <meta property="og:url" content="https://example.com/post/python/tutorials/file-handling-functions/">
+  <meta property="og:title" content="File Handling Functions Explained. | Library">
+  <meta property="og:description" content="If you want to learn how to work with files in Python, then this article is for you. Working with files is an important skill that every Python developer should learn, so let&#39;s get started."><meta property="og:image" content="https://example.com/post/python/tutorials/file-handling-functions/featured.png">
+  <meta property="twitter:image" content="https://example.com/post/python/tutorials/file-handling-functions/featured.png"><meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2020-05-07T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2020-05-07T00:00:00&#43;00:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>File Handling Functions Explained. | Library</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Library</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/python/"><span>Python</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/book/"><span>Book</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/courses/"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article py-5" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+    
+    
+    <div class="article-container py-3">
+      <h1 itemprop="name">File Handling Functions Explained.</h1>
+
+      
+      <p class="page-subtitle">Python Write to File – Open, Read, Append, and Other File Handling Functions Explained</p>
+      
+
+      
+      
+
+
+
+<meta content="2020-05-07 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2020-05-07 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/admin/">Little Dragon</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>May 7, 2020</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    15 min read
+  </span>
+  
+
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    <a href="/categories/tutorials/">Tutorials</a>, <a href="/categories/python/">Python</a></span>
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://example.com/post/python/tutorials/file-handling-functions/&amp;text=File%20Handling%20Functions%20Explained." target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://example.com/post/python/tutorials/file-handling-functions/&amp;t=File%20Handling%20Functions%20Explained." target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=File%20Handling%20Functions%20Explained.&amp;body=https://example.com/post/python/tutorials/file-handling-functions/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://example.com/post/python/tutorials/file-handling-functions/&amp;title=File%20Handling%20Functions%20Explained." target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=File%20Handling%20Functions%20Explained.%20https://example.com/post/python/tutorials/file-handling-functions/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://example.com/post/python/tutorials/file-handling-functions/&amp;title=File%20Handling%20Functions%20Explained." target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      
+    </div>
+  </div>
+</div>
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p><img src="https://www.freecodecamp.org/news/content/images/size/w2000/2020/05/Python-File-Handling-1.png" alt="enter image description here" /></p>
+
+<h2 id="welcome">Welcome</h2>
+
+<p>Hi! If you want to learn how to work with files in Python, then this article is for you. Working with files is an important skill that every Python developer should learn, so let&rsquo;s get started.</p>
+
+<p><strong>In this article, you will learn:</strong></p>
+
+<ul>
+<li>How to open a file.</li>
+<li>How to read a file.</li>
+<li>How to create a file.</li>
+<li>How to modify a file.</li>
+<li>How to close a file.</li>
+<li>How to open files for multiple operations.</li>
+<li>How to work with file object methods.</li>
+<li>How to delete files.</li>
+<li>How to work with context managers and why they are useful.</li>
+<li>How to handle exceptions that could be raised when you work with files.</li>
+<li>and more!</li>
+</ul>
+
+<p><strong>Let&rsquo;s begin! 🔅</strong></p>
+
+<h2 id="working-with-files-basic-syntax">Working with Files: Basic Syntax</h2>
+
+<p>One of the most important functions that you will need to use as you work with files in Python is  <code>**open()**</code><strong>,</strong>  a built-in function that opens a file and allows your program to use it and work with it.</p>
+
+<p><strong>This is the basic syntax</strong>:</p>
+
+<p><img src="https://www.freecodecamp.org/news/content/images/2020/05/image-48.png" alt="" /></p>
+
+<p>💡  <strong>Tip:</strong>  These are the two most commonly used arguments to call this function. There are six additional optional arguments. To learn more about them, please read  <a href="https://docs.python.org/3/library/functions.html#open" target="_blank">this article</a>  in the documentation.</p>
+
+<h3 id="first-parameter-file">First Parameter: File</h3>
+
+<p>The first parameter of the  <code>open()</code>  function is  <code>**file**</code>, the absolute or relative path to the file that you are trying to work with.</p>
+
+<p>We usually use a relative path, which indicates where the file is located relative to the location of the script (Python file) that is calling the  <code>open()</code>  function.</p>
+
+<p>For example, the path in this function call:</p>
+
+<pre><code class="language-python">open(&quot;names.txt&quot;) # The relative path is &quot;names.txt&quot;
+</code></pre>
+
+<p>Only contains the name of the file. This can be used when the file that you are trying to open is in the same directory or folder as the Python script, like this:</p>
+
+<p><img src="https://www.freecodecamp.org/news/content/images/2020/05/image-7.png" alt="" /></p>
+
+<p>But if the file is within a nested folder, like this:</p>
+
+<p><img src="https://www.freecodecamp.org/news/content/images/2020/05/image-9.png" alt="" /></p>
+
+<p>The names.txt file is in the &ldquo;data&rdquo; folder</p>
+
+<p>Then we need to use a specific path to tell the function that the file is within another folder.</p>
+
+<p>In this example, this would be the path:</p>
+
+<pre><code class="language-python">open(&quot;data/names.txt&quot;)
+</code></pre>
+
+<p>Notice that we are writing  <code>data/</code>  first (the name of the folder followed by a  <code>/</code>) and then  <code>names.txt</code>  (the name of the file with the extension).</p>
+
+<p>💡  <strong>Tip:</strong> The three letters  <code>.txt</code>  that follow the dot in  <code>names.txt</code>  is the &ldquo;extension&rdquo; of the file, or its type. In this case,  <code>.txt</code>  indicates that it&rsquo;s a text file.</p>
+
+<h3 id="second-parameter-mode">Second Parameter: Mode</h3>
+
+<p>The second parameter of the  <code>open()</code>  function is the  <code>**mode**</code>, a string with one character. That single character basically tells Python what you are planning to do with the file in your program.</p>
+
+<p>Modes available are:</p>
+
+<ul>
+<li>Read (<code>&quot;r&quot;</code>).</li>
+<li>Append (<code>&quot;a&quot;</code>)</li>
+<li>Write (<code>&quot;w&quot;</code>)</li>
+<li>Create (<code>&quot;x&quot;</code>)</li>
+</ul>
+
+<p>You can also choose to open the file in:</p>
+
+<ul>
+<li>Text mode (<code>&quot;t&quot;</code>)</li>
+<li>Binary mode (<code>&quot;b&quot;</code>)</li>
+</ul>
+
+<p>To use text or binary mode, you would need to add these characters to the main mode. For example:  <code>&quot;wb&quot;</code>  means writing in binary mode.</p>
+
+<p>💡  <strong>Tip:</strong>  The default modes are read (<code>&quot;r&quot;</code>) and text (<code>&quot;t&quot;</code>), which means &ldquo;open for reading text&rdquo; (<code>&quot;rt&quot;</code>), so you don&rsquo;t need to specify them in  <code>**open()**</code>  if you want to use them because they are assigned by default. You can simply write  <code>open(&lt;file&gt;)</code>.</p>
+
+<p><strong>Why Modes?</strong></p>
+
+<p>It really makes sense for Python to grant only certain permissions based what you are planning to do with the file, right? Why should Python allow your program to do more than necessary? This is basically why modes exist.</p>
+
+<p>Think about it — allowing a program to do more than necessary can problematic. For example, if you only need to read the content of a file, it can be dangerous to allow your program to modify it unexpectedly, which could potentially introduce bugs.</p>
+
+<h2 id="how-to-read-a-file">How to Read a File</h2>
+
+<p>Now that you know more about the arguments that the  <code>**open()**</code>  function takes, let&rsquo;s see how you can open a file and store it in a variable to use it in your program.</p>
+
+<p>This is the basic syntax:</p>
+
+<p><img src="https://www.freecodecamp.org/news/content/images/2020/05/image-41.png" alt="" /></p>
+
+<p>We are simply assigning the value returned to a variable. For example:</p>
+
+<pre><code class="language-python">names_file = open(&quot;data/names.txt&quot;, &quot;r&quot;)
+</code></pre>
+
+<p>I know you might be asking: what type of value is returned by  <code>**open()**</code>?</p>
+
+<p>Well,  <strong>a</strong>  <strong>file object</strong>.</p>
+
+<p>Let&rsquo;s talk a little bit about them.</p>
+
+<h3 id="file-objects">File Objects</h3>
+
+<p>According to the  <a href="https://docs.python.org/3/glossary.html#term-file-object" target="_blank">Python Documentation</a>, a  <strong>file object</strong>  is:</p>
+
+<blockquote>
+<p>An object exposing a file-oriented API (with methods such as read() or write()) to an underlying resource.</p>
+</blockquote>
+
+<p>This is basically telling us that a file object is an object that lets us work and interact with existing files in our Python program.</p>
+
+<p>File objects have attributes, such as:</p>
+
+<ul>
+<li><strong>name</strong>: the name of the file.</li>
+<li><strong>closed</strong>:  <code>True</code>  if the file is closed.  <code>False</code>  otherwise.</li>
+<li><strong>mode</strong>: the mode used to open the file.</li>
+</ul>
+
+<p><img src="https://www.freecodecamp.org/news/content/images/2020/05/image-57.png" alt="" /></p>
+
+<p>For example:</p>
+
+<pre><code class="language-python">f = open(&quot;data/names.txt&quot;, &quot;a&quot;)
+print(f.mode) # Output: &quot;a&quot;
+</code></pre>
+
+<p>Now let&rsquo;s see how you can access the content of a file through a file object.</p>
+
+<h3 id="methods-to-read-a-file">Methods to Read a File</h3>
+
+<p>For us to be able to work file objects, we need to have a way to &ldquo;interact&rdquo; with them in our program and that is exactly what methods do. Let&rsquo;s see some of them.</p>
+
+<h3 id="read"><strong>Read()</strong></h3>
+
+<p>The first method that you need to learn about is  <strong><code>read()</code></strong>,  which  <strong>returns the entire content of the file as a string.</strong></p>
+
+<p><img src="https://www.freecodecamp.org/news/content/images/2020/05/image-11.png" alt="" /></p>
+
+<p>Here we have an example:</p>
+
+<pre><code class="language-python">f = open(&quot;data/names.txt&quot;)
+print(f.read())
+</code></pre>
+
+<p>The output is:</p>
+
+<pre><code class="language-python">Nora
+Gino
+Timmy
+William
+</code></pre>
+
+<p>You can use the  <code>type()</code>  function to confirm that the value returned by  <code>f.read()</code>  is a string:</p>
+
+<pre><code class="language-pytohn">print(type(f.read()))
+
+# Output
+&lt;class 'str'&gt;
+</code></pre>
+
+<p>Yes, it&rsquo;s a string!</p>
+
+<p>In this case, the entire file was printed because we did not specify a maximum number of bytes, but we can do this as well.</p>
+
+<p>Here we have an example:</p>
+
+<pre><code class="language-python">f = open(&quot;data/names.txt&quot;)
+print(f.read(3))
+</code></pre>
+
+<p>The value returned is limited to this number of bytes:</p>
+
+<pre><code>Nor
+</code></pre>
+
+<p>📌  <strong>Important:</strong>  You need to  <strong>close</strong> a file after the task has been completed to free the resources associated to the file. To do this, you need to call the  <code>**close()**</code>  method, like this:</p>
+
+<p><img src="https://www.freecodecamp.org/news/content/images/2020/05/image-22.png" alt="" /></p>
+
+<h3 id="readline-vs-readlines">Readline() vs. Readlines()</h3>
+
+<p>You can read a file line by line with these two methods. They are slightly different, so let&rsquo;s see them in detail.</p>
+
+<p><code>**readline()**</code>  reads  <strong>one line</strong> of the file until it reaches the end of that line. A trailing newline character (<code>\n</code>) is kept in the string.</p>
+
+<p>💡  <strong>Tip:</strong>  Optionally, you can pass the size, the maximum number of characters that you want to include in the resulting string.</p>
+
+<p><img src="https://www.freecodecamp.org/news/content/images/2020/05/image-19.png" alt="" /></p>
+
+<p>For example:</p>
+
+<pre><code class="language-python">f = open(&quot;data/names.txt&quot;)
+print(f.readline())
+f.close()
+</code></pre>
+
+<p>The output is:</p>
+
+<pre><code class="language-python">Nora
+
+</code></pre>
+
+<p>This is the first line of the file.</p>
+
+<p>In contrast,  <code>**readlines()**</code>  returns a  <strong>list with all the lines</strong>  of the file as individual elements (strings). This is the syntax:</p>
+
+<p><img src="https://www.freecodecamp.org/news/content/images/2020/05/image-21.png" alt="" /></p>
+
+<p>For example:</p>
+
+<pre><code class="language-python">f = open(&quot;data/names.txt&quot;)
+print(f.readlines())
+f.close()
+</code></pre>
+
+<p>The output is:</p>
+
+<pre><code class="language-python">['Nora\n', 'Gino\n', 'Timmy\n', 'William']
+</code></pre>
+
+<p>Notice that there is a  <code>\n</code>  (newline character) at the end of each string, except the last one.</p>
+
+<p>💡  <strong>Tip:</strong>  You can get the same list with  <code>list(f)</code>.</p>
+
+<p>You can work with this list in your program by assigning it to a variable or using it in a loop:</p>
+
+<pre><code class="language-python">f = open(&quot;data/names.txt&quot;)
+
+for line in f.readlines():
+    # Do something with each line
+    
+f.close()
+</code></pre>
+
+<p>We can also iterate over  <code>f</code>  directly (the file object) in a loop:</p>
+
+<pre><code class="language-python">f = open(&quot;data/names.txt&quot;, &quot;r&quot;)
+
+for line in f:
+	# Do something with each line
+
+f.close()
+</code></pre>
+
+<p>Those are the main methods used to read file objects. Now let&rsquo;s see how you can create files.</p>
+
+<h2 id="how-to-create-a-file">How to Create a File</h2>
+
+<p>If you need to create a file &ldquo;dynamically&rdquo; using Python, you can do it with the  <code>&quot;x&quot;</code>  mode.</p>
+
+<p>Let&rsquo;s see how. This is the basic syntax:</p>
+
+<p><img src="https://www.freecodecamp.org/news/content/images/2020/05/image-58.png" alt="" /></p>
+
+<p>Here&rsquo;s an example. This is my current working directory:</p>
+
+<p><img src="https://www.freecodecamp.org/news/content/images/2020/05/image-29.png" alt="" /></p>
+
+<p>If I run this line of code:</p>
+
+<pre><code class="language-python">f = open(&quot;new_file.txt&quot;, &quot;x&quot;)
+</code></pre>
+
+<p>A new file with that name is created:</p>
+
+<p><img src="https://www.freecodecamp.org/news/content/images/2020/05/image-30.png" alt="" /></p>
+
+<p>With this mode, you can create a file and then write to it dynamically using methods that you will learn in just a few moments.</p>
+
+<p>💡  <strong>Tip:</strong>  The file will be initially empty until you modify it.</p>
+
+<p>A curious thing is that if you try to run this line again and a file with that name already exists, you will see this error:</p>
+
+<pre><code class="language-python">Traceback (most recent call last):
+  File &quot;&lt;path&gt;&quot;, line 8, in &lt;module&gt;
+    f = open(&quot;new_file.txt&quot;, &quot;x&quot;)
+FileExistsError: [Errno 17] File exists: 'new_file.txt'
+</code></pre>
+
+<p>According to the  <a href="https://docs.python.org/3/library/exceptions.html#FileExistsError" target="_blank">Python Documentation</a>, this exception (runtime error) is:</p>
+
+<blockquote>
+<p>Raised when trying to create a file or directory which already exists.</p>
+</blockquote>
+
+<p>Now that you know how to create a file, let&rsquo;s see how you can modify it.</p>
+
+<h2 id="how-to-modify-a-file">How to Modify a File</h2>
+
+<p>To modify (write to) a file, you need to use the  <code>**write()**</code>  method. You have two ways to do it (append or write) based on the mode that you choose to open it with. Let&rsquo;s see them in detail.</p>
+
+<h3 id="append">Append</h3>
+
+<p>&ldquo;Appending&rdquo; means adding something to the end of another thing. The  <code>&quot;a&quot;</code>  mode allows you to open a file to append some content to it.</p>
+
+<p>For example, if we have this file:</p>
+
+<p><img src="https://www.freecodecamp.org/news/content/images/2020/05/image-43.png" alt="" /></p>
+
+<p>And we want to add a new line to it, we can open it using the  <code>**&quot;a&quot;**</code>  mode (append) and then, call the  <code>**write()**</code>  method, passing the content that we want to append as argument.</p>
+
+<p>This is the basic syntax to call the  <code>**write()**</code>  method:</p>
+
+<p><img src="https://www.freecodecamp.org/news/content/images/2020/05/image-52.png" alt="" /></p>
+
+<p>Here&rsquo;s an example:</p>
+
+<pre><code class="language-python">f = open(&quot;data/names.txt&quot;, &quot;a&quot;)
+f.write(&quot;\nNew Line&quot;)
+f.close()
+</code></pre>
+
+<p>💡  <strong>Tip:</strong>  Notice that I&rsquo;m adding  <code>\n</code>  before the line to indicate that I want the new line to appear as a separate line, not as a continuation of the existing line.</p>
+
+<p>This is the file now, after running the script:</p>
+
+<p><img src="https://www.freecodecamp.org/news/content/images/2020/05/image-45.png" alt="" /></p>
+
+<p>💡  <strong>Tip:</strong>  The new line might not be displayed in the file until <strong><code>f.close()</code></strong>  runs.</p>
+
+<h3 id="write">Write</h3>
+
+<p>Sometimes, you may want to delete the content of a file and replace it entirely with new content. You can do this with the  <code>**write()**</code>  method if you open the file with the  <code>**&quot;w&quot;**</code>  mode.</p>
+
+<p>Here we have this text file:</p>
+
+<p><img src="https://www.freecodecamp.org/news/content/images/2020/05/image-43.png" alt="" /></p>
+
+<p>If I run this script:</p>
+
+<pre><code class="language-python">f = open(&quot;data/names.txt&quot;, &quot;w&quot;)
+f.write(&quot;New Content&quot;)
+f.close()
+
+</code></pre>
+
+<p>This is the result:</p>
+
+<p><img src="https://www.freecodecamp.org/news/content/images/2020/05/image-46.png" alt="" /></p>
+
+<p>As you can see, opening a file with the  <code>**&quot;w&quot;**</code>  mode and then writing to it replaces the existing content.</p>
+
+<p>💡  <strong>Tip:</strong>  The  <code>**write()**</code>  method returns the number of characters written.</p>
+
+<p>If you want to write several lines at once, you can use the  <code>**writelines()**</code>  method, which takes a list of strings. Each string represents a line to be added to the file.</p>
+
+<p>Here&rsquo;s an example. This is the initial file:</p>
+
+<p><img src="https://www.freecodecamp.org/news/content/images/2020/05/image-43.png" alt="" /></p>
+
+<p>If we run this script:</p>
+
+<pre><code class="language-python">f = open(&quot;data/names.txt&quot;, &quot;a&quot;)
+f.writelines([&quot;\nline1&quot;, &quot;\nline2&quot;, &quot;\nline3&quot;])
+f.close()
+</code></pre>
+
+<p>The lines are added to the end of the file:</p>
+
+<p><img src="https://www.freecodecamp.org/news/content/images/2020/05/image-47.png" alt="" /></p>
+
+<h3 id="open-file-for-multiple-operations">Open File For Multiple Operations</h3>
+
+<p>Now you know how to create, read, and write to a file, but what if you want to do more than one thing in the same program? Let&rsquo;s see what happens if we try to do this with the modes that you have learned so far:</p>
+
+<p>If you open a file in  <code>&quot;r&quot;</code>  mode (read), and then try to write to it:</p>
+
+<pre><code class="language-python">f = open(&quot;data/names.txt&quot;)
+f.write(&quot;New Content&quot;) # Trying to write
+f.close()
+</code></pre>
+
+<p>You will get this error:</p>
+
+<pre><code class="language-python">Traceback (most recent call last):
+  File &quot;&lt;path&gt;&quot;, line 9, in &lt;module&gt;
+    f.write(&quot;New Content&quot;)
+io.UnsupportedOperation: not writable
+</code></pre>
+
+<p>Similarly, if you open a file in  <code>&quot;w&quot;</code>  mode (write), and then try to read it:</p>
+
+<pre><code class="language-python">f = open(&quot;data/names.txt&quot;, &quot;w&quot;)
+print(f.readlines()) # Trying to read
+f.write(&quot;New Content&quot;)
+f.close()
+</code></pre>
+
+<p>You will see this error:</p>
+
+<pre><code class="language-python">Traceback (most recent call last):
+  File &quot;&lt;path&gt;&quot;, line 14, in &lt;module&gt;
+    print(f.readlines())
+io.UnsupportedOperation: not readable
+</code></pre>
+
+<p>The same will occur with the  <code>&quot;a&quot;</code>  (append) mode.</p>
+
+<p>How can we solve this? To be able to read a file and perform another operation in the same program, you need to add the  <code>&quot;+&quot;</code>  symbol to the mode, like this:</p>
+
+<pre><code class="language-python">f = open(&quot;data/names.txt&quot;, &quot;w+&quot;) # Read + Write
+</code></pre>
+
+<pre><code class="language-python">f = open(&quot;data/names.txt&quot;, &quot;a+&quot;) # Read + Append
+</code></pre>
+
+<pre><code class="language-python">f = open(&quot;data/names.txt&quot;, &quot;r+&quot;) # Read + Write
+</code></pre>
+
+<p>Very useful, right? This is probably what you will use in your programs, but be sure to include only the modes that you need to avoid potential bugs.</p>
+
+<p>Sometimes files are no longer needed. Let&rsquo;s see how you can delete files using Python.</p>
+
+<h2 id="how-to-delete-files">How to Delete Files</h2>
+
+<p>To remove a file using Python, you need to import a module called  <code>**os**</code>  which contains functions that interact with your operating system.</p>
+
+<p>💡 <strong>Tip:</strong>  A  <strong>module</strong> is a Python file with related variables, functions, and classes.</p>
+
+<p>Particularly, you need the  <code>**remove()**</code>  function. This function takes the path to the file as argument and deletes the file automatically.</p>
+
+<p><img src="https://www.freecodecamp.org/news/content/images/2020/05/image-56.png" alt="" /></p>
+
+<p>Let&rsquo;s see an example. We want to remove the file called  <code>sample_file.txt</code>.</p>
+
+<p><img src="https://www.freecodecamp.org/news/content/images/2020/05/image-34.png" alt="" /></p>
+
+<p>To do it, we write this code:</p>
+
+<pre><code class="language-python">import os
+os.remove(&quot;sample_file.txt&quot;)
+</code></pre>
+
+<ul>
+<li>The first line:  <code>import os</code>  is called an &ldquo;import statement&rdquo;. This statement is written at the top of your file and it gives you access to the functions defined in the  <code>os</code>  module.</li>
+<li>The second line:  <code>os.remove(&quot;sample_file.txt&quot;)</code>  removes the file specified.</li>
+</ul>
+
+<p>💡  <strong>Tip:</strong>  you can use an absolute or a relative path.</p>
+
+<p>Now that you know how to delete files, let&rsquo;s see an interesting tool&hellip; Context Managers!</p>
+
+<h2 id="meet-context-managers">Meet Context Managers</h2>
+
+<p>Context Managers are Python constructs that will make your life much easier. By using them, you don&rsquo;t need to remember to close a file at the end of your program and you have access to the file in the particular part of the program that you choose.</p>
+
+<h3 id="syntax">Syntax</h3>
+
+<p>This is an example of a context manager used to work with files:</p>
+
+<p><img src="https://www.freecodecamp.org/news/content/images/2020/05/image-33.png" alt="" /></p>
+
+<p>💡  <strong>Tip:</strong> The body of the context manager has to be indented, just like we indent loops, functions, and classes. If the code is not indented, it will not be considered part of the context manager.</p>
+
+<p>When the body of the context manager has been completed, the file closes automatically.</p>
+
+<pre><code class="language-python">with open(&quot;&lt;path&gt;&quot;, &quot;&lt;mode&gt;&quot;) as &lt;var&gt;:
+    # Working with the file...
+
+# The file is closed here!
+</code></pre>
+
+<h3 id="example">Example</h3>
+
+<p>Here&rsquo;s an example:</p>
+
+<pre><code class="language-python">with open(&quot;data/names.txt&quot;, &quot;r+&quot;) as f:
+    print(f.readlines()) 
+</code></pre>
+
+<p>This context manager opens the  <code>names.txt</code>  file for read/write operations and assigns that file object to the variable  <code>f</code>. This variable is used in the body of the context manager to refer to the file object.</p>
+
+<h3 id="trying-to-read-it-again">Trying to Read it Again</h3>
+
+<p>After the body has been completed, the file is automatically closed, so it can&rsquo;t be read without opening it again. But wait! We have a line that tries to read it again, right here below:</p>
+
+<pre><code class="language-python">with open(&quot;data/names.txt&quot;, &quot;r+&quot;) as f:
+    print(f.readlines())
+
+print(f.readlines()) # Trying to read the file again, outside of the context manager
+</code></pre>
+
+<p>Let&rsquo;s see what happens:</p>
+
+<pre><code class="language-python">Traceback (most recent call last):
+  File &quot;&lt;path&gt;&quot;, line 21, in &lt;module&gt;
+    print(f.readlines())
+ValueError: I/O operation on closed file.
+</code></pre>
+
+<p>This error is thrown because we are trying to read a closed file. Awesome, right? The context manager does all the heavy work for us, it is readable, and concise.</p>
+
+<h2 id="how-to-handle-exceptions-when-working-with-files">How to Handle Exceptions When Working With Files</h2>
+
+<p>When you&rsquo;re working with files, errors can occur. Sometimes you may not have the necessary permissions to modify or access a file, or a file might not even exist. As a programmer, you need to foresee these circumstances and handle them in your program to avoid sudden crashes that could definitely affect the user experience.</p>
+
+<p>Let&rsquo;s see some of the most common exceptions (runtime errors) that you might find when you work with files:</p>
+
+<h3 id="filenotfounderror">FileNotFoundError</h3>
+
+<p>According to the  <a href="https://docs.python.org/3/library/exceptions.html#FileNotFoundError" target="_blank">Python Documentation</a>, this exception is:</p>
+
+<blockquote>
+<p>Raised when a file or directory is requested but doesn’t exist.</p>
+</blockquote>
+
+<p>For example, if the file that you&rsquo;re trying to open doesn&rsquo;t exist in your current working directory:</p>
+
+<pre><code class="language-python">f = open(&quot;names.txt&quot;)
+</code></pre>
+
+<p>You will see this error:</p>
+
+<pre><code class="language-python">Traceback (most recent call last):
+  File &quot;&lt;path&gt;&quot;, line 8, in &lt;module&gt;
+    f = open(&quot;names.txt&quot;)
+FileNotFoundError: [Errno 2] No such file or directory: 'names.txt'
+</code></pre>
+
+<p>Let&rsquo;s break this error down this line by line:</p>
+
+<ul>
+<li><code>File &quot;&lt;path&gt;&quot;, line 8, in &lt;module&gt;</code>. This line tells you that the error was raised when the code on the file located in  <code>&lt;path&gt;</code>  was running. Specifically, when  <code>line 8</code>  was executed in  <code>&lt;module&gt;</code>.</li>
+<li><code>f = open(&quot;names.txt&quot;)</code>. This is the line that caused the error.</li>
+<li><code>FileNotFoundError: [Errno 2] No such file or directory: 'names.txt'</code>  . This line says that a  <code>FileNotFoundError</code>  exception was raised because the file or directory  <code>names.txt</code>  doesn&rsquo;t exist.</li>
+</ul>
+
+<p>💡  <strong>Tip:</strong> Python is very descriptive with the error messages, right? This is a huge advantage during the process of debugging.</p>
+
+<h3 id="permissionerror">PermissionError</h3>
+
+<p>This is another common exception when working with files. According to the  <a href="https://docs.python.org/3/library/exceptions.html#PermissionError" target="_blank">Python Documentation</a>, this exception is:</p>
+
+<blockquote>
+<p>Raised when trying to run an operation without the adequate access rights - for example filesystem permissions.</p>
+</blockquote>
+
+<p>This exception is raised when you are trying to read or modify a file that don&rsquo;t have permission to access. If you try to do so, you will see this error:</p>
+
+<pre><code class="language-python">Traceback (most recent call last):
+  File &quot;&lt;path&gt;&quot;, line 8, in &lt;module&gt;
+    f = open(&quot;&lt;file_path&gt;&quot;)
+PermissionError: [Errno 13] Permission denied: 'data'
+</code></pre>
+
+<h3 id="isadirectoryerror">IsADirectoryError</h3>
+
+<p>According to the  <a href="https://docs.python.org/3/library/exceptions.html#IsADirectoryError" target="_blank">Python Documentation</a>, this exception is:</p>
+
+<blockquote>
+<p>Raised when a file operation is requested on a directory.</p>
+</blockquote>
+
+<p>This particular exception is raised when you try to open or work on a directory instead of a file, so be really careful with the path that you pass as argument.</p>
+
+<h3 id="how-to-handle-exceptions">How to Handle Exceptions</h3>
+
+<p>To handle these exceptions, you can use a  <strong>try/except</strong>  statement. With this statement, you can &ldquo;tell&rdquo; your program what to do in case something unexpected happens.</p>
+
+<p>This is the basic syntax:</p>
+
+<pre><code>try:
+	# Try to run this code
+except &lt;type_of_exception&gt;:
+	# If an exception of this type is raised, stop the process and jump to this block
+    
+</code></pre>
+
+<p>Here you can see an example with  <code>FileNotFoundError</code>:</p>
+
+<pre><code class="language-python">try:
+    f = open(&quot;names.txt&quot;)
+except FileNotFoundError:
+    print(&quot;The file doesn't exist&quot;)
+</code></pre>
+
+<p>This basically says:</p>
+
+<ul>
+<li>Try to open the file  <code>names.txt</code>.</li>
+<li>If a  <code>FileNotFoundError</code>  is thrown, don&rsquo;t crash! Simply print a descriptive statement for the user.</li>
+</ul>
+
+<p>💡  <strong>Tip:</strong>  You can choose how to handle the situation by writing the appropriate code in the  <code>except</code>  block. Perhaps you could create a new file if it doesn&rsquo;t exist already.</p>
+
+<p>To close the file automatically after the task (regardless of whether an exception was raised or not in the  <code>try</code>  block) you can add the  <code>finally</code>  block.</p>
+
+<pre><code>try:
+	# Try to run this code
+except &lt;exception&gt;:
+	# If this exception is raised, stop the process immediately and jump to this block
+finally: 
+	# Do this after running the code, even if an exception was raised
+</code></pre>
+
+<p>This is an example:</p>
+
+<pre><code class="language-python">try:
+    f = open(&quot;names.txt&quot;)
+except FileNotFoundError:
+    print(&quot;The file doesn't exist&quot;)
+finally:
+    f.close()
+</code></pre>
+
+<p>There are many ways to customize the try/except/finally statement and you can even add an  <code>else</code>  block to run a block of code only if no exceptions were raised in the  <code>try</code>  block.</p>
+
+<p>💡 <strong>Tip:</strong>  To learn more about exception handling in Python, you may like to read my article:  <a href="https://www.freecodecamp.org/news/exception-handling-python/" target="_blank">&ldquo;How to Handle Exceptions in Python: A Detailed Visual Introduction&rdquo;</a>.</p>
+
+<h2 id="in-summary">In Summary</h2>
+
+<ul>
+<li>You can create, read, write, and delete files using Python.</li>
+<li>File objects have their own set of methods that you can use to work with them in your program.</li>
+<li>Context Managers help you work with files and manage them by closing them automatically when a task has been completed.</li>
+<li>Exception handling is key in Python. Common exceptions when you are working with files include  <code>FileNotFoundError</code>,  <code>PermissionError</code>  and  <code>IsADirectoryError</code>. They can be handled using try/except/else/finally.</li>
+</ul>
+
+<blockquote>
+<p>Reference : <a href="https://www.freecodecamp.org/news/python-write-to-file-open-read-append-and-other-file-handling-functions-explained/" target="_blank">freeCodeCamp</a></p>
+</blockquote>
+
+    </div>
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/freecodecamp/">freeCodeCamp</a>
+  
+  <a class="badge badge-light" href="/tags/file-handling/">File Handling</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="https://example.com/">Little Dragon</a></h5>
+      <h6 class="card-subtitle">Professor of Artificial Intelligence</h6>
+      <p class="card-text" itemprop="description">My research interests include distributed robotics, mobile computing and programmable matter.</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="/#contact" >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/GeorgeCushen" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ" target="_blank" rel="noopener">
+              <i class="ai ai-google-scholar"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://github.com/gcushen" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+      <div class="article-widget">
+        <div class="hr-light"></div>
+        <h3>Related</h3>
+        <ul>
+          
+          <li><a href="/post/python/tutorials/beginner_to_pro/">How to Go From Beginner to Pro</a></li>
+          
+          <li><a href="/post/python/tutorials/beginner_handbook/">The Ultimate Python Beginner&#39;s Handbook</a></li>
+          
+          <li><a href="/post/python/tutorials/list_append/">Python List Append VS Python List Extend</a></li>
+          
+          <li><a href="/post/python/tutorials/python-lists-explained/">Python Lists Explained</a></li>
+          
+          <li><a href="/post/python/tutorials/virtual-environments/">Python Virtual Environments Explained with Examples</a></li>
+          
+        </ul>
+      </div>
+      
+    
+
+    
+    <div class="article-widget">
+      
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item box">
+    <div class="meta-nav meta-next" >Previous <br>
+    <a href="/post/python/tutorials/beginner_to_pro/" rel="prev">How to Go From Beginner to Pro</a></div>
+  </div>
+  
+  <br>
+  <br>
+</div>
+
+    </div>
+    
+
+    
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academia.min.e4fc229c2f28284fc2dfa5b66a52b765.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        
+        <p>
+          
+          Powered by
+          <a href="https://themefisher.com" target="_blank" rel="noopener">themefisher</a> for
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-inline network-icon text-right">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/Twitter" target="_blank" rel="noopener" title="DM Me"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="skype:echo123?call"  title="Skype Me"><i class="fab fa-skype" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://keybase.io/" target="_blank" rel="noopener" title="Chat on Keybase"><i class="fab fa-keybase" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://discourse.gohugo.io" target="_blank" rel="noopener" title="Discuss on Forum"><i class="fas fa-comments" aria-hidden="true"></i></a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>String on Library</title>
+    <link>https://example.com/tags/string/</link>
+    <description>Recent content in String on Library</description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 30 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="https://example.com/tags/string/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python String Methods Explained with Examples.</title>
+      <link>https://example.com/post/python/tutorials/string-strip-method/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/post/python/tutorials/string-strip-method/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;Python String Methods Explained with Examples&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;string-find-method&#34;&gt;&lt;strong&gt;String Find Method&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;There are two options for finding a substring within a string in Python,  &lt;code&gt;find()&lt;/code&gt;  and  &lt;code&gt;rfind()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Each will return the position that the substring is found at. The difference between the two is that  &lt;code&gt;find()&lt;/code&gt;  returns the lowest position, and  &lt;code&gt;rfind()&lt;/code&gt;  returns the highest position.&lt;/p&gt;
+
+&lt;p&gt;Optional start and end arguments can be provided to limit the search for the substring to within portions of the string.&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;&amp;gt;&amp;gt;&amp;gt; string = &amp;quot;Don&#39;t you call me a mindless philosopher, you overweight glob of grease!&amp;quot;
+&amp;gt;&amp;gt;&amp;gt; string.find(&#39;you&#39;)
+6
+&amp;gt;&amp;gt;&amp;gt; string.rfind(&#39;you&#39;)
+42
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If the substring is not found, -1 is returned.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;&amp;gt;&amp;gt;&amp;gt; string = &amp;quot;Don&#39;t you call me a mindless philosopher, you overweight glob of grease!&amp;quot;
+&amp;gt;&amp;gt;&amp;gt; string.find(&#39;you&#39;, 43)  # find &#39;you&#39; in string anywhere from position 43 to the end of the string
+-1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;More Information:&lt;/p&gt;
+
+&lt;p&gt;String methods  &lt;a href=&#34;https://docs.python.org/3/library/stdtypes.html#string-methods&#34; target=&#34;_blank&#34;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;string-join-method&#34;&gt;&lt;strong&gt;String Join Method&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;The  &lt;code&gt;str.join(iterable)&lt;/code&gt;  method is used to join all elements in an  &lt;code&gt;iterable&lt;/code&gt;  with a specified string  &lt;code&gt;str&lt;/code&gt;. If the iterable contains any non-string values, it raises a TypeError exception.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;iterable&lt;/code&gt;: All iterables of string. Could a list of strings, tuple of string or even a plain string.&lt;/p&gt;
+
+&lt;h4 id=&#34;examples&#34;&gt;&lt;strong&gt;Examples&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;Join a ist of strings with  &lt;code&gt;&amp;quot;:&amp;quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print &amp;quot;:&amp;quot;.join([&amp;quot;freeCodeCamp&amp;quot;, &amp;quot;is&amp;quot;, &amp;quot;fun&amp;quot;])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;freeCodeCamp:is:fun
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Join a tuple of strings with  &lt;code&gt;&amp;quot; and &amp;quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print &amp;quot; and &amp;quot;.join([&amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;, &amp;quot;C&amp;quot;])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;A and B and C
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Insert a  &lt;code&gt;&amp;quot; &amp;quot;&lt;/code&gt;  after every character in a string&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print &amp;quot; &amp;quot;.join(&amp;quot;freeCodeCamp&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;f r e e C o d e C a m p
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Joining with empty string.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;list1 = [&#39;p&#39;,&#39;r&#39;,&#39;o&#39;,&#39;g&#39;,&#39;r&#39;,&#39;a&#39;,&#39;m&#39;]  
+print(&amp;quot;&amp;quot;.join(list1))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;program
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Joining with sets.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;test =  {&#39;2&#39;, &#39;1&#39;, &#39;3&#39;}
+s = &#39;, &#39;
+print(s.join(test))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;2, 3, 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;more-information&#34;&gt;&lt;strong&gt;More Information:&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://docs.python.org/2/library/stdtypes.html#str.join&#34; target=&#34;_blank&#34;&gt;Python Documentation on String Join&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;string-replace-method&#34;&gt;&lt;strong&gt;String Replace Method&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;The  &lt;code&gt;str.replace(old, new, max)&lt;/code&gt;  method is used to replace the substring  &lt;code&gt;old&lt;/code&gt;  with the string  &lt;code&gt;new&lt;/code&gt;  for a total of  &lt;code&gt;max&lt;/code&gt;  times. This method returns a new copy of the string with the replacement. The original string  &lt;code&gt;str&lt;/code&gt;  is unchanged.&lt;/p&gt;
+
+&lt;h4 id=&#34;examples-1&#34;&gt;&lt;strong&gt;Examples&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Replace all occurrences of  &lt;code&gt;&amp;quot;is&amp;quot;&lt;/code&gt;  with  &lt;code&gt;&amp;quot;WAS&amp;quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;string = &amp;quot;This is nice. This is good.&amp;quot;
+newString = string.replace(&amp;quot;is&amp;quot;,&amp;quot;WAS&amp;quot;)
+print(newString)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Output&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ThWAS WAS nice. ThWAS WAS good.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Replace the first 2 occurrences of  &lt;code&gt;&amp;quot;is&amp;quot;&lt;/code&gt;  with  &lt;code&gt;&amp;quot;WAS&amp;quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;string = &amp;quot;This is nice. This is good.&amp;quot;
+newString = string.replace(&amp;quot;is&amp;quot;,&amp;quot;WAS&amp;quot;, 2)
+print(newString)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Output&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ThWAS WAS nice. This is good.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;more-information-1&#34;&gt;&lt;strong&gt;More Information:&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;Read more about string replacement in the  &lt;a href=&#34;https://docs.python.org/2/library/string.html#string.replace&#34; target=&#34;_blank&#34;&gt;Python docs&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;string-strip-method&#34;&gt;&lt;strong&gt;String Strip Method&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;There are three options for stripping characters from a string in Python,  &lt;code&gt;lstrip()&lt;/code&gt;,  &lt;code&gt;rstrip()&lt;/code&gt;  and  &lt;code&gt;strip()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Each will return a copy of the string with characters removed, at from the beginning, the end or both beginning and end. If no arguments are given the default is to strip whitespace characters.&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;&amp;gt;&amp;gt;&amp;gt; string = &#39;   Hello, World!    &#39;
+&amp;gt;&amp;gt;&amp;gt; strip_beginning = string.lstrip()
+&amp;gt;&amp;gt;&amp;gt; strip_beginning
+&#39;Hello, World!    &#39;
+&amp;gt;&amp;gt;&amp;gt; strip_end = string.rstrip()
+&amp;gt;&amp;gt;&amp;gt; strip_end
+&#39;   Hello, World!&#39;
+&amp;gt;&amp;gt;&amp;gt; strip_both = string.strip()
+&amp;gt;&amp;gt;&amp;gt; strip_both
+&#39;Hello, World!&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;An optional argument can be provided as a string containing all characters you wish to strip.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;&amp;gt;&amp;gt;&amp;gt; url = &#39;www.example.com/&#39;
+&amp;gt;&amp;gt;&amp;gt; url.strip(&#39;w./&#39;)
+&#39;example.com&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;However, do notice that only the first  &lt;code&gt;.&lt;/code&gt;  got stripped from the string. This is because the  &lt;code&gt;strip&lt;/code&gt;  function only strips the argument characters that lie at the left or rightmost. Since w comes before the first  &lt;code&gt;.&lt;/code&gt;  they get stripped together, whereas ‘com’ is present in the right end before the  &lt;code&gt;.&lt;/code&gt;  after stripping  &lt;code&gt;/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;string-split-method&#34;&gt;String Split Method&lt;/h2&gt;
+
+&lt;p&gt;The  &lt;code&gt;split()&lt;/code&gt;  function is commonly used for string splitting in Python.&lt;/p&gt;
+
+&lt;h4 id=&#34;the-split-method&#34;&gt;&lt;strong&gt;The  &lt;code&gt;split()&lt;/code&gt;  method&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;Template:  &lt;code&gt;string.split(separator, maxsplit)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;separator&lt;/code&gt;: The delimiter string. You split the string based on this character. For eg. it could be ” ”, ”:”, ”;” etc&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;maxsplit&lt;/code&gt;: The number of times to split the string based on the  &lt;code&gt;separator&lt;/code&gt;. If not specified or -1, the string is split based on all occurrences of the  &lt;code&gt;separator&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This method returns a list of substrings delimited by the  &lt;code&gt;separator&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;examples-2&#34;&gt;&lt;strong&gt;Examples&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;Split string on space: ” ”&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;string = &amp;quot;freeCodeCamp is fun.&amp;quot;
+print(string.split(&amp;quot; &amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;[&#39;freeCodeCamp&#39;, &#39;is&#39;, &#39;fun.&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Split string on comma: ”,”&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;string = &amp;quot;freeCodeCamp,is fun, and informative&amp;quot;
+print(string.split(&amp;quot;,&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;[&#39;freeCodeCamp&#39;, &#39;is fun&#39;, &#39; and informative&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;No  &lt;code&gt;separator&lt;/code&gt;  specified&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;string = &amp;quot;freeCodeCamp is fun and informative&amp;quot;
+print(string.split())
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;[&#39;freeCodeCamp&#39;, &#39;is&#39;, &#39;fun&#39;, &#39;and&#39;, &#39;informative&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note: If no  &lt;code&gt;separator&lt;/code&gt;  is specified, then the string is stripped of  *&lt;strong&gt;&lt;em&gt;all&lt;/em&gt;&lt;/strong&gt;*  whitespace&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;string = &amp;quot;freeCodeCamp        is     fun and    informative&amp;quot;
+print(string.split())
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;[&#39;freeCodeCamp&#39;, &#39;is&#39;, &#39;fun&#39;, &#39;and&#39;, &#39;informative&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Split string using  &lt;code&gt;maxsplit&lt;/code&gt;. Here we split the string on ” ” twice:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;string = &amp;quot;freeCodeCamp is fun and informative&amp;quot;
+print(string.split(&amp;quot; &amp;quot;, 2))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;[&#39;freeCodeCamp&#39;, &#39;is&#39;, &#39;fun and informative&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;more-information-2&#34;&gt;&lt;strong&gt;More Information&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;Check out the  &lt;a href=&#34;https://www.freecodecamp.org/news/the-string-strip-method-in-python-explained/&#34; target=&#34;_blank&#34;&gt;Python docs on string splitting&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Reference : &lt;a href=&#34;https://www.freecodecamp.org/news/the-string-strip-method-in-python-explained/&#34; target=&#34;_blank&#34;&gt;freeCodeCamp&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
