@@ -2,21 +2,434 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Example on Library</title>
-    <link>https://dragon-library.github.io/docs/library/categories/example/</link>
+    <link>https://dragon-library.github.io/categories/example/</link>
     <description>Recent content in Example on Library</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 May 2020 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="https://dragon-library.github.io/docs/library/categories/example/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://dragon-library.github.io/categories/example/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Python Web Scraping Part IV - ทำไมถึง scrape บางเว็บไม่ได้</title>
+      <link>https://dragon-library.github.io/post/python/example/web-scraping-series-1/python-web-scraping-part-4/</link>
+      <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/post/python/example/web-scraping-series-1/python-web-scraping-part-4/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;featured.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;หลังจากที่ใน  &lt;a href=&#34;https://dev.to/copypasteengineer/python-web-scraping-part-2-chrome-s-code-inspector-3ok6&#34; target=&#34;_blank&#34;&gt;part ที่แล้ว&lt;/a&gt;  เราได้เรียนรู้วิธีการแกะ XPath ของแต่ละ element ออกมาจาก web browser แบบง่าย ๆ กันแล้ว แต่ทีนี้ในกรณีที่ข้อมูลที่เราสนใจมีหลายตำแหน่งมาก  &lt;strong&gt;เราคงไม่อยากเสียเวลานั่ง extract แต่ละ element ด้วยมือทั้งหมดใช่ไหมครับ&lt;/strong&gt;  (เพราะถ้าจะทำด้วยมือทั้งหมด ก็ก๊อปตัวข้อมูลมาตรง ๆ เลยสะดีกว่า 555)&lt;/p&gt;
+
+&lt;p&gt;ท่านที่พอจะมีประสบการณ์การทำเว็บมาบ้าง พอเห็น XPath สัก 1 หรือ 2 อัน ก็อาจจะเดาได้แล้ว ว่า XPath ที่เหมาะสม ที่น่าจะครอบคลุมทุก ๆ element นั้น ควรจะเป็นอะไร แต่ถึงจะเดาไม่ออกก็ไม่เป็นไรครับ เพราะอย่างบาง website ที่ซับซ้อนขึ้นหน่อย ต่อให้มีประสบการณ์ก็คงเดาไม่ออกในทีแรกเช่นกัน&lt;/p&gt;
+
+&lt;p&gt;สำหรับในบทความนี้ก็จะสอนวิธีหนึ่งที่สามารถทำได้ เพื่อหา XPath ที่  &lt;strong&gt;&amp;ldquo;น่าจะ&amp;rdquo;&lt;/strong&gt;  ครอบคลุมข้อมูลทั้งหมดที่เราต้องการมานะครับ ซึ่งเป็นวิธีที่ผู้เขียนเองก็ใช้งานอยู่จริงในการ scrape website ในหลาย ๆ ครั้งครับ (ที่บอกว่า  &lt;strong&gt;&amp;ldquo;น่าจะ&amp;rdquo;&lt;/strong&gt;  เนี่ย เพราะว่าในความเป็นจริงไม่มีใครรู้หรอกครับ ว่า website เป้าหมายนี้ ถูกเขียน หรือถูกสร้างมาอย่างไร แต่ด้วยวิธีดังกล่าว+หลักของสถิติ เราก็จะมั่นใจได้ในระดับหนึ่งว่า XPath ของเรามัน  &lt;strong&gt;&amp;ldquo;น่าจะ&amp;rdquo;&lt;/strong&gt;  ดีเพียงพอครับ)&lt;/p&gt;
+
+&lt;p&gt;วิธีหนึ่งที่ผมทำก็คือ sample XPath ออกมาดู เอามา  &lt;strong&gt;สำรวจ&lt;/strong&gt;  เพิ่มอีกเยอะ ๆ ก็จะช่วยให้เห็นภาพมากขึ้นครับ จากนั้นเราก็จะใช้ syntax ของ XPath ในการ select และระบุ condition เพื่อให้ครอบคลุมกรณีที่เรา sample ออกมา ให้มากที่สุดครับ&lt;/p&gt;
+
+&lt;h2 id=&#34;get-started&#34;&gt;Get Started!&lt;/h2&gt;
+
+&lt;p&gt;ทบทวนสักเล็กน้อย ใน part นี้เราก็ยังอยู่กับเว็บ Wikipedia  &lt;a href=&#34;https://th.wikipedia.org/wiki/%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%95%E0%B8%B3%E0%B8%9A%E0%B8%A5%E0%B9%83%E0%B8%99%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B9%84%E0%B8%97%E0%B8%A2&#34; target=&#34;_blank&#34;&gt;https://th.wikipedia.org/wiki/รายชื่อเทศบาลตำบลในประเทศไทย&lt;/a&gt;  กันเหมือนเดิมนะครับ โดยเป้าหมายคือ  &lt;strong&gt;หา XPath สำหรับ extract รายชื่อเทศบาลตำบลทั้งหมด&lt;/strong&gt;  ซึ่งใน  &lt;a href=&#34;https://dev.to/copypasteengineer/python-web-scraping-part-2-chrome-s-code-inspector-3ok6&#34; target=&#34;_blank&#34;&gt;part ที่แล้ว&lt;/a&gt;  เราใช้ Chrome Inspector ในการแกะ XPath ของ  &lt;strong&gt;&amp;ldquo;Element&amp;rdquo; หนึ่ง ๆ&lt;/strong&gt;  มาได้แบบง่าย ๆ แล้วนะครับ ในตอนนี้เรากำลังจะหา XPath ที่สามารถ extract ข้อมูลทั้งหมดได้  &lt;strong&gt;(คือครอบคลุมทุก element ไม่ใช่แค่ 1 element)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;1-sample-xpath-มาเพ-ม&#34;&gt;1. Sample XPath มาเพิ่ม&lt;/h3&gt;
+
+&lt;p&gt;อย่างในเว็บเป้าหมาย ถ้าลอง scroll เลื่อนขึ้นลงดู จะเห็นว่ามันมีหลายตาราง เพราะฉะนั้น เพื่อให้เราได้เห็นรูปแบบที่หลากหลาย แล้วก็ครอบคลุมข้อมูลทั้งหมดมากที่สุด ก็ควรจะหยิบ sample ออกมาจากหลาย ๆ ที่ กระจาย ๆ กันหน่อยนั่นเองครับ เช่น เอามาจากตาราง 1 บ้าง จากตาราง 8 บ้าง จากตารางสุดท้ายบ้าง หรือจากหัวตารางบ้าง จากท้ายตารางบ้าง ปน ๆ กันไป  &lt;strong&gt;โดยหลักสถิติแล้วยิ่งเราสุ่มมามากเท่าไหร่ เราก็จะยิ่งมั่นใจได้ว่าเราได้เห็น pattern ที่เป็นไปได้ทั้งหมดแล้วมากขึ้นนั่นเองครับ&lt;/strong&gt;  (จะเรียกว่าหลักสถิติหรือดวงก็ได้นะครับ 555)&lt;/p&gt;
+
+&lt;p&gt;สำหรับท่านที่ยังไม่เข้าใจว่าจะเอา sample XPath ตรงนี้มาได้อย่างไร  &lt;strong&gt;กรุณาอ่าน  &lt;a href=&#34;https://dev.to/copypasteengineer/python-web-scraping-part-2-chrome-s-code-inspector-3ok6&#34; target=&#34;_blank&#34;&gt;part 2&lt;/a&gt;  ด่วน ๆ เลยครับ!&lt;/strong&gt;  หรือถ้ามีข้อสงสัย สามารถคอมเม้นถามด้านล่าง หรือในเพจ  &lt;a href=&#34;https://www.facebook.com/CopyPasteEng/&#34; target=&#34;_blank&#34;&gt;Copy Paste Engineer&lt;/a&gt;  ได้เลยนะครับ&lt;/p&gt;
+
+&lt;p&gt;ด้านล่างนี้เป็นตัวอย่างที่ผม sample ออกมา&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; (1) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[3]/tbody/tr[1]/td[3]/b/a    (ตาราง 1 บรรทัด 1)
+ (2) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[3]/tbody/tr[2]/td[3]/b/a    (ตาราง 1 บรรทัด 2)
+ (3) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[3]/tbody/tr[10]/td[3]/b/a   (ตาราง 1 บรรทัด 10)
+ (4) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[4]/tbody/tr[3]/td[3]/b/a    (ตาราง 2 บรรทัด 1)
+ (5) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[4]/tbody/tr[30]/td[2]/b/a   (ตาราง 2 บรรทัด 28)
+ (6) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[7]/tbody/tr[25]/td[2]/b/a/b (ตาราง 5 บรรทัด 23)
+ (7) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[10]/tbody/tr[41]/td[2]/b/a  (ตาราง 8 บรรทัดสุดท้าย)
+ (8) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[24]/tbody/tr[3]/td[3]/a/b   (ตาราง 22 บรรทัด 1)
+ (9) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[76]/tbody/tr[3]/td[3]/b/a   (ตารางสุดท้าย บรรทัด 1)
+(10) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[76]/tbody/tr[37]/td[2]/b/a  (ตารางสุดท้าย บรรทัดสุดท้าย)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;จะเห็นว่า XPath จริง ๆ ของข้อมูลเรา มันไม่ได้ตรงไปตรงมาเสมอไปนะครับ อย่างเช่นตัวเลขของ table และ tr ใน XPath ของแต่ละ sample นั้น ก็อาจจะไม่ได้สัมพันธ์กับเลขตารางหรือเลขบรรทัดของข้อมูลเสมอไป หรือบางทีก็มี element b บ้าง บางทีก็ไม่มี  &lt;strong&gt;ซึ่งในเหตุการณ์เช่นนี้สามารถพบเจอได้จริง ในเว็บทั่ว ๆ ไปนะครับ&lt;/strong&gt;  โดยอาจเกิดจาก developer ที่เขียนโค้ดไม่สัมพันธ์กันเอง หรืออย่างในกรณีของ Wikipedia นี้ คืออาจเกิดจาก user ซึ่งเป็นผู้เขียนบทความได้ใช้โครงสร้างของข้อมูลที่แตกต่างกันนั่นเองครับ&lt;/p&gt;
+
+&lt;h3 id=&#34;2-สำรวจ-xpath&#34;&gt;2. สำรวจ XPath&lt;/h3&gt;
+
+&lt;p&gt;ในขั้นตอนนี้ เราจะทำการวิเคราะห์ XPath ที่เรา sample ออกมา แล้วก็ตั้งข้อสังเกตุถึง  &lt;strong&gt;จุดที่เหมือน&lt;/strong&gt;  และ  &lt;strong&gt;จุดที่แตกต่าง&lt;/strong&gt;  สำหรับแต่ละตัวอย่างนะครับ ซึ่งอาจจะต้องใช้ความรู้ HTML เล็กน้อยนะครับ แต่จะพยายามอธิบายให้เข้าใจง่ายที่สุดนะครับ&lt;/p&gt;
+
+&lt;p&gt;เมื่อเรา sample ออกมาดูเยอะ ๆ แล้วก็จะเห็นครับว่ามันมีส่วนที่เหมือนกันอยู่ คือ ขึ้นต้นด้วย element  &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ซึ่ง  &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt;  ก็หมายถึงตัวตารางแต่ละตารางนั่นเองครับ&lt;/p&gt;
+
+&lt;p&gt;และจะสังเกตุได้จาก XPath ที่ได้มา ว่าข้อมูลที่เราต้องการ&lt;br /&gt;
+&lt;strong&gt;1.&lt;/strong&gt;  จะเริ่มต้นที่  &lt;strong&gt;ตารางที่ 3&lt;/strong&gt;  (เพราะในตารางที่ 1 บรรทัดที่ 1 ใช้  &lt;code&gt;table[3]&lt;/code&gt;)&lt;br /&gt;
+&lt;strong&gt;2.&lt;/strong&gt;  แล้วตามด้วย  &lt;code&gt;&amp;lt;tbody&amp;gt;&lt;/code&gt;&lt;br /&gt;
+&lt;strong&gt;3.&lt;/strong&gt;  ตามด้วย  &lt;code&gt;&amp;lt;tr&amp;gt;&lt;/code&gt;  คือแต่ละ row ของ table นั้น ๆ&lt;br /&gt;
+&lt;strong&gt;4.&lt;/strong&gt;  จากนั้นก็  &lt;code&gt;&amp;lt;td&amp;gt;&lt;/code&gt;  คือแต่ละ column ของ row นั้น ๆ ซึ่งอาจจะเป็น  &lt;strong&gt;column ที่ 2 หรือ column ที่ 3 ก็ได้&lt;/strong&gt;  (เช่น sample  &lt;code&gt;(4)&lt;/code&gt;  และ  &lt;code&gt;(5)&lt;/code&gt;)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(4) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[4]/tbody/tr[3]/td[3]/b/a    (ตาราง 2 บรรทัด 1)
+(5) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[4]/tbody/tr[30]/td[2]/b/a   (ตาราง 2 บรรทัด 28)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;5.&lt;/strong&gt;  แล้วก็อาจจะมี หรือไม่มี  &lt;code&gt;&amp;lt;b&amp;gt;&lt;/code&gt;  ก็ได้ (กรณีที่ไม่มี  &lt;code&gt;&amp;lt;b&amp;gt;&lt;/code&gt;  ดู sample ที่  &lt;code&gt;(8)&lt;/code&gt;)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(8) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[24]/tbody/tr[3]/td[3]/a/b   (ตาราง 22 บรรทัด 1)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;6.&lt;/strong&gt;  ตามด้วย  &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;  คือข้อความที่เป็น link&lt;br /&gt;
+&lt;strong&gt;7.&lt;/strong&gt;  แล้วก็อาจจะมี หรือไม่มี  &lt;code&gt;&amp;lt;b&amp;gt;&lt;/code&gt;  ก็ได้&lt;/p&gt;
+
+&lt;p&gt;นี่ก็เป็นข้อสังเกตุทั้งหมดที่เราได้จาก sample ของเรานะครับ&lt;/p&gt;
+
+&lt;h3 id=&#34;3-สร-าง-xpath-จร-ง-ๆ-ส-กท-555&#34;&gt;3. สร้าง XPath (จริง ๆ สักที 555)**&lt;/h3&gt;
+
+&lt;p&gt;ต่อไป จากข้อสังเกตุทั้ง 7 ข้อ ด้านบน เราก็ได้ทราบแล้วว่า elements ที่เราต้องการ จะมี XPath ลักษณะอย่างไร  &lt;strong&gt;ทีนี้เรานำข้อสังเกตุทั้งหมดมารวมกัน เพื่อสร้าง XPath ขึ้นมา 1 อัน ที่สามารถครอบคลุม cases ที่กล่าวมาได้ทั้งหมด!&lt;/strong&gt;  โดยใช้การเขียน  &lt;strong&gt;condition&lt;/strong&gt;  มาเพื่อช่วยเลือก elements ที่ต้องการนะครับ อันดับแรกก็เริ่มจาก XPath ที่ทุก sample มีร่วมกันก่อน ก็คือ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ทีนี้ ก็จะเริ่มใส่ condition ตามข้อสังเกตุของเราข้างต้นแล้วนะครับ&lt;br /&gt;
+&lt;strong&gt;1.&lt;/strong&gt;  เราต้องการเลือกตารางตั้งแต่ตารางที่ 3 ขึ้นไปเท่านั้น วิธีการคือให้ใส่ condition เข้าไป ว่า  &lt;strong&gt;position ของ  &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt;  เนี่ย ต้องมากกว่าหรือเท่ากับ 3 ครับ&lt;/strong&gt;  ซึ่งเขียนเป็น condition ได้ว่า  &lt;code&gt;position() &amp;gt;= 3&lt;/code&gt;  ก็จะได้ XPath เป็น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[position() &amp;gt;= 3]
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;2.&lt;/strong&gt;  ตามด้วย  &lt;code&gt;&amp;lt;tbody&amp;gt;&lt;/code&gt;  และ  &lt;code&gt;&amp;lt;tr&amp;gt;&lt;/code&gt;  ก็เติมเข้าไปตรง ๆ ได้เลยครับ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[position() &amp;gt;= 3]/tbody/tr
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt;  ตามด้วย  &lt;code&gt;&amp;lt;td&amp;gt;&lt;/code&gt;  แต่เราจะเอาเฉพาะ column ที่ 2 หรือ 3 เท่านั้น วิธีหนึ่งที่ทำได้ก็คือ ใส่ condition ว่า  &lt;strong&gt;position ของ  &lt;code&gt;&amp;lt;td&amp;gt;&lt;/code&gt;  เนี่ย ต้อง &amp;gt;= 2 และ &amp;lt;= 3&lt;/strong&gt;  ซึ่งเขียน condition ออกมาได้ว่า  &lt;code&gt;2 &amp;lt;= position() and position() &amp;lt;= 3&lt;/code&gt;  จึงได้ XPath เป็น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//*[@id=&amp;quot;mw-c.../tbody/tr/td[2 &amp;lt;= position() and position() &amp;lt;= 3]
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;4.&lt;/strong&gt;  อย่างที่สังเกตุว่าบาง sample ก็มี  &lt;code&gt;&amp;lt;b&amp;gt;&lt;/code&gt;  ขึ้นก่อนแล้วตามด้วย  &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;  (&lt;code&gt;/b/a/&lt;/code&gt;)&lt;br /&gt;
+หรือบาง sample ก็เป็น  &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;  ขึ้นก่อน แล้วตามด้วย  &lt;code&gt;&amp;lt;b&amp;gt;&lt;/code&gt;  (&lt;code&gt;/a/b/&lt;/code&gt;)&lt;br /&gt;
+แล้วยังมี  &lt;code&gt;&amp;lt;b&amp;gt;&lt;/code&gt;  แล้ว  &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;  แล้ว  &lt;code&gt;&amp;lt;b&amp;gt;&lt;/code&gt;  อีก (&lt;code&gt;/b/a/b/&lt;/code&gt;)&lt;br /&gt;
+โชคดีที่ใน XPath เราสามารถละได้ โดยการเขียนเป็น  &lt;code&gt;//a//&lt;/code&gt;  จะหมายถึงว่าจะมี element อะไรขึ้นก่อน  &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;  ก็ได้ (กี่ elements ก็ได้ หรือจะไม่มีก็ได้) แล้วตามด้วย elements อะไรก็ได้ (กี่ elements ก็ได้ หรือจะไม่มีก็ได้) แล้วตัว engine ก็จะหาทุก ๆ elements ที่เป็นไปได้มาให้เองครับ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//*[@id=&amp;quot;mw-c.../tbody/tr/td[2 &amp;lt;= position() and position() &amp;lt;= 3]//a//
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;note: ซึ่งการละใน XPath นี้ ต้องระวังในการใช้สักเล็กน้อยนะครับ อย่าง  &lt;code&gt;//a//&lt;/code&gt;  อาจหมายถึง  &lt;code&gt;/b/a&lt;/code&gt;  ก็ได้ หรือ  &lt;code&gt;/b/a/b&lt;/code&gt;  ก็ได้ หรืออาจหมายถึง  &lt;code&gt;/b/div/a/div/b/a/b/div&lt;/code&gt;  ก็ได้ คือในส่วนที่ละ จะแทนเป็นอะไรก็ได้นั่นเองครับ&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;5.&lt;/strong&gt;  สุดท้ายตามด้วย  &lt;code&gt;text()&lt;/code&gt;  คือต้องการเอาเฉพาะข้อความที่อยู่ใน element นั้นออกมา&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//*[@id=&amp;quot;mw-c.../tbody/tr/td[2 &amp;lt;= position() and position() &amp;lt;= 3]//a//text()
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ได้ XPath สุดท้ายเป็น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[position() &amp;gt;= 3]/tbody/tr/td[2 &amp;lt;= position() and position() &amp;lt;= 3]//a//text()
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ซึ่งเป็น XPath ที่เรามั่นใจว่าและครอบคลุมทุกกรณีที่เรา sample ออกมา และ(หวังว่า)จะครอบคลุมข้อมูลที่เราต้องการจริง ๆ ทั้งหมด&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;และเป็น XPath ที่เราก็ได้นำไปใช้จริงแล้วในการ extract  &lt;em&gt;รายชื่อเทศบาลตำบล&lt;/em&gt;  ใน  &lt;a href=&#34;https://dev.to/copypasteengineer/python-web-scraping-part-1-python-49ce&#34; target=&#34;_blank&#34;&gt;บทความ part ที่ 1&lt;/a&gt;  นั่นเองครับ&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;สำหรับการสร้าง XPath นั้น วิธีการที่นำเสนอไปก็เป็นหนึ่งในวิธีที่สามารถทำได้ง่าย ๆ ซึ่งเราจะสามารถมั่นใจได้ในระดับหนึ่งว่า XPath ที่ได้มานั้น  &lt;strong&gt;ครอบคลุมข้อมูลส่วนใหญ่ โดยทำการ sample ออกมาให้มากขึ้น และ sample  &lt;em&gt;ในหลาย ๆ จุดที่แตกต่างกัน กระจาย ๆ กันไป&lt;/em&gt;&lt;/strong&gt;  แต่อาจจะต้องอาศัยความรู้ในเรื่อง syntax และคำสั่งของ XPath สักเล็กน้อยสำหรับการเขียน condition เพื่อ select element ต่าง ๆ นะครับ&lt;/p&gt;
+
+&lt;p&gt;ซึ่งจริง ๆ แล้ว  &lt;strong&gt;ผู้เขียนเองก็ไม่ได้จำคำสั่งของ XPath ได้ทั้งหมดจริง ๆ หรอกครับ&lt;/strong&gt;  เมื่อจำเป็นต้องใช้ที ก็ search หาจาก internet เอา โดยผู้เขียนพบว่า  &lt;strong&gt;เว็บ  &lt;em&gt;w3school&lt;/em&gt;  ได้ทำรายการของคำสั่งต่าง ๆ พร้อมคำอธิบายเอาไว้ได้ดีและครบถ้วนแล้ว ทุก ๆ ท่านสามารถนำไปใช้เพื่ออ้างอิงขณะที่เขียนได้เลยครับ  &lt;a href=&#34;https://www.w3schools.com/xml/xpath_intro.asp&#34; target=&#34;_blank&#34;&gt;link นี้เลยครับ&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;และถ้ามีเรื่องไหนที่สนใจเพิ่มเติมสามารถ comment เอาไว้ได้นะครับ&lt;/p&gt;
+
+&lt;p&gt;FB Page:  &lt;a href=&#34;https://www.facebook.com/CopyPasteEng&#34; target=&#34;_blank&#34;&gt;Copy Paste Engineer&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Part อื่น ๆ ใน series&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../python-web-scraping-part-1/&#34;&gt; Part I - การดูดข้อมูลเบื้องต้น ด้วย Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../python-web-scraping-part-2/&#34;&gt;Part II - Chrome&amp;rsquo;s Code Inspector&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../python-web-scraping-part-3/&#34;&gt;Part III - เทคนิคการ extract ข้อมูลด้วย XPath&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Reference : &lt;a href=&#34;https://dev.to/copypasteengineer/python-web-scraping-part-3-extract-xpath-18h&#34; target=&#34;_blank&#34;&gt;https://dev.to/copypasteengineer/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Python Web Scraping Part III - เทคนิคการ extract ข้อมูลด้วย XPath</title>
+      <link>https://dragon-library.github.io/post/python/example/web-scraping-series-1/python-web-scraping-part-3/</link>
+      <pubDate>Sun, 12 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/post/python/example/web-scraping-series-1/python-web-scraping-part-3/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;featured.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;หลังจากที่ใน  &lt;a href=&#34;https://dev.to/copypasteengineer/python-web-scraping-part-2-chrome-s-code-inspector-3ok6&#34; target=&#34;_blank&#34;&gt;part ที่แล้ว&lt;/a&gt;  เราได้เรียนรู้วิธีการแกะ XPath ของแต่ละ element ออกมาจาก web browser แบบง่าย ๆ กันแล้ว แต่ทีนี้ในกรณีที่ข้อมูลที่เราสนใจมีหลายตำแหน่งมาก  &lt;strong&gt;เราคงไม่อยากเสียเวลานั่ง extract แต่ละ element ด้วยมือทั้งหมดใช่ไหมครับ&lt;/strong&gt;  (เพราะถ้าจะทำด้วยมือทั้งหมด ก็ก๊อปตัวข้อมูลมาตรง ๆ เลยสะดีกว่า 555)&lt;/p&gt;
+
+&lt;p&gt;ท่านที่พอจะมีประสบการณ์การทำเว็บมาบ้าง พอเห็น XPath สัก 1 หรือ 2 อัน ก็อาจจะเดาได้แล้ว ว่า XPath ที่เหมาะสม ที่น่าจะครอบคลุมทุก ๆ element นั้น ควรจะเป็นอะไร แต่ถึงจะเดาไม่ออกก็ไม่เป็นไรครับ เพราะอย่างบาง website ที่ซับซ้อนขึ้นหน่อย ต่อให้มีประสบการณ์ก็คงเดาไม่ออกในทีแรกเช่นกัน&lt;/p&gt;
+
+&lt;p&gt;สำหรับในบทความนี้ก็จะสอนวิธีหนึ่งที่สามารถทำได้ เพื่อหา XPath ที่  &lt;strong&gt;&amp;ldquo;น่าจะ&amp;rdquo;&lt;/strong&gt;  ครอบคลุมข้อมูลทั้งหมดที่เราต้องการมานะครับ ซึ่งเป็นวิธีที่ผู้เขียนเองก็ใช้งานอยู่จริงในการ scrape website ในหลาย ๆ ครั้งครับ (ที่บอกว่า  &lt;strong&gt;&amp;ldquo;น่าจะ&amp;rdquo;&lt;/strong&gt;  เนี่ย เพราะว่าในความเป็นจริงไม่มีใครรู้หรอกครับ ว่า website เป้าหมายนี้ ถูกเขียน หรือถูกสร้างมาอย่างไร แต่ด้วยวิธีดังกล่าว+หลักของสถิติ เราก็จะมั่นใจได้ในระดับหนึ่งว่า XPath ของเรามัน  &lt;strong&gt;&amp;ldquo;น่าจะ&amp;rdquo;&lt;/strong&gt;  ดีเพียงพอครับ)&lt;/p&gt;
+
+&lt;p&gt;วิธีหนึ่งที่ผมทำก็คือ sample XPath ออกมาดู เอามา  &lt;strong&gt;สำรวจ&lt;/strong&gt;  เพิ่มอีกเยอะ ๆ ก็จะช่วยให้เห็นภาพมากขึ้นครับ จากนั้นเราก็จะใช้ syntax ของ XPath ในการ select และระบุ condition เพื่อให้ครอบคลุมกรณีที่เรา sample ออกมา ให้มากที่สุดครับ&lt;/p&gt;
+
+&lt;h2 id=&#34;get-started&#34;&gt;Get Started!&lt;/h2&gt;
+
+&lt;p&gt;ทบทวนสักเล็กน้อย ใน part นี้เราก็ยังอยู่กับเว็บ Wikipedia  &lt;a href=&#34;https://th.wikipedia.org/wiki/%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%95%E0%B8%B3%E0%B8%9A%E0%B8%A5%E0%B9%83%E0%B8%99%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B9%84%E0%B8%97%E0%B8%A2&#34; target=&#34;_blank&#34;&gt;https://th.wikipedia.org/wiki/รายชื่อเทศบาลตำบลในประเทศไทย&lt;/a&gt;  กันเหมือนเดิมนะครับ โดยเป้าหมายคือ  &lt;strong&gt;หา XPath สำหรับ extract รายชื่อเทศบาลตำบลทั้งหมด&lt;/strong&gt;  ซึ่งใน  &lt;a href=&#34;https://dev.to/copypasteengineer/python-web-scraping-part-2-chrome-s-code-inspector-3ok6&#34; target=&#34;_blank&#34;&gt;part ที่แล้ว&lt;/a&gt;  เราใช้ Chrome Inspector ในการแกะ XPath ของ  &lt;strong&gt;&amp;ldquo;Element&amp;rdquo; หนึ่ง ๆ&lt;/strong&gt;  มาได้แบบง่าย ๆ แล้วนะครับ ในตอนนี้เรากำลังจะหา XPath ที่สามารถ extract ข้อมูลทั้งหมดได้  &lt;strong&gt;(คือครอบคลุมทุก element ไม่ใช่แค่ 1 element)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;1-sample-xpath-มาเพ-ม&#34;&gt;1. Sample XPath มาเพิ่ม&lt;/h3&gt;
+
+&lt;p&gt;อย่างในเว็บเป้าหมาย ถ้าลอง scroll เลื่อนขึ้นลงดู จะเห็นว่ามันมีหลายตาราง เพราะฉะนั้น เพื่อให้เราได้เห็นรูปแบบที่หลากหลาย แล้วก็ครอบคลุมข้อมูลทั้งหมดมากที่สุด ก็ควรจะหยิบ sample ออกมาจากหลาย ๆ ที่ กระจาย ๆ กันหน่อยนั่นเองครับ เช่น เอามาจากตาราง 1 บ้าง จากตาราง 8 บ้าง จากตารางสุดท้ายบ้าง หรือจากหัวตารางบ้าง จากท้ายตารางบ้าง ปน ๆ กันไป  &lt;strong&gt;โดยหลักสถิติแล้วยิ่งเราสุ่มมามากเท่าไหร่ เราก็จะยิ่งมั่นใจได้ว่าเราได้เห็น pattern ที่เป็นไปได้ทั้งหมดแล้วมากขึ้นนั่นเองครับ&lt;/strong&gt;  (จะเรียกว่าหลักสถิติหรือดวงก็ได้นะครับ 555)&lt;/p&gt;
+
+&lt;p&gt;สำหรับท่านที่ยังไม่เข้าใจว่าจะเอา sample XPath ตรงนี้มาได้อย่างไร  &lt;strong&gt;กรุณาอ่าน  &lt;a href=&#34;https://dev.to/copypasteengineer/python-web-scraping-part-2-chrome-s-code-inspector-3ok6&#34; target=&#34;_blank&#34;&gt;part 2&lt;/a&gt;  ด่วน ๆ เลยครับ!&lt;/strong&gt;  หรือถ้ามีข้อสงสัย สามารถคอมเม้นถามด้านล่าง หรือในเพจ  &lt;a href=&#34;https://www.facebook.com/CopyPasteEng/&#34; target=&#34;_blank&#34;&gt;Copy Paste Engineer&lt;/a&gt;  ได้เลยนะครับ&lt;/p&gt;
+
+&lt;p&gt;ด้านล่างนี้เป็นตัวอย่างที่ผม sample ออกมา&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; (1) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[3]/tbody/tr[1]/td[3]/b/a    (ตาราง 1 บรรทัด 1)
+ (2) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[3]/tbody/tr[2]/td[3]/b/a    (ตาราง 1 บรรทัด 2)
+ (3) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[3]/tbody/tr[10]/td[3]/b/a   (ตาราง 1 บรรทัด 10)
+ (4) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[4]/tbody/tr[3]/td[3]/b/a    (ตาราง 2 บรรทัด 1)
+ (5) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[4]/tbody/tr[30]/td[2]/b/a   (ตาราง 2 บรรทัด 28)
+ (6) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[7]/tbody/tr[25]/td[2]/b/a/b (ตาราง 5 บรรทัด 23)
+ (7) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[10]/tbody/tr[41]/td[2]/b/a  (ตาราง 8 บรรทัดสุดท้าย)
+ (8) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[24]/tbody/tr[3]/td[3]/a/b   (ตาราง 22 บรรทัด 1)
+ (9) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[76]/tbody/tr[3]/td[3]/b/a   (ตารางสุดท้าย บรรทัด 1)
+(10) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[76]/tbody/tr[37]/td[2]/b/a  (ตารางสุดท้าย บรรทัดสุดท้าย)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;จะเห็นว่า XPath จริง ๆ ของข้อมูลเรา มันไม่ได้ตรงไปตรงมาเสมอไปนะครับ อย่างเช่นตัวเลขของ table และ tr ใน XPath ของแต่ละ sample นั้น ก็อาจจะไม่ได้สัมพันธ์กับเลขตารางหรือเลขบรรทัดของข้อมูลเสมอไป หรือบางทีก็มี element b บ้าง บางทีก็ไม่มี  &lt;strong&gt;ซึ่งในเหตุการณ์เช่นนี้สามารถพบเจอได้จริง ในเว็บทั่ว ๆ ไปนะครับ&lt;/strong&gt;  โดยอาจเกิดจาก developer ที่เขียนโค้ดไม่สัมพันธ์กันเอง หรืออย่างในกรณีของ Wikipedia นี้ คืออาจเกิดจาก user ซึ่งเป็นผู้เขียนบทความได้ใช้โครงสร้างของข้อมูลที่แตกต่างกันนั่นเองครับ&lt;/p&gt;
+
+&lt;h3 id=&#34;2-สำรวจ-xpath&#34;&gt;2. สำรวจ XPath&lt;/h3&gt;
+
+&lt;p&gt;ในขั้นตอนนี้ เราจะทำการวิเคราะห์ XPath ที่เรา sample ออกมา แล้วก็ตั้งข้อสังเกตุถึง  &lt;strong&gt;จุดที่เหมือน&lt;/strong&gt;  และ  &lt;strong&gt;จุดที่แตกต่าง&lt;/strong&gt;  สำหรับแต่ละตัวอย่างนะครับ ซึ่งอาจจะต้องใช้ความรู้ HTML เล็กน้อยนะครับ แต่จะพยายามอธิบายให้เข้าใจง่ายที่สุดนะครับ&lt;/p&gt;
+
+&lt;p&gt;เมื่อเรา sample ออกมาดูเยอะ ๆ แล้วก็จะเห็นครับว่ามันมีส่วนที่เหมือนกันอยู่ คือ ขึ้นต้นด้วย element  &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ซึ่ง  &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt;  ก็หมายถึงตัวตารางแต่ละตารางนั่นเองครับ&lt;/p&gt;
+
+&lt;p&gt;และจะสังเกตุได้จาก XPath ที่ได้มา ว่าข้อมูลที่เราต้องการ&lt;br /&gt;
+&lt;strong&gt;1.&lt;/strong&gt;  จะเริ่มต้นที่  &lt;strong&gt;ตารางที่ 3&lt;/strong&gt;  (เพราะในตารางที่ 1 บรรทัดที่ 1 ใช้  &lt;code&gt;table[3]&lt;/code&gt;)&lt;br /&gt;
+&lt;strong&gt;2.&lt;/strong&gt;  แล้วตามด้วย  &lt;code&gt;&amp;lt;tbody&amp;gt;&lt;/code&gt;&lt;br /&gt;
+&lt;strong&gt;3.&lt;/strong&gt;  ตามด้วย  &lt;code&gt;&amp;lt;tr&amp;gt;&lt;/code&gt;  คือแต่ละ row ของ table นั้น ๆ&lt;br /&gt;
+&lt;strong&gt;4.&lt;/strong&gt;  จากนั้นก็  &lt;code&gt;&amp;lt;td&amp;gt;&lt;/code&gt;  คือแต่ละ column ของ row นั้น ๆ ซึ่งอาจจะเป็น  &lt;strong&gt;column ที่ 2 หรือ column ที่ 3 ก็ได้&lt;/strong&gt;  (เช่น sample  &lt;code&gt;(4)&lt;/code&gt;  และ  &lt;code&gt;(5)&lt;/code&gt;)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(4) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[4]/tbody/tr[3]/td[3]/b/a    (ตาราง 2 บรรทัด 1)
+(5) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[4]/tbody/tr[30]/td[2]/b/a   (ตาราง 2 บรรทัด 28)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;5.&lt;/strong&gt;  แล้วก็อาจจะมี หรือไม่มี  &lt;code&gt;&amp;lt;b&amp;gt;&lt;/code&gt;  ก็ได้ (กรณีที่ไม่มี  &lt;code&gt;&amp;lt;b&amp;gt;&lt;/code&gt;  ดู sample ที่  &lt;code&gt;(8)&lt;/code&gt;)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(8) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[24]/tbody/tr[3]/td[3]/a/b   (ตาราง 22 บรรทัด 1)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;6.&lt;/strong&gt;  ตามด้วย  &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;  คือข้อความที่เป็น link&lt;br /&gt;
+&lt;strong&gt;7.&lt;/strong&gt;  แล้วก็อาจจะมี หรือไม่มี  &lt;code&gt;&amp;lt;b&amp;gt;&lt;/code&gt;  ก็ได้&lt;/p&gt;
+
+&lt;p&gt;นี่ก็เป็นข้อสังเกตุทั้งหมดที่เราได้จาก sample ของเรานะครับ&lt;/p&gt;
+
+&lt;h3 id=&#34;3-สร-าง-xpath-จร-ง-ๆ-ส-กท-555&#34;&gt;3. สร้าง XPath (จริง ๆ สักที 555)**&lt;/h3&gt;
+
+&lt;p&gt;ต่อไป จากข้อสังเกตุทั้ง 7 ข้อ ด้านบน เราก็ได้ทราบแล้วว่า elements ที่เราต้องการ จะมี XPath ลักษณะอย่างไร  &lt;strong&gt;ทีนี้เรานำข้อสังเกตุทั้งหมดมารวมกัน เพื่อสร้าง XPath ขึ้นมา 1 อัน ที่สามารถครอบคลุม cases ที่กล่าวมาได้ทั้งหมด!&lt;/strong&gt;  โดยใช้การเขียน  &lt;strong&gt;condition&lt;/strong&gt;  มาเพื่อช่วยเลือก elements ที่ต้องการนะครับ อันดับแรกก็เริ่มจาก XPath ที่ทุก sample มีร่วมกันก่อน ก็คือ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ทีนี้ ก็จะเริ่มใส่ condition ตามข้อสังเกตุของเราข้างต้นแล้วนะครับ&lt;br /&gt;
+&lt;strong&gt;1.&lt;/strong&gt;  เราต้องการเลือกตารางตั้งแต่ตารางที่ 3 ขึ้นไปเท่านั้น วิธีการคือให้ใส่ condition เข้าไป ว่า  &lt;strong&gt;position ของ  &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt;  เนี่ย ต้องมากกว่าหรือเท่ากับ 3 ครับ&lt;/strong&gt;  ซึ่งเขียนเป็น condition ได้ว่า  &lt;code&gt;position() &amp;gt;= 3&lt;/code&gt;  ก็จะได้ XPath เป็น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[position() &amp;gt;= 3]
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;2.&lt;/strong&gt;  ตามด้วย  &lt;code&gt;&amp;lt;tbody&amp;gt;&lt;/code&gt;  และ  &lt;code&gt;&amp;lt;tr&amp;gt;&lt;/code&gt;  ก็เติมเข้าไปตรง ๆ ได้เลยครับ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[position() &amp;gt;= 3]/tbody/tr
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt;  ตามด้วย  &lt;code&gt;&amp;lt;td&amp;gt;&lt;/code&gt;  แต่เราจะเอาเฉพาะ column ที่ 2 หรือ 3 เท่านั้น วิธีหนึ่งที่ทำได้ก็คือ ใส่ condition ว่า  &lt;strong&gt;position ของ  &lt;code&gt;&amp;lt;td&amp;gt;&lt;/code&gt;  เนี่ย ต้อง &amp;gt;= 2 และ &amp;lt;= 3&lt;/strong&gt;  ซึ่งเขียน condition ออกมาได้ว่า  &lt;code&gt;2 &amp;lt;= position() and position() &amp;lt;= 3&lt;/code&gt;  จึงได้ XPath เป็น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//*[@id=&amp;quot;mw-c.../tbody/tr/td[2 &amp;lt;= position() and position() &amp;lt;= 3]
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;4.&lt;/strong&gt;  อย่างที่สังเกตุว่าบาง sample ก็มี  &lt;code&gt;&amp;lt;b&amp;gt;&lt;/code&gt;  ขึ้นก่อนแล้วตามด้วย  &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;  (&lt;code&gt;/b/a/&lt;/code&gt;)&lt;br /&gt;
+หรือบาง sample ก็เป็น  &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;  ขึ้นก่อน แล้วตามด้วย  &lt;code&gt;&amp;lt;b&amp;gt;&lt;/code&gt;  (&lt;code&gt;/a/b/&lt;/code&gt;)&lt;br /&gt;
+แล้วยังมี  &lt;code&gt;&amp;lt;b&amp;gt;&lt;/code&gt;  แล้ว  &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;  แล้ว  &lt;code&gt;&amp;lt;b&amp;gt;&lt;/code&gt;  อีก (&lt;code&gt;/b/a/b/&lt;/code&gt;)&lt;br /&gt;
+โชคดีที่ใน XPath เราสามารถละได้ โดยการเขียนเป็น  &lt;code&gt;//a//&lt;/code&gt;  จะหมายถึงว่าจะมี element อะไรขึ้นก่อน  &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;  ก็ได้ (กี่ elements ก็ได้ หรือจะไม่มีก็ได้) แล้วตามด้วย elements อะไรก็ได้ (กี่ elements ก็ได้ หรือจะไม่มีก็ได้) แล้วตัว engine ก็จะหาทุก ๆ elements ที่เป็นไปได้มาให้เองครับ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//*[@id=&amp;quot;mw-c.../tbody/tr/td[2 &amp;lt;= position() and position() &amp;lt;= 3]//a//
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;note: ซึ่งการละใน XPath นี้ ต้องระวังในการใช้สักเล็กน้อยนะครับ อย่าง  &lt;code&gt;//a//&lt;/code&gt;  อาจหมายถึง  &lt;code&gt;/b/a&lt;/code&gt;  ก็ได้ หรือ  &lt;code&gt;/b/a/b&lt;/code&gt;  ก็ได้ หรืออาจหมายถึง  &lt;code&gt;/b/div/a/div/b/a/b/div&lt;/code&gt;  ก็ได้ คือในส่วนที่ละ จะแทนเป็นอะไรก็ได้นั่นเองครับ&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;5.&lt;/strong&gt;  สุดท้ายตามด้วย  &lt;code&gt;text()&lt;/code&gt;  คือต้องการเอาเฉพาะข้อความที่อยู่ใน element นั้นออกมา&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//*[@id=&amp;quot;mw-c.../tbody/tr/td[2 &amp;lt;= position() and position() &amp;lt;= 3]//a//text()
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ได้ XPath สุดท้ายเป็น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[position() &amp;gt;= 3]/tbody/tr/td[2 &amp;lt;= position() and position() &amp;lt;= 3]//a//text()
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ซึ่งเป็น XPath ที่เรามั่นใจว่าและครอบคลุมทุกกรณีที่เรา sample ออกมา และ(หวังว่า)จะครอบคลุมข้อมูลที่เราต้องการจริง ๆ ทั้งหมด&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;และเป็น XPath ที่เราก็ได้นำไปใช้จริงแล้วในการ extract  &lt;em&gt;รายชื่อเทศบาลตำบล&lt;/em&gt;  ใน  &lt;a href=&#34;https://dev.to/copypasteengineer/python-web-scraping-part-1-python-49ce&#34; target=&#34;_blank&#34;&gt;บทความ part ที่ 1&lt;/a&gt;  นั่นเองครับ&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;สำหรับการสร้าง XPath นั้น วิธีการที่นำเสนอไปก็เป็นหนึ่งในวิธีที่สามารถทำได้ง่าย ๆ ซึ่งเราจะสามารถมั่นใจได้ในระดับหนึ่งว่า XPath ที่ได้มานั้น  &lt;strong&gt;ครอบคลุมข้อมูลส่วนใหญ่ โดยทำการ sample ออกมาให้มากขึ้น และ sample  &lt;em&gt;ในหลาย ๆ จุดที่แตกต่างกัน กระจาย ๆ กันไป&lt;/em&gt;&lt;/strong&gt;  แต่อาจจะต้องอาศัยความรู้ในเรื่อง syntax และคำสั่งของ XPath สักเล็กน้อยสำหรับการเขียน condition เพื่อ select element ต่าง ๆ นะครับ&lt;/p&gt;
+
+&lt;p&gt;ซึ่งจริง ๆ แล้ว  &lt;strong&gt;ผู้เขียนเองก็ไม่ได้จำคำสั่งของ XPath ได้ทั้งหมดจริง ๆ หรอกครับ&lt;/strong&gt;  เมื่อจำเป็นต้องใช้ที ก็ search หาจาก internet เอา โดยผู้เขียนพบว่า  &lt;strong&gt;เว็บ  &lt;em&gt;w3school&lt;/em&gt;  ได้ทำรายการของคำสั่งต่าง ๆ พร้อมคำอธิบายเอาไว้ได้ดีและครบถ้วนแล้ว ทุก ๆ ท่านสามารถนำไปใช้เพื่ออ้างอิงขณะที่เขียนได้เลยครับ  &lt;a href=&#34;https://www.w3schools.com/xml/xpath_intro.asp&#34; target=&#34;_blank&#34;&gt;link นี้เลยครับ&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;และถ้ามีเรื่องไหนที่สนใจเพิ่มเติมสามารถ comment เอาไว้ได้นะครับ&lt;/p&gt;
+
+&lt;p&gt;FB Page:  &lt;a href=&#34;https://www.facebook.com/CopyPasteEng&#34; target=&#34;_blank&#34;&gt;Copy Paste Engineer&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Part อื่น ๆ ใน series&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../python-web-scraping-part-1/&#34;&gt; Part I - การดูดข้อมูลเบื้องต้น ด้วย Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../python-web-scraping-part-2/&#34;&gt;Part II - Chrome&amp;rsquo;s Code Inspector&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../python-web-scraping-part-4/&#34;&gt;Part IV - ทำไมถึง scrape บางเว็บไม่ได้&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Reference : &lt;a href=&#34;https://dev.to/copypasteengineer/python-web-scraping-part-3-extract-xpath-18h&#34; target=&#34;_blank&#34;&gt;https://dev.to/copypasteengineer/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Python Web Scraping Part II - Chrome&#39;s Code Inspector</title>
+      <link>https://dragon-library.github.io/post/python/example/web-scraping-series-1/python-web-scraping-part-2/</link>
+      <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/post/python/example/web-scraping-series-1/python-web-scraping-part-2/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;featured.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;เราได้ลองดึงข้อมูลจาก Wikipedia ด้วย Python แบบง่าย ๆ ดูแล้ว ถ้ายังจำได้ หลังจากที่เรา  &lt;strong&gt;scrape&lt;/strong&gt;  &lt;strong&gt;ข้อมูลดิบ&lt;/strong&gt;  เป็นโค้ด HTML ยาว ๆ ลงมาใน Python แล้ว ในส่วนของการ  &lt;strong&gt;extract ข้อมูล&lt;/strong&gt;  เราใช้  &lt;strong&gt;XPath&lt;/strong&gt;  เพื่อ select elements ที่ต้องการออกมา&lt;/p&gt;
+
+&lt;p&gt;ซึ่งผู้เขียนได้แอบบอกไว้แล้วว่า XPath ที่ได้มานั้น มาจากการแกะโค้ด HTML ของเว็บต้นทาง โดยใช้เครื่องมือ  &lt;strong&gt;Code Inspector&lt;/strong&gt;  บน  &lt;strong&gt;Google Chrome Browser&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;บทความนี้จะมาพูดถึงเครื่องมือตัวนี้กันครับ ว่ามันจะช่วยให้เราดูดข้อมูลได้ง่ายขึ้นอย่างไรบ้าง&lt;/p&gt;
+
+&lt;p&gt;จริง ๆ แล้วตัว  &lt;strong&gt;Code Inspector&lt;/strong&gt;  นี่มันเป็นแค่หนึ่งในหลาย ๆ tools ที่  &lt;strong&gt;Google Chrome&lt;/strong&gt;  มีให้ใน  &lt;strong&gt;Google Chrome DevTools&lt;/strong&gt;  เท่านั้นนะครับ โดยจุดประสงค์หลัก ๆ ของ tools ทั้งหลายก็คือใช้เพื่อ debug เว็บที่เราเขียนขึ้นเอง โดยผู้ใช้สามารถเรียกดูได้ทั้งโครงสร้าง การทำงาน และ data ของเว็บที่รันอยู่แบบ real-time เลย  &lt;strong&gt;ซึ่งล้วนแล้วแต่เป็น information ที่มีประโยชน์ต่อการ scrape ข้อมูลทั้งสิ้นครับ&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;โดยในครั้งนี้จะมาแนะนำ  &lt;strong&gt;Code Inspector&lt;/strong&gt;  ให้รู้จักกันคร่าว ๆ ว่ามันทำอะไรได้บ้าง แล้วจะใช้เพื่อแกะ XPath ออกมาจากโค้ดได้อย่างไรนะครับ แล้วในบทความถัด ๆ ไป จะสอน tool อีกตัวที่ช่วยให้เราเข้าใจการทำงานของเว็บนั้น ๆ มากขึ้น เช่น กดปุ่มนี้แล้วเว็บจะโหลดข้อมูลอะไรมาจากที่ไหน ด้วย tool ที่ชื่อว่า  &lt;strong&gt;Network Inspector&lt;/strong&gt;  บน Google Chrome เช่นกันครับ&lt;/p&gt;
+
+&lt;h2 id=&#34;get-started&#34;&gt;Get Started!&lt;/h2&gt;
+
+&lt;p&gt;ตัว Code Inspector นี่ สำหรับ developer จะเอาไว้ใช้ตรวจสอบว่าหน้าเว็บที่เราเขียนนั้น render ออกมาเป็น code HTML ได้ถูกต้องหรือไม่ ทั้งโครงสร้างของ HTML และ attributes ต่าง ๆ&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;note: อธิบายสำหรับท่านที่ไม่ได้เป็น web developer นะครับ บางที web page ที่เราเห็นนั้นอาจจะไม่ได้เขียนด้วย HTML ไฟล์เดียวทั้งหมดนะครับ อาจจะมาจาก HTML หลายไฟล์มารวมกัน หรือถูก render ลงมาเป็น HTML จาก server ต้นทางอีกที ทำให้ในการ develop ฝั่ง server อาจจะต้องดูผลลัพธ์ไปพร้อม ๆ กัน ว่า HTML code ถูก rendered ออกมาตามที่ต้องการหรือไม่&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;ซึ่งประโยชน์หลัก ๆ ที่เราจะได้จาก Code Inspector ก็คือใช้หา XPath หรือหาวิธีการ extract ข้อมูลจากหน้าเว็บนั้น ๆ เช่น ดู id ของ elements ที่เราสนใจ&lt;/p&gt;
+
+&lt;p&gt;วิธีการเรียก Code Inspect คือให้เข้าไปที่ website ที่ต้องการ ด้วย  &lt;strong&gt;Google Chrome Browser&lt;/strong&gt;  แล้วกด  &lt;code&gt;F12&lt;/code&gt;  ก็จะมีแถบด้านขวา (หรือด้านล่าง) ที่แสดง HTML elements ของ page ปัจจุบัน ปรากฎออกมาตามภาพ&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://res.cloudinary.com/practicaldev/image/fetch/s--aIFdosyu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/sdawbnm8vkmgun33g31u.png&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://res.cloudinary.com/practicaldev/image/fetch/s--aIFdosyu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/sdawbnm8vkmgun33g31u.png&#34; alt=&#34;code-inspector-1.png&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;highlight-ตำแหน-งของ-component-จาก-element&#34;&gt;Highlight ตำแหน่งของ Component จาก Element&lt;/h3&gt;
+
+&lt;p&gt;โดยเราสามารถ  &lt;strong&gt;คลิกเพื่อ expand elements ย่อย ๆ ออก&lt;/strong&gt;  แล้วเข้าไปดูโครงสร้างที่ซ่อนไว้ได้ หรือถ้าหากลองเอาเมาส์ไปชี้ที่ element ในนั้นดู Chrome ก็จะข่วย highlight บอกเราให้ด้วย ว่า element นั้น อยู่ตรงไหนบนหน้าเว็บ&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://res.cloudinary.com/practicaldev/image/fetch/s--E1mB_gkv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/p7ap5s21e969faqgko4l.png&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://res.cloudinary.com/practicaldev/image/fetch/s--E1mB_gkv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/p7ap5s21e969faqgko4l.png&#34; alt=&#34;code-inspector-highlight.png&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;highlight-element-จาก-component&#34;&gt;Highlight Element จาก Component&lt;/h3&gt;
+
+&lt;p&gt;หรือในกรณีที่เราอยากทราบว่าตัว component บนหน้าเว็บ เช่น ตารางที่เราเห็นอยู่นี้ มันคือ element ในโค้ด HTML ก็สามารถทำได้ โดยการ  &lt;strong&gt;คลิกขวาที่ component นั้น ๆ แล้วเลือก Inspect&lt;/strong&gt;  จากนั้นตัว Code Inspector ก็จะไป highlight HTML element ของ component ให้ทันทีครับ&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://res.cloudinary.com/practicaldev/image/fetch/s--tT7MQ41b--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/9qgsvj4nwwmso24tjlp9.png&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://res.cloudinary.com/practicaldev/image/fetch/s--tT7MQ41b--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/9qgsvj4nwwmso24tjlp9.png&#34; alt=&#34;code-inspector-find-element.png&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;แกะ-xpath-ของ-component-แบบเบส-ก&#34;&gt;แกะ XPath ของ Component แบบเบสิก&lt;/h3&gt;
+
+&lt;p&gt;เมื่อเราคลิกเลือก element ที่เราสนใจได้แล้ว หากเราอยากจะได้ XPath ของ element นั้น ๆ มา Inspector ก็สามารถหาให้เราแบบง่าย ๆ ได้ (แต่อาจจะไม่ค่อยตรงใจเราสักเท่าไหร่555)&lt;/p&gt;
+
+&lt;p&gt;เช่น สมมุติว่าเราอยากจะได้ XPath ของ  &lt;code&gt;เทศบาลตำบลบ้านดู่&lt;/code&gt;  ก็ให้หา element ของมันให้ได้ก่อนตามที่อธิบายไว้ด้านบน คือคลิกขวาที่  &lt;code&gt;เทศบาลตำบลบ้านดู่&lt;/code&gt;  แล้วเลือก  &lt;code&gt;Inspect&lt;/code&gt;  Inspector ก็จะ highlight element ของ  &lt;code&gt;เทศบาลตำบลบ้านดู่&lt;/code&gt;  ไว้ให้&lt;br /&gt;
+จากนั้นก็หา XPath โดยการ  &lt;strong&gt;คลิกขวาที่ element นั้น แล้วเลือก  &lt;code&gt;Copy&lt;/code&gt;  แล้วก็  &lt;code&gt;Copy XPath&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://res.cloudinary.com/practicaldev/image/fetch/s--lfYxlBnA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/m6ht57jk45ms9x0w6owv.png&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://res.cloudinary.com/practicaldev/image/fetch/s--lfYxlBnA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/m6ht57jk45ms9x0w6owv.png&#34; alt=&#34;code-inspector-copy-xpath.png&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ถ้าลอง paste ดูก็จะได้ XPath ของ  &lt;code&gt;เทศบาลตำบลบ้านดู่&lt;/code&gt;  แบบนี้ครับ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[3]/tbody/tr[1]/td[3]/b/a
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;แต่ XPath นี้เป็นแค่ของ  &lt;code&gt;เทศบาลตำบลบ้านดู่&lt;/code&gt;  เท่านั้นครับ&lt;/strong&gt;  แต่สิ่งที่ต้องการจริง ๆ คือ  &lt;strong&gt;ชื่อเทศบาลทั้งหมด&lt;/strong&gt;  ถามว่าจะหามาได้อย่างไร?&lt;/p&gt;
+
+&lt;p&gt;ถ้ามีประสบการณ์การทำเว็บมาบ้าง พอเห็นข้างบนก็อาจจะเดาได้แล้วว่า XPath ที่เหมาะสมควรจะเป็นอะไรนะครับ แต่ถ้ายังเดาไม่ออกก็ไม่เป็นไรครับ เพราะอย่างบาง website ที่ซับซ้อนขึ้นหน่อย ถึงจะพอมีประสบการณ์ก็คงเดาไม่ออกในทีแรกเช่นกัน&lt;/p&gt;
+
+&lt;p&gt;วิธีหนึ่งที่ผมทำก็คือใช้ตัว Chrome Inspector นี่แหละ เอาตัวอย่างของ XPath จากเทศบาลตำบลอันอื่น ๆ ออกมาดูเพิ่มอีกเยอะ ๆ ก็จะช่วยให้เห็นภาพมากขึ้นครับ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; (1) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[3]/tbody/tr[1]/td[3]/b/a    (ตาราง 1 บรรทัด 1)
+ (2) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[3]/tbody/tr[2]/td[3]/b/a    (ตาราง 1 บรรทัด 2)
+ (3) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[3]/tbody/tr[10]/td[3]/b/a   (ตาราง 1 บรรทัด 10)
+ (4) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[4]/tbody/tr[3]/td[3]/b/a    (ตาราง 2 บรรทัด 1)
+ (5) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[4]/tbody/tr[30]/td[2]/b/a   (ตาราง 2 บรรทัด 28)
+ (6) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[7]/tbody/tr[25]/td[2]/b/a/b (ตาราง 5 บรรทัด 23)
+ (7) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[10]/tbody/tr[41]/td[2]/b/a  (ตาราง 8 บรรทัดสุดท้าย)
+ (8) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[24]/tbody/tr[3]/td[3]/a/b   (ตาราง 22 บรรทัด 1)
+ (9) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[76]/tbody/tr[3]/td[3]/b/a   (ตารางสุดท้าย บรรทัด 1)
+(10) //*[@id=&amp;quot;mw-content-text&amp;quot;]/div/table[76]/tbody/tr[37]/td[2]/b/a  (ตารางสุดท้าย บรรทัดสุดท้าย)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;&amp;hellip;แล้วยังไงต่อ&amp;hellip;&lt;/strong&gt;  ใช่ไหมครับ 555&lt;br /&gt;
+ต่อไปเราก็จะสร้าง XPath 1 อัน ที่สามารถครอบคลุมทุกกรณีที่เราเจอมาโดยการใส่ condition เพื่อช่วยเลือก โดยผลลัพธ์สุดท้ายก็จะได้เป็น XPath ที่เราใช้จริง ใน  &lt;a href=&#34;https://dev.to/copypasteengineer/python-web-scraping-part-1-python-49ce&#34; target=&#34;_blank&#34;&gt;part ที่ 1&lt;/a&gt;  นั่นเองครับ ซึ่งจะอธิบายวิธีการโดยละเอียดต่อใน part 3 นะครับ&lt;/p&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;สำหรับ part ที่ 2 นี้ จุดประสงค์หลัก ก็คือแนะนำ tool ที่ชื่อ  &lt;strong&gt;Code Inspector&lt;/strong&gt;  ใน  &lt;strong&gt;Google Chrome&lt;/strong&gt;  ครับ ซึ่งเป็น tool ที่ช่วยให้สามารถ extract ข้อมูลได้ง่ายขึ้นมาก และผู้เขียนได้ใช้หา XPath ไปจริง ๆ ใน  &lt;a href=&#34;https://dev.to/copypasteengineer/python-web-scraping-part-1-python-49ce&#34; target=&#34;_blank&#34;&gt;บทความ part 1&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Part อื่น ๆ ใน series&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../python-web-scraping-part-1/&#34;&gt; Part I - การดูดข้อมูลเบื้องต้น ด้วย Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../python-web-scraping-part-3/&#34;&gt;Part III - เทคนิคการ extract ข้อมูลด้วย XPath&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../python-web-scraping-part-4/&#34;&gt;Part IV - ทำไมถึง scrape บางเว็บไม่ได้&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Reference : &lt;a href=&#34;https://dev.to/copypasteengineer/python-web-scraping-part-2-chrome-s-code-inspector-3ok6&#34; target=&#34;_blank&#34;&gt;https://dev.to/copypasteengineer/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Python Web Scraping Part I</title>
-      <link>https://dragon-library.github.io/docs/library/post/python/example/python-web-scraping-part-1/</link>
+      <link>https://dragon-library.github.io/post/python/example/web-scraping-series-1/python-web-scraping-part-1/</link>
       <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/post/python/example/python-web-scraping-part-1/</guid>
+      <guid>https://dragon-library.github.io/post/python/example/web-scraping-series-1/python-web-scraping-part-1/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -151,13 +564,13 @@ print(tambon_list)
 
 &lt;p&gt;FB Page:  &lt;a href=&#34;https://www.facebook.com/CopyPasteEng&#34; target=&#34;_blank&#34;&gt;Copy Paste Engineer&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;- ขอบคุณที่อ่านครับ -&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Part อื่น ๆ ใน series&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;part อื่น ๆ ใน series&lt;/strong&gt;&lt;br /&gt;
--  &lt;a href=&#34;https://dev.to/copypasteengineer/python-web-scraping-part-1-python-49ce&#34; target=&#34;_blank&#34;&gt;part 1: การดูดข้อมูลเบื้องต้น ด้วย Python&lt;/a&gt;&lt;br /&gt;
--  &lt;a href=&#34;https://dev.to/copypasteengineer/python-web-scraping-part-2-chrome-s-code-inspector-3ok6&#34; target=&#34;_blank&#34;&gt;part 2: Chrome&amp;rsquo;s Code Inspector&lt;/a&gt;&lt;br /&gt;
--  &lt;a href=&#34;https://dev.to/copypasteengineer/python-web-scraping-part-3-extract-xpath-18h&#34; target=&#34;_blank&#34;&gt;part 3: เทคนิคการ extract ข้อมูลด้วย XPath&lt;/a&gt;&lt;br /&gt;
--  &lt;a href=&#34;https://dev.to/copypasteengineer/python-web-scraping-part-4-scrape-7-scrape-4ko4&#34; target=&#34;_blank&#34;&gt;part 4: ทำไมถึง scrape บางเว็บไม่ได้??? 7 เทคนิคง่าย ๆ ให้ scrape เว็บส่วนใหญ่ได้ลื่นปรื๊ด&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;../python-web-scraping-part-2/&#34;&gt;Part II - Chrome&amp;rsquo;s Code Inspector&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../python-web-scraping-part-3/&#34;&gt;Part III - เทคนิคการ extract ข้อมูลด้วย XPath&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../python-web-scraping-part-4/&#34;&gt;Part IV - ทำไมถึง scrape บางเว็บไม่ได้&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Reference : &lt;a href=&#34;https://dev.to/copypasteengineer/python-web-scraping-part-1-python-49ce&#34; target=&#34;_blank&#34;&gt;https://dev.to/copypasteengineer/&lt;/a&gt;&lt;/p&gt;

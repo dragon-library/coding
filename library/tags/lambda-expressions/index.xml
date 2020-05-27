@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lambda Expressions on Library</title>
-    <link>https://dragon-library.github.io/docs/library/tags/lambda-expressions/</link>
+    <link>https://dragon-library.github.io/tags/lambda-expressions/</link>
     <description>Recent content in Lambda Expressions on Library</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 04 Jan 2020 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="https://dragon-library.github.io/docs/library/tags/lambda-expressions/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://dragon-library.github.io/tags/lambda-expressions/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Lambda Expressions in Python.</title>
-      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/lambda-expressions/</link>
+      <link>https://dragon-library.github.io/post/python/tutorials/lambda-expressions/</link>
       <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/lambda-expressions/</guid>
+      <guid>https://dragon-library.github.io/post/python/tutorials/lambda-expressions/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;Lambda Expressions in Python&#34; /&gt;&lt;/p&gt;

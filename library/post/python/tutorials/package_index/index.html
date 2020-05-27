@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academia 4.3.1">
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Little Dragon">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Lambda Expressions are ideally used when we need to do something simple and are more interested in getting the job done quickly rather than formally naming the function. Lambda expressions are also known as anonymous functions.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://dragon-library.github.io/post/python/tutorials/package_index/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#c7254e">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:400,700|Sarabun|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academia.min.f35a3aa2d6c0f8f5cecce078107d4395.css">
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://dragon-library.github.io/post/python/tutorials/package_index/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Library">
+  <meta property="og:url" content="https://dragon-library.github.io/post/python/tutorials/package_index/">
+  <meta property="og:title" content="Python Package Index. | Library">
+  <meta property="og:description" content="Lambda Expressions are ideally used when we need to do something simple and are more interested in getting the job done quickly rather than formally naming the function. Lambda expressions are also known as anonymous functions."><meta property="og:image" content="https://dragon-library.github.io/post/python/tutorials/package_index/featured.png">
+  <meta property="twitter:image" content="https://dragon-library.github.io/post/python/tutorials/package_index/featured.png"><meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2020-05-24T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2020-05-24T00:00:00&#43;00:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>Python Package Index. | Library</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Library</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/python/"><span>Python</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/book/"><span>Book</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/courses/"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article py-5" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+    
+    
+    <div class="article-container py-3">
+      <h1 itemprop="name">Python Package Index.</h1>
+
+      
+      <p class="page-subtitle">While  The Python Language Reference  describes the exact syntax and semantics of the Python language, this library reference manual describes the standard library that is distributed with Python.</p>
+      
+
+      
+      
+
+
+
+<meta content="2020-05-24 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2020-05-24 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/admin/">Little Dragon</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>May 24, 2020</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    9 min read
+  </span>
+  
+
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    <a href="/categories/tutorials/">Tutorials</a>, <a href="/categories/python/">Python</a></span>
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://dragon-library.github.io/post/python/tutorials/package_index/&amp;text=Python%20Package%20Index." target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://dragon-library.github.io/post/python/tutorials/package_index/&amp;t=Python%20Package%20Index." target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Python%20Package%20Index.&amp;body=https://dragon-library.github.io/post/python/tutorials/package_index/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://dragon-library.github.io/post/python/tutorials/package_index/&amp;title=Python%20Package%20Index." target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Python%20Package%20Index.%20https://dragon-library.github.io/post/python/tutorials/package_index/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://dragon-library.github.io/post/python/tutorials/package_index/&amp;title=Python%20Package%20Index." target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      
+    </div>
+  </div>
+</div>
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      <p><img src="featured.png" alt="" /></p>
+
+<p>While  <a href="https://docs.python.org/3.8/reference/index.html#reference-index" target="_blank">The Python Language Reference</a>  describes the exact syntax and semantics of the Python language, this library reference manual describes the standard library that is distributed with Python. It also describes some of the optional components that are commonly included in Python distributions.</p>
+
+<p>Python’s standard library is very extensive, offering a wide range of facilities as indicated by the long table of contents listed below. The library contains built-in modules (written in C) that provide access to system functionality such as file I/O that would otherwise be inaccessible to Python programmers, as well as modules written in Python that provide standardized solutions for many problems that occur in everyday programming. Some of these modules are explicitly designed to encourage and enhance the portability of Python programs by abstracting away platform-specifics into platform-neutral APIs.</p>
+
+<p>The Python installers for the Windows platform usually include the entire standard library and often also include many additional components. For Unix-like operating systems Python is normally provided as a collection of packages, so it may be necessary to use the packaging tools provided with the operating system to obtain some or all of the optional components.</p>
+
+<p>In addition to the standard library, there is a growing collection of several thousand components (from individual programs and modules to packages and entire application development frameworks), available from the  <a href="https://pypi.org/" target="_blank">Python Package Index</a>.</p>
+
+<ul>
+<li><a href="https://docs.python.org/3.8/library/intro.html" target="_blank">Introduction</a>
+
+<ul>
+<li><a href="https://docs.python.org/3.8/library/intro.html#notes-on-availability" target="_blank">Notes on availability</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/functions" target="_blank">Built-in Functions</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/constants" target="_blank">Built-in Constants</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/constants#constants-added-by-the-site-module" target="_blank">Constants added by the  <code>site</code>  module</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/stdtypes" target="_blank">Built-in Types</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/stdtypes#truth-value-testing" target="_blank">Truth Value Testing</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/stdtypes#boolean-operations-and-or-not" target="_blank">Boolean Operations —  <code>and</code>,  <code>or</code>,  <code>not</code></a></li>
+<li><a href="https://devdocs.io/python~3.8/library/stdtypes#comparisons" target="_blank">Comparisons</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/stdtypes#numeric-types-int-float-complex" target="_blank">Numeric Types —  <code>int</code>,  <code>float</code>,  <code>complex</code></a></li>
+<li><a href="https://devdocs.io/python~3.8/library/stdtypes#iterator-types" target="_blank">Iterator Types</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/stdtypes#sequence-types-list-tuple-range" target="_blank">Sequence Types —  <code>list</code>,  <code>tuple</code>,  <code>range</code></a></li>
+<li><a href="https://devdocs.io/python~3.8/library/stdtypes#text-sequence-type-str" target="_blank">Text Sequence Type —  <code>str</code></a></li>
+<li><a href="https://devdocs.io/python~3.8/library/stdtypes#binary-sequence-types-bytes-bytearray-memoryview" target="_blank">Binary Sequence Types —  <code>bytes</code>,  <code>bytearray</code>,  <code>memoryview</code></a></li>
+<li><a href="https://devdocs.io/python~3.8/library/stdtypes#set-types-set-frozenset" target="_blank">Set Types —  <code>set</code>,  <code>frozenset</code></a></li>
+<li><a href="https://devdocs.io/python~3.8/library/stdtypes#mapping-types-dict" target="_blank">Mapping Types —  <code>dict</code></a></li>
+<li><a href="https://devdocs.io/python~3.8/library/stdtypes#context-manager-types" target="_blank">Context Manager Types</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/stdtypes#other-built-in-types" target="_blank">Other Built-in Types</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/stdtypes#special-attributes" target="_blank">Special Attributes</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/exceptions" target="_blank">Built-in Exceptions</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/exceptions#base-classes" target="_blank">Base classes</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/exceptions#concrete-exceptions" target="_blank">Concrete exceptions</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/exceptions#warnings" target="_blank">Warnings</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/exceptions#exception-hierarchy" target="_blank">Exception hierarchy</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/text" target="_blank">Text Processing Services</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/string" target="_blank"><code>string</code>  — Common string operations</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/re" target="_blank"><code>re</code>  — Regular expression operations</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/difflib" target="_blank"><code>difflib</code>  — Helpers for computing deltas</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/textwrap" target="_blank"><code>textwrap</code>  — Text wrapping and filling</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/unicodedata" target="_blank"><code>unicodedata</code>  — Unicode Database</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/stringprep" target="_blank"><code>stringprep</code>  — Internet String Preparation</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/readline" target="_blank"><code>readline</code>  — GNU readline interface</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/rlcompleter" target="_blank"><code>rlcompleter</code>  — Completion function for GNU readline</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/binary" target="_blank">Binary Data Services</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/struct" target="_blank"><code>struct</code>  — Interpret bytes as packed binary data</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/codecs" target="_blank"><code>codecs</code>  — Codec registry and base classes</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/datatypes" target="_blank">Data Types</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/datetime" target="_blank"><code>datetime</code>  — Basic date and time types</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/calendar" target="_blank"><code>calendar</code>  — General calendar-related functions</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/collections" target="_blank"><code>collections</code>  — Container datatypes</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/collections.abc" target="_blank"><code>collections.abc</code>  — Abstract Base Classes for Containers</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/heapq" target="_blank"><code>heapq</code>  — Heap queue algorithm</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/bisect" target="_blank"><code>bisect</code>  — Array bisection algorithm</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/array" target="_blank"><code>array</code>  — Efficient arrays of numeric values</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/weakref" target="_blank"><code>weakref</code>  — Weak references</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/types" target="_blank"><code>types</code>  — Dynamic type creation and names for built-in types</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/copy" target="_blank"><code>copy</code>  — Shallow and deep copy operations</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/pprint" target="_blank"><code>pprint</code>  — Data pretty printer</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/reprlib" target="_blank"><code>reprlib</code>  — Alternate  <code>repr()</code>  implementation</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/enum" target="_blank"><code>enum</code>  — Support for enumerations</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/numeric" target="_blank">Numeric and Mathematical Modules</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/numbers" target="_blank"><code>numbers</code>  — Numeric abstract base classes</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/math" target="_blank"><code>math</code>  — Mathematical functions</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/cmath" target="_blank"><code>cmath</code>  — Mathematical functions for complex numbers</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/decimal" target="_blank"><code>decimal</code>  — Decimal fixed point and floating point arithmetic</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/fractions" target="_blank"><code>fractions</code>  — Rational numbers</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/random" target="_blank"><code>random</code>  — Generate pseudo-random numbers</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/statistics" target="_blank"><code>statistics</code>  — Mathematical statistics functions</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/functional" target="_blank">Functional Programming Modules</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/itertools" target="_blank"><code>itertools</code>  — Functions creating iterators for efficient looping</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/functools" target="_blank"><code>functools</code>  — Higher-order functions and operations on callable objects</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/operator" target="_blank"><code>operator</code>  — Standard operators as functions</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/filesys" target="_blank">File and Directory Access</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/pathlib" target="_blank"><code>pathlib</code>  — Object-oriented filesystem paths</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/os.path" target="_blank"><code>os.path</code>  — Common pathname manipulations</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/fileinput" target="_blank"><code>fileinput</code>  — Iterate over lines from multiple input streams</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/stat" target="_blank"><code>stat</code>  — Interpreting  <code>stat()</code>  results</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/filecmp" target="_blank"><code>filecmp</code>  — File and Directory Comparisons</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/tempfile" target="_blank"><code>tempfile</code>  — Generate temporary files and directories</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/glob" target="_blank"><code>glob</code>  — Unix style pathname pattern expansion</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/fnmatch" target="_blank"><code>fnmatch</code>  — Unix filename pattern matching</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/linecache" target="_blank"><code>linecache</code>  — Random access to text lines</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/shutil" target="_blank"><code>shutil</code>  — High-level file operations</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/persistence" target="_blank">Data Persistence</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/pickle" target="_blank"><code>pickle</code>  — Python object serialization</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/copyreg" target="_blank"><code>copyreg</code>  — Register  <code>pickle</code>  support functions</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/shelve" target="_blank"><code>shelve</code>  — Python object persistence</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/marshal" target="_blank"><code>marshal</code>  — Internal Python object serialization</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/dbm" target="_blank"><code>dbm</code>  — Interfaces to Unix “databases”</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/sqlite3" target="_blank"><code>sqlite3</code>  — DB-API 2.0 interface for SQLite databases</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/archiving" target="_blank">Data Compression and Archiving</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/zlib" target="_blank"><code>zlib</code>  — Compression compatible with  <strong>gzip</strong></a></li>
+<li><a href="https://devdocs.io/python~3.8/library/gzip" target="_blank"><code>gzip</code>  — Support for  <strong>gzip</strong>  files</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/bz2" target="_blank"><code>bz2</code>  — Support for  <strong>bzip2</strong>  compression</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/lzma" target="_blank"><code>lzma</code>  — Compression using the LZMA algorithm</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/zipfile" target="_blank"><code>zipfile</code>  — Work with ZIP archives</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/tarfile" target="_blank"><code>tarfile</code>  — Read and write tar archive files</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/fileformats" target="_blank">File Formats</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/csv" target="_blank"><code>csv</code>  — CSV File Reading and Writing</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/configparser" target="_blank"><code>configparser</code>  — Configuration file parser</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/netrc" target="_blank"><code>netrc</code>  — netrc file processing</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/xdrlib" target="_blank"><code>xdrlib</code>  — Encode and decode XDR data</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/plistlib" target="_blank"><code>plistlib</code>  — Generate and parse Mac OS X  <code>.plist</code>  files</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/crypto" target="_blank">Cryptographic Services</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/hashlib" target="_blank"><code>hashlib</code>  — Secure hashes and message digests</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/hmac" target="_blank"><code>hmac</code>  — Keyed-Hashing for Message Authentication</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/secrets" target="_blank"><code>secrets</code>  — Generate secure random numbers for managing secrets</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/allos" target="_blank">Generic Operating System Services</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/os" target="_blank"><code>os</code>  — Miscellaneous operating system interfaces</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/io" target="_blank"><code>io</code>  — Core tools for working with streams</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/time" target="_blank"><code>time</code>  — Time access and conversions</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/argparse" target="_blank"><code>argparse</code>  — Parser for command-line options, arguments and sub-commands</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/getopt" target="_blank"><code>getopt</code>  — C-style parser for command line options</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/logging" target="_blank"><code>logging</code>  — Logging facility for Python</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/logging.config" target="_blank"><code>logging.config</code>  — Logging configuration</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/logging.handlers" target="_blank"><code>logging.handlers</code>  — Logging handlers</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/getpass" target="_blank"><code>getpass</code>  — Portable password input</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/curses" target="_blank"><code>curses</code>  — Terminal handling for character-cell displays</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/curses#module-curses.textpad" target="_blank"><code>curses.textpad</code>  — Text input widget for curses programs</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/curses.ascii" target="_blank"><code>curses.ascii</code>  — Utilities for ASCII characters</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/curses.panel" target="_blank"><code>curses.panel</code>  — A panel stack extension for curses</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/platform" target="_blank"><code>platform</code>  — Access to underlying platform’s identifying data</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/errno" target="_blank"><code>errno</code>  — Standard errno system symbols</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/ctypes" target="_blank"><code>ctypes</code>  — A foreign function library for Python</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/concurrency" target="_blank">Concurrent Execution</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/threading" target="_blank"><code>threading</code>  — Thread-based parallelism</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/multiprocessing" target="_blank"><code>multiprocessing</code>  — Process-based parallelism</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/multiprocessing.shared_memory" target="_blank"><code>multiprocessing.shared_memory</code>  — Provides shared memory for direct access across processes</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/concurrent" target="_blank">The  <code>concurrent</code>  package</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/concurrent.futures" target="_blank"><code>concurrent.futures</code>  — Launching parallel tasks</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/subprocess" target="_blank"><code>subprocess</code>  — Subprocess management</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/sched" target="_blank"><code>sched</code>  — Event scheduler</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/queue" target="_blank"><code>queue</code>  — A synchronized queue class</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/_thread" target="_blank"><code>_thread</code>  — Low-level threading API</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/_dummy_thread" target="_blank"><code>_dummy_thread</code>  — Drop-in replacement for the  <code>_thread</code>  module</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/dummy_threading" target="_blank"><code>dummy_threading</code>  — Drop-in replacement for the  <code>threading</code>  module</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/contextvars" target="_blank"><code>contextvars</code>  — Context Variables</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/contextvars#context-variables" target="_blank">Context Variables</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/contextvars#manual-context-management" target="_blank">Manual Context Management</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/contextvars#asyncio-support" target="_blank">asyncio support</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/ipc" target="_blank">Networking and Interprocess Communication</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/asyncio" target="_blank"><code>asyncio</code>  — Asynchronous I/O</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/socket" target="_blank"><code>socket</code>  — Low-level networking interface</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/ssl" target="_blank"><code>ssl</code>  — TLS/SSL wrapper for socket objects</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/select" target="_blank"><code>select</code>  — Waiting for I/O completion</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/selectors" target="_blank"><code>selectors</code>  — High-level I/O multiplexing</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/asyncore" target="_blank"><code>asyncore</code>  — Asynchronous socket handler</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/asynchat" target="_blank"><code>asynchat</code>  — Asynchronous socket command/response handler</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/signal" target="_blank"><code>signal</code>  — Set handlers for asynchronous events</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/mmap" target="_blank"><code>mmap</code>  — Memory-mapped file support</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/netdata" target="_blank">Internet Data Handling</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/email" target="_blank"><code>email</code>  — An email and MIME handling package</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/json" target="_blank"><code>json</code>  — JSON encoder and decoder</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/mailcap" target="_blank"><code>mailcap</code>  — Mailcap file handling</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/mailbox" target="_blank"><code>mailbox</code>  — Manipulate mailboxes in various formats</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/mimetypes" target="_blank"><code>mimetypes</code>  — Map filenames to MIME types</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/base64" target="_blank"><code>base64</code>  — Base16, Base32, Base64, Base85 Data Encodings</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/binhex" target="_blank"><code>binhex</code>  — Encode and decode binhex4 files</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/binascii" target="_blank"><code>binascii</code>  — Convert between binary and ASCII</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/quopri" target="_blank"><code>quopri</code>  — Encode and decode MIME quoted-printable data</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/uu" target="_blank"><code>uu</code>  — Encode and decode uuencode files</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/markup" target="_blank">Structured Markup Processing Tools</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/html" target="_blank"><code>html</code>  — HyperText Markup Language support</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/html.parser" target="_blank"><code>html.parser</code>  — Simple HTML and XHTML parser</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/html.entities" target="_blank"><code>html.entities</code>  — Definitions of HTML general entities</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/xml" target="_blank">XML Processing Modules</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/xml.etree.elementtree" target="_blank"><code>xml.etree.ElementTree</code>  — The ElementTree XML API</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/xml.dom" target="_blank"><code>xml.dom</code>  — The Document Object Model API</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/xml.dom.minidom" target="_blank"><code>xml.dom.minidom</code>  — Minimal DOM implementation</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/xml.dom.pulldom" target="_blank"><code>xml.dom.pulldom</code>  — Support for building partial DOM trees</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/xml.sax" target="_blank"><code>xml.sax</code>  — Support for SAX2 parsers</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/xml.sax.handler" target="_blank"><code>xml.sax.handler</code>  — Base classes for SAX handlers</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/xml.sax.utils" target="_blank"><code>xml.sax.saxutils</code>  — SAX Utilities</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/xml.sax.reader" target="_blank"><code>xml.sax.xmlreader</code>  — Interface for XML parsers</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/pyexpat" target="_blank"><code>xml.parsers.expat</code>  — Fast XML parsing using Expat</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/internet" target="_blank">Internet Protocols and Support</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/webbrowser" target="_blank"><code>webbrowser</code>  — Convenient Web-browser controller</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/cgi" target="_blank"><code>cgi</code>  — Common Gateway Interface support</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/cgitb" target="_blank"><code>cgitb</code>  — Traceback manager for CGI scripts</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/wsgiref" target="_blank"><code>wsgiref</code>  — WSGI Utilities and Reference Implementation</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/urllib" target="_blank"><code>urllib</code>  — URL handling modules</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/urllib.request" target="_blank"><code>urllib.request</code>  — Extensible library for opening URLs</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/urllib.request#module-urllib.response" target="_blank"><code>urllib.response</code>  — Response classes used by urllib</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/urllib.parse" target="_blank"><code>urllib.parse</code>  — Parse URLs into components</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/urllib.error" target="_blank"><code>urllib.error</code>  — Exception classes raised by urllib.request</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/urllib.robotparser" target="_blank"><code>urllib.robotparser</code>  — Parser for robots.txt</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/http" target="_blank"><code>http</code>  — HTTP modules</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/http.client" target="_blank"><code>http.client</code>  — HTTP protocol client</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/ftplib" target="_blank"><code>ftplib</code>  — FTP protocol client</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/poplib" target="_blank"><code>poplib</code>  — POP3 protocol client</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/imaplib" target="_blank"><code>imaplib</code>  — IMAP4 protocol client</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/nntplib" target="_blank"><code>nntplib</code>  — NNTP protocol client</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/smtplib" target="_blank"><code>smtplib</code>  — SMTP protocol client</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/smtpd" target="_blank"><code>smtpd</code>  — SMTP Server</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/telnetlib" target="_blank"><code>telnetlib</code>  — Telnet client</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/uuid" target="_blank"><code>uuid</code>  — UUID objects according to  <strong>RFC 4122</strong></a></li>
+<li><a href="https://devdocs.io/python~3.8/library/socketserver" target="_blank"><code>socketserver</code>  — A framework for network servers</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/http.server" target="_blank"><code>http.server</code>  — HTTP servers</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/http.cookies" target="_blank"><code>http.cookies</code>  — HTTP state management</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/http.cookiejar" target="_blank"><code>http.cookiejar</code>  — Cookie handling for HTTP clients</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/xmlrpc" target="_blank"><code>xmlrpc</code>  — XMLRPC server and client modules</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/xmlrpc.client" target="_blank"><code>xmlrpc.client</code>  — XML-RPC client access</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/xmlrpc.server" target="_blank"><code>xmlrpc.server</code>  — Basic XML-RPC servers</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/ipaddress" target="_blank"><code>ipaddress</code>  — IPv4/IPv6 manipulation library</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/mm" target="_blank">Multimedia Services</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/audioop" target="_blank"><code>audioop</code>  — Manipulate raw audio data</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/aifc" target="_blank"><code>aifc</code>  — Read and write AIFF and AIFC files</a></li>
+<li><a href="https://docs.python.org/3.8/library/sunau.html" target="_blank"><code>sunau</code>  — Read and write Sun AU files</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/wave" target="_blank"><code>wave</code>  — Read and write WAV files</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/chunk" target="_blank"><code>chunk</code>  — Read IFF chunked data</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/colorsys" target="_blank"><code>colorsys</code>  — Conversions between color systems</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/imghdr" target="_blank"><code>imghdr</code>  — Determine the type of an image</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/sndhdr" target="_blank"><code>sndhdr</code>  — Determine type of sound file</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/ossaudiodev" target="_blank"><code>ossaudiodev</code>  — Access to OSS-compatible audio devices</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/i18n" target="_blank">Internationalization</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/gettext" target="_blank"><code>gettext</code>  — Multilingual internationalization services</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/locale" target="_blank"><code>locale</code>  — Internationalization services</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/frameworks" target="_blank">Program Frameworks</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/turtle" target="_blank"><code>turtle</code>  — Turtle graphics</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/cmd" target="_blank"><code>cmd</code>  — Support for line-oriented command interpreters</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/shlex" target="_blank"><code>shlex</code>  — Simple lexical analysis</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/tk" target="_blank">Graphical User Interfaces with Tk</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/tkinter" target="_blank"><code>tkinter</code>  — Python interface to Tcl/Tk</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/tkinter.ttk" target="_blank"><code>tkinter.ttk</code>  — Tk themed widgets</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/tkinter.tix" target="_blank"><code>tkinter.tix</code>  — Extension widgets for Tk</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/tkinter.scrolledtext" target="_blank"><code>tkinter.scrolledtext</code>  — Scrolled Text Widget</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/idle" target="_blank">IDLE</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/othergui" target="_blank">Other Graphical User Interface Packages</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/development" target="_blank">Development Tools</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/typing" target="_blank"><code>typing</code>  — Support for type hints</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/pydoc" target="_blank"><code>pydoc</code>  — Documentation generator and online help system</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/doctest" target="_blank"><code>doctest</code>  — Test interactive Python examples</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/unittest" target="_blank"><code>unittest</code>  — Unit testing framework</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/unittest.mock" target="_blank"><code>unittest.mock</code>  — mock object library</a></li>
+<li><a href="https://docs.python.org/3.8/library/unittest.mock-examples.html" target="_blank"><code>unittest.mock</code>  — getting started</a></li>
+<li><a href="https://docs.python.org/3.8/library/2to3.html" target="_blank">2to3 - Automated Python 2 to 3 code translation</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/test" target="_blank"><code>test</code>  — Regression tests package for Python</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/test#module-test.support" target="_blank"><code>test.support</code>  — Utilities for the Python test suite</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/test#module-test.support.script_helper" target="_blank"><code>test.support.script_helper</code>  — Utilities for the Python execution tests</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/debug" target="_blank">Debugging and Profiling</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/audit_events" target="_blank">Audit events table</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/bdb" target="_blank"><code>bdb</code>  — Debugger framework</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/faulthandler" target="_blank"><code>faulthandler</code>  — Dump the Python traceback</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/pdb" target="_blank"><code>pdb</code>  — The Python Debugger</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/profile" target="_blank">The Python Profilers</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/timeit" target="_blank"><code>timeit</code>  — Measure execution time of small code snippets</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/trace" target="_blank"><code>trace</code>  — Trace or track Python statement execution</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/tracemalloc" target="_blank"><code>tracemalloc</code>  — Trace memory allocations</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/distribution" target="_blank">Software Packaging and Distribution</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/distutils" target="_blank"><code>distutils</code>  — Building and installing Python modules</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/ensurepip" target="_blank"><code>ensurepip</code>  — Bootstrapping the  <code>pip</code>  installer</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/venv" target="_blank"><code>venv</code>  — Creation of virtual environments</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/zipapp" target="_blank"><code>zipapp</code>  — Manage executable Python zip archives</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/python" target="_blank">Python Runtime Services</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/sys" target="_blank"><code>sys</code>  — System-specific parameters and functions</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/sysconfig" target="_blank"><code>sysconfig</code>  — Provide access to Python’s configuration information</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/builtins" target="_blank"><code>builtins</code>  — Built-in objects</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/__main__" target="_blank"><code>__main__</code>  — Top-level script environment</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/warnings" target="_blank"><code>warnings</code>  — Warning control</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/dataclasses" target="_blank"><code>dataclasses</code>  — Data Classes</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/contextlib" target="_blank"><code>contextlib</code>  — Utilities for  <code>with</code>-statement contexts</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/abc" target="_blank"><code>abc</code>  — Abstract Base Classes</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/atexit" target="_blank"><code>atexit</code>  — Exit handlers</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/traceback" target="_blank"><code>traceback</code>  — Print or retrieve a stack traceback</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/__future__" target="_blank"><code>__future__</code>  — Future statement definitions</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/gc" target="_blank"><code>gc</code>  — Garbage Collector interface</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/inspect" target="_blank"><code>inspect</code>  — Inspect live objects</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/site" target="_blank"><code>site</code>  — Site-specific configuration hook</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/custominterp" target="_blank">Custom Python Interpreters</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/code" target="_blank"><code>code</code>  — Interpreter base classes</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/codeop" target="_blank"><code>codeop</code>  — Compile Python code</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/modules" target="_blank">Importing Modules</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/zipimport" target="_blank"><code>zipimport</code>  — Import modules from Zip archives</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/pkgutil" target="_blank"><code>pkgutil</code>  — Package extension utility</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/modulefinder" target="_blank"><code>modulefinder</code>  — Find modules used by a script</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/runpy" target="_blank"><code>runpy</code>  — Locating and executing Python modules</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/importlib" target="_blank"><code>importlib</code>  — The implementation of  <code>import</code></a></li>
+<li><a href="https://devdocs.io/python~3.8/library/importlib.metadata" target="_blank">Using importlib.metadata</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/language" target="_blank">Python Language Services</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/parser" target="_blank"><code>parser</code>  — Access Python parse trees</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/ast" target="_blank"><code>ast</code>  — Abstract Syntax Trees</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/symtable" target="_blank"><code>symtable</code>  — Access to the compiler’s symbol tables</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/symbol" target="_blank"><code>symbol</code>  — Constants used with Python parse trees</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/token" target="_blank"><code>token</code>  — Constants used with Python parse trees</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/keyword" target="_blank"><code>keyword</code>  — Testing for Python keywords</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/tokenize" target="_blank"><code>tokenize</code>  — Tokenizer for Python source</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/tabnanny" target="_blank"><code>tabnanny</code>  — Detection of ambiguous indentation</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/pyclbr" target="_blank"><code>pyclbr</code>  — Python class browser support</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/py_compile" target="_blank"><code>py_compile</code>  — Compile Python source files</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/compileall" target="_blank"><code>compileall</code>  — Byte-compile Python libraries</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/dis" target="_blank"><code>dis</code>  — Disassembler for Python bytecode</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/pickletools" target="_blank"><code>pickletools</code>  — Tools for pickle developers</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/misc" target="_blank">Miscellaneous Services</a>
+
+<ul>
+<li><a href="https://docs.python.org/3.8/library/formatter.html" target="_blank"><code>formatter</code>  — Generic output formatting</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/windows" target="_blank">MS Windows Specific Services</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/msilib" target="_blank"><code>msilib</code>  — Read and write Microsoft Installer files</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/msvcrt" target="_blank"><code>msvcrt</code>  — Useful routines from the MS VC++ runtime</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/winreg" target="_blank"><code>winreg</code>  — Windows registry access</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/winsound" target="_blank"><code>winsound</code>  — Sound-playing interface for Windows</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/unix" target="_blank">Unix Specific Services</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/posix" target="_blank"><code>posix</code>  — The most common POSIX system calls</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/pwd" target="_blank"><code>pwd</code>  — The password database</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/spwd" target="_blank"><code>spwd</code>  — The shadow password database</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/grp" target="_blank"><code>grp</code>  — The group database</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/crypt" target="_blank"><code>crypt</code>  — Function to check Unix passwords</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/termios" target="_blank"><code>termios</code>  — POSIX style tty control</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/tty" target="_blank"><code>tty</code>  — Terminal control functions</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/pty" target="_blank"><code>pty</code>  — Pseudo-terminal utilities</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/fcntl" target="_blank"><code>fcntl</code>  — The  <code>fcntl</code>  and  <code>ioctl</code>  system calls</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/pipes" target="_blank"><code>pipes</code>  — Interface to shell pipelines</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/resource" target="_blank"><code>resource</code>  — Resource usage information</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/nis" target="_blank"><code>nis</code>  — Interface to Sun’s NIS (Yellow Pages)</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/syslog" target="_blank"><code>syslog</code>  — Unix syslog library routines</a></li>
+</ul></li>
+<li><a href="https://devdocs.io/python~3.8/library/superseded" target="_blank">Superseded Modules</a>
+
+<ul>
+<li><a href="https://devdocs.io/python~3.8/library/optparse" target="_blank"><code>optparse</code>  — Parser for command line options</a></li>
+<li><a href="https://devdocs.io/python~3.8/library/imp" target="_blank"><code>imp</code>  — Access the  import  internals</a></li>
+</ul></li>
+<li><a href="https://docs.python.org/3.8/library/undoc.html" target="_blank">Undocumented Modules</a>
+
+<ul>
+<li><a href="https://docs.python.org/3.8/library/undoc.html#platform-specific-modules" target="_blank">Platform specific modules</a></li>
+</ul></li>
+</ul>
+
+<blockquote>
+<p>Reference : <a href="https://devdocs.io/python~3.8/" target="_blank">devdocs.io</a></p>
+</blockquote>
+
+    </div>
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/package-index/">Package Index</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="https://dragon-library.github.io">Little Dragon</a></h5>
+      <h6 class="card-subtitle">Professor of Artificial Intelligence</h6>
+      <p class="card-text" itemprop="description">My research interests include distributed robotics, mobile computing and programmable matter.</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="/#contact" >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/GeorgeCushen" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ" target="_blank" rel="noopener">
+              <i class="ai ai-google-scholar"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://github.com/gcushen" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+    
+
+    
+    <div class="article-widget">
+      
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item box ">
+    <div class="meta-nav meta-prev">Next <br>
+    <a href="/post/python/tutorials/cheatsheet/" rel="next">Python Cheatsheet.</a></div>
+  </div>
+  
+  
+  
+  <div class="post-nav-item box">
+    <div class="meta-nav meta-next" >Previous <br>
+    <a href="/post/python/tutorials/file-handling-functions/" rel="prev">File Handling Functions Explained.</a></div>
+  </div>
+  
+  <br>
+  <br>
+</div>
+
+    </div>
+    
+
+    
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academia.min.e4fc229c2f28284fc2dfa5b66a52b765.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        
+        <p>
+          
+          Powered by
+          <a href="https://themefisher.com" target="_blank" rel="noopener">themefisher</a> for
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-inline network-icon text-right">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/Twitter" target="_blank" rel="noopener" title="DM Me"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="skype:echo123?call"  title="Skype Me"><i class="fab fa-skype" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://keybase.io/" target="_blank" rel="noopener" title="Chat on Keybase"><i class="fab fa-keybase" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://discourse.gohugo.io" target="_blank" rel="noopener" title="Discuss on Forum"><i class="fas fa-comments" aria-hidden="true"></i></a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

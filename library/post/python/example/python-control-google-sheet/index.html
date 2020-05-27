@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academia 4.3.1">
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Little Dragon">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Google Sheets คือ App ในกลุ่มของ Google Drive ซึ่งเป็นนวัตกรรมของทาง Google ซึ่งมีลักษณะการทำงานที่คล้ายกับ Microsoft Excel มีการสร้าง Column Row สามารถใส่ข้อมูลลงไปใน Cell ได้และที่สำคัญคือไม่ต้องติดตั้งที่เครื่อง สามารถใช้งานบน Web ได้ โดย ไฟล์ที่เราทำนั้นจะถูกบันทึกไว้ใน Google Drive ทำให้สามารถเปิดใช้งานได้ ไม่ว่าจะอยู่ที่ใด">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://dragon-library.github.io/post/python/example/python-control-google-sheet/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#c7254e">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:400,700|Sarabun|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academia.min.f35a3aa2d6c0f8f5cecce078107d4395.css">
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://dragon-library.github.io/post/python/example/python-control-google-sheet/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Library">
+  <meta property="og:url" content="https://dragon-library.github.io/post/python/example/python-control-google-sheet/">
+  <meta property="og:title" content="การใช้งาน Python ควบคุม Google sheet | Library">
+  <meta property="og:description" content="Google Sheets คือ App ในกลุ่มของ Google Drive ซึ่งเป็นนวัตกรรมของทาง Google ซึ่งมีลักษณะการทำงานที่คล้ายกับ Microsoft Excel มีการสร้าง Column Row สามารถใส่ข้อมูลลงไปใน Cell ได้และที่สำคัญคือไม่ต้องติดตั้งที่เครื่อง สามารถใช้งานบน Web ได้ โดย ไฟล์ที่เราทำนั้นจะถูกบันทึกไว้ใน Google Drive ทำให้สามารถเปิดใช้งานได้ ไม่ว่าจะอยู่ที่ใด"><meta property="og:image" content="https://dragon-library.github.io/post/python/example/python-control-google-sheet/featured.jpg">
+  <meta property="twitter:image" content="https://dragon-library.github.io/post/python/example/python-control-google-sheet/featured.jpg"><meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2020-05-26T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2020-05-26T00:00:00&#43;00:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>การใช้งาน Python ควบคุม Google sheet | Library</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Library</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/python/"><span>Python</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/book/"><span>Book</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/courses/"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article py-5" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container split-header">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+        <img class="img-fluid w-100" src="/post/python/example/python-control-google-sheet/featured_hud52102d0918573bfdb35b36d9bac7b75_7868_680x500_fill_q90_lanczos_smart1.jpg" itemprop="image" alt="">
+        
+    </div>
+    <div class="col-lg-8">
+      <h1 itemprop="name">การใช้งาน Python ควบคุม Google sheet</h1>
+
+      
+      <p class="page-subtitle">วิธีการดึงขอมูลหรือเเก้ไขปรับปรุง ข้อมูลใน Google sheet ด้วย Python</p>
+      
+
+      
+
+
+
+<meta content="2020-05-26 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2020-05-26 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/admin/">Little Dragon</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>May 26, 2020</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    2 min read
+  </span>
+  
+
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    <a href="/categories/articles/">Articles</a>, <a href="/categories/python/">Python</a></span>
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://dragon-library.github.io/post/python/example/python-control-google-sheet/&amp;text=%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b9%83%e0%b8%8a%e0%b9%89%e0%b8%87%e0%b8%b2%e0%b8%99%20Python%20%e0%b8%84%e0%b8%a7%e0%b8%9a%e0%b8%84%e0%b8%b8%e0%b8%a1%20Google%20sheet" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://dragon-library.github.io/post/python/example/python-control-google-sheet/&amp;t=%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b9%83%e0%b8%8a%e0%b9%89%e0%b8%87%e0%b8%b2%e0%b8%99%20Python%20%e0%b8%84%e0%b8%a7%e0%b8%9a%e0%b8%84%e0%b8%b8%e0%b8%a1%20Google%20sheet" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b9%83%e0%b8%8a%e0%b9%89%e0%b8%87%e0%b8%b2%e0%b8%99%20Python%20%e0%b8%84%e0%b8%a7%e0%b8%9a%e0%b8%84%e0%b8%b8%e0%b8%a1%20Google%20sheet&amp;body=https://dragon-library.github.io/post/python/example/python-control-google-sheet/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://dragon-library.github.io/post/python/example/python-control-google-sheet/&amp;title=%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b9%83%e0%b8%8a%e0%b9%89%e0%b8%87%e0%b8%b2%e0%b8%99%20Python%20%e0%b8%84%e0%b8%a7%e0%b8%9a%e0%b8%84%e0%b8%b8%e0%b8%a1%20Google%20sheet" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b9%83%e0%b8%8a%e0%b9%89%e0%b8%87%e0%b8%b2%e0%b8%99%20Python%20%e0%b8%84%e0%b8%a7%e0%b8%9a%e0%b8%84%e0%b8%b8%e0%b8%a1%20Google%20sheet%20https://dragon-library.github.io/post/python/example/python-control-google-sheet/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://dragon-library.github.io/post/python/example/python-control-google-sheet/&amp;title=%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b9%83%e0%b8%8a%e0%b9%89%e0%b8%87%e0%b8%b2%e0%b8%99%20Python%20%e0%b8%84%e0%b8%a7%e0%b8%9a%e0%b8%84%e0%b8%b8%e0%b8%a1%20Google%20sheet" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
+    </div>
+  </div>
+</div>
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p>วันนี้ Stackpython จะมาบอกวิธีการดึงขอมูลหรือเเก้ไขปรับปรุง ข้อมูลใน Google sheet ด้วย Python</p>
+
+<blockquote>
+<p><strong>Google Sheets</strong> คือ App ในกลุ่มของ Google Drive ซึ่งเป็นนวัตกรรมของทาง Google ซึ่งมีลักษณะการทำงานที่คล้ายกับ Microsoft Excel มีการสร้าง Column Row สามารถใส่ข้อมูลลงไปใน Cell ได้และที่สำคัญคือไม่ต้องติดตั้งที่เครื่อง สามารถใช้งานบน Web ได้ โดย ไฟล์ที่เราทำนั้นจะถูกบันทึกไว้ใน Google Drive ทำให้สามารถเปิดใช้งานได้ ไม่ว่าจะอยู่ที่ใด</p>
+</blockquote>
+
+<p>การเปิดช่องทางการเข้าถึง Google Sheet และกำหนดสิทธิ์ให้กับ Application ของเราที่ต้องการจะเข้าถึงข้อมูลผ่านตัว Google Sheet API มีวิธีดังต่อนี้</p>
+
+<h1 id="เร-มสร-างโปรเจคท">เริ่มสร้างโปรเจคท์</h1>
+
+<p>มาเริ่มสร้างโปรเจ็กต์ เพื่อเตรียมช่องทางการเข้าถึงข้อมูลใน Google Sheet ก่อนอื่นให้เข้า แพลตฟอร์ม Google Cloud และ เข้าเมนูเลือกไปที่ IAMและผู้ดูแลระบบ -&gt; เลือกจัดการทรัพยากร</p>
+
+<p><img src="https://miro.medium.com/max/1010/1*B-8JhFOxSPNzS_YvnKyYkw.jpeg" alt="" /></p>
+
+<ol>
+<li>ไปที่สร้างโปรเจ็กต์ -&gt; ตั้งชื่อ โปรเจ็กต์ และกดสร้าง เมื่้อเสร็จจะมีเมนูที่เราสร้าง เด้งขึ้นมามุมบนขวามือ</li>
+</ol>
+
+<p><img src="https://miro.medium.com/max/481/1*Xvvl-04_xd_9hB4NoDMB_w.jpeg" alt="" /></p>
+
+<hr />
+
+<p><img src="https://miro.medium.com/max/573/1*ORIPGVLdBciSiLY6wNXkkw.jpeg" alt="" /></p>
+
+<hr />
+
+<p><img src="https://miro.medium.com/max/1857/1*2OEXIhG7UdnHU-UhXu2m8g.jpeg" alt="" /></p>
+
+<ol>
+<li>เข้าที่เมนูอีกครั้ง แล้วเลือกไปที่ API และบริการ -&gt; เลือกหน้าแดชบอร์ด จากนั้นคลิกที่ เลือกโปรเจ็กต์ เเละทำการเลือกโปรเจ็กต์ที่เราสร้างไว้ -&gt; ไปที่ข้อมูลรับรอง</li>
+</ol>
+
+<p><img src="https://miro.medium.com/max/684/1*NCkuG-2dECOjn0jF7OUeWQ.jpeg" alt="" /></p>
+
+<hr />
+
+<p><img src="https://miro.medium.com/max/664/1*f9fB3ZUvhFvoK0KVRwyilg.jpeg" alt="" /></p>
+
+<hr />
+
+<p><img src="https://miro.medium.com/max/646/1*IQcnaLGi5Zmh1IWupObhtg.jpeg" alt="" /></p>
+
+<ol>
+<li>เมื่ออยู่ในหน้า ข้อมูลเข้าสู่ระบบ เราจะสร้างข้อมูลรับรองเป็นบัญชีบริการ เลือกที่สร้างข้อมูลรับรอง -&gt; บัญชีบริการ</li>
+</ol>
+
+<p><img src="https://miro.medium.com/max/977/1*WaTYoR-tLZiIWuaneKEDrQ.jpeg" alt="" /></p>
+
+<ol>
+<li>จากนั้นตั้งชื่อเเละกดสร้าง -&gt; ให้เลือกบทบาทเป็นโปรเจ็กต์ ผู้เเก้ไข -&gt; กดสร้างคีย์ และเลือก JSON มันจะโหลดไฟร์มาให้เราเก็บไว้ เมื่อกดปุ่มเสร็จสิ้น จะกลับมาที่หน้าหลัก ข้อมูลเข้าสู่ระบบ จะเห็นรายการ บัญชีบริการที่เราสร้างไว้ แสดงขึ้นมาด้านล่าง</li>
+</ol>
+
+<p><img src="https://miro.medium.com/max/603/1*ovcm3dpKY5aoyDVQqN6PSQ.jpeg" alt="" /></p>
+
+<hr />
+
+<p><img src="https://miro.medium.com/max/60/1*esC5aZctoqTXXQg0Ax1C7w.jpeg?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/666/1*esC5aZctoqTXXQg0Ax1C7w.jpeg" alt="" /></p>
+
+<hr />
+
+<p><img src="https://miro.medium.com/max/566/1*ugDF6u6bSYbb2oTZ-YFUzg.jpeg" alt="" /></p>
+
+<hr />
+
+<p><img src="https://miro.medium.com/max/1245/1*thceZKxNiBRuE3ubrRKR6g.jpeg" alt="" /></p>
+
+<ol>
+<li>ให้ทำการแก้ไขชื่อไฟล์ JSON ที่โหลดออกมาเป็นชื่อ creds.json -&gt;ให้ Copy ข้อมูลส่วน client_email ไว้ เพื่อจะนำไปตั้งสิทธิให้เข้าถึง Google Sheet ที่เราต้องการโดย การกดปุ่ม แชร์ที่ Google Sheet และใส่ข้อมูล email เป็น ข้อมูล client_email ส่วนที่เรา Copy มาและกดส่ง เพื่อ setApplication ให้มีสิทธิเข้าถึง Google Sheet นี้ได้</li>
+</ol>
+
+<p><img src="https://miro.medium.com/max/976/1*lSGFDrXKueBxUzup1rbjBg.jpeg" alt="" /></p>
+
+<hr />
+
+<p><img src="https://miro.medium.com/max/1373/1*Zb3v9LhlixBG_FLdHePO5w.jpeg" alt="" /></p>
+
+<ol>
+<li>จากนั้นให้ไป ไลบรารี ค้นหา Google Sheets API และ Google Drive API เพื่อเปิดใช้งาน -&gt;ไปที่ Google Drive API กดสร้างข้อมูลเข้าสู้ระบบ และเลือก Google Drive API , เว็บเซิร์ฟเวอร์ , ข้อมูลแอปพลิเคชัน , ไม่ ฉันไม่ได้ใช้ แล้วกดฉันต้องใช้ข้อมูลรับรองใด -&gt; กดเสร็จสิ้น</li>
+</ol>
+
+<p><img src="https://miro.medium.com/max/683/1*BVXwlChWgLsE0gZEhl6vUA.jpeg" alt="" /></p>
+
+<hr />
+
+<p><img src="https://miro.medium.com/max/713/1*wWKcSYdI9QvkfVU7-VGqsA.jpeg" alt="" /></p>
+
+<hr />
+
+<p><img src="https://miro.medium.com/max/60/1*902gITott4GzZPizfYXHrg.jpeg?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/718/1*902gITott4GzZPizfYXHrg.jpeg" alt="" /></p>
+
+<hr />
+
+<p><img src="https://miro.medium.com/max/60/1*-Wd0W_b5x8Lr2-DSCKXC3A.jpeg?q=20" alt="" /></p>
+
+<p><img src="https://miro.medium.com/max/899/1*-Wd0W_b5x8Lr2-DSCKXC3A.jpeg" alt="" /></p>
+
+<hr />
+
+<p><img src="https://miro.medium.com/max/782/1*mNWIXH-tLQ75_xqnXTkh-g.jpeg" alt="" /></p>
+
+<h1 id="เข-ยนไพธอนด-งข-อม-ลจาก-google-sheet">เขียนไพธอนดึงข้อมูลจาก Google Sheet</h1>
+
+<p>ขั้นตอนต่อไป เราจะมาเขียน Python ให้ดึงแก้ไขข้อมูลออกมาจาก Google Sheet กัน ก่อนอื่นต้องสร้าง virtualenvironment ใน folderที่เราเก็บไฟร์ที่โหลดมาไว้ (แนะนำให้สร้างใหม่เเละเก็บไว้ด้วยกัน) จากนั้นสร้าง file.py เพื่อใช้ในการเขียนโค้ด -&gt; Install Library ที่จำเป็น oauth2client และ gspread ด้วยคำสั้ง pip install oauth2client , pip install gspread</p>
+
+<p><img src="https://miro.medium.com/max/1124/1*3J4YoVhZIADMzm5bDyu5XA.jpeg" alt="" /></p>
+
+<hr />
+
+<p><img src="https://miro.medium.com/max/746/1*UTSCogrqZM-IZSF9jj3Z6A.jpeg" alt="" /></p>
+
+<hr />
+
+<p><img src="https://miro.medium.com/max/803/1*nNisxjig9TrEuEw5HPiTIA.jpeg" alt="" /></p>
+
+<hr />
+
+<p><img src="https://miro.medium.com/max/790/1*P4burFRy-e6ji3--szg2xQ.jpeg" alt="" /></p>
+
+<p>โอเครเรามาดูโค้ดกัน(อันแรกเป็นการดึงข้อมูลมาแสดง)</p>
+
+<pre><code class="language-py">import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+from pprint import pprint
+scope = [&quot;https://spreadsheets.google.com/feeds&quot;,'https://www.googleapis.com/auth/spreadsheets',&quot;https://www.googleapis.com/auth/drive.file&quot;,&quot;https://www.googleapis.com/auth/drive&quot;]
+cerds = ServiceAccountCredentials.from_json_keyfile_name(&quot;cerds.json&quot;, scope)
+client = gspread.authorize(cerds)
+sheet = client.open(&quot;ชื่อไฟล์งาน&quot;).worksheet('แผ่นที่จะเรียกเปิด') # เป็นการเปิดไปยังหน้าชีตนั้นๆ
+data = sheet.get_all_records()  # การรับรายการของระเบียนทั้งหมด
+pprint(data)
+</code></pre>
+
+<p>ตัวอย่างผลลัพธ์</p>
+
+<p><img src="https://miro.medium.com/max/1862/1*2GLtVjbNW6c4P8ZpF7mQMQ.jpeg" alt="" /></p>
+
+<p>(ต่อไปจะเป็นการแก้ไขข้อความ)</p>
+
+<pre><code class="language-py">import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+from pprint import pprint
+scope = [&quot;https://spreadsheets.google.com/feeds&quot;,'https://www.googleapis.com/auth/spreadsheets',&quot;https://www.googleapis.com/auth/drive.file&quot;,&quot;https://www.googleapis.com/auth/drive&quot;]
+cerds = ServiceAccountCredentials.from_json_keyfile_name(&quot;cerds.json&quot;, scope)
+client = gspread.authorize(cerds)
+sheet = client.open(&quot;ชื่อไฟล์งาน&quot;).worksheet('แผ่นที่จะเรียกเปิด') # เป็นการเปิดไปยังหน้าชีตนั้นๆ
+cell=sheet.cell(4,2).value
+pprint(cell)
+sheet.update_cell(4,2,&quot;แก้ไข&quot;)
+cell=sheet.cell(4,2).value
+pprint(cell)
+</code></pre>
+
+<p>ตัวอย่างผลลัพธ์</p>
+
+<p><img src="https://miro.medium.com/max/1862/1*iN2NI0OPHKF-dNf85cEI8Q.jpeg" alt="" /></p>
+
+<p>นอกจากนี้ยังมีคำสั่งอีกมาก เช่น</p>
+
+<pre><code class="language-py"> sheet.row_value(*) #ใส่เลขที่ต้องการแทน *­­­­­­­­ 
+ sheet.col_value(*) #ใส่เลขที่ต้องการแทน *
+ sheet.delete_row(*) #ใส่เลขที่ต้องการแทน *
+ sheet.delete_columns(*) #ใส่เลขที่ต้องการแทน *
+ sheet.insert_row([&amp;],*)#ใส่เลขที่ต้องการแทน *และข้อความแทน &amp;
+</code></pre>
+
+<p>ลองไปใช้กันดูนะครับ</p>
+
+<blockquote>
+<p>ขอบคุณมากครับที่เข้ามาอ่านบทความของทางเพจ Stackpython ทั้งนี้ หากสงสัยตรงไหนเกี่ยวกับเนื้อหาในบทความสามารถติดต่อสอบถามทางเพจเราได้เลยครับ</p>
+</blockquote>
+
+<p>Reference : <a href="https://medium.com/@stackpython/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99-python-%E0%B8%84%E0%B8%A7%E0%B8%9A%E0%B8%84%E0%B8%B8%E0%B8%A1-google-sheet-665a6dca077d" target="_blank">Medium</a></p>
+
+    </div>
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/google-sheet/">Google sheet</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="https://dragon-library.github.io">Little Dragon</a></h5>
+      <h6 class="card-subtitle">Professor of Artificial Intelligence</h6>
+      <p class="card-text" itemprop="description">My research interests include distributed robotics, mobile computing and programmable matter.</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="/#contact" >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/GeorgeCushen" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ" target="_blank" rel="noopener">
+              <i class="ai ai-google-scholar"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://github.com/gcushen" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+    
+
+    
+    <div class="article-widget">
+      
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item box">
+    <div class="meta-nav meta-next" >Previous <br>
+    <a href="/post/python/example/web-scraping-series-1/python-web-scraping-part-4/" rel="prev">Python Web Scraping Part IV - ทำไมถึง scrape บางเว็บไม่ได้</a></div>
+  </div>
+  
+  <br>
+  <br>
+</div>
+
+    </div>
+    
+
+    
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academia.min.e4fc229c2f28284fc2dfa5b66a52b765.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        
+        <p>
+          
+          Powered by
+          <a href="https://themefisher.com" target="_blank" rel="noopener">themefisher</a> for
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-inline network-icon text-right">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/Twitter" target="_blank" rel="noopener" title="DM Me"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="skype:echo123?call"  title="Skype Me"><i class="fab fa-skype" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://keybase.io/" target="_blank" rel="noopener" title="Chat on Keybase"><i class="fab fa-keybase" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://discourse.gohugo.io" target="_blank" rel="noopener" title="Discuss on Forum"><i class="fas fa-comments" aria-hidden="true"></i></a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
