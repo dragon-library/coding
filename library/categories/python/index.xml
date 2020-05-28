@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Library</title>
-    <link>https://dragon-library.github.io/categories/python/</link>
+    <link>https://dragon-library.github.iodocs/library/categories/python/</link>
     <description>Recent content in Python on Library</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 May 2020 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="https://dragon-library.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://dragon-library.github.iodocs/library/categories/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Google Text-to-Speech.</title>
-      <link>https://dragon-library.github.io/post/google-text-to-speech/</link>
+      <link>https://dragon-library.github.iodocs/library/post/google-text-to-speech/</link>
       <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/post/google-text-to-speech/</guid>
+      <guid>https://dragon-library.github.iodocs/library/post/google-text-to-speech/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -161,10 +161,10 @@ Audio(&#39;speech_it.mp3&#39;, autoplay=True)
     
     <item>
       <title>Google Translate.</title>
-      <link>https://dragon-library.github.io/post/google-translate/</link>
+      <link>https://dragon-library.github.iodocs/library/post/google-translate/</link>
       <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/post/google-translate/</guid>
+      <guid>https://dragon-library.github.iodocs/library/post/google-translate/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -1046,10 +1046,10 @@ except LookupError:                            # ประมวลผลแล�
     
     <item>
       <title>Flask 101 พัฒนาเว็บด้วยภาษาไพธอน(Flask Framework)</title>
-      <link>https://dragon-library.github.io/post/python/tutorials/flask-101/</link>
+      <link>https://dragon-library.github.iodocs/library/post/python/tutorials/flask-101/</link>
       <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/post/python/tutorials/flask-101/</guid>
+      <guid>https://dragon-library.github.iodocs/library/post/python/tutorials/flask-101/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -1306,10 +1306,10 @@ app = Flask(__name__)
     
     <item>
       <title>Python Cheatsheet.</title>
-      <link>https://dragon-library.github.io/post/python/tutorials/cheatsheet/</link>
+      <link>https://dragon-library.github.iodocs/library/post/python/tutorials/cheatsheet/</link>
       <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/post/python/tutorials/cheatsheet/</guid>
+      <guid>https://dragon-library.github.iodocs/library/post/python/tutorials/cheatsheet/</guid>
       <description>
 
 &lt;p&gt;Basic cheatsheet for Python mostly based on the book written by Al Sweigart, &lt;a href=&#34;https://automatetheboringstuff.com/&#34; target=&#34;_blank&#34;&gt;Automate the Boring Stuff with Python&lt;/a&gt; under the &lt;a href=&#34;https://creativecommons.org/licenses/by-nc-sa/3.0/&#34; target=&#34;_blank&#34;&gt;Creative Commons license&lt;/a&gt; and many other sources.&lt;/p&gt;
@@ -6155,10 +6155,10 @@ Your place for free public conda package hosting.&lt;/p&gt;
     
     <item>
       <title>การใช้งาน Python ควบคุม Google sheet</title>
-      <link>https://dragon-library.github.io/post/python/example/python-control-google-sheet/</link>
+      <link>https://dragon-library.github.iodocs/library/post/python/example/python-control-google-sheet/</link>
       <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/post/python/example/python-control-google-sheet/</guid>
+      <guid>https://dragon-library.github.iodocs/library/post/python/example/python-control-google-sheet/</guid>
       <description>
 
 &lt;p&gt;วันนี้ Stackpython จะมาบอกวิธีการดึงขอมูลหรือเเก้ไขปรับปรุง ข้อมูลใน Google sheet ด้วย Python&lt;/p&gt;
@@ -6341,10 +6341,10 @@ pprint(cell)
     
     <item>
       <title>Python Package Index.</title>
-      <link>https://dragon-library.github.io/post/python/tutorials/package_index/</link>
+      <link>https://dragon-library.github.iodocs/library/post/python/tutorials/package_index/</link>
       <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/post/python/tutorials/package_index/</guid>
+      <guid>https://dragon-library.github.iodocs/library/post/python/tutorials/package_index/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;featured.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;While  &lt;a href=&#34;https://docs.python.org/3.8/reference/index.html#reference-index&#34; target=&#34;_blank&#34;&gt;The Python Language Reference&lt;/a&gt;  describes the exact syntax and semantics of the Python language, this library reference manual describes the standard library that is distributed with Python. It also describes some of the optional components that are commonly included in Python distributions.&lt;/p&gt;
@@ -6785,10 +6785,10 @@ pprint(cell)
     
     <item>
       <title>Python Web Scraping Part IV - ทำไมถึง scrape บางเว็บไม่ได้</title>
-      <link>https://dragon-library.github.io/post/python/example/web-scraping-series-1/python-web-scraping-part-4/</link>
+      <link>https://dragon-library.github.iodocs/library/post/python/example/web-scraping-series-1/python-web-scraping-part-4/</link>
       <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/post/python/example/web-scraping-series-1/python-web-scraping-part-4/</guid>
+      <guid>https://dragon-library.github.iodocs/library/post/python/example/web-scraping-series-1/python-web-scraping-part-4/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -6942,10 +6942,10 @@ pprint(cell)
     
     <item>
       <title>File Handling Functions Explained.</title>
-      <link>https://dragon-library.github.io/post/python/tutorials/file-handling-functions/</link>
+      <link>https://dragon-library.github.iodocs/library/post/python/tutorials/file-handling-functions/</link>
       <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/post/python/tutorials/file-handling-functions/</guid>
+      <guid>https://dragon-library.github.iodocs/library/post/python/tutorials/file-handling-functions/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/size/w2000/2020/05/Python-File-Handling-1.png&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
@@ -7589,10 +7589,10 @@ finally:
     
     <item>
       <title>How to Go From Beginner to Pro</title>
-      <link>https://dragon-library.github.io/post/python/tutorials/beginner_to_pro/</link>
+      <link>https://dragon-library.github.iodocs/library/post/python/tutorials/beginner_to_pro/</link>
       <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/post/python/tutorials/beginner_to_pro/</guid>
+      <guid>https://dragon-library.github.iodocs/library/post/python/tutorials/beginner_to_pro/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/size/w2000/2020/05/The-Ultimate-Guide-To-Python-1.png&#34; alt=&#34;The Ultimate Guide to Python: How to Go From Beginner to Pro&#34; /&gt;&lt;/p&gt;
@@ -10111,10 +10111,10 @@ ImportError: No module named data
     
     <item>
       <title>Regular Expressions</title>
-      <link>https://dragon-library.github.io/post/python/tutorials/regular-expressions/</link>
+      <link>https://dragon-library.github.iodocs/library/post/python/tutorials/regular-expressions/</link>
       <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/post/python/tutorials/regular-expressions/</guid>
+      <guid>https://dragon-library.github.iodocs/library/post/python/tutorials/regular-expressions/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -10397,10 +10397,10 @@ else:
     
     <item>
       <title>The Ultimate Python Beginner&#39;s Handbook</title>
-      <link>https://dragon-library.github.io/post/python/tutorials/beginner_handbook/</link>
+      <link>https://dragon-library.github.iodocs/library/post/python/tutorials/beginner_handbook/</link>
       <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/post/python/tutorials/beginner_handbook/</guid>
+      <guid>https://dragon-library.github.iodocs/library/post/python/tutorials/beginner_handbook/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/size/w2000/2020/04/cover-post-smaller.png&#34; alt=&#34;The Ultimate Python Beginner&#39;s Handbook&#34; /&gt;&lt;/p&gt;
@@ -13981,10 +13981,10 @@ Finally block
     
     <item>
       <title>Python Web Scraping Part III - เทคนิคการ extract ข้อมูลด้วย XPath</title>
-      <link>https://dragon-library.github.io/post/python/example/web-scraping-series-1/python-web-scraping-part-3/</link>
+      <link>https://dragon-library.github.iodocs/library/post/python/example/web-scraping-series-1/python-web-scraping-part-3/</link>
       <pubDate>Sun, 12 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/post/python/example/web-scraping-series-1/python-web-scraping-part-3/</guid>
+      <guid>https://dragon-library.github.iodocs/library/post/python/example/web-scraping-series-1/python-web-scraping-part-3/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -14138,10 +14138,10 @@ Finally block
     
     <item>
       <title>Python Web Scraping Part II - Chrome&#39;s Code Inspector</title>
-      <link>https://dragon-library.github.io/post/python/example/web-scraping-series-1/python-web-scraping-part-2/</link>
+      <link>https://dragon-library.github.iodocs/library/post/python/example/web-scraping-series-1/python-web-scraping-part-2/</link>
       <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/post/python/example/web-scraping-series-1/python-web-scraping-part-2/</guid>
+      <guid>https://dragon-library.github.iodocs/library/post/python/example/web-scraping-series-1/python-web-scraping-part-2/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -14237,10 +14237,10 @@ Finally block
     
     <item>
       <title>Python Web Scraping Part I</title>
-      <link>https://dragon-library.github.io/post/python/example/web-scraping-series-1/python-web-scraping-part-1/</link>
+      <link>https://dragon-library.github.iodocs/library/post/python/example/web-scraping-series-1/python-web-scraping-part-1/</link>
       <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/post/python/example/web-scraping-series-1/python-web-scraping-part-1/</guid>
+      <guid>https://dragon-library.github.iodocs/library/post/python/example/web-scraping-series-1/python-web-scraping-part-1/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -14391,10 +14391,10 @@ print(tambon_list)
     
     <item>
       <title>Python List Append VS Python List Extend</title>
-      <link>https://dragon-library.github.io/post/python/tutorials/list_append/</link>
+      <link>https://dragon-library.github.iodocs/library/post/python/tutorials/list_append/</link>
       <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/post/python/tutorials/list_append/</guid>
+      <guid>https://dragon-library.github.iodocs/library/post/python/tutorials/list_append/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/size/w2000/2020/03/Image---Append-vs-Extend-1.png&#34; alt=&#34;Python List Append VS Python List Extend – The Difference Explained with Array Method Examples&#34; /&gt;&lt;/p&gt;
@@ -14781,10 +14781,10 @@ Dictionaries have a particular behavior when you pass them as arguments to  &lt;
     
     <item>
       <title>Python Lists Explained</title>
-      <link>https://dragon-library.github.io/post/python/tutorials/python-lists-explained/</link>
+      <link>https://dragon-library.github.iodocs/library/post/python/tutorials/python-lists-explained/</link>
       <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/post/python/tutorials/python-lists-explained/</guid>
+      <guid>https://dragon-library.github.iodocs/library/post/python/tutorials/python-lists-explained/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixlib=rb-1.2.1&amp;amp;q=80&amp;amp;fm=jpg&amp;amp;crop=entropy&amp;amp;cs=tinysrgb&amp;amp;w=2000&amp;amp;fit=max&amp;amp;ixid=eyJhcHBfaWQiOjExNzczfQ&#34; alt=&#34;Python Lists Explained: Len, Pop, Index, and List Comprehension&#34; /&gt;&lt;/p&gt;
@@ -15060,10 +15060,10 @@ for i in range(50):
     
     <item>
       <title>Python Virtual Environments Explained with Examples</title>
-      <link>https://dragon-library.github.io/post/python/tutorials/virtual-environments/</link>
+      <link>https://dragon-library.github.iodocs/library/post/python/tutorials/virtual-environments/</link>
       <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/post/python/tutorials/virtual-environments/</guid>
+      <guid>https://dragon-library.github.iodocs/library/post/python/tutorials/virtual-environments/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;Python Virtual Environments Explained with Examples&#34; /&gt;&lt;/p&gt;
@@ -15217,10 +15217,10 @@ pip install -r requirements.txt
     
     <item>
       <title>Python String Methods Explained with Examples.</title>
-      <link>https://dragon-library.github.io/post/python/tutorials/string-strip-method/</link>
+      <link>https://dragon-library.github.iodocs/library/post/python/tutorials/string-strip-method/</link>
       <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/post/python/tutorials/string-strip-method/</guid>
+      <guid>https://dragon-library.github.iodocs/library/post/python/tutorials/string-strip-method/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;Python String Methods Explained with Examples&#34; /&gt;&lt;/p&gt;
@@ -15468,10 +15468,10 @@ print(string.split(&amp;quot; &amp;quot;, 2))
     
     <item>
       <title>Python Function Guide</title>
-      <link>https://dragon-library.github.io/post/python/tutorials/python-function-guide/</link>
+      <link>https://dragon-library.github.iodocs/library/post/python/tutorials/python-function-guide/</link>
       <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/post/python/tutorials/python-function-guide/</guid>
+      <guid>https://dragon-library.github.iodocs/library/post/python/tutorials/python-function-guide/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-1.2.1&amp;amp;q=80&amp;amp;fm=jpg&amp;amp;crop=entropy&amp;amp;cs=tinysrgb&amp;amp;w=2000&amp;amp;fit=max&amp;amp;ixid=eyJhcHBfaWQiOjExNzczfQ&#34; alt=&#34;Python Function Guide with Examples&#34; /&gt;&lt;/p&gt;
@@ -15916,10 +15916,10 @@ Hello Bob
     
     <item>
       <title>Lambda Expressions in Python.</title>
-      <link>https://dragon-library.github.io/post/python/tutorials/lambda-expressions/</link>
+      <link>https://dragon-library.github.iodocs/library/post/python/tutorials/lambda-expressions/</link>
       <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/post/python/tutorials/lambda-expressions/</guid>
+      <guid>https://dragon-library.github.iodocs/library/post/python/tutorials/lambda-expressions/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;Lambda Expressions in Python&#34; /&gt;&lt;/p&gt;
@@ -16021,10 +16021,10 @@ list(filtered)
     
     <item>
       <title>Regular Expressions Explained</title>
-      <link>https://dragon-library.github.io/post/python/tutorials/regular-expressions-explained/</link>
+      <link>https://dragon-library.github.iodocs/library/post/python/tutorials/regular-expressions-explained/</link>
       <pubDate>Sun, 07 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/post/python/tutorials/regular-expressions-explained/</guid>
+      <guid>https://dragon-library.github.iodocs/library/post/python/tutorials/regular-expressions-explained/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -16165,10 +16165,10 @@ The match function is defined as:
     
     <item>
       <title>Learning Python From Zero to Hero</title>
-      <link>https://dragon-library.github.io/post/python/tutorials/zero_to_hero/</link>
+      <link>https://dragon-library.github.iodocs/library/post/python/tutorials/zero_to_hero/</link>
       <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/post/python/tutorials/zero_to_hero/</guid>
+      <guid>https://dragon-library.github.iodocs/library/post/python/tutorials/zero_to_hero/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://cdn-media-1.freecodecamp.org/images/1*ueWmI48uuShON-hX7LwI0w.png&#34; alt=&#34;Learning Python: From Zero to Hero&#34; /&gt;&lt;/p&gt;

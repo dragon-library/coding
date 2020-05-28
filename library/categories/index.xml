@@ -2,75 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Library</title>
-    <link>https://dragon-library.github.io/categories/</link>
+    <link>https://dragon-library.github.iodocs/library/categories/</link>
     <description>Recent content in Categories on Library</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 May 2020 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="https://dragon-library.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://dragon-library.github.iodocs/library/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Example</title>
-      <link>https://dragon-library.github.io/categories/example/</link>
+      <link>https://dragon-library.github.iodocs/library/categories/example/</link>
       <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/categories/example/</guid>
+      <guid>https://dragon-library.github.iodocs/library/categories/example/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://dragon-library.github.io/categories/python/</link>
+      <link>https://dragon-library.github.iodocs/library/categories/python/</link>
       <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/categories/python/</guid>
+      <guid>https://dragon-library.github.iodocs/library/categories/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Web Development</title>
-      <link>https://dragon-library.github.io/categories/web-development/</link>
+      <link>https://dragon-library.github.iodocs/library/categories/web-development/</link>
       <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/categories/web-development/</guid>
+      <guid>https://dragon-library.github.iodocs/library/categories/web-development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Articles</title>
-      <link>https://dragon-library.github.io/categories/articles/</link>
+      <link>https://dragon-library.github.iodocs/library/categories/articles/</link>
       <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/categories/articles/</guid>
+      <guid>https://dragon-library.github.iodocs/library/categories/articles/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tutorials</title>
-      <link>https://dragon-library.github.io/categories/tutorials/</link>
+      <link>https://dragon-library.github.iodocs/library/categories/tutorials/</link>
       <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/categories/tutorials/</guid>
+      <guid>https://dragon-library.github.iodocs/library/categories/tutorials/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Series</title>
-      <link>https://dragon-library.github.io/categories/series/</link>
+      <link>https://dragon-library.github.iodocs/library/categories/series/</link>
       <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/categories/series/</guid>
+      <guid>https://dragon-library.github.iodocs/library/categories/series/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CSS</title>
-      <link>https://dragon-library.github.io/categories/css/</link>
+      <link>https://dragon-library.github.iodocs/library/categories/css/</link>
       <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/categories/css/</guid>
+      <guid>https://dragon-library.github.iodocs/library/categories/css/</guid>
       <description></description>
     </item>
     
