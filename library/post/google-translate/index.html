@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academia 4.3.1">
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Little Dragon">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Google Translate มีเครื่องมือให้นักพัฒนานำความสามารถไปใช้กับโปรแกรมภายนอก ผ่านโมดูล googletrans เป็นโมดูลที่นำ Google Translate มาใช้งานร่วมกับ Python">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://dragon-library.github.io/post/google-translate/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#c7254e">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:400,700|Sarabun|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academia.min.1793e6c314ad93524174c58f830b9319.css">
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://dragon-library.github.io/post/google-translate/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Library">
+  <meta property="og:url" content="https://dragon-library.github.io/post/google-translate/">
+  <meta property="og:title" content="Google Translate. | Library">
+  <meta property="og:description" content="Google Translate มีเครื่องมือให้นักพัฒนานำความสามารถไปใช้กับโปรแกรมภายนอก ผ่านโมดูล googletrans เป็นโมดูลที่นำ Google Translate มาใช้งานร่วมกับ Python"><meta property="og:image" content="https://dragon-library.github.io/post/google-translate/featured.jpeg">
+  <meta property="twitter:image" content="https://dragon-library.github.io/post/google-translate/featured.jpeg"><meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2020-05-28T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2020-05-28T00:00:00&#43;00:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>Google Translate. | Library</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Library</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/python/"><span>Python</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/book/"><span>Book</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/courses/"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article py-5" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+    
+    
+    <div class="article-container py-3">
+      <h1 itemprop="name">Google Translate.</h1>
+
+      
+      <p class="page-subtitle">Google Translate มีเครื่องมือให้นักพัฒนานำความสามารถไปใช้กับโปรแกรมภายนอก ผ่านโมดูล googletrans เป็นโมดูลที่นำ Google Translate มาใช้งานร่วมกับ Python</p>
+      
+
+      
+      
+
+
+
+<meta content="2020-05-28 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2020-05-28 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/admin/">Little Dragon</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>May 28, 2020</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 min read
+  </span>
+  
+
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    <a href="/categories/example/">Example</a>, <a href="/categories/python/">Python</a></span>
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://dragon-library.github.io/post/google-translate/&amp;text=Google%20Translate." target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://dragon-library.github.io/post/google-translate/&amp;t=Google%20Translate." target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Google%20Translate.&amp;body=https://dragon-library.github.io/post/google-translate/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://dragon-library.github.io/post/google-translate/&amp;title=Google%20Translate." target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Google%20Translate.%20https://dragon-library.github.io/post/google-translate/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://dragon-library.github.io/post/google-translate/&amp;title=Google%20Translate." target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      
+    </div>
+  </div>
+</div>
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p><img src="featured.jpeg" alt="" /></p>
+
+<ul>
+<li><a href="https://pypi.org/project/googletrans/?fbclid=IwAR2nJome20RmcX1UMc6GCrslpIXn-Uj9TgpnJrfS4etUVd4q9SgZKVpuM6w" target="_blank">Document:</a></li>
+<li>install: <code>pip install googletrans</code></li>
+<li>install: <code>conda install -c conda-forge googletrans</code></li>
+</ul>
+
+<hr />
+
+<ul>
+<li>author: <a href="prasert.k@chula.ac.th" target="_blank">Prasert Kanawattanachai</a></li>
+<li>YouTube: <a href="https://www.youtube.com/prasertcbs" target="_blank">https://www.youtube.com/prasertcbs</a></li>
+<li><a href="https://www.cbs.chula.ac.th/en/" target="_blank">Chulalongkorn Business School</a></li>
+</ul>
+
+<hr />
+
+<pre><code class="language-python">from IPython.display import YouTubeVideo
+YouTubeVideo('9tR1aqQEwGY', width=720, height=405)
+</code></pre>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/9tR1aqQEwGY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<pre><code class="language-python">from googletrans import Translator
+import pandas as pd
+
+# pandas display options
+pd.set_option('display.max_rows', 100)
+
+dlang = pd.read_csv('https://github.com/prasertcbs/basic-dataset/raw/master/google_translate_language_code.csv')
+dlang
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>language</th>
+      <th>code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afrikaans</td>
+      <td>af</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Irish</td>
+      <td>ga</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Albanian</td>
+      <td>sq</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Italian</td>
+      <td>it</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Arabic</td>
+      <td>ar</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Japanese</td>
+      <td>ja</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Azerbaijani</td>
+      <td>az</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Kannada</td>
+      <td>kn</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Basque</td>
+      <td>eu</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Korean</td>
+      <td>ko</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Bengali</td>
+      <td>bn</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Latin</td>
+      <td>la</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Belarusian</td>
+      <td>be</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Latvian</td>
+      <td>lv</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Bulgarian</td>
+      <td>bg</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Lithuanian</td>
+      <td>lt</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Catalan</td>
+      <td>ca</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Macedonian</td>
+      <td>mk</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Chinese Simplified</td>
+      <td>zh-CN</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Malay</td>
+      <td>ms</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Chinese Traditional</td>
+      <td>zh-TW</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Maltese</td>
+      <td>mt</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Croatian</td>
+      <td>hr</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Norwegian</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Czech</td>
+      <td>cs</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Persian</td>
+      <td>fa</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Danish</td>
+      <td>da</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Polish</td>
+      <td>pl</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Dutch</td>
+      <td>nl</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Portuguese</td>
+      <td>pt</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>English</td>
+      <td>en</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Romanian</td>
+      <td>ro</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Esperanto</td>
+      <td>eo</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Russian</td>
+      <td>ru</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>Estonian</td>
+      <td>et</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Serbian</td>
+      <td>sr</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>Filipino</td>
+      <td>tl</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Slovak</td>
+      <td>sk</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>Finnish</td>
+      <td>fi</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>Slovenian</td>
+      <td>sl</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>French</td>
+      <td>fr</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>Spanish</td>
+      <td>es</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>Galician</td>
+      <td>gl</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Swahili</td>
+      <td>sw</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>Georgian</td>
+      <td>ka</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>Swedish</td>
+      <td>sv</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>German</td>
+      <td>de</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Tamil</td>
+      <td>ta</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>Greek</td>
+      <td>el</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>Telugu</td>
+      <td>te</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>Gujarati</td>
+      <td>gu</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Thai</td>
+      <td>th</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>Haitian Creole</td>
+      <td>ht</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>Turkish</td>
+      <td>tr</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>Hebrew</td>
+      <td>iw</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>Ukrainian</td>
+      <td>uk</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>Hindi</td>
+      <td>hi</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>Urdu</td>
+      <td>ur</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>Hungarian</td>
+      <td>hu</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>Vietnamese</td>
+      <td>vi</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>Icelandic</td>
+      <td>is</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>Welsh</td>
+      <td>cy</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>Indonesian</td>
+      <td>id</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>Yiddish</td>
+      <td>yi</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python">translator = Translator() # create object/instance from Translator class
+r=translator.translate('สวัสดี', dest='ja', src='th')
+print(f'{r.text}: {r.pronunciation}')
+</code></pre>
+
+<p>こんにちは！: Kon&rsquo;nichiwa!</p>
+
+<pre><code class="language-python">r=translator.translate('こんにちは', dest='ko')
+print(f'{r.text}: {r.pronunciation}')
+</code></pre>
+
+<pre><code>안녕하세요: annyeonghaseyo
+</code></pre>
+
+<pre><code class="language-python">r=translator.translate('안녕하세요', dest='th')
+print(f'{r.text}: {r.pronunciation}')
+</code></pre>
+
+<pre><code>สวัสดี: S̄wạs̄dī
+</code></pre>
+
+<pre><code class="language-python">r=translator.translate(&quot;life is beautiful&quot;, dest='th')
+r.text
+</code></pre>
+
+<pre><code>'ชีวิตช่างสวยงาม'
+</code></pre>
+
+<pre><code class="language-python">r=translator.translate(&quot;life is beautiful&quot;, dest='it')
+r.text
+</code></pre>
+
+<pre><code>'la vita è bella'
+</code></pre>
+
+<pre><code class="language-python">r=translator.translate(&quot;ฉันรักคุณ&quot;, dest='ja')
+print(f'{r.text}: {r.pronunciation}')
+</code></pre>
+
+<pre><code>わたしは、あなたを愛しています: Watashi wa, anata o aishiteimasu
+</code></pre>
+
+<pre><code class="language-python">r=translator.translate('わたしは、あなたを愛しています', dest='th')
+print(f'{r.text}: {r.pronunciation}')
+</code></pre>
+
+<pre><code>ฉันรักคุณ: C̄hạn rạk khuṇ
+</code></pre>
+
+<pre><code class="language-python">words=['water', 'toilet', 'thank you']
+translations = translator.translate(words, dest='th')
+for t in translations:
+    print(f'{t.origin} -&gt; {t.text} ({t.pronunciation})')
+</code></pre>
+
+<pre><code> water -&gt; น้ำ (N̂ả)
+toilet -&gt; ห้องน้ำ (H̄̂xngn̂ả)
+thank you -&gt; ขอบคุณ (None)
+</code></pre>
+
+<pre><code class="language-python">words=['hello', 'thank you', 'water', 'toilet', 'thank you', 'egg tart', 'muffin', 'green tea']
+
+for w in words:
+    for lang in ['th', 'ja', 'de']:
+        t=translator.translate(w, dest=lang)
+        print(f'{w} -&gt; {t.text} ({t.pronunciation})')
+</code></pre>
+
+<pre><code>  hello -&gt; สวัสดี (S̄wạs̄dī)
+  hello -&gt; こんにちは (Kon'nichiwa)
+  hello -&gt; Hallo (None)
+  thank you -&gt; ขอบคุณ (None)
+  thank you -&gt; ありがとうございました (None)
+  thank you -&gt; Vielen Dank (thank you)
+  water -&gt; น้ำ (N̂ả)
+  water -&gt; 水 (Mizu)
+  water -&gt; Wasser (None)
+  toilet -&gt; トイレ (Toire)
+  toilet -&gt; Toilette (None)
+  thank you -&gt; ขอบคุณ (None)
+  thank you -&gt; ありがとうございました (None)
+  thank you -&gt; Vielen Dank (thank you)
+  egg tart -&gt; ทาร์ตไข่ (None)
+  egg tart -&gt; エッグタルト (None)
+  egg tart -&gt; Eitörtchen (egg tart)
+  muffin -&gt; มัฟฟิน (Mạffin)
+  muffin -&gt; マフィン (Mafin)
+   muffin -&gt; Muffin (None)
+  green tea -&gt; ชาเขียว (None)
+  green tea -&gt; 緑茶 (None)
+  green tea -&gt; grüner Tee (green tea)
+</code></pre>
+
+<pre><code class="language-python">words=['สวัสดี', 'ขอบคุณ', 'ข้าว', 'น้ำ', 'ชา', 'กาแฟ']
+
+for w in words:
+    for lang in ['en', 'ja', 'fr']:
+        t=translator.translate(w, dest=lang)
+        print(f'{w} -&gt; {t.text} | {t.pronunciation} ({lang})')
+</code></pre>
+
+<pre><code>สวัสดี -&gt; Hello! | None (en)
+สวัสดี -&gt; こんにちは！ | Kon'nichiwa! (ja)
+สวัสดี -&gt; salut! | None (fr)
+ขอบคุณ -&gt; thank | None (en)
+ขอบคุณ -&gt; 感謝 | Kansha (ja)
+ขอบคุณ -&gt; remercier | None (fr)
+ข้าว -&gt; rice | None (en)
+ข้าว -&gt; ご飯 | Gohan (ja)
+ข้าว -&gt; riz | None (fr)
+น้ำ -&gt; water | None (en)
+น้ำ -&gt; 水 | Mizu (ja)
+น้ำ -&gt; l'eau | None (fr)
+ชา -&gt; tea | None (en)
+ชา -&gt; お茶 | Ocha (ja)
+ชา -&gt; thé | None (fr)
+กาแฟ -&gt; coffee | None (en)
+กาแฟ -&gt; コーヒー | Kōhī (ja)
+กาแฟ -&gt; café | None (fr)
+</code></pre>
+
+<h2 id="translate-and-save-to-csv-excel">translate and save to CSV, Excel</h2>
+
+<pre><code class="language-python">words=['สวัสดี', 'ขอบคุณ', 'ข้าว', 'น้ำ', 'ชา', 'กาแฟ', 'โรงแรม', 'ห้องน้ำ', 'สนามบิน', 'ร้านอาหาร']
+df=pd.DataFrame(words, columns=['th'])
+df
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>th</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>สวัสดี</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ขอบคุณ</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ข้าว</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>น้ำ</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ชา</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>กาแฟ</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>โรงแรม</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>ห้องน้ำ</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>สนามบิน</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>ร้านอาหาร</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python">df.to_csv('basic_th.csv', index=False)
+</code></pre>
+
+<pre><code class="language-python">df = pd.read_csv('basic_th.csv')
+df
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>th</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>สวัสดี</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ขอบคุณ</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ข้าว</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>น้ำ</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ชา</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>กาแฟ</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>โรงแรม</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>ห้องน้ำ</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>สนามบิน</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>ร้านอาหาร</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python">lang=['en', 'la', 'fr', 'ja', 'zh-CN', 'fa']
+for dest in lang:
+    df[dest]=df.apply(lambda r: translator.translate(r['th'], dest=dest).text, axis=1)
+df
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>th</th>
+      <th>en</th>
+      <th>la</th>
+      <th>fr</th>
+      <th>ja</th>
+      <th>zh-CN</th>
+      <th>fa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>สวัสดี</td>
+      <td>Hello!</td>
+      <td>Salve!</td>
+      <td>salut!</td>
+      <td>こんにちは！</td>
+      <td>你好！</td>
+      <td>سلام!</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ขอบคุณ</td>
+      <td>thank</td>
+      <td>gratias ago</td>
+      <td>remercier</td>
+      <td>感謝</td>
+      <td>谢谢</td>
+      <td>تشکر</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ข้าว</td>
+      <td>rice</td>
+      <td>rice</td>
+      <td>riz</td>
+      <td>ご飯</td>
+      <td>白饭</td>
+      <td>برنج</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>น้ำ</td>
+      <td>water</td>
+      <td>aqua</td>
+      <td>l'eau</td>
+      <td>水</td>
+      <td>水</td>
+      <td>اب</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ชา</td>
+      <td>tea</td>
+      <td>tea</td>
+      <td>thé</td>
+      <td>お茶</td>
+      <td>茶</td>
+      <td>چای</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>กาแฟ</td>
+      <td>coffee</td>
+      <td>capulus</td>
+      <td>café</td>
+      <td>コーヒー</td>
+      <td>咖啡</td>
+      <td>قهوه</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>โรงแรม</td>
+      <td>hotel</td>
+      <td>deversorium</td>
+      <td>Hôtel</td>
+      <td>ホテル</td>
+      <td>旅馆</td>
+      <td>هتل</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>ห้องน้ำ</td>
+      <td>toilet</td>
+      <td>CULTUS</td>
+      <td>toilette</td>
+      <td>トイレ</td>
+      <td>厕所</td>
+      <td>توالت</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>สนามบิน</td>
+      <td>airport</td>
+      <td>aeroportus</td>
+      <td>aéroport</td>
+      <td>空港</td>
+      <td>飞机场</td>
+      <td>فرودگاه</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>ร้านอาหาร</td>
+      <td>Restaurant</td>
+      <td>popina</td>
+      <td>Restaurant</td>
+      <td>飲食店</td>
+      <td>餐厅</td>
+      <td>رستوران</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python">df.to_csv('translation.csv', index=False)
+df.to_excel('translation.xlsx', index=False)
+</code></pre>
+
+<p>อีกหนึ่งตัวอย่างการนำไปใช้งาน</p>
+
+<pre><code class="language-py">‘’’
+Create By Joompot Sriyapan
+Date 29/3/2019
+Name
+  Google Translate Example 1
+Description
+  แปลภาษาอังกฤษเป็นไทยด้วย Python
+Required
+  python 3.7.3
+  googletrans 2.4.0
+Pre-programmed
+  pip install googletrans
+‘’’
+from googletrans import Translator
+T = Translator()
+source = “Hello, world”
+try:
+  dest = T.translate(source,src=”en”,dest=”th”).text
+  print(dest)
+except:
+  print (“Error!!!”)
+
+</code></pre>
+
+<blockquote>
+<p>Reference : - <a href="https://medium.com/@JoTaijiquan/google-translate-with-python-2b4db669f6fa" target="_blank">https://medium.com/@JoTaijiquan/google-translate-with-python-2b4db669f6fa</a></p>
+</blockquote>
+
+<hr />
+
+<h2 id="goslate">goslate</h2>
+
+<p>ิอีกโมดูลหนึ่งคือ goslate เป็นโมดูลที่นำ Google Translate มาใช้งานร่วมกับ Python รองรับทั้ง Python 2 และ Python 3 (License: MIT) <a href="https://pypi.python.org/pypi/goslate" target="_blank">https://pypi.python.org/pypi/goslate</a></p>
+
+<p>สามารถติดตั้งได้ง่าย ๆ โดยใช้คำสั่ง pip ดังนี้ครับ</p>
+
+<pre><code>pip install goslate
+</code></pre>
+
+<p>ในการใช้งานสามารถใช้งานได้ง่าย ๆ ดังนี้ครับ</p>
+
+<p>gs.translate(&lsquo;ข้อความ&rsquo;, &lsquo;รหัสภาษา เช่น en คือ ภาษาอังกฤษ th คือ ภาษาไทย&rsquo;)</p>
+
+<p>ตัวอย่าง</p>
+
+<pre><code>&gt;&gt;&gt; import goslate
+&gt;&gt;&gt; gs = goslate.Goslate()
+&gt;&gt;&gt; print(gs.translate('hello world', 'th')) #
+สวัสดีชาวโลก
+&gt;&gt;&gt; print(gs.translate('สวัสดีชาวโลก', 'en'))
+Hello world!
+</code></pre>
+
+<p>ตัวอย่างการนำไปประยุกต์ใช้</p>
+
+<p>นำโมดูล SpeechRecognition มาใช้รับเสียงจากชาวต่างชาติ แล้วใช้โมดูล goslate มาแปลเป็นข้อความภาษาไทย</p>
+
+<pre><code class="language-py">import goslate
+import speech_recognition as sr
+gs = goslate.Goslate()
+r = sr.Recognizer()
+with sr.Microphone() as source:                # เรียกใช้  Microphone พื้นฐานของระบบ
+    audio = r.listen(source)                   # รับเสียงเข้ามาแล้วประมวลผลส่งไปยัง Google Speech Recognition API
+try:
+    a = r.recognize(audio)
+    b = gs.translate(a, 'th')     # แสดงข้อความจากเสียงด้วย Google Speech Recognition
+    print(b)
+except LookupError:                            # ประมวลผลแล้วไม่รู้จักหรือเข้าใจเสียง
+        print(&quot;Could not understand audio&quot;)
+</code></pre>
+
+<blockquote>
+<p>Reference : <a href="https://python3.wannaphong.com/2015/01/python.html" target="_blank">https://python3.wannaphong.com/2015/01/python.html</a></p>
+</blockquote>
+
+    </div>
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/google-translate/">Google Translate</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="https://dragon-library.github.io">Little Dragon</a></h5>
+      <h6 class="card-subtitle">Professor of Artificial Intelligence</h6>
+      <p class="card-text" itemprop="description">My research interests include distributed robotics, mobile computing and programmable matter.</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="/#contact" >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/GeorgeCushen" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ" target="_blank" rel="noopener">
+              <i class="ai ai-google-scholar"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://github.com/gcushen" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+    
+
+    
+    <div class="article-widget">
+      
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item box ">
+    <div class="meta-nav meta-prev">Next <br>
+    <a href="/post/google-text-to-speech/" rel="next">Google Text-to-Speech.</a></div>
+  </div>
+  
+  
+  
+  <div class="post-nav-item box">
+    <div class="meta-nav meta-next" >Previous <br>
+    <a href="/post/css-handbook/" rel="prev">The CSS Handbook</a></div>
+  </div>
+  
+  <br>
+  <br>
+</div>
+
+    </div>
+    
+
+    
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academia.min.e4fc229c2f28284fc2dfa5b66a52b765.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        
+        <p>
+          
+          Powered by
+          <a href="https://themefisher.com" target="_blank" rel="noopener">themefisher</a> for
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-inline network-icon text-right">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/Twitter" target="_blank" rel="noopener" title="DM Me"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="skype:echo123?call"  title="Skype Me"><i class="fab fa-skype" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://keybase.io/" target="_blank" rel="noopener" title="Chat on Keybase"><i class="fab fa-keybase" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://discourse.gohugo.io" target="_blank" rel="noopener" title="Discuss on Forum"><i class="fas fa-comments" aria-hidden="true"></i></a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
