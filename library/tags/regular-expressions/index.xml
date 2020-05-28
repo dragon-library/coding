@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Regular Expressions on Library</title>
-    <link>https://dragon-library.github.iodocs/library/tags/regular-expressions/</link>
+    <link>https://dragon-library.github.io/docs/library/tags/regular-expressions/</link>
     <description>Recent content in Regular Expressions on Library</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 15 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="https://dragon-library.github.iodocs/library/tags/regular-expressions/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://dragon-library.github.io/docs/library/tags/regular-expressions/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Regular Expressions</title>
-      <link>https://dragon-library.github.iodocs/library/post/python/tutorials/regular-expressions/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/regular-expressions/</link>
       <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.iodocs/library/post/python/tutorials/regular-expressions/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/regular-expressions/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -299,10 +299,10 @@ else:
     
     <item>
       <title>Regular Expressions Explained</title>
-      <link>https://dragon-library.github.iodocs/library/post/python/tutorials/regular-expressions-explained/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/regular-expressions-explained/</link>
       <pubDate>Sun, 07 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.iodocs/library/post/python/tutorials/regular-expressions-explained/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/regular-expressions-explained/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>File Handling on Library</title>
-    <link>https://dragon-library.github.iodocs/library/tags/file-handling/</link>
+    <link>https://dragon-library.github.io/docs/library/tags/file-handling/</link>
     <description>Recent content in File Handling on Library</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 07 May 2020 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="https://dragon-library.github.iodocs/library/tags/file-handling/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://dragon-library.github.io/docs/library/tags/file-handling/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>File Handling Functions Explained.</title>
-      <link>https://dragon-library.github.iodocs/library/post/python/tutorials/file-handling-functions/</link>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/file-handling-functions/</link>
       <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.iodocs/library/post/python/tutorials/file-handling-functions/</guid>
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/file-handling-functions/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/size/w2000/2020/05/Python-File-Handling-1.png&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
