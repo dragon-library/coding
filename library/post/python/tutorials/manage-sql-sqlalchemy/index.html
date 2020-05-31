@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academia 4.3.1">
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Little Dragon">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="sqlalchemy เป็นมอดูลในไพธอนที่ใช้สำหรับเชื่อมต่อกับระบบจัดการฐานข้อมูล SQL โดยควบคุมฐานข้อมูลในรูปแบบที่สั่งข้อมูลเหมือนเป็นออบเจ็กต์ตามแนวคิดเชิงวัตถุ  บทความนี้จะอธิบายแนวคิดเบื้องต้นและวิธีการใช้ sqlalchemy เพื่อจัดการกับฐานข้อมูลอย่างง่าย">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://dragon-library.github.io/docs/library/post/python/tutorials/manage-sql-sqlalchemy/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#c7254e">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:400,700|Sarabun|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/docs/library/css/academia.min.1793e6c314ad93524174c58f830b9319.css">
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="manifest" href="/docs/library/site.webmanifest">
+  <link rel="icon" type="image/png" href="/docs/library/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/docs/library/img/icon-192.png">
+
+  <link rel="canonical" href="https://dragon-library.github.io/docs/library/post/python/tutorials/manage-sql-sqlalchemy/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Library">
+  <meta property="og:url" content="https://dragon-library.github.io/docs/library/post/python/tutorials/manage-sql-sqlalchemy/">
+  <meta property="og:title" content="จัดการฐานข้อมูล SQL ด้วย sqlalchemy | Library">
+  <meta property="og:description" content="sqlalchemy เป็นมอดูลในไพธอนที่ใช้สำหรับเชื่อมต่อกับระบบจัดการฐานข้อมูล SQL โดยควบคุมฐานข้อมูลในรูปแบบที่สั่งข้อมูลเหมือนเป็นออบเจ็กต์ตามแนวคิดเชิงวัตถุ  บทความนี้จะอธิบายแนวคิดเบื้องต้นและวิธีการใช้ sqlalchemy เพื่อจัดการกับฐานข้อมูลอย่างง่าย"><meta property="og:image" content="https://dragon-library.github.io/docs/library/post/python/tutorials/manage-sql-sqlalchemy/featured.png">
+  <meta property="twitter:image" content="https://dragon-library.github.io/docs/library/post/python/tutorials/manage-sql-sqlalchemy/featured.png"><meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2020-05-31T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2020-05-31T00:00:00&#43;00:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>จัดการฐานข้อมูล SQL ด้วย sqlalchemy | Library</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/docs/library/">Library</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/docs/library/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/docs/library/python/"><span>Python</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/docs/library/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/docs/library/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/docs/library/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/docs/library/book/"><span>Book</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/docs/library/courses/"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/docs/library/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article py-5" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+    
+    
+    <div class="article-container py-3">
+      <h1 itemprop="name">จัดการฐานข้อมูล SQL ด้วย sqlalchemy</h1>
+
+      
+      <p class="page-subtitle">sqlalchemy เป็นมอดูลในไพธอนที่ใช้สำหรับเชื่อมต่อกับระบบจัดการฐานข้อมูล SQL โดยควบคุมฐานข้อมูลในรูปแบบที่สั่งข้อมูลเหมือนเป็นออบเจ็กต์ตามแนวคิดเชิงวัตถุ  บทความนี้จะอธิบายแนวคิดเบื้องต้นและวิธีการใช้ sqlalchemy เพื่อจัดการกับฐานข้อมูลอย่างง่าย</p>
+      
+
+      
+      
+
+
+
+<meta content="2020-05-31 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2020-05-31 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/docs/library/authors/admin/">Little Dragon</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>May 31, 2020</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 min read
+  </span>
+  
+
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    <a href="/docs/library/categories/tutorials/">Tutorials</a>, <a href="/docs/library/categories/python/">Python</a></span>
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://dragon-library.github.io/docs/library/post/python/tutorials/manage-sql-sqlalchemy/&amp;text=%e0%b8%88%e0%b8%b1%e0%b8%94%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%90%e0%b8%b2%e0%b8%99%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%20SQL%20%e0%b8%94%e0%b9%89%e0%b8%a7%e0%b8%a2%20sqlalchemy" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://dragon-library.github.io/docs/library/post/python/tutorials/manage-sql-sqlalchemy/&amp;t=%e0%b8%88%e0%b8%b1%e0%b8%94%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%90%e0%b8%b2%e0%b8%99%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%20SQL%20%e0%b8%94%e0%b9%89%e0%b8%a7%e0%b8%a2%20sqlalchemy" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=%e0%b8%88%e0%b8%b1%e0%b8%94%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%90%e0%b8%b2%e0%b8%99%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%20SQL%20%e0%b8%94%e0%b9%89%e0%b8%a7%e0%b8%a2%20sqlalchemy&amp;body=https://dragon-library.github.io/docs/library/post/python/tutorials/manage-sql-sqlalchemy/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://dragon-library.github.io/docs/library/post/python/tutorials/manage-sql-sqlalchemy/&amp;title=%e0%b8%88%e0%b8%b1%e0%b8%94%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%90%e0%b8%b2%e0%b8%99%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%20SQL%20%e0%b8%94%e0%b9%89%e0%b8%a7%e0%b8%a2%20sqlalchemy" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=%e0%b8%88%e0%b8%b1%e0%b8%94%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%90%e0%b8%b2%e0%b8%99%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%20SQL%20%e0%b8%94%e0%b9%89%e0%b8%a7%e0%b8%a2%20sqlalchemy%20https://dragon-library.github.io/docs/library/post/python/tutorials/manage-sql-sqlalchemy/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://dragon-library.github.io/docs/library/post/python/tutorials/manage-sql-sqlalchemy/&amp;title=%e0%b8%88%e0%b8%b1%e0%b8%94%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%90%e0%b8%b2%e0%b8%99%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%20SQL%20%e0%b8%94%e0%b9%89%e0%b8%a7%e0%b8%a2%20sqlalchemy" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      
+    </div>
+  </div>
+</div>
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      <p><img src="featured.png" alt="" /></p>
+
+<p><strong>สารบัญ</strong></p>
+
+<p>๛ แนวคิดการควบคุมฐานข้อมูลในรูปออบเจ็กต์<br />
+๛ การติดตั้ง<br />
+๛ การเริ่มต้นเชื่อมต่อกับฐานข้อมูลเพื่อเตรียมการใช้งาน<br />
+๛ การสร้างคลาสตารางข้อมูล<br />
+๛ การเตรียมไฟล์แบบจำลองและตัวสร้างเซสชัน<br />
+๛ การเพิ่มข้อมูลลงไป<br />
+๛ การอ่านข้อมูลในตาราง (query)<br />
+๛ การอ่านข้อมูลทั้งหมดใส่ลิสต์ (all)<br />
+๛ การกำหนดวิธีการเรียงลำดับข้อมูล (order_by)<br />
+๛ การเอาข้อมูลเฉพาะตัวแรกตัวเดียว (first)<br />
+๛ การจำกัดเอาข้อมูลเฉพาะบางส่วน (limit และ offset)<br />
+๛ การกำหนดเงื่อนไขข้อมูลที่จะอ่าน (filter)<br />
+๛ การแก้ข้อมูล (update)<br />
+๛ การลบข้อมูลออก (delete)<br />
+๛ การย้อนคืนสิ่งที่ทำกลับไป (rollback)<br />
+๛ การป้อนคำสั่ง SQL ใส่โดยตรง (execute)</p>
+
+<p><strong>sqlalchemy</strong> เป็นมอดูลในไพธอนที่ใช้สำหรับเชื่อมต่อกับระบบจัดการฐานข้อมูล SQL โดยควบคุมฐานข้อมูลในรูปแบบที่สั่งข้อมูลเหมือนเป็นออบเจ็กต์ตามแนวคิดเชิงวัตถุ</p>
+
+<p>บทความนี้จะอธิบายแนวคิดเบื้องต้นและวิธีการใช้ sqlalchemy เพื่อจัดการกับฐานข้อมูลอย่างง่าย</p>
+
+<p><strong>แนวคิดการควบคุมฐานข้อมูลในรูปออบเจ็กต์介</strong></p>
+
+<p>ปกติการเชื่อมต่อกับฐานข้อมูล SQL จะทำโดยใช้โค้ดคำสั่งภาษา SQL แม้ว่าบางทีอาจไม่ได้สั่งโดยตรงแต่ผ่านตัวกลางอะไรก็ตาม</p>
+
+<p>ไพธอนมีมอดูลมาตรฐานที่ใช้จัดการฐานข้อมูลอยู่แล้วคือ sqlite3 อย่างไรก็ตาม มอดูลนี้เป็นแค่ตัวกลางสำหรับส่งโค้ดคำสั่ง SQL เข้าไปสั่งฐานข้อมูลเท่านั้น เรายังคงต้องเขียนโค้ดควบคุมด้วยตัวเอง</p>
+
+<p>เกี่ยวกับการใช้ sqlite3 ได้เขียนถึงไปใน &gt;&gt; <a href="https://phyblas.hinaboshi.com/20200519" target="_blank">https://phyblas.hinaboshi.com/20200519</a></p>
+
+<p>แต่หากใช้ sqlalchemy แม้จะใช้ควบคุมฐานข้อมูล SQL เหมือนกัน แต่ใช้วิธีการต่างกัน คือ sqlalchemy จะเป็นการควบคุมทางอ้อม เรามักจะไม่ต้องพิมพ์โค้ดคำสั่ง SQL เองโดยตรง</p>
+
+<p>วิธีการของ sqlalchemy คือมองว่าตารางข้อมูลในฐานข้อมูลนั้นเป็นออบเจ็กต์ตัวหนึ่ง โดยออบเจ็กต์นั้นจะมีฟังก์ชันหรือเมธอดต่างๆซึ่งเมื่อใช้แล้วจะไปสร้างโค้ดคำสั่ง SQL สั่งฐานข้อมูลอีกที</p>
+
+<p>ดังนั้นแล้วการควบคุมออบเจ็กต์นั้นก็เป็นการควบคุมข้อมูลในฐานข้อมูล ถ้าเราต้องการดึงข้อมูลในฐานข้อมูลมาอ่าน sqlalchemy ก็จะไปสร้างคำสั่งดึงข้อมูลมาให้ ถ้าเราทำความเปลี่ยนแปลงอะไรกับออบเจ็กต์ มันก็จะไปเปลี่ยนแปลงตัวข้อมูลในฐานข้อมูลด้วยโดยอัตโนมัติ</p>
+
+<p>การที่ทำแบบนี้ได้เพราะในตัวมอดูล sqlalchemy นั้นมีการตั้งความเชื่อมโยงระหว่างการกระทำต่อตัวออบเจ็กต์ กับคำสั่ง SQL สำหรับสั่งฐานข้อมูล</p>
+
+<p>แนวคิดแบบนี้เรียกว่า<strong>การจับคู่เชื่อมโยงระหว่างเชิงวัตถุและเชิงสัมพันธ์ (Object-Relational mapping)</strong> หรือมักเรียกย่อๆว่า <strong>ORM</strong></p>
+
+<p>นอกจาก sqlalchemy แล้วในไพธอนก็ยังมีมอดูลตัวอื่นที่ทำคล้ายๆกันนี้ เช่น <a href="https://tortoise-orm.readthedocs.io/" target="_blank">tortoise-orm</a> รวมถึง <a href="https://www.djangoproject.com/" target="_blank">django</a> ซึ่งเป็นมอดูลทำเฟรมเวิร์กเขียนเว็บ ก็มีมอดูลย่อยที่ควบคุมฐานข้อมูลแบบ ORM เช่นเดียวกัน</p>
+
+<p>sqlalchemy อาจใช้คู่กับมอดูลไพธอนสำหรับเขียนเว็บที่ไม่ได้มี ORM อยู่ในตัวสำเร็จเหมือนอย่างที่ django มีแบบนั้น เช่น flask หรือ responder</p>
+
+<p>หากเทียบกับในภาษารูบีก็เหมือนกับมอดูล activerecord ซึ่งมักจะใช้คู่กับ ruby on rails เฟรมเวิร์กเขียนเว็บยอดนิยมตัวหนึ่ง</p>
+
+<p>sqlalchemy อาจใช้ได้กับฐานข้อมูลต่างๆเหล่านี้</p>
+
+<ul>
+<li>SQLite</li>
+<li>MySQL</li>
+<li>PostgreSQL</li>
+<li>Oracle</li>
+<li>Mycrosoft SQL Server</li>
+<li>Firebird</li>
+<li>Sybase</li>
+</ul>
+
+<p>ซึ่งฐานข้อมูลแต่ละตัวนั้นก็จะมีลักษณะการเขียนที่ต่างกันออกไป และ sqlalchemy ช่วยรองรับความแตกต่างนี้ให้ได้ในระดับหนึ่ง อย่างไรก็ตามความต่างนี้ก็ส่งผลอยู่บ้าง แต่พวกคำสั่งพื้นฐานจะใช้ได้ไม่ต่างกันนัก</p>
+
+<p>ในบทความนี้จะใช้ SQLite เป็นตัวอย่าง แต่วิธีการสามารถนำไปใช้กับฐานข้อมูลชนิดอื่นได้เช่นกัน แม้อาจมีรายละเอียดหรือผลลัพธ์ต่างกันออกไปบ้าง</p>
+
+<p>เมื่อใช้ sqlalchemy แล้วจะทำให้เราอ่านเขียนข้อมูลในฐานข้อมูล SQL ได้โดยไม่ต้องเขียนโค้ดภาษา SQL โดยตรงเลย เพียงแต่ในเบื้องหลังการทำงานของมันจริงๆแล้วก็คือสร้างโค้ด SQL โดยอัตโนมัติเพื่อไปสั่งอีกที ดังนั้นก็ยังควรจะรู้โค้ด SQL อยู่ เมื่อมีปัญหาจะได้เข้าใจว่าเกิดอะไรขึ้น อีกทั้งคำสั่งลึกๆซับซ้อนจำเพาะบางอย่างเขียนโค้ด SQL สั่งเองอาจจะเร็วกว่าด้วย</p>
+
+<p>ปกติเวลาเกิดข้อผิดพลาดอะไรขึ้นระหว่างติดต่อกับฐานข้อมูลอยู่ sqlalchemy ก็จะแสดงโค้ด SQL ที่ใช้ตอนนั้นให้ดูไปด้วย สามารถดูโค้ดเพื่อให้เข้าใจได้มากขึ้นว่ามีข้อผิดพลาดอะไร</p>
+
+<p><strong>การติดตั้ง介</strong></p>
+
+<p>sqlalchemy ไม่ใช่มอดูลมาตรฐานของไพธอน ต้องติดตั้งเพิ่มเติมเอง ซึ่งก็ทำได้ง่ายโดยใช้ pip</p>
+
+<pre><code class="language-py">pip install SQLAlchemy
+</code></pre>
+
+<p>หรือ conda</p>
+
+<pre><code class="language-py">conda install -c anaconda sqlalchemy
+</code></pre>
+
+<p><strong>การเริ่มต้นเชื่อมต่อกับฐานข้อมูลเพื่อเตรียมการใช้งาน介</strong></p>
+
+<p>ขอเริ่มด้วยการยกตัวอย่างการใช้ sqlalchemy ทำการเชื่อมต่อกับฐานข้อมูล สร้างตารางข้อมูลในนั้น จากนั้นเติมข้อมูลในตาราง และสุดท้ายคือดูข้อมูลในตาราง</p>
+
+<pre><code class="language-python">import sqlalchemy
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
+
+# สร้างคลาสแบบจำลองพื้นฐาน
+Base = declarative_base()
+
+# สร้างคลาสตารางฐานข้อมูลนักเรียน
+class Nakrian(Base):
+    __tablename__ = 'nakrian'
+    chue = sqlalchemy.Column(sqlalchemy.String,primary_key=True)
+    ayu = sqlalchemy.Column(sqlalchemy.Integer)
+    sung = sqlalchemy.Column(sqlalchemy.Float)
+    
+    def __repr__(self):
+        return f'{self.chue} อายุ {self.ayu} สูง {self.sung*100:.0f} ซม.'
+
+# สร้างตัวเชื่อมต่อกับฐานข้อมูล sqlite ในไฟล์ yurudata.db
+engine = sqlalchemy.create_engine('sqlite:///yurudata.db')
+
+# ทำการสร้างตารางขึ้นมาในฐานข้อมูล SQL จริงๆ
+Base.metadata.create_all(engine)
+
+# สร้างเซชชัน
+sm = sessionmaker(engine)
+session = sm()
+
+
+
+# เข้าสู่ขั้นตอนใช้งาน
+
+# สร้างออบเจ็กต์นักเรียนคนแรก
+nakrian1 = Nakrian(chue='ริเสะ',ayu=15,sung=1.46)
+# ใส่นักเรียนคนแรกลงในฐานข้อมูล
+session.add(nakrian1)
+
+# สร้างออบเจ็กต์นักเรียนคนที่ ๒ และ ๓
+nakrian2 = Nakrian(chue='อายาโนะ',ayu=14,sung=1.59)
+nakrian3 = Nakrian(chue='ซากุราโกะ',ayu=13,sung=1.53)
+# ใส่นักเรียนคนที่ ๒ และ ๓ ลงในฐานข้อมูลพร้อมกันทีเดียว
+session.bulk_save_objects([nakrian2,nakrian3])
+
+# บันทึกความเปลี่ยนแปลงลงในฐานข้อมูลจริงๆ
+session.commit()
+
+# เปิดดูข้อมูลทั้งหมดในฐานข้อมูล
+for nakrian in session.query(Nakrian).order_by(Nakrian.ayu):
+    print(nakrian)
+</code></pre>
+
+<p>ผลที่ได้</p>
+
+<pre><code class="language-javascript">ซากุราโกะ อายุ 13 สูง 153 ซม.
+อายาโนะ อายุ 14 สูง 159 ซม.
+ริเสะ อายุ 15 สูง 146 ซม.
+</code></pre>
+
+<p>จากตัวอย่างจะเห็นว่าขั้นตอนการเตรียมการใช้งานโดยรวมก็จะมีอยู่ดังนี้</p>
+
+<ul>
+<li><p>สร้างคลาสแบบจำลองพื้นฐาน (Base) จาก sqlalchemy.ext.declarative.declarative_base()</p></li>
+
+<li><p>สร้างคลาสตารางฐานข้อมูลนักเรียนขึ้นมาโดยรับทอดจากแบบจำลองพื้นฐานนั้น</p></li>
+
+<li><p>สร้างออบเจ็กต์ตัวเชื่อมต่อกับฐานข้อมูล (ใน sqlalchemy จะเรียกว่าเป็น engine หรือเครื่องยนต์) โดยใช้ sqlalchemy.create_engine() แล้วระบุชื่อฐานข้อมูลที่จะเชื่อมต่อ</p>
+
+<p>ในกรณีของ SQLite ดังตัวอย่างนี้จะเขียนเป็น sqlalchemy.create_engine(&lsquo;sqlite:///พาธและชื่อไฟล์ฐานข้อมูล&rsquo;)</p></li>
+
+<li><p>สร้างตารางขึ้นตามแบบจำลองที่สร้างไว้ Base.metadata.create_all(engine)</p></li>
+
+<li><p>สร้างตัวสร้างเซชชันขึ้นมาจาก sqlalchemy.orm.sessionmaker()</p></li>
+
+<li><p>สร้างเซชชันขึ้นมาจากตัวสร้างเซชชัน</p></li>
+</ul>
+
+<p>หลังจากนั้นก็เข้าสู่ขั้นตอนการนำมาใช้งานได้ โดยสิ่งที่จะต้องใช้คือตัว session และตัวคลาสของตารางข้อมูลที่เราสร้างขึ้นมาจากขั้นเตรียมการ</p>
+
+<p>รายละเอียดในส่วนการใช้งานนั้นจะอธิบายอีกทีหลังในหัวข้อถัดๆไป</p>
+
+<p>ฟังก์ชันที่ใช้นั้นกระจัดกระจายอยู่ตามมอดูลย่อยต่างๆ ตัวหลักๆที่ใช้เป็นประจำมีดังนี้</p>
+
+<p>ชื่อฟังก์ชัน</p>
+
+<p>หน้าที่</p>
+
+<p><code>sqlalchemy.create_engine</code></p>
+
+<p>สร้างตัวเชื่อมต่อกับฐานข้อมูล</p>
+
+<p><code>sqlalchemy.orm.sessionmaker</code></p>
+
+<p>ตัวสร้างเซสชันการเชื่อมต่อ</p>
+
+<p><code>sqlalchemy.ext.declarative.declarative_base</code></p>
+
+<p>ตัวสร้างคลาสที่เป็นฐานของแบบจำลองตารางข้อมูล</p>
+
+<p><code>sqlalchemy.Column</code></p>
+
+<p>สร้างออบเจ็กต์ที่แทนสดมภ์ของตารางข้อมูล</p>
+
+<p><code>sqlalchemy.String</code><br />
+<code>sqlalchemy.Integer</code><br />
+<code>sqlalchemy.Float</code><br />
+ฯลฯ</p>
+
+<p>คลาสแทนชนิดข้อมูล สายอักขระ, เลขจำนวนเต็ม, เลขทศนิยม, ฯลฯ</p>
+
+<p>การแค่ import sqlalchemy เข้ามาอย่างเดียวไม่ได้ทำให้สามารถเรียกใช้พวก sqlalchemy.orm.sessionmaker() หรือ sqlalchemy.ext.declarative.declarative_base() ซึ่งอยู่ภายในมอดูลย่อยได้ ดังนั้นจึงต้องเขียน from import แยกออกมาอีกที</p>
+
+<p><strong>การสร้างคลาสตารางข้อมูล介</strong></p>
+
+<p>ในส่วนของขั้นตอนการเตรียมตัวดังที่ยกตัวอย่างมาแล้วนั้น ขั้นตอนที่ดูจะซับซ้อนและต้องปรับแต่งอะไรมากที่สุดก็คือการสร้างคลาสของตารางข้อมูล</p>
+
+<p>เวลาสร้างคลาสนี้ขึ้นจะสร้างโดยรับทอดจากคลาส Base ซึ่งสร้างขึ้นมาจาก sqlalchemy.ext.declarative.declarative_base() อีกที</p>
+
+<p>ตัวอย่าง สร้างตารางข้อมูลผู้กล้าซึ่งมี ๓ สดมภ์คือ chue (ชื่อ), lv, hp</p>
+
+<pre><code class="language-python">import sqlalchemy
+from sqlalchemy.ext.declarative import declarative_base
+
+Basemodel = declarative_base()
+
+class Phukla(Basemodel):
+    __tablename__ = 'phukla'
+    chue = sqlalchemy.Column(sqlalchemy.String(32),primary_key=True)
+    lv = sqlalchemy.Column(sqlalchemy.Integer)
+    hp = sqlalchemy.Column(sqlalchemy.Float)
+    
+    def __repr__(self):
+        return f'{self.chue} lv: {self.lv} hp: {self.hp}'
+
+engine = sqlalchemy.create_engine('sqlite:///pukla.db')
+Basemodel.metadata.create_all(engine)
+</code></pre>
+
+<p>sqlalchemy.Column() คือคลาสที่ใช้สร้างออบเจ็กต์สดมภ์ (column) ของตารางข้อมูล ต้องการให้ตารางมีข้อมูลอะไรบ้างก็ใส่ไปตามนั้น โดยในวงเล็บจะเป็นตัวกำหนดคุณสมบัติของสดมภ์นั้น ที่สำคัญที่สุดก็คือชนิดของข้อมูล ก็ให้ใส่โดยใช้ตัวคลาสที่เตรียมไว้ในตัวมอดูล sqlalchemy ได้แก่ String (สายอักขระ), Integer (เลขจำนวนเต็ม), Float (เลขทศนิยม), ฯลฯ</p>
+
+<p>สำหรับสายอักขระ หากต้องการจำกัดจำนวนตัวอักษรก็ใส่วงเล็บต่อ เช่น sqlalchemy.String(20) แบบนี้ แต่จะไม่ใส่ก็ได้</p>
+
+<p>นอกจากนี้หากต้องการให้สดมภ์ไหนเป็นไพรมารีคีย์ (สดมภ์ที่สำคัญที่สุดในตาราง และจะให้มีค่าซ้ำกันไม่ได้) ก็ใส่ primary_key=True ลงไป</p>
+
+<p>ในการใช้ sqlalchemy จำเป็นต้องกำหนดสดมภ์สักตัวหนึ่งให้เป็นไพรมารีคีย์เสมอ</p>
+
+<p>ปกติแล้วแค่กำหนดคอลัมน์ลงไปแบบนี้ ตอนที่สั่งสร้างอินสแตนซ์ขึ้นมาก็ใส่ชื่อสดมภ์ต่างๆเหล่านั้นลงไปเป็นคีย์เวิร์ด</p>
+
+<pre><code class="language-python">phukla1 = Phukla(chue='ได',lv=99,hp=999)
+print(phukla1) # ได้ ได lv: 99 hp: 999
+</code></pre>
+
+<p>ตรงส่วน <strong>repr</strong> นี้ใส่ลงไปเพื่อกำหนดว่าเวลาสั่ง print ขึ้นมาจะให้แสดงค่าเป็นแบบไหน อาจจะไม่ได้จำเป็นต้องใส่ แต่สะดวกเวลาแสดงผล จะได้รู้ว่าข้อมูลตัวนี้เป็นตัวไหน มีค่าอะไรอย่างไร</p>
+
+<p>หากไม่เขียน <strong>repr</strong> เมื่อสั่ง print ก็คงจะออกมาในลักษณะแบบนี้</p>
+
+<pre><code class="language-javascript">&lt;__main__.Phukla at 0x11b2a5090&gt;
+</code></pre>
+
+<p>ซึ่งก็ไม่ได้แสดงข้อมูลในนี้ให้เห็นโดยตรง จึงอาจจะไม่สะดวก ดังนั้นตัวอย่างต่อจากนี้ไปก็จะใส่ <strong>repr</strong> ไปด้วยตลอด</p>
+
+<p>นอกจากนี้แล้วอาจกำหนดตรงส่วนของ <strong>init</strong> เพื่อให้ตอนสร้างง่ายขึ้นหน่อย เช่นแค่ใส่เป็นอาร์กิวเมนต์ลงไปตามลำดับ รวมทั้งกำหนดค่าเริ่มต้นให้ได้ด้วย เช่น</p>
+
+<pre><code class="language-python">class Nangsue(Basemodel):
+    __tablename__ = 'nangsue'
+    chue = sqlalchemy.Column(sqlalchemy.String,primary_key=True)
+    chamnuanna = sqlalchemy.Column(sqlalchemy.Integer)
+    rakha = sqlalchemy.Column(sqlalchemy.Float)
+    
+    def __init__(self,chue,chamnuanna=100,rakha=200):
+        self.chue = chue
+        self.chamnuanna = chamnuanna
+        self.rakha = rakha
+    
+    def __repr__(self):
+        return f'หนังสือชื่อ &quot;{self.chue}&quot; มี {self.chamnuanna} หน้า ราคา {self.rakha} บาท'
+
+ns = Nangsue('สอนแมวเขียนโปรแกรม',400)
+print(ns) # ได้ หนังสือชื่อ &quot;สอนแมวเขียนโปรแกรม&quot; มี 400 หน้า ราคา 200 บาท
+</code></pre>
+
+<p>นอกจากนี้ขั้นตอนสำคัญอีกอย่างก็คือการทำให้ตารางถูกสร้างขึ้นมาจริงๆในฐานข้อมูลด้วย</p>
+
+<p>การสร้างคลาสขึ้นมานั้นยังไม่ได้ทำให้ตารางถูกสร้างขึ้นมาในฐานข้อมูลจริงๆทันที ก่อนจะใช้งานจริงต้องสั่งสร้างตารางก่อน ซึ่งทำได้โดยสั่ง Base.metadata.create_all()</p>
+
+<p>Base นี้ก็คือตัวคลาสฐานที่ใช้ตอนรับทอดคลาสตารางข้อมูลนี้มา หากมีข้อมูลที่อยากให้สร้างขึ้นมาพร้อมกันก็ให้รับทอดจาก Base อันนี้เหมือนกัน แล้วเมื่อสั่ง .metadata.create_all() ก็จะสร้างขึ้นมาใหม่ทั้งหมด ถ้าหากยังไม่ได้มีอยู่ก่อน แต่ถ้าอันไหนมีแล้วก็จะไม่เกิดอะไรขึ้น</p>
+
+<p>ในทางกลับกัน ถ้าหากต้องการลบตารางข้อมูลทั้งหมดในฐานนั้นก็สั่ง Base.metadata.drop_all()</p>
+
+<p><strong>การเตรียมไฟล์แบบจำลองและตัวสร้างเซสชัน介</strong></p>
+
+<p>นอกจากตัวคลาสแบบจำลองแล้ว อีกสิ่งที่ต้องเตรียมการก็คือเซสชัน (session) ซึ่งสร้างจาก sqlalchemy.orm.sessionmaker</p>
+
+<p>เซสชันเป็นตัวกลางเชื่อมต่อกับ engine อีกที เวลาสร้าง sessionmaker ให้ใส่ engine ที่จะทำการเชื่อมต่อลงไป</p>
+
+<p>สิ่งที่ได้จาก sessionmaker คือตัวคลาสที่เอาไว้สร้างเซสชันอีกที ยังไม่ใช่ตัวเซสชัน ต้องเอามาเรียกใช้โดยสั่ง () เพื่อสร้างเซสชันอีกที</p>
+
+<p>ปกติแล้วส่วนของแบบจำลองและส่วนสร้างเซสชันอาจจะถูกเก็บไว้ในไฟล์หนึ่ง แล้วก็ให้เรียกใช้ไฟล์นั้นขึ้นมาในฐานะมอดูล โดย import เอาตัวคลาสและเซสชันมาใช้</p>
+
+<p>เพื่อเป็นตัวอย่างสำหรับหัวข้อถัดๆไป ขอสร้างแบบจำลองและเซสชันนี้ขึ้นมาใส่ในไฟล์ชื่อ pkmoses.py</p>
+
+<pre><code class="language-python">import sqlalchemy
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
+
+Basemodel = declarative_base()
+
+class Pokemon(Basemodel):
+    __tablename__ = 'pokemon'
+    lek = sqlalchemy.Column(sqlalchemy.Integer,primary_key=True)
+    chue = sqlalchemy.Column(sqlalchemy.String(32))
+    nak = sqlalchemy.Column(sqlalchemy.Float)
+    sung = sqlalchemy.Column(sqlalchemy.Float)
+    
+    def __init__(self,lek,chue,nak,sung):
+        self.lek = lek
+        self.chue = chue
+        self.nak = nak
+        self.sung = sung
+    
+    def __repr__(self):
+        return f'{self.lek}. {self.chue} หนัก {self.nak} สูง {self.sung*100:.0f} ซม.'
+
+engine = sqlalchemy.create_engine('sqlite:///pkdata.db')
+Basemodel.metadata.create_all(engine)
+
+Session = sessionmaker(engine)
+session = Session()
+</code></pre>
+
+<p>ข้อมูลในตารางนี้ก็คือข้อมูล pokemon ซึ่งมี ๔ สดมภ์ ได้แก่ lek (เลข), chue (ชื่อ), nak (หนัก), sung (สูง) โดยใช้เลขเป็นไพรมารีคีย์</p>
+
+<p><strong>การเพิ่มข้อมูลลงไป介</strong></p>
+
+<p>หลังจากขั้นตอนการสร้างตาราง ก็เข้าสู่ขั้นตอนการใช้งาน โดยคำสั่งพื้นฐานที่สุดก็คือการใส่ข้อมูลเข้าไป</p>
+
+<p>การใส่ข้อมูลอาจมีขั้นตอนดังนี้</p>
+
+<ul>
+<li><p>สร้างออบเจ็กต์ที่เป็นอินสแตนซ์ของคลาสตารางข้อมูลขึ้นมา</p></li>
+
+<li><p>ใส่ข้อมูลลงในฐานข้อมูลจริงๆ โดยใช้ session.add (ถ้ามีตัวเดียว) หรือ session.add_all หรือ session.bulk_save_objects (ถ้ามีหลายตัว)</p></li>
+
+<li><p>session.commit() เพื่อให้ข้อมูลถูกบันทึกไปจริงๆ</p></li>
+</ul>
+
+<p>ตัวอย่างการใช้งาน ให้ import ตัวคลาสแบบจำลองและ session จาก pkmoses ที่สร้างขึ้นมาจากไฟล์ที่สร้างจากในหัวข้อที่แล้ว แล้วเพิ่มข้อมูลลงไปตัวหนึ่งด้วย .add()</p>
+
+<pre><code class="language-python">from pkmoses import session,Pokemon
+
+poke1 = Pokemon(152,'ชิโครีตา',6.4,0.9)
+session.add(poke1)
+session.commit()
+</code></pre>
+
+<p>หากต้องการเพิ่มทีละหลายตัวอาจใช้ .add_all() หรือ .bulk_save_objects() ก็ได้</p>
+
+<pre><code class="language-python">poke2 = Pokemon(155,'ฮิโนอาราชิ',7.9,0.5)
+poke3 = Pokemon(158,'วานิโนโกะ',9.5,0.6)
+session.bulk_save_objects([poke2,poke3])
+session.commit()
+
+poke4 = Pokemon(153,'เบย์ลีฟ',15.8,1.2)
+poke5 = Pokemon(154,'เมกาเนียม',100.5,1.8)
+session.add_all([poke4,poke5])
+session.commit()
+</code></pre>
+
+<p>เพียงแต่ข้อแตกต่างก็คือ .add_all() จะเป็นการสั่งให้วนซ้ำเพิ่มข้อมูลเข้าไปทีละตัวตามลำดับ ส่วน .bulk_save_objects() จะทำไปพร้อมกันและจะรวดเร็วกว่า</p>
+
+<p>ดังนั้นถ้าต้องการความรวดเร็วใช้ .bulk_save_objects() จะเร็วกว่า เพียงแต่เนื่องจากข้อมูลอาจถูกใส่อย่างไม่เป็นลำดับถูกต้อง ดังนั้นหากให้ความสำคัญกับลำดับของข้อมูลก็อาจใช้ .add_all()</p>
+
+<p>หลังสั่งเพิ่มข้อมูลทั้งหมดลงไปแล้วต้องสั่ง .commit() หากไม่มีการสั่ง .commit() ไปแม้จะใช้ .add() หรือ .add_all() หรือ .bulk_save_objects() ลงไปแล้วก็จะไม่มีการบันทึกลงไปจริงๆ</p>
+
+<p>อย่างไรก็ตาม หากต้องการให้มีการบันทึกไปเลยโดยอัตโนมัติทุกครั้งไม่ต้องมาสั่ง .commit() ก็ทำได้โดยตอนที่สร้างตัวสร้างเซสชันขึ้นให้ใส่เป็น sessionmaker(autocommit=True) ไป ก็เป็นวิธีหนึ่งที่ทำได้</p>
+
+<p>หากเพิ่มข้อมูลไปแล้วแต่ยังไม่ได้ .commit() แล้วต้องการยกเลิกความเปลี่ยนแปลงนั้นก็สามารถทำได้โดยใช้ .rollback()</p>
+
+<p><strong>การอ่านข้อมูลในตาราง (query)介</strong></p>
+
+<p>การอ่านข้อมูลที่อยู่ในตารางทำได้โดยใช้เมธอด .query() โดยใส่คลาสของตารางนั้นลงไป</p>
+
+<p>ข้อมูลที่อ่านขึ้นมาสามารถนำมาใช้วนด้วย for เพื่อเอาค่าทีละตัวก็ได้</p>
+
+<p>ตัวอย่างการอ่านข้อมูล</p>
+
+<pre><code class="language-python">for pk in session.query(Pokemon):
+    print(pk)
+</code></pre>
+
+<p>ได้</p>
+
+<pre><code class="language-javascript">152. ชิโครีตา หนัก 6.4 สูง 90 ซม.
+153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม.
+154. เมกาเนียม หนัก 100.5 สูง 180 ซม.
+155. ฮิโนอาราชิ หนัก 7.9 สูง 50 ซม.
+158. วานิโนโกะ หนัก 9.5 สูง 60 ซม.
+</code></pre>
+
+<p>กรณีที่ต้องการเอาข้อมูลแค่เฉพาะบางสดมภ์ให้ให้ใส่ตัวแอตทริบิวต์ที่เป็นชื่อตัวคอลัมน์ลงไปทีละตัวตามที่ต้องการ</p>
+
+<pre><code class="language-python">for pk in session.query(Pokemon.lek,Pokemon.chue):
+    print(pk)
+</code></pre>
+
+<p>ได้</p>
+
+<pre><code class="language-javascript">(152, 'ชิโครีตา')
+(153, 'เบย์ลีฟ')
+(154, 'เมกาเนียม')
+(155, 'ฮิโนอาราชิ')
+(158, 'วานิโนโกะ')
+</code></pre>
+
+<p><strong>การอ่านข้อมูลทั้งหมดใส่ลิสต์ (all)介</strong></p>
+
+<p>วิธีการอ่านข้อมูลจากในตารางนอกจากจะใช้วนใน for แล้วก็ยังอาจจะใช้ .all() เพื่อดึงข้อมูลมาทั้งหมดทีเดียวเป็นลิสต์ก็ได้</p>
+
+<pre><code class="language-python">print(session.query(Pokemon).all())
+print(session.query(Pokemon.lek,Pokemon.chue).all())
+</code></pre>
+
+<p>ได้</p>
+
+<pre><code class="language-javascript">[152. ชิโครีตา หนัก 6.4 สูง 90 ซม., 153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 154. เมกาเนียม หนัก 100.5 สูง 180 ซม., 155. ฮิโนอาราชิ หนัก 7.9 สูง 50 ซม., 158. วานิโนโกะ หนัก 9.5 สูง 60 ซม.]
+[(152, 'ชิโครีตา'), (153, 'เบย์ลีฟ'), (154, 'เมกาเนียม'), (155, 'ฮิโนอาราชิ'), (158, 'วานิโนโกะ')]
+</code></pre>
+
+<p><strong>การกำหนดวิธีการเรียงลำดับข้อมูล (order_by)介</strong></p>
+
+<p>สามารถกำหนดลำดับการเรียงข้อมูลที่ออกมาได้โดยใส่ .order_by() โดยระบุสดมภ์ที่ต้องการใช้เรียงลงไป เช่น</p>
+
+<pre><code class="language-python">print(session.query(Pokemon).order_by(Pokemon.sung).all())
+print(session.query(Pokemon).order_by(Pokemon.nak).all())
+</code></pre>
+
+<p>ได้</p>
+
+<pre><code class="language-javascript">[155. ฮิโนอาราชิ หนัก 7.9 สูง 50 ซม., 158. วานิโนโกะ หนัก 9.5 สูง 60 ซม., 152. ชิโครีตา หนัก 6.4 สูง 90 ซม., 153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 154. เมกาเนียม หนัก 100.5 สูง 180 ซม.]
+[152. ชิโครีตา หนัก 6.4 สูง 90 ซม., 155. ฮิโนอาราชิ หนัก 7.9 สูง 50 ซม., 158. วานิโนโกะ หนัก 9.5 สูง 60 ซม., 153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 154. เมกาเนียม หนัก 100.5 สูง 180 ซม.]
+</code></pre>
+
+<p>หากต้องการเรียงกลับด้านให้ใส่ .desc() เช่น</p>
+
+<pre><code class="language-python">print(session.query(Pokemon).order_by(Pokemon.lek.desc()).all())
+print(session.query(Pokemon).order_by(Pokemon.sung.desc()).all())
+</code></pre>
+
+<p>ได้</p>
+
+<pre><code class="language-javascript">[158. วานิโนโกะ หนัก 9.5 สูง 60 ซม., 155. ฮิโนอาราชิ หนัก 7.9 สูง 50 ซม., 154. เมกาเนียม หนัก 100.5 สูง 180 ซม., 153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 152. ชิโครีตา หนัก 6.4 สูง 90 ซม.]
+[154. เมกาเนียม หนัก 100.5 สูง 180 ซม., 153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 152. ชิโครีตา หนัก 6.4 สูง 90 ซม., 158. วานิโนโกะ หนัก 9.5 สูง 60 ซม., 155. ฮิโนอาราชิ หนัก 7.9 สูง 50 ซม.]
+</code></pre>
+
+<p><strong>การเอาข้อมูลเฉพาะตัวแรกตัวเดียว (first)介</strong></p>
+
+<p>หากต้องการข้อมูลเฉพาะแค่ตัวแรกให้ใช้ .first() เช่น</p>
+
+<pre><code class="language-python">print(session.query(Pokemon).first())
+# ได้ 152. ชิโครีตา หนัก 6.4 สูง 90 ซม.
+print(session.query(Pokemon).order_by(Pokemon.sung).first())
+# ได้ 155. ฮิโนอาราชิ หนัก 7.9 สูง 50 ซม.
+print(session.query(Pokemon).order_by(Pokemon.nak.desc()).first())
+# ได้ 154. เมกาเนียม หนัก 100.5 สูง 180 ซม.
+</code></pre>
+
+<p><strong>การจำกัดเอาข้อมูลเฉพาะบางส่วน (limit และ offset)介</strong></p>
+
+<p>ถ้าต้องการจำกัดจำนวนที่จะเอาให้ใช้ .limit() และกำหนดลำดับเริ่มต้นโดยใช้ .offset() เช่น</p>
+
+<pre><code class="language-python">print(session.query(Pokemon).limit(3).all())
+# ได้ [152. ชิโครีตา หนัก 6.4 สูง 90 ซม., 153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 154. เมกาเนียม หนัก 100.5 สูง 180 ซม.]
+print(session.query(Pokemon.lek).limit(4).all())
+# ได้ [(152,), (153,), (154,), (155,)]
+print(session.query(Pokemon).offset(2).all())
+# ได้ [154. เมกาเนียม หนัก 100.5 สูง 180 ซม., 155. ฮิโนอาราชิ หนัก 7.9 สูง 50 ซม., 158. วานิโนโกะ หนัก 9.5 สูง 60 ซม.]
+print(session.query(Pokemon).offset(1).limit(2).all())
+# ได้ [153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 154. เมกาเนียม หนัก 100.5 สูง 180 ซม.]
+print(session.query(Pokemon).order_by(Pokemon.sung).limit(2).all())
+# ได้ [155. ฮิโนอาราชิ หนัก 7.9 สูง 50 ซม., 158. วานิโนโกะ หนัก 9.5 สูง 60 ซม.]
+</code></pre>
+
+<p>ถ้าใช้ order_by เพื่อกำหนดรูปแบบการเรียงไปด้วยให้ใส่ order_by ก่อนค่อยตามด้วย offset และ limit</p>
+
+<p><strong>การกำหนดเงื่อนไขข้อมูลที่จะอ่าน (filter)介</strong></p>
+
+<p>สามารถกำหนดเงื่อนไขว่าจะเอาข้อมูลแค่บางส่วนที่ต้องการออกมาได้โดยใช้ .filter() เช่น</p>
+
+<pre><code class="language-python">print(session.query(Pokemon).filter(Pokemon.nak&lt;10).all())
+# ได้ [152. ชิโครีตา หนัก 6.4 สูง 90 ซม., 155. ฮิโนอาราชิ หนัก 7.9 สูง 50 ซม., 158. วานิโนโกะ หนัก 9.5 สูง 60 ซม.]
+print(session.query(Pokemon.chue).filter(Pokemon.chue!='เบย์ลีฟ').all())
+# ได้ [('ชิโครีตา',), ('เมกาเนียม',), ('ฮิโนอาราชิ',), ('วานิโนโกะ',)]
+</code></pre>
+
+<p>สามารถใส่มากกว่าเงื่อนไขพร้อมกันได้ โดยจะมีความหมายเป็น &ldquo;และ&rdquo; คือต้องเข้าทุกเงื่อนไข</p>
+
+<pre><code class="language-python">print(session.query(Pokemon).filter(Pokemon.nak&gt;8,Pokemon.nak&lt;20).all())
+# ได้ [153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 158. วานิโนโกะ หนัก 9.5 สูง 60 ซม.]
+print(session.query(Pokemon.chue).filter(Pokemon.chue!='ชิโครีตา',Pokemon.chue!='เบย์ลีฟ').all())
+# [('เมกาเนียม',), ('ฮิโนอาราชิ',), ('วานิโนโกะ',)]
+</code></pre>
+
+<p>นอกจากนี้ในการรวมหรือจัดการเงื่อนไขอาจใช้ and<em>, or</em>, not_ เพื่อแทน &ldquo;และ&rdquo;, &ldquo;หรือ&rdquo;, &ldquo;ไม่&rdquo;</p>
+
+<pre><code class="language-python">print(session.query(Pokemon).filter(sqlalchemy.or_(Pokemon.chue==&quot;เบย์ลีฟ&quot;,Pokemon.chue==&quot;เมกาเนียม&quot;)).all())
+# ได้ [153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 154. เมกาเนียม หนัก 100.5 สูง 180 ซม.]
+print(session.query(Pokemon.chue).filter(sqlalchemy.not_(Pokemon.chue==&quot;ชิโครีตา&quot;)).all())
+# ได้ [('เบย์ลีฟ',), ('เมกาเนียม',), ('ฮิโนอาราชิ',), ('วานิโนโกะ',)]
+</code></pre>
+
+<p>อนึ่ง สาเหตุที่ชื่อ and<em>, or</em>, not_ มี _ ต่อท้ายเพราะคำว่า and, or, not เป็นคำต้องห้ามในไพธอน ใช้เป็นชื่อตัวแปรไม่ได้เลยต้องเติม _</p>
+
+<p>นอกจากนี้เงื่อนไขที่เป็นตัวเลขอาจใช้ .between() เพื่อคัดเอาค่าที่อยู่ในช่วงได้</p>
+
+<pre><code class="language-python">print(session.query(Pokemon).filter(Pokemon.nak.between(9,25)).all())
+# ได้ [153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 158. วานิโนโกะ หนัก 9.5 สูง 60 ซม.]
+print(session.query(Pokemon).filter(Pokemon.lek.between(153,155)).all())
+# ได้ [153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 154. เมกาเนียม หนัก 100.5 สูง 180 ซม., 155. ฮิโนอาราชิ หนัก 7.9 สูง 50 ซม.]
+</code></pre>
+
+<p>ถ้าค่าเป็นสายอักขระอาจใช้ .contains() เพื่อคัดเอาที่มีคำที่ต้องการอยู่</p>
+
+<pre><code class="language-python">print(session.query(Pokemon.chue).filter(Pokemon.chue.contains('โน')).all())
+# ได้ [('ฮิโนอาราชิ',), ('วานิโนโกะ',)]
+</code></pre>
+
+<p><strong>การแก้ข้อมูล (update)介</strong></p>
+
+<p>การแก้ไขข้อมูลอาจทำโดยใช้ .query อ่านข้อมูลเข้ามา() แล้วเอามาแก้ แล้วก็ทำการ .commit() ข้อมูลในฐานข้อมูลก็จะถูกแก้ไปด้วยตามนั้น</p>
+
+<pre><code class="language-python">pk1 = session.query(Pokemon).filter(Pokemon.chue=='ฮิโนอาราชิ').first()
+pk1.lek = 156
+pk1.chue = 'แม็กมาราชิ'
+pk1.nak = 0.9
+pk1.sung = 19
+session.commit()
+</code></pre>
+
+<p>นอกจากนี้ก็อาจใช้เมธอด .update() ที่ตัวข้อมูลที่ใช้ .filter() คัดมา เพื่อสั่งแก้ข้อมูลโดยตรง เช่น</p>
+
+<pre><code class="language-python">kha = {'lek':159,'chue':'อาลิเกตซ์','nak':1.1,'sung':25}
+session.query(Pokemon).filter(Pokemon.chue=='วานิโนโกะ').update(kha)
+session.commit()
+</code></pre>
+
+<p><strong>การลบข้อมูลออก (delete)介</strong></p>
+
+<p>การลบข้อมูลออกอาจทำโดยใช้ .query() ดึงข้อมูลที่ต้องการลบออกมา แล้วใช้เมธอด .delete() จากตัวเซสชัน แล้ว .commit()</p>
+
+<pre><code class="language-python">pk2 = session.query(Pokemon).filter(Pokemon.chue=='เมกาเนียม').first()
+session.delete(pk2)
+session.commit()
+</code></pre>
+
+<p>นอกจากนี้อาจจะเรียกเมธอด .delete() จากตัว query โดยตรงเลยก็ได้ เช่น</p>
+
+<pre><code class="language-python">session.query(Pokemon).filter(Pokemon.chue=='ชิโครีตา').delete()
+session.commit()
+</code></pre>
+
+<p><strong>การย้อนคืนสิ่งที่ทำกลับไป (rollback)介</strong></p>
+
+<p>หากเพิ่มหรือแก้ไขหรือลบข้อมูลไปแล้วยังไม่ได้สั่ง .commit() ที่ตัวเซสชันอาจสามารถย้อนคืนกลับได้โดยใช้ .rollback()น</p>
+
+<p>ตัวอย่างการใช้</p>
+
+<pre><code class="language-python">print(session.query(Pokemon).all())
+# ได้ [153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 156. แม็กมาราชิ หนัก 0.9 สูง 1900 ซม., 159. อาลิเกตซ์ หนัก 1.1 สูง 2500 ซม.]
+
+kha = {'lek':157,'chue':'บักฟูน','nak':1.7,'sung':79.5}
+session.query(Pokemon).filter(Pokemon.chue=='แม็กมาราชิ').update(kha)
+session.query(Pokemon).filter(Pokemon.chue=='เบย์ลีฟ').delete()
+
+print(session.query(Pokemon).all())
+# ได้ [157. บักฟูน หนัก 1.7 สูง 7950 ซม., 159. อาลิเกตซ์ หนัก 1.1 สูง 2500 ซม.]
+
+session.rollback()
+print(session.query(Pokemon).all())
+# ได้ [153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 156. แม็กมาราชิ หนัก 0.9 สูง 1900 ซม., 159. อาลิเกตซ์ หนัก 1.1 สูง 2500 ซม.]
+</code></pre>
+
+<p>อาจนำมาใช้เพื่อรับมือในกรณีที่เกิดข้อผิดพลาด เช่น</p>
+
+<pre><code class="language-python">try:
+    oda = Pokemon(160,'ออร์ไดล์','ไม่ทราบ',2.3)
+    session.add(oda)
+    session.commit()
+except sqlalchemy.exc.SQLAlchemyError as e:
+    session.rollback()
+    print('เกิดข้อผิดพลาด\n',e)
+</code></pre>
+
+<p>ได้</p>
+
+<pre><code class="language-javascript">เกิดข้อผิดพลาด
+ (builtins.ValueError) could not convert string to float: 'ไม่ทราบ'
+[SQL: INSERT INTO pokemon (lek, chue, nak, sung) VALUES (?, ?, ?, ?)]
+[parameters: [{'sung': 2.3, 'lek': 160, 'chue': 'ออร์ไดล์', 'nak': 'ไม่ทราบ'}]]
+</code></pre>
+
+<p>sqlalchemy.exc.SQLAlchemyError คือคลาสของความผิดพลาดที่จะเกิดขึ้นเมื่อมีปัญหาในการติดต่อกับฐานข้อมูล SQL จะมีการอธิบายรายละเอียดว่าโค้ด SQL ที่ส่งไปจริงๆเป็นอย่างไร และผิดพลาดที่ตรงไหน</p>
+
+<p>อย่างตัวอย่างนี้ไปใส่ nak ว่า &lsquo;ไม่ทราบ&rsquo; ทั้งที่จริงๆควรจะเป็นตัวเลข ก็เลยเกิดข้อผิดพลาดขึ้น</p>
+
+<p><strong>การป้อนคำสั่ง SQL ใส่โดยตรง (execute)介</strong></p>
+
+<p>นอกจากจะใช้เมธอดต่างๆที่ sqlalchemy เตรียมไว้ให้แล้ว หากต้องการพิมพ์โค้ด SQL เพื่อป้อนคำสั่งสั่งฐานข้อมูลโดยตรงก็สามารถทำผ่าน sqlalchemy ได้เช่นกัน โดยใช้เมธอด .execute() ซึ่งอาจเรียกจากตัว engine หรือตัว session ก็ได้</p>
+
+<p>ไม่ว่าขั้นตอนไหนก็สามารถใช้ .execute() ทำแทนได้ เช่น</p>
+
+<pre><code class="language-python">import sqlalchemy
+from sqlalchemy.orm import sessionmaker
+engine = sqlalchemy.create_engine('sqlite:///pikadata.db')
+engine.execute('create table pokemon (lek integer,chue text,nak real,sung real)')
+engine.execute('insert into pokemon (lek,chue,nak,sung) values (25,&quot;พิคาชู&quot;,6,0.4)')
+print(engine.execute('select * from pokemon').fetchall())
+# ได้ [(25, 'พิคาชู', 6.0, 0.4)]
+</code></pre>
+
+<p>เมื่อใช้ execute กับ select ก็จะเอาผลที่ได้มาใช้ .fetchall() หรือวนด้วย for เพื่อเอาข้อมูลได้ เหมือนกับที่ใช้ sqlite3 โดยตรง</p>
+
+<p>เพียงแต่หากจะใช้ .execute() สั่งไปทั้งหมดแบบนี้ก็ไม่ต่างจากใช้ sqlite3 โดยตรง อาจไม่มีความหมายที่จะใช้ sqlalchemy นัก</p>
+
+<p>.execute() อาจจะใช้แค่บางส่วน แค่ในกรณีที่ต้องการสั่งคำสั่งที่ไม่สะดวกจะทำผ่านเมธอดต่างๆของ sqlalchemy เอง ซึ่งอาจมีความจำเป็นบ้างเพราะโค้ดจับคู่เชื่อมต่อก็ไม่ได้ทำทุกอย่างไว้สมบูรณ์แบบทั้งหมด</p>
+
+<p>หลักการใช้ยังมีรายละเอียดอีกมากมาย นี่เป็นเพียงแค่เบื้องต้นส่วนหนึ่งเท่านั้น อาจอ่านเพิ่มเติมได้ใน<a href="https://www.sqlalchemy.org/" target="_blank">เว็บหลักของ sqlalchemy</a></p>
+
+<blockquote>
+<p>Reference : <a href="https://phyblas.hinaboshi.com/20200529" target="_blank">https://phyblas.hinaboshi.com/20200529</a></p>
+</blockquote>
+
+    </div>
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/docs/library/tags/database/">database</a>
+  
+  <a class="badge badge-light" href="/docs/library/tags/sqlalchemy/">sqlalchemy</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="https://dragon-library.github.io/docs/library/">Little Dragon</a></h5>
+      <h6 class="card-subtitle">Professor of Artificial Intelligence</h6>
+      <p class="card-text" itemprop="description">My research interests include distributed robotics, mobile computing and programmable matter.</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="/docs/library/#contact" >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/GeorgeCushen" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ" target="_blank" rel="noopener">
+              <i class="ai ai-google-scholar"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://github.com/gcushen" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+    
+
+    
+    <div class="article-widget">
+      
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item box ">
+    <div class="meta-nav meta-prev">Next <br>
+    <a href="/docs/library/post/python/tutorials/pandas-cheat-sheet/" rel="next">Pandas Cheat Sheet</a></div>
+  </div>
+  
+  
+  
+  <div class="post-nav-item box">
+    <div class="meta-nav meta-next" >Previous <br>
+    <a href="/docs/library/post/python/tutorials/flask-101/" rel="prev">Flask 101 พัฒนาเว็บด้วยภาษาไพธอน(Flask Framework)</a></div>
+  </div>
+  
+  <br>
+  <br>
+</div>
+
+    </div>
+    
+
+    
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/docs/library/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/docs/library/js/academia.min.e4fc229c2f28284fc2dfa5b66a52b765.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        
+        <p>
+          
+          Powered by
+          <a href="https://themefisher.com" target="_blank" rel="noopener">themefisher</a> for
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-inline network-icon text-right">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/Twitter" target="_blank" rel="noopener" title="DM Me"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="skype:echo123?call"  title="Skype Me"><i class="fab fa-skype" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://keybase.io/" target="_blank" rel="noopener" title="Chat on Keybase"><i class="fab fa-keybase" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://discourse.gohugo.io" target="_blank" rel="noopener" title="Discuss on Forum"><i class="fas fa-comments" aria-hidden="true"></i></a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -6,10 +6,1196 @@
     <description>Recent content in Python Tutorials on Library</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 31 May 2020 00:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="https://dragon-library.github.io/docs/library/post/python/tutorials/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pandas Cheat Sheet</title>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/pandas-cheat-sheet/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/pandas-cheat-sheet/</guid>
+      <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/2017/11/05/&#34; target=&#34;_blank&#34;&gt;November 5, 2017&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Image by www.reddit.com&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Pandas ถือเป็นเครื่องมือหลักในการทำ Data Wrangling บน Python และสามารถนำไปใช้ประโยชน์คู่กับ Package อื่น เช่น เอาไปเตรียมข้อมูลก่อนทำ Model ใน SKLearn ได้ด้วย&lt;/p&gt;
+
+&lt;p&gt;วันนี้แอดมินเลยเอาคำสั่ง Pandas ที่ใช้บ่อย ๆ มารวบรวมให้renameหาง่าย ๆ ตั้งแต่อ่านไฟล์ข้อมูล เลือกข้อมูล แก้ไขข้อมูล ไปจนถึงเซฟไฟล์ข้อมูลเพื่อนำไปใช้ต่อเลยทีเดียว หวังว่าจะเป็นประโยชน์กับทุกท่านนะครับ :)&lt;/p&gt;
+
+&lt;p&gt;และเนื่องจากหน้านี้เป็น Cheatsheet รวมเทคนิคเยอะแยะมากมาย ถ้าไล่อ่านกันอาจจะหายาก ผมเลยเตรียมสารบัญมาให้ด้านล่างนี้ครับ&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Contents&lt;/strong&gt;  &lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#&#34; target=&#34;_blank&#34;&gt;hide&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#Pandas_khux_xari&#34; target=&#34;_blank&#34;&gt;1  Pandas คืออะไร?&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#thekhnikh_kar_chi_Pandas&#34; target=&#34;_blank&#34;&gt;2  เทคนิคการใช้ Pandas&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_chekh_Version_Pandas&#34; target=&#34;_blank&#34;&gt;2.1  วิธีเช็ค Version Pandas&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_kar_hold_fil_CSV_Import&#34; target=&#34;_blank&#34;&gt;2.2  วิธีการโหลดไฟล์ CSV (Import)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_sum_khxmul_sahrab_chekh_Sample&#34; target=&#34;_blank&#34;&gt;2.3  วิธีสุ่มข้อมูลสำหรับเช็ค (Sample)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_chekh_khxmul_hakhwam_phid_pkti_ni_DataFrame_beuxng_tn&#34; target=&#34;_blank&#34;&gt;2.4  วิธีเช็คข้อมูลหาความผิดปกติใน DataFrame เบื้องต้น&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_paelng_prapheth_khxmul_Data_Type_ni_Data_Frame&#34; target=&#34;_blank&#34;&gt;2.5  วิธีแปลงประเภทข้อมูล (Data Type) ใน Data Frame&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_chekh_Summary_khxng_taela_khxlamn_count_min_max_mean&#34; target=&#34;_blank&#34;&gt;2.6  วิธีเช็ค Summary ของแต่ละคอลัมน์ (count, min, max, mean)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_chekh_Summary_count_min_max_mean_baeb_yaek_klum&#34; target=&#34;_blank&#34;&gt;2.7  วิธีเช็ค Summary (count, min, max, mean) แบบแยกกลุ่ม&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_srang_DataFrame_him&#34; target=&#34;_blank&#34;&gt;2.8  วิธีสร้าง DataFrame ใหม่&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_leuxk_hlay_khxlamn_cak_DataFrame&#34; target=&#34;_blank&#34;&gt;2.9  วิธีเลือกหลายคอลัมน์จาก DataFrame&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_leuxk_khxlamn_tam_ngeuxnkhi_thi_txngkar&#34; target=&#34;_blank&#34;&gt;2.10  วิธีเลือกคอลัมน์ตามเงื่อนไขที่ต้องการ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_leuxk_thaew_tam_ngeuxnkhi_thi_txngkar&#34; target=&#34;_blank&#34;&gt;2.11  วิธีเลือกแถวตามเงื่อนไขที่ต้องการ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_pheim_khxlamn_him&#34; target=&#34;_blank&#34;&gt;2.12  วิธีเพิ่มคอลัมน์ใหม่&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#kar_slab_Row_-_Column_Transpose&#34; target=&#34;_blank&#34;&gt;2.13  การสลับ Row &amp;lt;-&amp;gt; Column (Transpose)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#kar_tx_DataFrame&#34; target=&#34;_blank&#34;&gt;2.14  การต่อ DataFrame&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#kar_tx_DataFrame_baeb_Join&#34; target=&#34;_blank&#34;&gt;2.15  การต่อ DataFrame แบบ Join&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#kar_ha_kha_Mean_Sum_Max_Aggregate_baeb_thang_DataFrame&#34; target=&#34;_blank&#34;&gt;2.16  การหาค่า Mean, Sum, Max (Aggregate) แบบทั้ง DataFrame&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#kar_Aggregate_baeb_tam_klum_thi_txngkar&#34; target=&#34;_blank&#34;&gt;2.17  การ Aggregate แบบตามกลุ่มที่ต้องการ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#kar_ran_Function_deiywkan_thuk_thaew_hrux_thuk_khxlamn&#34; target=&#34;_blank&#34;&gt;2.18  การรัน Function เดียวกันทุกแถว หรือทุกคอลัมน์&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#ran_kha_sang_thi_kheiyn_xeng_kab_thuk_thaew_ni_1_khxlamn&#34; target=&#34;_blank&#34;&gt;2.19  รันคำสั่งที่เขียนเองกับทุกแถวใน 1 คอลัมน์&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#ran_kha_sang_thi_kheiyn_xeng_kab_thuk_kha&#34; target=&#34;_blank&#34;&gt;2.20  รันคำสั่งที่เขียนเองกับทุกค่า&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#khanwn_Correlation_Covariance&#34; target=&#34;_blank&#34;&gt;2.21  คำนวณ Correlation &amp;amp; Covariance&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#khanwn_Cross_Tabulation&#34; target=&#34;_blank&#34;&gt;2.22  คำนวณ Cross Tabulation&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_ha_kha_Unique_ni_taela_khxlamn&#34; target=&#34;_blank&#34;&gt;2.23  วิธีหาค่า Unique ในแต่ละคอลัมน์&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_chekh_wa_mi_thaew_hin_khxmul_sa_may_Duplicated&#34; target=&#34;_blank&#34;&gt;2.24  วิธีเช็คว่ามีแถวไหนข้อมูลซ้ำมั้ย (Duplicated)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_kar_nab_canwn_Duplicate&#34; target=&#34;_blank&#34;&gt;2.25  วิธีการนับจำนวน Duplicate&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_kar_lb_Duplicate&#34; target=&#34;_blank&#34;&gt;2.26  วิธีการลบ Duplicate&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_kar_lb_thaew_laea_lb_khxlamn&#34; target=&#34;_blank&#34;&gt;2.27  วิธีการลบแถว และลบคอลัมน์&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_kar_lb_thaew_thi_mi_Missing_Value&#34; target=&#34;_blank&#34;&gt;2.28  วิธีการลบแถวที่มี Missing Value&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_thaen_kha_Missing_Value_dwy_kha_cheliy_Mean_Imputation&#34; target=&#34;_blank&#34;&gt;2.29  วิธีแทนค่า Missing Value ด้วยค่าเฉลี่ย (Mean Imputation)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#kar_lup_khxmul_taela_khxlamn_laea_taela_thaew&#34; target=&#34;_blank&#34;&gt;2.30  การลูปข้อมูลแต่ละคอลัมน์ และแต่ละแถว&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_peliyn_DataFrame_cak_baeb_Wide_pen_Long_Melt&#34; target=&#34;_blank&#34;&gt;2.31  วิธีเปลี่ยน DataFrame จากแบบ Wide เป็น Long (Melt)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_kar_peliyn_chux_khxlamn_Rename&#34; target=&#34;_blank&#34;&gt;2.32  วิธีการเปลี่ยนชื่อคอลัมน์ (Rename)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_kar_si_khana_hna_khxlamn_Prefix&#34; target=&#34;_blank&#34;&gt;2.33  วิธีการใส่คำนำหน้าคอลัมน์ (Prefix)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_kar_thaen_kha_ni_DataFrame&#34; target=&#34;_blank&#34;&gt;2.34  วิธีการแทนค่าใน DataFrame&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_kar_Export_DataFrame_pen_fil_CSV&#34; target=&#34;_blank&#34;&gt;2.35  วิธีการ Export DataFrame เป็นไฟล์ CSV&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#srup_kar_chi_ngan_Pandas&#34; target=&#34;_blank&#34;&gt;3  สรุปการใช้งาน Pandas&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;pandas-ค-ออะไร&#34;&gt;Pandas คืออะไร?&lt;/h2&gt;
+
+&lt;p&gt;Pandas เป็น Library ใน Python ที่ทำให้เราเล่นกับข้อมูลได้ง่ายขึ้น เหมาะมากสำหรับทำ  &lt;a href=&#34;https://www.facebook.com/datasciencechill/photos/a.251751741876557.1073741828.250303472021384/388914871493576/?type=3&#34; target=&#34;_blank&#34;&gt;Data Cleaning / Wrangling&lt;/a&gt;  ครับผม&lt;/p&gt;
+
+&lt;p&gt;วิธีการใช้งาน Pandas คือ โหลดไฟล์ข้อมูล เช่น CSV เข้าไป แล้วเราจะได้ข้อมูลในรูปแบบตาราง (DataFrame) ที่แบ่งข้อมูลตามแถวและคอลัมน์ หรือเหมือน Excel ที่เราใช้กันนั่นเอง&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/example-dataframe-pandas/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_998/https://blog.datath.com/wp-content/uploads/2017/11/example-dataframe-pandas.jpg&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ตัวอย่าง DataFrame ของ Pandas เป็นตารางเหมือน Excel เลยครับ&lt;/p&gt;
+
+&lt;p&gt;ป.ล. Pandas ไม่เกี่ยวกับหมีแพนด้านะฮะ จริง ๆ แล้วมาจากคำว่า PANel DAta ซึ่งหมายถึงข้อมูลที่มีหลายมิตินั่นเอง&lt;/p&gt;
+
+&lt;h2 id=&#34;เทคน-คการใช-pandas&#34;&gt;เทคนิคการใช้ Pandas&lt;/h2&gt;
+
+&lt;p&gt;อย่างที่&lt;a href=&#34;https://www.facebook.com/datasciencechill/photos/a.251751741876557.1073741828.250303472021384/388914871493576/?type=3&#34; target=&#34;_blank&#34;&gt;แอดมินเคยเล่า&lt;/a&gt; ว่าการทำ Data Wrangling เป็นงานที่ค่อนข้างถึกครับ วันนี้เลยรวบรวมโค้ดต่าง ๆ ในการใช้ Pandas มาให้ ซึ่งน่าจะครอบคลุมการใช้งานประมาณ 80 – 90% แล้วครับผม&lt;/p&gt;
+
+&lt;p&gt;โค้ดบางส่วนมาจากคลาส Data Wrangling ที่แอดมินเรียน และจากเว็บไซต์ &lt;a href=&#34;https://mycheatsheets.com/pandas&#34; target=&#34;_blank&#34;&gt;MyCheatSheet&lt;/a&gt; ครับ&lt;/p&gt;
+
+&lt;h3 id=&#34;ว-ธ-เช-ค-version-pandas&#34;&gt;วิธีเช็ค Version Pandas&lt;/h3&gt;
+
+&lt;p&gt;โค้ดนี้เหมือนไม่สำคัญ แต่จริง ๆ แล้วสำคัญมากเวลาเราอ่าน Documentation ครับ เพราะถ้าเกิดมีอะไรพัง เราจะเทียบได้ว่า Pandas ของเราเป็นเวอร์ชั่นตามใน Documentation มั้ย&lt;/p&gt;
+
+&lt;p&gt;print  (&amp;ldquo;Pandas version&amp;rdquo;,pandas.&lt;strong&gt;version&lt;/strong&gt;)&lt;/p&gt;
+
+&lt;h3 id=&#34;ว-ธ-การโหลดไฟล-csv-import&#34;&gt;วิธีการโหลดไฟล์ CSV (Import)&lt;/h3&gt;
+
+&lt;p&gt;จุดเริ่มต้นของการทำ Data Exploration &amp;amp; Analysis ใน Pandas ก็คือการโหลดไฟล์ข้อมูลแบบ CSV มาใช้งานนั่นเองครับ&lt;/p&gt;
+
+&lt;p&gt;เราสามารถใช้คำสั่ง .head หรือ .tail เพื่อดูข้อมูลแถวบนสุด หรือแถวล่างสุดได้&lt;/p&gt;
+
+&lt;h1 id=&#34;read-df&#34;&gt;Read DF&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;csvdf = pd.read_csv(&#39;data.csv&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;sometimes-reading-csv-for-excel-need-encoding&#34;&gt;Sometimes reading CSV for Excel need encoding&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;csvdf = pd.read_csv(&#39;data.csv&#39;,encoding = &amp;quot;ISO-8859-1&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;print-head-and-tail&#34;&gt;Print head and tail&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;csvdf.head()
+
+csvdf.tail()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-ส-มข-อม-ลสำหร-บเช-ค-sample&#34;&gt;วิธีสุ่มข้อมูลสำหรับเช็ค (Sample)&lt;/h3&gt;
+
+&lt;p&gt;ปกติเราเช็คข้อมูลว่าถูกต้องมั้ยด้วย head กับ tail ซึ่งเป็นการเช็คจากด้านบนหรือด้านล่าง อีกวิธีที่น่าสนใจ คือ เช็คแบบสุ่มข้อมูลขึ้นมานั่นเองครับ ทำได้ง่าย ๆ โดยใช้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;csvdf.sample()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-เช-คข-อม-ลหาความผ-ดปกต-ใน-dataframe-เบ-องต-น&#34;&gt;วิธีเช็คข้อมูลหาความผิดปกติใน DataFrame เบื้องต้น&lt;/h3&gt;
+
+&lt;p&gt;หลังจากโหลดข้อมูลมาแล้ว เราอยากรู้ว่าข้อมูลมีกี่แถว, Missing value เท่าไหร่, แต่ละคอลัมน์เป็น Data Type อะไรบ้าง ก็รันคำสั่งนี้ได้เลย มีประโยชน์มากครับ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df.info()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_525/https://blog.datath.com/wp-content/uploads/2017/11/sample-info-pandas.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;df.info() จะแสดงสรุปข้อมูลมาให้&lt;/p&gt;
+
+&lt;p&gt;นอกจากนั้นยังมีคำสั่ง df.dtypes (ไม่มีวงเล็บ) สำหรับดู Data Type แต่ละคอลัมน์อย่างเดียว&lt;/p&gt;
+
+&lt;h3 id=&#34;ว-ธ-แปลงประเภทข-อม-ล-data-type-ใน-data-frame&#34;&gt;วิธีแปลงประเภทข้อมูล (Data Type) ใน Data Frame&lt;/h3&gt;
+
+&lt;p&gt;บางครั้งประเภทข้อมูลของคอลัมน์เป็น String แต่เราต้องการ Integer หรือเราต้องการ Date เราสามารถแปลงข้อมูลได้ง่าย ๆ ดังนี้เลยครับ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df[&#39;hour&#39;] = pd.to_numeric(df[&#39;hour&#39;]) # แปลงเป็น Numeric
+
+df[&#39;hour&#39;] = df[&#39;hour&#39;].astype(&#39;int&#39;) # อีกวิธีในการแปลงค่า สามารถใช้วิธีนี้แปลงเป็น float ได้
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-เช-ค-summary-ของแต-ละคอล-มน-count-min-max-mean&#34;&gt;วิธีเช็ค Summary ของแต่ละคอลัมน์ (count, min, max, mean)&lt;/h3&gt;
+
+&lt;p&gt;ถ้าเราอยากรู้ Distribution คร่าว ๆ ของแต่ละคอลัมน์ว่าเป็นอย่างไร สามารถใช้คำสั่ง describe() ได้&lt;/p&gt;
+
+&lt;p&gt;df.describe()&lt;/p&gt;
+
+&lt;h3 id=&#34;ว-ธ-เช-ค-summary-count-min-max-mean-แบบแยกกล-ม&#34;&gt;วิธีเช็ค Summary (count, min, max, mean) แบบแยกกลุ่ม&lt;/h3&gt;
+
+&lt;p&gt;บางครั้งเราไม่ได้ต้องการรู้ Summary ของทั้งคอลัมน์ แต่อยากให้แยกตามแต่ละค่าในคอลัมน์นั้น ๆ ครับ ซึ่งมีประโยชน์มากเวลาเราทำ Data Analysis แล้วอยากรู้ว่าบางกลุ่มมีอะไรผิดปกติหรือเปล่า&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;test = df.groupby([&#39;Gender&#39;])
+
+test.describe()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-สร-าง-dataframe-ใหม&#34;&gt;วิธีสร้าง DataFrame ใหม่&lt;/h3&gt;
+
+&lt;p&gt;วิธีสร้างแบบง่ายที่สุด ถ้าต้องการข้อมูลหลายรูปแบบ เราสามารถใช้ Dictionary แบบนี้เลยครับ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe = pandas.DataFrame({
+
+&#39;C1&#39;: pandas.date_range(&#39;20170101&#39;, periods=4),
+
+&#39;C2&#39; : [10,20,30,40],
+
+&#39;C3&#39;: pandas.Categorical([&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;]),
+
+&#39;C4&#39;: 1})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;แต่ถ้าเราต้องการแค่เป็นแบบตัวเลขทั่วไป ใช้ Numpy แบบนี้ได้เลย&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;array = numpy.array([(1,2,3), (4,5,6),(7,8,9)])
+
+dataframe = pandas.DataFrame(array,columns=[&#39;C1&#39;,&#39;C2&#39;,&#39;C3&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-เล-อกหลายคอล-มน-จาก-dataframe&#34;&gt;วิธีเลือกหลายคอลัมน์จาก DataFrame&lt;/h3&gt;
+
+&lt;p&gt;ปกติถ้าเราต้องการเลือกแค่ 1 Column ก็เขียนแบบนี้ได้เลย&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df[&#39;C1&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;แต่ถ้าต้องการเลือกหลายคอลัมน์ ให้ทำแบบนี้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df[[&#39;C1&#39;,&#39;C2&#39;]]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-เล-อกคอล-มน-ตามเง-อนไขท-ต-องการ&#34;&gt;วิธีเลือกคอลัมน์ตามเงื่อนไขที่ต้องการ&lt;/h3&gt;
+
+&lt;p&gt;บางทีเราอยาก Filter เฉพาะคอลัมน์ที่มีค่าตามที่เราต้องการโดยใช้ .loc ได้ โดยสามารถเลือก Filter แบบ .all() (ทุกค่าในคอลัมน์ต้องตรงตามเงื่อนไข) หรือ .any() (บางค่าในคอลัมน์ต้องตรงตามเงื่อนไข)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe2 = dataframe.loc[:,(dataframe&amp;gt;50).any()]
+
+dataframe3 = dataframe.loc[:,(dataframe&amp;gt;50).all()]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;เราสามารถใช้หาคอลัมน์ที่มี Missing Values หรือหาคอลัมน์ที่ไม่มี Missing Values เลยก็ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe2 = dataframe.loc[:,dataframe.isnull().any()]
+
+dataframe3 = dataframe.loc[:,dataframe.notnull().all()]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-เล-อกแถวตามเง-อนไขท-ต-องการ&#34;&gt;วิธีเลือกแถวตามเงื่อนไขที่ต้องการ&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe[dataframe[&#39;C1&#39;]&amp;gt;50] # เงื่อนไขแบบง่าย ๆ
+
+dataframe2 = dataframe.loc[dataframe.C1.isin([1,2,3])] # เงื่อนไขแบบซับซ้อน
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ถ้ามีหลายเงื่อนไขเราสามารถใช้ &amp;amp; (and) หรือ | (or) ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe[(dataframe[&#39;C1&#39;]&amp;gt;50) &amp;amp; ((dataframe[&#39;C2&#39;]&amp;lt;25) | (dataframe[&#39;C2&#39;]&amp;gt;75))]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;หรือใช้ Query เป็นเงื่อนไขได้ด้วย มีประโยชน์มากเวลาเรามีเงื่อนไขแปลก ๆ ไม่ต้องเขียนลูปขึ้นมาเองเลยครับ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe2 = dataframe.query(&#39;C1 &amp;gt; C2&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-เพ-มคอล-มน-ใหม&#34;&gt;วิธีเพิ่มคอลัมน์ใหม่&lt;/h3&gt;
+
+&lt;p&gt;สามารถเพิ่มคอลัมน์ใหม่ได้ 2 แบบ คือ&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;เพิ่มโดยอิงจากคอลัมน์เดิม (เช่น เอาคอลัมน์เดิม + 10 หรือ เอาคอลัมน์ A – คอลัมน์ B มีประโยชน์มากตอนทำ Feature Engineering)&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;เพิ่มคอลัมน์โดยตั้งค่า Fix ไปเลยสำหรับทุกแถว ส่วนใหญ่จะใช้วิธีนี้เวลาเราอยากได้ค่าอะไรแปลก ๆ ที่ต้องเขียนลูปเพื่อใส่ค่า ก็สร้างคอลัมน์แบบ Fix ค่าก่อน แล้วต่อด้วยลูป&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df[&#39;new&#39;] = dataframe[&#39;old&#39;] + 10 # use old values
+
+df[&#39;new2&#39;] = 5 # apply the same value
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;การสล-บ-row-column-transpose&#34;&gt;การสลับ Row &amp;lt;-&amp;gt; Column (Transpose)&lt;/h3&gt;
+
+&lt;p&gt;ถ้าเราต้องการ Transpose (อารมณ์เหมือน Vector) เราสามารถใช้คำสั่งนี้ได้เลย&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe.T
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;การต-อ-dataframe&#34;&gt;การต่อ DataFrame&lt;/h3&gt;
+
+&lt;p&gt;การต่อ Data Frame คือการเอา Data Set 2 ชุดมาต่อกันในแถวตั้งหรือแนวนอน สำหรับการต่อแบบปะติดไปเลย&lt;/p&gt;
+
+&lt;p&gt;มี 2 คำสั่งที่เหมือนกัน คือ concat กับ append แต่ให้ใช้ concat ไปเลย เพราะ append เป็นคำสั่งที่ไม่ Memory Efficient&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;pd.concat([df1,df2], axis=1) # รวมกัน 2 คอลัมน์ (axis = 0 คือแถว, axis = 1 คือคอลัมน์)
+
+pd.concat([df1,df2,df3)] # รวมมากกว่า 2 คอลัมน์ก็ได้
+
+pd.concat(…, ignore_index=True) # รวมเสร็จแล้ว reset index ให้ด้วย ควรใช้ ไม่งั้นจะเจอ row ID ซ้ำกันตอนรวมร่าง
+
+pd.concat(…, join=&#39;inner&#39;) # รวมร่างเฉพาะคอลัมน์ที่ df1 กับ df2 มีทั้งคู่
+
+pd.concat(…, keys=[&#39;source1&#39;, &#39;source2&#39;]) # เพิ่มคอลัมน์เข้าไปด้วยเพื่อระบุว่า Row แต่ละอันมาจาก Data Frame อันไหน
+
+pd.concat(…, join_axes=[df2.index]) # เลือกรวมร่างเฉพาะ row index ที่เรากำหนดได้
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;การต-อ-dataframe-แบบ-join&#34;&gt;การต่อ DataFrame แบบ Join&lt;/h3&gt;
+
+&lt;p&gt;ถ้าต้องการต่อ DataFrame แบบ Advance หน่อย เราก็สามารถ Join DataFrame ได้เหมือน Join Table ใครเขียน SQL มาก่อนน่าจะถนัดเลย&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;pd.merge(df1, df2, left_on=&amp;quot;col1&amp;quot;, right_on=&amp;quot;col2&amp;quot;, how=&amp;quot;inner&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;เราสามารถเปลี่ยนตรง how=”inner” เป็น “outer”, “left”, “right” เพื่อเปลี่ยนเป็น Outer Join, Left Join, Right Join ได้อีกด้วย&lt;/p&gt;
+
+&lt;h3 id=&#34;การหาค-า-mean-sum-max-aggregate-แบบท-ง-dataframe&#34;&gt;การหาค่า Mean, Sum, Max (Aggregate) แบบทั้ง DataFrame&lt;/h3&gt;
+
+&lt;p&gt;Pandas สามารถสั่ง Aggregate เพื่อหาค่า Mean, Sum, และ Max ได้เลย เหมาะมากเวลาเราต้องการรวบข้อมูลก่อนเอาไป Visualize หรือต้องการทำ Feature Engineering ก็ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;newdf = df.agg([&#39;sum&#39;, &#39;max&#39;,&#39;mean&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;การ-aggregate-แบบตามกล-มท-ต-องการ&#34;&gt;การ Aggregate แบบตามกลุ่มที่ต้องการ&lt;/h3&gt;
+
+&lt;p&gt;บางทีเราอยาก Aggregate ข้อมูลตามการจัดกลุ่มในคอลัมน์อื่น เช่น เราอยากได้รายจ่ายทั้งหมดของแต่ละคน (ต้อง aggregate sum ของคอลัมน์รายจ่าย โดยแบ่งกลุ่มตามคอลัมน์ User ID) ใช้แบบนี้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;aggregate = dataframe.groupby(&#39;C1&#39;).sum()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;การร-น-function-เด-ยวก-นท-กแถว-หร-อท-กคอล-มน&#34;&gt;การรัน Function เดียวกันทุกแถว หรือทุกคอลัมน์&lt;/h3&gt;
+
+&lt;p&gt;เวลาเราอยากรันคำสั่งอะไรสักอย่างสำหรับทุกแถว หรือทุกคอลัมน์ เราสามารถเขียนได้แบบนี้&lt;/p&gt;
+
+&lt;h1 id=&#34;sum-for-columns&#34;&gt;sum for columns&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;sum_columns = dataframe[[&#39;C1&#39;,&#39;C2&#39;]].apply(sum,axis=0)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;sum-for-rows&#34;&gt;sum for rows&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;sum_rows = dataframe[[&#39;C1&#39;,&#39;C2&#39;]].apply(sum,axis=1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;เหมือนกับฟังก์ชั่น apply() ใน R นั่นเอง&lt;/p&gt;
+
+&lt;h3 id=&#34;ร-นคำส-งท-เข-ยนเองก-บท-กแถวใน-1-คอล-มน&#34;&gt;รันคำสั่งที่เขียนเองกับทุกแถวใน 1 คอลัมน์&lt;/h3&gt;
+
+&lt;p&gt;ถ้าต้องการรันคำสั่ง (Function) ที่เขียนเอง สำหรับทุกแถวในคอลัมน์อันใดอันหนึ่ง ใช้แบบนี้ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe[&#39;C1&#39;] = dataframe[&#39;C1&#39;].map(lambda x: x-100)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ร-นคำส-งท-เข-ยนเองก-บท-กค-า&#34;&gt;รันคำสั่งที่เขียนเองกับทุกค่า&lt;/h3&gt;
+
+&lt;p&gt;ถ้าต้องการรันคำสั่งที่เขียนเองกับทุกค่าใน DataFrame ใช้โค้ดนี้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;function_result = dataframe.applymap(lambda x: x*10)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;หรือใช้ transform ก็ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;new_dataframe = dataframe.transform(lambda x: x*100)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;คำนวณ-correlation-covariance&#34;&gt;คำนวณ Correlation &amp;amp; Covariance&lt;/h3&gt;
+
+&lt;p&gt;เวลาเราอยากรู้ว่าค่าต่าง ๆ ใน Data Set เรา Correlate กันมั้ย&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe.corr() # Correlation
+
+dataframe.cov() # Covariance
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;แต่ค่าที่ออกมาเป็นตัวเลขอาจจะดูยากนิดนึง เราสามารถพลอตสวย ๆ ด้วย Seaborn ได้ครับ สามารถใช้โค้ดด้านล่างนี้ได้เลย&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;import seaborn as sns
+
+corr = modeldf.corr()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;set-up-the-matplotlib-figure&#34;&gt;Set up the matplotlib figure&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;f, ax = plt.subplots(figsize=(15, 8))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;generate-a-custom-diverging-colormap&#34;&gt;Generate a custom diverging colormap&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;cmap = sns.diverging_palette(10, 10, as_cmap=True)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;draw-the-heatmap-with-the-mask-and-correct-aspect-ratio&#34;&gt;Draw the heatmap with the mask and correct aspect ratio&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;sns.heatmap(corr, annot=True)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_861/https://blog.datath.com/wp-content/uploads/2017/11/seaborn-correlation-heatmap.jpg&#34; alt=&#34;&#34; /&gt;
+Correlation Plot สวย ๆ ด้วย Seaborn&lt;/p&gt;
+
+&lt;h3 id=&#34;คำนวณ-cross-tabulation&#34;&gt;คำนวณ Cross Tabulation&lt;/h3&gt;
+
+&lt;p&gt;Cross Tabulation มีประโยชน์มากเวลาเราอยากรู้ว่ามี Data ที่ตรงกับกรุ๊ป A ของคอลัมน์ 1 และกรุ๊ป B ของคอลัมน์ 2 เท่าไหร่ เช่น มีนักเรียนผู้ชาย (คอลัมน์ gender) กี่คนในมัธยมปลาย (คอลัมน์ education) แบบนี้เป็นต้น&lt;/p&gt;
+
+&lt;p&gt;หรือถ้าใครใช้ PivotTable ใน Excel มาก่อน ก็เหมือนกันเลยครับ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;aggregate = pandas.crosstab(dataframe.C1, dataframe.C2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-หาค-า-unique-ในแต-ละคอล-มน&#34;&gt;วิธีหาค่า Unique ในแต่ละคอลัมน์&lt;/h3&gt;
+
+&lt;p&gt;คำสั่งนี้มีประโยชน์มาก เอาไว้ใช้เช็คว่าแต่ละคอลัมน์มีค่าแปลก ๆ มั้ย&lt;/p&gt;
+
+&lt;p&gt;ตัวอย่างการใช้งานก็คือ เราอยากรู้ว่า มีบ้านไหนที่มีจำนวนห้องนอนแปลก ๆ มั้ย (เช่น 50 ห้องนอน หรือ -5 ห้องนอน) ก็หาค่า unique จากคอลัมน์ “bedrooms”&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe[&#39;C1&#39;].unique()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-เช-คว-าม-แถวไหนข-อม-ลซ-ำม-ย-duplicated&#34;&gt;วิธีเช็คว่ามีแถวไหนข้อมูลซ้ำมั้ย (Duplicated)&lt;/h3&gt;
+
+&lt;p&gt;อันนี้มีประโยชน์มาก เอาไว้ใช้เช็คว่ามีข้อมูลแปลก ๆ มั้ย เช่น ทุกคอลัมน์ซ้ำกันหมด (อันนี้มีโอกาสว่าเป็นข้อมูลซ้ำ อาจจะต้องลบออก) หรือซ้ำกันบางคอลัมน์ (อันนี้ต้องเช็คอีกทีว่าคืออะไร)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe.duplicated() # หาอันที่เหมือนกันทุกคอลัมน์
+
+dataframe.duplicated(&#39;C1&#39;) # หาอันที่ซ้ำกันเฉพาะคอลัมน์ C1
+
+dataframe.duplicated([&#39;C1&#39;, &#39;C2&#39;]) # หาอันที่ซ้ำกันเฉพาะคอลัมน์ C1 และ C2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ปกติแล้วถ้ามีไอเทมซ้ำ คำสั่งนี้จะไม่แสดงไอเทมแรกในกลุ่มที่ซ้ำ (เช่น ถ้า C1=5 มี 2 แถว มันจะแสดงเฉพาะแถวที่ 2) เราสามารถใส่ Argument  &lt;strong&gt;keep=False&lt;/strong&gt;  เข้าไปเพื่อบังคับให้มันแสดงทุกแถวได้&lt;/p&gt;
+
+&lt;p&gt;นอกจากนั้นเรายังสามารถนับจำนวนแถวที่ Duplicate และลบทิ้งได้ด้วย&lt;/p&gt;
+
+&lt;h3 id=&#34;ว-ธ-การน-บจำนวน-duplicate&#34;&gt;วิธีการนับจำนวน Duplicate&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;len(df[ df.duplicated([&#39;A&#39;, &#39;B&#39;, &#39;C&#39;], keep = False)  ])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-การลบ-duplicate&#34;&gt;วิธีการลบ Duplicate&lt;/h3&gt;
+
+&lt;p&gt;เอาไว้ใช้ตอนเราเจอว่าทุกคอลัมน์ซ้ำกันหมดเลย ซึ่งเป็นเคสที่บอกว่าข้อมูลน่าจะซ้ำ ลบออกได้ (ขึ้นอยู่กับข้อมูลด้วยนะครับ บางข้อมูลอาจจะไม่ได้แปลว่าซ้ำแล้วลบได้):&lt;/p&gt;
+
+&lt;h1 id=&#34;remove-the-duplicates&#34;&gt;Remove the duplicates&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df.drop_duplicates([&#39;A&#39;, &#39;B&#39;, &#39;C&#39;], inplace=True)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;reset-dataframe-index-after-drop-duplicates&#34;&gt;Reset dataframe index after drop_duplicates.&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df.reset_index(drop=True, inplace=True)
+
+len(df)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;สำหรับโค้ดข้างบน จะเห็นว่าเราต้อง reset index หลังลบ duplicate ด้วยนะครับ&lt;/p&gt;
+
+&lt;h3 id=&#34;ว-ธ-การลบแถว-และลบคอล-มน&#34;&gt;วิธีการลบแถว และลบคอลัมน์&lt;/h3&gt;
+
+&lt;p&gt;ลบคอลัมน์สามารถทำได้แบบนี้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe = dataframe.drop(&#39;C1&#39;, axis=1)
+
+df.drop([&#39;C1&#39;], axis=1, inplace=True) # แบบนี้ก็ได้
+
+df.drop([&#39;C1&#39;, &#39;C2&#39;, &#39;C3&#39;], 1, inplace=True) # ลบทีละหลายคอลัมน์ก็ได้
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ส่วนการลบแถวจะลำบากหน่อย เพราะต้องใส่ Row Index (เลขที่อยู่ซ้ายสุดเวลาเราปรินท์ DataFrame)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe = dataframe.drop(5, axis=0)
+
+dataframe.reset_index(drop=True) # Reset index
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ลบแถวแล้วอย่าลืมเช็คด้วยว่าที่ลบไปถูกต้องมั้ย และหลังจากลบแถวต้อง Reset Index ด้วย&lt;/p&gt;
+
+&lt;h3 id=&#34;ว-ธ-การลบแถวท-ม-missing-value&#34;&gt;วิธีการลบแถวที่มี Missing Value&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;ข้อควรระวัง:&lt;/strong&gt;  การที่อยู่ ๆ เราลบแถวที่มี Missing Value ทิ้งไปเลยอาจจะไม่ใช่วิธีที่ดีที่สุดในการทำ Data Analysis เสมอไปนะครับ บางเคสการ Impute (คำนวณหาค่าไปใส่) จะดีกว่าครับ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe2 = dataframe.dropna(axis=0)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-แทนค-า-missing-value-ด-วยค-าเฉล-ย-mean-imputation&#34;&gt;วิธีแทนค่า Missing Value ด้วยค่าเฉลี่ย (Mean Imputation)&lt;/h3&gt;
+
+&lt;p&gt;วิธีหนึ่งในการแทนค่าที่หายไป คือการทำสิ่งที่เรียกว่า Mean Imputation หรือหาค่าเฉลี่ยของคอลัมน์นั้น แล้วเอามาแทนค่าที่หายไปนั่นเองครับ&lt;/p&gt;
+
+&lt;p&gt;ข้อดีของการทำ Mean Imputation คือ สามารถทำได้ง่าย แต่ก็ต้องระวังเรื่องข้อเสีย เช่น ทำแบบนี้จะเป็นการไม่สนใจความสัมพันธ์ระหว่างตัวแปร ทำให้เกิด Bias สูง ควรใช้เฉพาะเวลา Missing Value ไม่เยอะเท่านั้นครับ&lt;/p&gt;
+
+&lt;p&gt;สามารถรันโค้ดด้านล่างเพื่อทำ Mean Imputation ได้ง่าย ๆ เลย&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;import numpy as np
+
+meanAge = np.mean(df.Age) # Get mean value
+
+df.Age = df.Age.fillna(meanAge) # Fill missing values with mean
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;การล-ปข-อม-ลแต-ละคอล-มน-และแต-ละแถว&#34;&gt;การลูปข้อมูลแต่ละคอลัมน์ และแต่ละแถว&lt;/h3&gt;
+
+&lt;p&gt;การลูปมีประโยชน์มากถ้าเราต้องการเขียนฟังก์ชั่นแปลก ๆ ใช้เองที่ Pandas ไม่รองรับ (หรืออาจจะรองรับแต่เราหาไม่เจอ เขียนเองง่ายกว่า) สามารถลูปได้ทั้งแต่ละคอลัมน์ และแต่ละแถว&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;for col_idx,data in dataframe.iteritems():
+
+	print  (&amp;quot;column:&amp;quot;,col_idx)
+	print  (&amp;quot;column data:&amp;quot;)
+	print  (data,&amp;quot;\n&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;การลูปข้อมูลแต่ละแถว&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;for col_idx,data in dataframe.iterrows():
+
+print  (&amp;quot;row:&amp;quot;,col_idx)
+print  (&amp;quot;row data:&amp;quot;)
+print  (data,&amp;quot;\n&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-เปล-ยน-dataframe-จากแบบ-wide-เป-น-long-melt&#34;&gt;วิธีเปลี่ยน DataFrame จากแบบ Wide เป็น Long (Melt)&lt;/h3&gt;
+
+&lt;p&gt;การ Melt Data มีประโยชน์มากเวลาเราต้องการเอาข้อมูลไปพลอต Data Visualization หรือเราต้องการ Aggregate ครับ&lt;/p&gt;
+
+&lt;p&gt;dataframe2 = dataframe.melt()&lt;/p&gt;
+
+&lt;h3 id=&#34;ว-ธ-การเปล-ยนช-อคอล-มน-rename&#34;&gt;วิธีการเปลี่ยนชื่อคอลัมน์ (Rename)&lt;/h3&gt;
+
+&lt;p&gt;บางทีเราต้องการเปลี่ยนชื่อเพื่อให้สั้นลง ให้พิมพ์สะดวกขึ้น สามารถทำได้ดังนี้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe.rename(columns={&#39;old&#39;:&#39;new&#39;},inplace=True)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-การใส-คำนำหน-าคอล-มน-prefix&#34;&gt;วิธีการใส่คำนำหน้าคอลัมน์ (Prefix)&lt;/h3&gt;
+
+&lt;p&gt;อันนี้มีประโยชน์มากตอนเรามีข้อมูลหลาย ๆ ชุด และต้องการ Merge โดยอยากให้ชื่อคอลัมน์ไม่ซ้ำกัน&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;thisdata = thisdata.add_prefix(&#39;data_&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-การแทนค-าใน-dataframe&#34;&gt;วิธีการแทนค่าใน DataFrame&lt;/h3&gt;
+
+&lt;p&gt;เหมาะมากเวลาต้องการแก้ Typo Error เช่น เราอยากได้ค่า Bangkok แต่เรารู้ว่ามีคนเขียนเป็น BKK อะไรแบบนี้ (รันคำสั่ง .unique เพื่อดูก่อน)&lt;/p&gt;
+
+&lt;p&gt;เราสามารถ Replace ทั้ง DataFrame ได้เลยแบบนี้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe2 = dataframe.replace(1, -100)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;เราสามารถ Replace หลายค่าพร้อมกันได้ด้วยครับ และสามารถกำหนด Column ที่ต้องการให้แทนค่าได้ด้วย&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df[&#39;city&#39;].replace({
+
+&#39;BKK&#39;:&#39;Bangkok&#39;,
+
+&#39;BNK&#39;:&#39;Bangkok&#39;
+
+}, inplace=True)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-การ-export-dataframe-เป-นไฟล-csv&#34;&gt;วิธีการ Export DataFrame เป็นไฟล์ CSV&lt;/h3&gt;
+
+&lt;p&gt;หลังจากที่เราจัดการ Data เรียบร้อยแล้ว ก็สามารถ Export เป็น CSV เอาไปใช้ต่อกับโปรแกรมอื่น หรืองานส่วนอื่น ๆ ได้ (แอดทำบ่อยเพราะบางทีต้องสลับ Python &amp;lt;-&amp;gt; R รัว ๆ)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe.to_csv(&#39;dataframe.csv&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Reference : &lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/&#34; target=&#34;_blank&#34;&gt;https://blog.datath.com/cheatsheet-pandas/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>จัดการฐานข้อมูล SQL ด้วย sqlalchemy</title>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/manage-sql-sqlalchemy/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/manage-sql-sqlalchemy/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;featured.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;สารบัญ&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;๛ แนวคิดการควบคุมฐานข้อมูลในรูปออบเจ็กต์&lt;br /&gt;
+๛ การติดตั้ง&lt;br /&gt;
+๛ การเริ่มต้นเชื่อมต่อกับฐานข้อมูลเพื่อเตรียมการใช้งาน&lt;br /&gt;
+๛ การสร้างคลาสตารางข้อมูล&lt;br /&gt;
+๛ การเตรียมไฟล์แบบจำลองและตัวสร้างเซสชัน&lt;br /&gt;
+๛ การเพิ่มข้อมูลลงไป&lt;br /&gt;
+๛ การอ่านข้อมูลในตาราง (query)&lt;br /&gt;
+๛ การอ่านข้อมูลทั้งหมดใส่ลิสต์ (all)&lt;br /&gt;
+๛ การกำหนดวิธีการเรียงลำดับข้อมูล (order_by)&lt;br /&gt;
+๛ การเอาข้อมูลเฉพาะตัวแรกตัวเดียว (first)&lt;br /&gt;
+๛ การจำกัดเอาข้อมูลเฉพาะบางส่วน (limit และ offset)&lt;br /&gt;
+๛ การกำหนดเงื่อนไขข้อมูลที่จะอ่าน (filter)&lt;br /&gt;
+๛ การแก้ข้อมูล (update)&lt;br /&gt;
+๛ การลบข้อมูลออก (delete)&lt;br /&gt;
+๛ การย้อนคืนสิ่งที่ทำกลับไป (rollback)&lt;br /&gt;
+๛ การป้อนคำสั่ง SQL ใส่โดยตรง (execute)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;sqlalchemy&lt;/strong&gt; เป็นมอดูลในไพธอนที่ใช้สำหรับเชื่อมต่อกับระบบจัดการฐานข้อมูล SQL โดยควบคุมฐานข้อมูลในรูปแบบที่สั่งข้อมูลเหมือนเป็นออบเจ็กต์ตามแนวคิดเชิงวัตถุ&lt;/p&gt;
+
+&lt;p&gt;บทความนี้จะอธิบายแนวคิดเบื้องต้นและวิธีการใช้ sqlalchemy เพื่อจัดการกับฐานข้อมูลอย่างง่าย&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;แนวคิดการควบคุมฐานข้อมูลในรูปออบเจ็กต์介&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;ปกติการเชื่อมต่อกับฐานข้อมูล SQL จะทำโดยใช้โค้ดคำสั่งภาษา SQL แม้ว่าบางทีอาจไม่ได้สั่งโดยตรงแต่ผ่านตัวกลางอะไรก็ตาม&lt;/p&gt;
+
+&lt;p&gt;ไพธอนมีมอดูลมาตรฐานที่ใช้จัดการฐานข้อมูลอยู่แล้วคือ sqlite3 อย่างไรก็ตาม มอดูลนี้เป็นแค่ตัวกลางสำหรับส่งโค้ดคำสั่ง SQL เข้าไปสั่งฐานข้อมูลเท่านั้น เรายังคงต้องเขียนโค้ดควบคุมด้วยตัวเอง&lt;/p&gt;
+
+&lt;p&gt;เกี่ยวกับการใช้ sqlite3 ได้เขียนถึงไปใน &amp;gt;&amp;gt; &lt;a href=&#34;https://phyblas.hinaboshi.com/20200519&#34; target=&#34;_blank&#34;&gt;https://phyblas.hinaboshi.com/20200519&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;แต่หากใช้ sqlalchemy แม้จะใช้ควบคุมฐานข้อมูล SQL เหมือนกัน แต่ใช้วิธีการต่างกัน คือ sqlalchemy จะเป็นการควบคุมทางอ้อม เรามักจะไม่ต้องพิมพ์โค้ดคำสั่ง SQL เองโดยตรง&lt;/p&gt;
+
+&lt;p&gt;วิธีการของ sqlalchemy คือมองว่าตารางข้อมูลในฐานข้อมูลนั้นเป็นออบเจ็กต์ตัวหนึ่ง โดยออบเจ็กต์นั้นจะมีฟังก์ชันหรือเมธอดต่างๆซึ่งเมื่อใช้แล้วจะไปสร้างโค้ดคำสั่ง SQL สั่งฐานข้อมูลอีกที&lt;/p&gt;
+
+&lt;p&gt;ดังนั้นแล้วการควบคุมออบเจ็กต์นั้นก็เป็นการควบคุมข้อมูลในฐานข้อมูล ถ้าเราต้องการดึงข้อมูลในฐานข้อมูลมาอ่าน sqlalchemy ก็จะไปสร้างคำสั่งดึงข้อมูลมาให้ ถ้าเราทำความเปลี่ยนแปลงอะไรกับออบเจ็กต์ มันก็จะไปเปลี่ยนแปลงตัวข้อมูลในฐานข้อมูลด้วยโดยอัตโนมัติ&lt;/p&gt;
+
+&lt;p&gt;การที่ทำแบบนี้ได้เพราะในตัวมอดูล sqlalchemy นั้นมีการตั้งความเชื่อมโยงระหว่างการกระทำต่อตัวออบเจ็กต์ กับคำสั่ง SQL สำหรับสั่งฐานข้อมูล&lt;/p&gt;
+
+&lt;p&gt;แนวคิดแบบนี้เรียกว่า&lt;strong&gt;การจับคู่เชื่อมโยงระหว่างเชิงวัตถุและเชิงสัมพันธ์ (Object-Relational mapping)&lt;/strong&gt; หรือมักเรียกย่อๆว่า &lt;strong&gt;ORM&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;นอกจาก sqlalchemy แล้วในไพธอนก็ยังมีมอดูลตัวอื่นที่ทำคล้ายๆกันนี้ เช่น &lt;a href=&#34;https://tortoise-orm.readthedocs.io/&#34; target=&#34;_blank&#34;&gt;tortoise-orm&lt;/a&gt; รวมถึง &lt;a href=&#34;https://www.djangoproject.com/&#34; target=&#34;_blank&#34;&gt;django&lt;/a&gt; ซึ่งเป็นมอดูลทำเฟรมเวิร์กเขียนเว็บ ก็มีมอดูลย่อยที่ควบคุมฐานข้อมูลแบบ ORM เช่นเดียวกัน&lt;/p&gt;
+
+&lt;p&gt;sqlalchemy อาจใช้คู่กับมอดูลไพธอนสำหรับเขียนเว็บที่ไม่ได้มี ORM อยู่ในตัวสำเร็จเหมือนอย่างที่ django มีแบบนั้น เช่น flask หรือ responder&lt;/p&gt;
+
+&lt;p&gt;หากเทียบกับในภาษารูบีก็เหมือนกับมอดูล activerecord ซึ่งมักจะใช้คู่กับ ruby on rails เฟรมเวิร์กเขียนเว็บยอดนิยมตัวหนึ่ง&lt;/p&gt;
+
+&lt;p&gt;sqlalchemy อาจใช้ได้กับฐานข้อมูลต่างๆเหล่านี้&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;SQLite&lt;/li&gt;
+&lt;li&gt;MySQL&lt;/li&gt;
+&lt;li&gt;PostgreSQL&lt;/li&gt;
+&lt;li&gt;Oracle&lt;/li&gt;
+&lt;li&gt;Mycrosoft SQL Server&lt;/li&gt;
+&lt;li&gt;Firebird&lt;/li&gt;
+&lt;li&gt;Sybase&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ซึ่งฐานข้อมูลแต่ละตัวนั้นก็จะมีลักษณะการเขียนที่ต่างกันออกไป และ sqlalchemy ช่วยรองรับความแตกต่างนี้ให้ได้ในระดับหนึ่ง อย่างไรก็ตามความต่างนี้ก็ส่งผลอยู่บ้าง แต่พวกคำสั่งพื้นฐานจะใช้ได้ไม่ต่างกันนัก&lt;/p&gt;
+
+&lt;p&gt;ในบทความนี้จะใช้ SQLite เป็นตัวอย่าง แต่วิธีการสามารถนำไปใช้กับฐานข้อมูลชนิดอื่นได้เช่นกัน แม้อาจมีรายละเอียดหรือผลลัพธ์ต่างกันออกไปบ้าง&lt;/p&gt;
+
+&lt;p&gt;เมื่อใช้ sqlalchemy แล้วจะทำให้เราอ่านเขียนข้อมูลในฐานข้อมูล SQL ได้โดยไม่ต้องเขียนโค้ดภาษา SQL โดยตรงเลย เพียงแต่ในเบื้องหลังการทำงานของมันจริงๆแล้วก็คือสร้างโค้ด SQL โดยอัตโนมัติเพื่อไปสั่งอีกที ดังนั้นก็ยังควรจะรู้โค้ด SQL อยู่ เมื่อมีปัญหาจะได้เข้าใจว่าเกิดอะไรขึ้น อีกทั้งคำสั่งลึกๆซับซ้อนจำเพาะบางอย่างเขียนโค้ด SQL สั่งเองอาจจะเร็วกว่าด้วย&lt;/p&gt;
+
+&lt;p&gt;ปกติเวลาเกิดข้อผิดพลาดอะไรขึ้นระหว่างติดต่อกับฐานข้อมูลอยู่ sqlalchemy ก็จะแสดงโค้ด SQL ที่ใช้ตอนนั้นให้ดูไปด้วย สามารถดูโค้ดเพื่อให้เข้าใจได้มากขึ้นว่ามีข้อผิดพลาดอะไร&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;การติดตั้ง介&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;sqlalchemy ไม่ใช่มอดูลมาตรฐานของไพธอน ต้องติดตั้งเพิ่มเติมเอง ซึ่งก็ทำได้ง่ายโดยใช้ pip&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;pip install SQLAlchemy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;หรือ conda&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;conda install -c anaconda sqlalchemy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;การเริ่มต้นเชื่อมต่อกับฐานข้อมูลเพื่อเตรียมการใช้งาน介&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;ขอเริ่มด้วยการยกตัวอย่างการใช้ sqlalchemy ทำการเชื่อมต่อกับฐานข้อมูล สร้างตารางข้อมูลในนั้น จากนั้นเติมข้อมูลในตาราง และสุดท้ายคือดูข้อมูลในตาราง&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sqlalchemy
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
+
+# สร้างคลาสแบบจำลองพื้นฐาน
+Base = declarative_base()
+
+# สร้างคลาสตารางฐานข้อมูลนักเรียน
+class Nakrian(Base):
+    __tablename__ = &#39;nakrian&#39;
+    chue = sqlalchemy.Column(sqlalchemy.String,primary_key=True)
+    ayu = sqlalchemy.Column(sqlalchemy.Integer)
+    sung = sqlalchemy.Column(sqlalchemy.Float)
+    
+    def __repr__(self):
+        return f&#39;{self.chue} อายุ {self.ayu} สูง {self.sung*100:.0f} ซม.&#39;
+
+# สร้างตัวเชื่อมต่อกับฐานข้อมูล sqlite ในไฟล์ yurudata.db
+engine = sqlalchemy.create_engine(&#39;sqlite:///yurudata.db&#39;)
+
+# ทำการสร้างตารางขึ้นมาในฐานข้อมูล SQL จริงๆ
+Base.metadata.create_all(engine)
+
+# สร้างเซชชัน
+sm = sessionmaker(engine)
+session = sm()
+
+
+
+# เข้าสู่ขั้นตอนใช้งาน
+
+# สร้างออบเจ็กต์นักเรียนคนแรก
+nakrian1 = Nakrian(chue=&#39;ริเสะ&#39;,ayu=15,sung=1.46)
+# ใส่นักเรียนคนแรกลงในฐานข้อมูล
+session.add(nakrian1)
+
+# สร้างออบเจ็กต์นักเรียนคนที่ ๒ และ ๓
+nakrian2 = Nakrian(chue=&#39;อายาโนะ&#39;,ayu=14,sung=1.59)
+nakrian3 = Nakrian(chue=&#39;ซากุราโกะ&#39;,ayu=13,sung=1.53)
+# ใส่นักเรียนคนที่ ๒ และ ๓ ลงในฐานข้อมูลพร้อมกันทีเดียว
+session.bulk_save_objects([nakrian2,nakrian3])
+
+# บันทึกความเปลี่ยนแปลงลงในฐานข้อมูลจริงๆ
+session.commit()
+
+# เปิดดูข้อมูลทั้งหมดในฐานข้อมูล
+for nakrian in session.query(Nakrian).order_by(Nakrian.ayu):
+    print(nakrian)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ผลที่ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;ซากุราโกะ อายุ 13 สูง 153 ซม.
+อายาโนะ อายุ 14 สูง 159 ซม.
+ริเสะ อายุ 15 สูง 146 ซม.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;จากตัวอย่างจะเห็นว่าขั้นตอนการเตรียมการใช้งานโดยรวมก็จะมีอยู่ดังนี้&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;สร้างคลาสแบบจำลองพื้นฐาน (Base) จาก sqlalchemy.ext.declarative.declarative_base()&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;สร้างคลาสตารางฐานข้อมูลนักเรียนขึ้นมาโดยรับทอดจากแบบจำลองพื้นฐานนั้น&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;สร้างออบเจ็กต์ตัวเชื่อมต่อกับฐานข้อมูล (ใน sqlalchemy จะเรียกว่าเป็น engine หรือเครื่องยนต์) โดยใช้ sqlalchemy.create_engine() แล้วระบุชื่อฐานข้อมูลที่จะเชื่อมต่อ&lt;/p&gt;
+
+&lt;p&gt;ในกรณีของ SQLite ดังตัวอย่างนี้จะเขียนเป็น sqlalchemy.create_engine(&amp;lsquo;sqlite:///พาธและชื่อไฟล์ฐานข้อมูล&amp;rsquo;)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;สร้างตารางขึ้นตามแบบจำลองที่สร้างไว้ Base.metadata.create_all(engine)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;สร้างตัวสร้างเซชชันขึ้นมาจาก sqlalchemy.orm.sessionmaker()&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;สร้างเซชชันขึ้นมาจากตัวสร้างเซชชัน&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;หลังจากนั้นก็เข้าสู่ขั้นตอนการนำมาใช้งานได้ โดยสิ่งที่จะต้องใช้คือตัว session และตัวคลาสของตารางข้อมูลที่เราสร้างขึ้นมาจากขั้นเตรียมการ&lt;/p&gt;
+
+&lt;p&gt;รายละเอียดในส่วนการใช้งานนั้นจะอธิบายอีกทีหลังในหัวข้อถัดๆไป&lt;/p&gt;
+
+&lt;p&gt;ฟังก์ชันที่ใช้นั้นกระจัดกระจายอยู่ตามมอดูลย่อยต่างๆ ตัวหลักๆที่ใช้เป็นประจำมีดังนี้&lt;/p&gt;
+
+&lt;p&gt;ชื่อฟังก์ชัน&lt;/p&gt;
+
+&lt;p&gt;หน้าที่&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;sqlalchemy.create_engine&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;สร้างตัวเชื่อมต่อกับฐานข้อมูล&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;sqlalchemy.orm.sessionmaker&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;ตัวสร้างเซสชันการเชื่อมต่อ&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;sqlalchemy.ext.declarative.declarative_base&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;ตัวสร้างคลาสที่เป็นฐานของแบบจำลองตารางข้อมูล&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;sqlalchemy.Column&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;สร้างออบเจ็กต์ที่แทนสดมภ์ของตารางข้อมูล&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;sqlalchemy.String&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;sqlalchemy.Integer&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;sqlalchemy.Float&lt;/code&gt;&lt;br /&gt;
+ฯลฯ&lt;/p&gt;
+
+&lt;p&gt;คลาสแทนชนิดข้อมูล สายอักขระ, เลขจำนวนเต็ม, เลขทศนิยม, ฯลฯ&lt;/p&gt;
+
+&lt;p&gt;การแค่ import sqlalchemy เข้ามาอย่างเดียวไม่ได้ทำให้สามารถเรียกใช้พวก sqlalchemy.orm.sessionmaker() หรือ sqlalchemy.ext.declarative.declarative_base() ซึ่งอยู่ภายในมอดูลย่อยได้ ดังนั้นจึงต้องเขียน from import แยกออกมาอีกที&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;การสร้างคลาสตารางข้อมูล介&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;ในส่วนของขั้นตอนการเตรียมตัวดังที่ยกตัวอย่างมาแล้วนั้น ขั้นตอนที่ดูจะซับซ้อนและต้องปรับแต่งอะไรมากที่สุดก็คือการสร้างคลาสของตารางข้อมูล&lt;/p&gt;
+
+&lt;p&gt;เวลาสร้างคลาสนี้ขึ้นจะสร้างโดยรับทอดจากคลาส Base ซึ่งสร้างขึ้นมาจาก sqlalchemy.ext.declarative.declarative_base() อีกที&lt;/p&gt;
+
+&lt;p&gt;ตัวอย่าง สร้างตารางข้อมูลผู้กล้าซึ่งมี ๓ สดมภ์คือ chue (ชื่อ), lv, hp&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sqlalchemy
+from sqlalchemy.ext.declarative import declarative_base
+
+Basemodel = declarative_base()
+
+class Phukla(Basemodel):
+    __tablename__ = &#39;phukla&#39;
+    chue = sqlalchemy.Column(sqlalchemy.String(32),primary_key=True)
+    lv = sqlalchemy.Column(sqlalchemy.Integer)
+    hp = sqlalchemy.Column(sqlalchemy.Float)
+    
+    def __repr__(self):
+        return f&#39;{self.chue} lv: {self.lv} hp: {self.hp}&#39;
+
+engine = sqlalchemy.create_engine(&#39;sqlite:///pukla.db&#39;)
+Basemodel.metadata.create_all(engine)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;sqlalchemy.Column() คือคลาสที่ใช้สร้างออบเจ็กต์สดมภ์ (column) ของตารางข้อมูล ต้องการให้ตารางมีข้อมูลอะไรบ้างก็ใส่ไปตามนั้น โดยในวงเล็บจะเป็นตัวกำหนดคุณสมบัติของสดมภ์นั้น ที่สำคัญที่สุดก็คือชนิดของข้อมูล ก็ให้ใส่โดยใช้ตัวคลาสที่เตรียมไว้ในตัวมอดูล sqlalchemy ได้แก่ String (สายอักขระ), Integer (เลขจำนวนเต็ม), Float (เลขทศนิยม), ฯลฯ&lt;/p&gt;
+
+&lt;p&gt;สำหรับสายอักขระ หากต้องการจำกัดจำนวนตัวอักษรก็ใส่วงเล็บต่อ เช่น sqlalchemy.String(20) แบบนี้ แต่จะไม่ใส่ก็ได้&lt;/p&gt;
+
+&lt;p&gt;นอกจากนี้หากต้องการให้สดมภ์ไหนเป็นไพรมารีคีย์ (สดมภ์ที่สำคัญที่สุดในตาราง และจะให้มีค่าซ้ำกันไม่ได้) ก็ใส่ primary_key=True ลงไป&lt;/p&gt;
+
+&lt;p&gt;ในการใช้ sqlalchemy จำเป็นต้องกำหนดสดมภ์สักตัวหนึ่งให้เป็นไพรมารีคีย์เสมอ&lt;/p&gt;
+
+&lt;p&gt;ปกติแล้วแค่กำหนดคอลัมน์ลงไปแบบนี้ ตอนที่สั่งสร้างอินสแตนซ์ขึ้นมาก็ใส่ชื่อสดมภ์ต่างๆเหล่านั้นลงไปเป็นคีย์เวิร์ด&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;phukla1 = Phukla(chue=&#39;ได&#39;,lv=99,hp=999)
+print(phukla1) # ได้ ได lv: 99 hp: 999
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ตรงส่วน &lt;strong&gt;repr&lt;/strong&gt; นี้ใส่ลงไปเพื่อกำหนดว่าเวลาสั่ง print ขึ้นมาจะให้แสดงค่าเป็นแบบไหน อาจจะไม่ได้จำเป็นต้องใส่ แต่สะดวกเวลาแสดงผล จะได้รู้ว่าข้อมูลตัวนี้เป็นตัวไหน มีค่าอะไรอย่างไร&lt;/p&gt;
+
+&lt;p&gt;หากไม่เขียน &lt;strong&gt;repr&lt;/strong&gt; เมื่อสั่ง print ก็คงจะออกมาในลักษณะแบบนี้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;lt;__main__.Phukla at 0x11b2a5090&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ซึ่งก็ไม่ได้แสดงข้อมูลในนี้ให้เห็นโดยตรง จึงอาจจะไม่สะดวก ดังนั้นตัวอย่างต่อจากนี้ไปก็จะใส่ &lt;strong&gt;repr&lt;/strong&gt; ไปด้วยตลอด&lt;/p&gt;
+
+&lt;p&gt;นอกจากนี้แล้วอาจกำหนดตรงส่วนของ &lt;strong&gt;init&lt;/strong&gt; เพื่อให้ตอนสร้างง่ายขึ้นหน่อย เช่นแค่ใส่เป็นอาร์กิวเมนต์ลงไปตามลำดับ รวมทั้งกำหนดค่าเริ่มต้นให้ได้ด้วย เช่น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Nangsue(Basemodel):
+    __tablename__ = &#39;nangsue&#39;
+    chue = sqlalchemy.Column(sqlalchemy.String,primary_key=True)
+    chamnuanna = sqlalchemy.Column(sqlalchemy.Integer)
+    rakha = sqlalchemy.Column(sqlalchemy.Float)
+    
+    def __init__(self,chue,chamnuanna=100,rakha=200):
+        self.chue = chue
+        self.chamnuanna = chamnuanna
+        self.rakha = rakha
+    
+    def __repr__(self):
+        return f&#39;หนังสือชื่อ &amp;quot;{self.chue}&amp;quot; มี {self.chamnuanna} หน้า ราคา {self.rakha} บาท&#39;
+
+ns = Nangsue(&#39;สอนแมวเขียนโปรแกรม&#39;,400)
+print(ns) # ได้ หนังสือชื่อ &amp;quot;สอนแมวเขียนโปรแกรม&amp;quot; มี 400 หน้า ราคา 200 บาท
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;นอกจากนี้ขั้นตอนสำคัญอีกอย่างก็คือการทำให้ตารางถูกสร้างขึ้นมาจริงๆในฐานข้อมูลด้วย&lt;/p&gt;
+
+&lt;p&gt;การสร้างคลาสขึ้นมานั้นยังไม่ได้ทำให้ตารางถูกสร้างขึ้นมาในฐานข้อมูลจริงๆทันที ก่อนจะใช้งานจริงต้องสั่งสร้างตารางก่อน ซึ่งทำได้โดยสั่ง Base.metadata.create_all()&lt;/p&gt;
+
+&lt;p&gt;Base นี้ก็คือตัวคลาสฐานที่ใช้ตอนรับทอดคลาสตารางข้อมูลนี้มา หากมีข้อมูลที่อยากให้สร้างขึ้นมาพร้อมกันก็ให้รับทอดจาก Base อันนี้เหมือนกัน แล้วเมื่อสั่ง .metadata.create_all() ก็จะสร้างขึ้นมาใหม่ทั้งหมด ถ้าหากยังไม่ได้มีอยู่ก่อน แต่ถ้าอันไหนมีแล้วก็จะไม่เกิดอะไรขึ้น&lt;/p&gt;
+
+&lt;p&gt;ในทางกลับกัน ถ้าหากต้องการลบตารางข้อมูลทั้งหมดในฐานนั้นก็สั่ง Base.metadata.drop_all()&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;การเตรียมไฟล์แบบจำลองและตัวสร้างเซสชัน介&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;นอกจากตัวคลาสแบบจำลองแล้ว อีกสิ่งที่ต้องเตรียมการก็คือเซสชัน (session) ซึ่งสร้างจาก sqlalchemy.orm.sessionmaker&lt;/p&gt;
+
+&lt;p&gt;เซสชันเป็นตัวกลางเชื่อมต่อกับ engine อีกที เวลาสร้าง sessionmaker ให้ใส่ engine ที่จะทำการเชื่อมต่อลงไป&lt;/p&gt;
+
+&lt;p&gt;สิ่งที่ได้จาก sessionmaker คือตัวคลาสที่เอาไว้สร้างเซสชันอีกที ยังไม่ใช่ตัวเซสชัน ต้องเอามาเรียกใช้โดยสั่ง () เพื่อสร้างเซสชันอีกที&lt;/p&gt;
+
+&lt;p&gt;ปกติแล้วส่วนของแบบจำลองและส่วนสร้างเซสชันอาจจะถูกเก็บไว้ในไฟล์หนึ่ง แล้วก็ให้เรียกใช้ไฟล์นั้นขึ้นมาในฐานะมอดูล โดย import เอาตัวคลาสและเซสชันมาใช้&lt;/p&gt;
+
+&lt;p&gt;เพื่อเป็นตัวอย่างสำหรับหัวข้อถัดๆไป ขอสร้างแบบจำลองและเซสชันนี้ขึ้นมาใส่ในไฟล์ชื่อ pkmoses.py&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sqlalchemy
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
+
+Basemodel = declarative_base()
+
+class Pokemon(Basemodel):
+    __tablename__ = &#39;pokemon&#39;
+    lek = sqlalchemy.Column(sqlalchemy.Integer,primary_key=True)
+    chue = sqlalchemy.Column(sqlalchemy.String(32))
+    nak = sqlalchemy.Column(sqlalchemy.Float)
+    sung = sqlalchemy.Column(sqlalchemy.Float)
+    
+    def __init__(self,lek,chue,nak,sung):
+        self.lek = lek
+        self.chue = chue
+        self.nak = nak
+        self.sung = sung
+    
+    def __repr__(self):
+        return f&#39;{self.lek}. {self.chue} หนัก {self.nak} สูง {self.sung*100:.0f} ซม.&#39;
+
+engine = sqlalchemy.create_engine(&#39;sqlite:///pkdata.db&#39;)
+Basemodel.metadata.create_all(engine)
+
+Session = sessionmaker(engine)
+session = Session()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ข้อมูลในตารางนี้ก็คือข้อมูล pokemon ซึ่งมี ๔ สดมภ์ ได้แก่ lek (เลข), chue (ชื่อ), nak (หนัก), sung (สูง) โดยใช้เลขเป็นไพรมารีคีย์&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;การเพิ่มข้อมูลลงไป介&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;หลังจากขั้นตอนการสร้างตาราง ก็เข้าสู่ขั้นตอนการใช้งาน โดยคำสั่งพื้นฐานที่สุดก็คือการใส่ข้อมูลเข้าไป&lt;/p&gt;
+
+&lt;p&gt;การใส่ข้อมูลอาจมีขั้นตอนดังนี้&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;สร้างออบเจ็กต์ที่เป็นอินสแตนซ์ของคลาสตารางข้อมูลขึ้นมา&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ใส่ข้อมูลลงในฐานข้อมูลจริงๆ โดยใช้ session.add (ถ้ามีตัวเดียว) หรือ session.add_all หรือ session.bulk_save_objects (ถ้ามีหลายตัว)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;session.commit() เพื่อให้ข้อมูลถูกบันทึกไปจริงๆ&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ตัวอย่างการใช้งาน ให้ import ตัวคลาสแบบจำลองและ session จาก pkmoses ที่สร้างขึ้นมาจากไฟล์ที่สร้างจากในหัวข้อที่แล้ว แล้วเพิ่มข้อมูลลงไปตัวหนึ่งด้วย .add()&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from pkmoses import session,Pokemon
+
+poke1 = Pokemon(152,&#39;ชิโครีตา&#39;,6.4,0.9)
+session.add(poke1)
+session.commit()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;หากต้องการเพิ่มทีละหลายตัวอาจใช้ .add_all() หรือ .bulk_save_objects() ก็ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;poke2 = Pokemon(155,&#39;ฮิโนอาราชิ&#39;,7.9,0.5)
+poke3 = Pokemon(158,&#39;วานิโนโกะ&#39;,9.5,0.6)
+session.bulk_save_objects([poke2,poke3])
+session.commit()
+
+poke4 = Pokemon(153,&#39;เบย์ลีฟ&#39;,15.8,1.2)
+poke5 = Pokemon(154,&#39;เมกาเนียม&#39;,100.5,1.8)
+session.add_all([poke4,poke5])
+session.commit()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;เพียงแต่ข้อแตกต่างก็คือ .add_all() จะเป็นการสั่งให้วนซ้ำเพิ่มข้อมูลเข้าไปทีละตัวตามลำดับ ส่วน .bulk_save_objects() จะทำไปพร้อมกันและจะรวดเร็วกว่า&lt;/p&gt;
+
+&lt;p&gt;ดังนั้นถ้าต้องการความรวดเร็วใช้ .bulk_save_objects() จะเร็วกว่า เพียงแต่เนื่องจากข้อมูลอาจถูกใส่อย่างไม่เป็นลำดับถูกต้อง ดังนั้นหากให้ความสำคัญกับลำดับของข้อมูลก็อาจใช้ .add_all()&lt;/p&gt;
+
+&lt;p&gt;หลังสั่งเพิ่มข้อมูลทั้งหมดลงไปแล้วต้องสั่ง .commit() หากไม่มีการสั่ง .commit() ไปแม้จะใช้ .add() หรือ .add_all() หรือ .bulk_save_objects() ลงไปแล้วก็จะไม่มีการบันทึกลงไปจริงๆ&lt;/p&gt;
+
+&lt;p&gt;อย่างไรก็ตาม หากต้องการให้มีการบันทึกไปเลยโดยอัตโนมัติทุกครั้งไม่ต้องมาสั่ง .commit() ก็ทำได้โดยตอนที่สร้างตัวสร้างเซสชันขึ้นให้ใส่เป็น sessionmaker(autocommit=True) ไป ก็เป็นวิธีหนึ่งที่ทำได้&lt;/p&gt;
+
+&lt;p&gt;หากเพิ่มข้อมูลไปแล้วแต่ยังไม่ได้ .commit() แล้วต้องการยกเลิกความเปลี่ยนแปลงนั้นก็สามารถทำได้โดยใช้ .rollback()&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;การอ่านข้อมูลในตาราง (query)介&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;การอ่านข้อมูลที่อยู่ในตารางทำได้โดยใช้เมธอด .query() โดยใส่คลาสของตารางนั้นลงไป&lt;/p&gt;
+
+&lt;p&gt;ข้อมูลที่อ่านขึ้นมาสามารถนำมาใช้วนด้วย for เพื่อเอาค่าทีละตัวก็ได้&lt;/p&gt;
+
+&lt;p&gt;ตัวอย่างการอ่านข้อมูล&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for pk in session.query(Pokemon):
+    print(pk)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;152. ชิโครีตา หนัก 6.4 สูง 90 ซม.
+153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม.
+154. เมกาเนียม หนัก 100.5 สูง 180 ซม.
+155. ฮิโนอาราชิ หนัก 7.9 สูง 50 ซม.
+158. วานิโนโกะ หนัก 9.5 สูง 60 ซม.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;กรณีที่ต้องการเอาข้อมูลแค่เฉพาะบางสดมภ์ให้ให้ใส่ตัวแอตทริบิวต์ที่เป็นชื่อตัวคอลัมน์ลงไปทีละตัวตามที่ต้องการ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for pk in session.query(Pokemon.lek,Pokemon.chue):
+    print(pk)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;(152, &#39;ชิโครีตา&#39;)
+(153, &#39;เบย์ลีฟ&#39;)
+(154, &#39;เมกาเนียม&#39;)
+(155, &#39;ฮิโนอาราชิ&#39;)
+(158, &#39;วานิโนโกะ&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;การอ่านข้อมูลทั้งหมดใส่ลิสต์ (all)介&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;วิธีการอ่านข้อมูลจากในตารางนอกจากจะใช้วนใน for แล้วก็ยังอาจจะใช้ .all() เพื่อดึงข้อมูลมาทั้งหมดทีเดียวเป็นลิสต์ก็ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(session.query(Pokemon).all())
+print(session.query(Pokemon.lek,Pokemon.chue).all())
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;[152. ชิโครีตา หนัก 6.4 สูง 90 ซม., 153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 154. เมกาเนียม หนัก 100.5 สูง 180 ซม., 155. ฮิโนอาราชิ หนัก 7.9 สูง 50 ซม., 158. วานิโนโกะ หนัก 9.5 สูง 60 ซม.]
+[(152, &#39;ชิโครีตา&#39;), (153, &#39;เบย์ลีฟ&#39;), (154, &#39;เมกาเนียม&#39;), (155, &#39;ฮิโนอาราชิ&#39;), (158, &#39;วานิโนโกะ&#39;)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;การกำหนดวิธีการเรียงลำดับข้อมูล (order_by)介&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;สามารถกำหนดลำดับการเรียงข้อมูลที่ออกมาได้โดยใส่ .order_by() โดยระบุสดมภ์ที่ต้องการใช้เรียงลงไป เช่น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(session.query(Pokemon).order_by(Pokemon.sung).all())
+print(session.query(Pokemon).order_by(Pokemon.nak).all())
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;[155. ฮิโนอาราชิ หนัก 7.9 สูง 50 ซม., 158. วานิโนโกะ หนัก 9.5 สูง 60 ซม., 152. ชิโครีตา หนัก 6.4 สูง 90 ซม., 153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 154. เมกาเนียม หนัก 100.5 สูง 180 ซม.]
+[152. ชิโครีตา หนัก 6.4 สูง 90 ซม., 155. ฮิโนอาราชิ หนัก 7.9 สูง 50 ซม., 158. วานิโนโกะ หนัก 9.5 สูง 60 ซม., 153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 154. เมกาเนียม หนัก 100.5 สูง 180 ซม.]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;หากต้องการเรียงกลับด้านให้ใส่ .desc() เช่น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(session.query(Pokemon).order_by(Pokemon.lek.desc()).all())
+print(session.query(Pokemon).order_by(Pokemon.sung.desc()).all())
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;[158. วานิโนโกะ หนัก 9.5 สูง 60 ซม., 155. ฮิโนอาราชิ หนัก 7.9 สูง 50 ซม., 154. เมกาเนียม หนัก 100.5 สูง 180 ซม., 153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 152. ชิโครีตา หนัก 6.4 สูง 90 ซม.]
+[154. เมกาเนียม หนัก 100.5 สูง 180 ซม., 153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 152. ชิโครีตา หนัก 6.4 สูง 90 ซม., 158. วานิโนโกะ หนัก 9.5 สูง 60 ซม., 155. ฮิโนอาราชิ หนัก 7.9 สูง 50 ซม.]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;การเอาข้อมูลเฉพาะตัวแรกตัวเดียว (first)介&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;หากต้องการข้อมูลเฉพาะแค่ตัวแรกให้ใช้ .first() เช่น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(session.query(Pokemon).first())
+# ได้ 152. ชิโครีตา หนัก 6.4 สูง 90 ซม.
+print(session.query(Pokemon).order_by(Pokemon.sung).first())
+# ได้ 155. ฮิโนอาราชิ หนัก 7.9 สูง 50 ซม.
+print(session.query(Pokemon).order_by(Pokemon.nak.desc()).first())
+# ได้ 154. เมกาเนียม หนัก 100.5 สูง 180 ซม.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;การจำกัดเอาข้อมูลเฉพาะบางส่วน (limit และ offset)介&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;ถ้าต้องการจำกัดจำนวนที่จะเอาให้ใช้ .limit() และกำหนดลำดับเริ่มต้นโดยใช้ .offset() เช่น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(session.query(Pokemon).limit(3).all())
+# ได้ [152. ชิโครีตา หนัก 6.4 สูง 90 ซม., 153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 154. เมกาเนียม หนัก 100.5 สูง 180 ซม.]
+print(session.query(Pokemon.lek).limit(4).all())
+# ได้ [(152,), (153,), (154,), (155,)]
+print(session.query(Pokemon).offset(2).all())
+# ได้ [154. เมกาเนียม หนัก 100.5 สูง 180 ซม., 155. ฮิโนอาราชิ หนัก 7.9 สูง 50 ซม., 158. วานิโนโกะ หนัก 9.5 สูง 60 ซม.]
+print(session.query(Pokemon).offset(1).limit(2).all())
+# ได้ [153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 154. เมกาเนียม หนัก 100.5 สูง 180 ซม.]
+print(session.query(Pokemon).order_by(Pokemon.sung).limit(2).all())
+# ได้ [155. ฮิโนอาราชิ หนัก 7.9 สูง 50 ซม., 158. วานิโนโกะ หนัก 9.5 สูง 60 ซม.]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ถ้าใช้ order_by เพื่อกำหนดรูปแบบการเรียงไปด้วยให้ใส่ order_by ก่อนค่อยตามด้วย offset และ limit&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;การกำหนดเงื่อนไขข้อมูลที่จะอ่าน (filter)介&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;สามารถกำหนดเงื่อนไขว่าจะเอาข้อมูลแค่บางส่วนที่ต้องการออกมาได้โดยใช้ .filter() เช่น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(session.query(Pokemon).filter(Pokemon.nak&amp;lt;10).all())
+# ได้ [152. ชิโครีตา หนัก 6.4 สูง 90 ซม., 155. ฮิโนอาราชิ หนัก 7.9 สูง 50 ซม., 158. วานิโนโกะ หนัก 9.5 สูง 60 ซม.]
+print(session.query(Pokemon.chue).filter(Pokemon.chue!=&#39;เบย์ลีฟ&#39;).all())
+# ได้ [(&#39;ชิโครีตา&#39;,), (&#39;เมกาเนียม&#39;,), (&#39;ฮิโนอาราชิ&#39;,), (&#39;วานิโนโกะ&#39;,)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;สามารถใส่มากกว่าเงื่อนไขพร้อมกันได้ โดยจะมีความหมายเป็น &amp;ldquo;และ&amp;rdquo; คือต้องเข้าทุกเงื่อนไข&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(session.query(Pokemon).filter(Pokemon.nak&amp;gt;8,Pokemon.nak&amp;lt;20).all())
+# ได้ [153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 158. วานิโนโกะ หนัก 9.5 สูง 60 ซม.]
+print(session.query(Pokemon.chue).filter(Pokemon.chue!=&#39;ชิโครีตา&#39;,Pokemon.chue!=&#39;เบย์ลีฟ&#39;).all())
+# [(&#39;เมกาเนียม&#39;,), (&#39;ฮิโนอาราชิ&#39;,), (&#39;วานิโนโกะ&#39;,)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;นอกจากนี้ในการรวมหรือจัดการเงื่อนไขอาจใช้ and&lt;em&gt;, or&lt;/em&gt;, not_ เพื่อแทน &amp;ldquo;และ&amp;rdquo;, &amp;ldquo;หรือ&amp;rdquo;, &amp;ldquo;ไม่&amp;rdquo;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(session.query(Pokemon).filter(sqlalchemy.or_(Pokemon.chue==&amp;quot;เบย์ลีฟ&amp;quot;,Pokemon.chue==&amp;quot;เมกาเนียม&amp;quot;)).all())
+# ได้ [153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 154. เมกาเนียม หนัก 100.5 สูง 180 ซม.]
+print(session.query(Pokemon.chue).filter(sqlalchemy.not_(Pokemon.chue==&amp;quot;ชิโครีตา&amp;quot;)).all())
+# ได้ [(&#39;เบย์ลีฟ&#39;,), (&#39;เมกาเนียม&#39;,), (&#39;ฮิโนอาราชิ&#39;,), (&#39;วานิโนโกะ&#39;,)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;อนึ่ง สาเหตุที่ชื่อ and&lt;em&gt;, or&lt;/em&gt;, not_ มี _ ต่อท้ายเพราะคำว่า and, or, not เป็นคำต้องห้ามในไพธอน ใช้เป็นชื่อตัวแปรไม่ได้เลยต้องเติม _&lt;/p&gt;
+
+&lt;p&gt;นอกจากนี้เงื่อนไขที่เป็นตัวเลขอาจใช้ .between() เพื่อคัดเอาค่าที่อยู่ในช่วงได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(session.query(Pokemon).filter(Pokemon.nak.between(9,25)).all())
+# ได้ [153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 158. วานิโนโกะ หนัก 9.5 สูง 60 ซม.]
+print(session.query(Pokemon).filter(Pokemon.lek.between(153,155)).all())
+# ได้ [153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 154. เมกาเนียม หนัก 100.5 สูง 180 ซม., 155. ฮิโนอาราชิ หนัก 7.9 สูง 50 ซม.]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ถ้าค่าเป็นสายอักขระอาจใช้ .contains() เพื่อคัดเอาที่มีคำที่ต้องการอยู่&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(session.query(Pokemon.chue).filter(Pokemon.chue.contains(&#39;โน&#39;)).all())
+# ได้ [(&#39;ฮิโนอาราชิ&#39;,), (&#39;วานิโนโกะ&#39;,)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;การแก้ข้อมูล (update)介&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;การแก้ไขข้อมูลอาจทำโดยใช้ .query อ่านข้อมูลเข้ามา() แล้วเอามาแก้ แล้วก็ทำการ .commit() ข้อมูลในฐานข้อมูลก็จะถูกแก้ไปด้วยตามนั้น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pk1 = session.query(Pokemon).filter(Pokemon.chue==&#39;ฮิโนอาราชิ&#39;).first()
+pk1.lek = 156
+pk1.chue = &#39;แม็กมาราชิ&#39;
+pk1.nak = 0.9
+pk1.sung = 19
+session.commit()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;นอกจากนี้ก็อาจใช้เมธอด .update() ที่ตัวข้อมูลที่ใช้ .filter() คัดมา เพื่อสั่งแก้ข้อมูลโดยตรง เช่น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;kha = {&#39;lek&#39;:159,&#39;chue&#39;:&#39;อาลิเกตซ์&#39;,&#39;nak&#39;:1.1,&#39;sung&#39;:25}
+session.query(Pokemon).filter(Pokemon.chue==&#39;วานิโนโกะ&#39;).update(kha)
+session.commit()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;การลบข้อมูลออก (delete)介&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;การลบข้อมูลออกอาจทำโดยใช้ .query() ดึงข้อมูลที่ต้องการลบออกมา แล้วใช้เมธอด .delete() จากตัวเซสชัน แล้ว .commit()&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pk2 = session.query(Pokemon).filter(Pokemon.chue==&#39;เมกาเนียม&#39;).first()
+session.delete(pk2)
+session.commit()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;นอกจากนี้อาจจะเรียกเมธอด .delete() จากตัว query โดยตรงเลยก็ได้ เช่น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;session.query(Pokemon).filter(Pokemon.chue==&#39;ชิโครีตา&#39;).delete()
+session.commit()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;การย้อนคืนสิ่งที่ทำกลับไป (rollback)介&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;หากเพิ่มหรือแก้ไขหรือลบข้อมูลไปแล้วยังไม่ได้สั่ง .commit() ที่ตัวเซสชันอาจสามารถย้อนคืนกลับได้โดยใช้ .rollback()น&lt;/p&gt;
+
+&lt;p&gt;ตัวอย่างการใช้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(session.query(Pokemon).all())
+# ได้ [153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 156. แม็กมาราชิ หนัก 0.9 สูง 1900 ซม., 159. อาลิเกตซ์ หนัก 1.1 สูง 2500 ซม.]
+
+kha = {&#39;lek&#39;:157,&#39;chue&#39;:&#39;บักฟูน&#39;,&#39;nak&#39;:1.7,&#39;sung&#39;:79.5}
+session.query(Pokemon).filter(Pokemon.chue==&#39;แม็กมาราชิ&#39;).update(kha)
+session.query(Pokemon).filter(Pokemon.chue==&#39;เบย์ลีฟ&#39;).delete()
+
+print(session.query(Pokemon).all())
+# ได้ [157. บักฟูน หนัก 1.7 สูง 7950 ซม., 159. อาลิเกตซ์ หนัก 1.1 สูง 2500 ซม.]
+
+session.rollback()
+print(session.query(Pokemon).all())
+# ได้ [153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 156. แม็กมาราชิ หนัก 0.9 สูง 1900 ซม., 159. อาลิเกตซ์ หนัก 1.1 สูง 2500 ซม.]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;อาจนำมาใช้เพื่อรับมือในกรณีที่เกิดข้อผิดพลาด เช่น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;try:
+    oda = Pokemon(160,&#39;ออร์ไดล์&#39;,&#39;ไม่ทราบ&#39;,2.3)
+    session.add(oda)
+    session.commit()
+except sqlalchemy.exc.SQLAlchemyError as e:
+    session.rollback()
+    print(&#39;เกิดข้อผิดพลาด\n&#39;,e)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;เกิดข้อผิดพลาด
+ (builtins.ValueError) could not convert string to float: &#39;ไม่ทราบ&#39;
+[SQL: INSERT INTO pokemon (lek, chue, nak, sung) VALUES (?, ?, ?, ?)]
+[parameters: [{&#39;sung&#39;: 2.3, &#39;lek&#39;: 160, &#39;chue&#39;: &#39;ออร์ไดล์&#39;, &#39;nak&#39;: &#39;ไม่ทราบ&#39;}]]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;sqlalchemy.exc.SQLAlchemyError คือคลาสของความผิดพลาดที่จะเกิดขึ้นเมื่อมีปัญหาในการติดต่อกับฐานข้อมูล SQL จะมีการอธิบายรายละเอียดว่าโค้ด SQL ที่ส่งไปจริงๆเป็นอย่างไร และผิดพลาดที่ตรงไหน&lt;/p&gt;
+
+&lt;p&gt;อย่างตัวอย่างนี้ไปใส่ nak ว่า &amp;lsquo;ไม่ทราบ&amp;rsquo; ทั้งที่จริงๆควรจะเป็นตัวเลข ก็เลยเกิดข้อผิดพลาดขึ้น&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;การป้อนคำสั่ง SQL ใส่โดยตรง (execute)介&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;นอกจากจะใช้เมธอดต่างๆที่ sqlalchemy เตรียมไว้ให้แล้ว หากต้องการพิมพ์โค้ด SQL เพื่อป้อนคำสั่งสั่งฐานข้อมูลโดยตรงก็สามารถทำผ่าน sqlalchemy ได้เช่นกัน โดยใช้เมธอด .execute() ซึ่งอาจเรียกจากตัว engine หรือตัว session ก็ได้&lt;/p&gt;
+
+&lt;p&gt;ไม่ว่าขั้นตอนไหนก็สามารถใช้ .execute() ทำแทนได้ เช่น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sqlalchemy
+from sqlalchemy.orm import sessionmaker
+engine = sqlalchemy.create_engine(&#39;sqlite:///pikadata.db&#39;)
+engine.execute(&#39;create table pokemon (lek integer,chue text,nak real,sung real)&#39;)
+engine.execute(&#39;insert into pokemon (lek,chue,nak,sung) values (25,&amp;quot;พิคาชู&amp;quot;,6,0.4)&#39;)
+print(engine.execute(&#39;select * from pokemon&#39;).fetchall())
+# ได้ [(25, &#39;พิคาชู&#39;, 6.0, 0.4)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;เมื่อใช้ execute กับ select ก็จะเอาผลที่ได้มาใช้ .fetchall() หรือวนด้วย for เพื่อเอาข้อมูลได้ เหมือนกับที่ใช้ sqlite3 โดยตรง&lt;/p&gt;
+
+&lt;p&gt;เพียงแต่หากจะใช้ .execute() สั่งไปทั้งหมดแบบนี้ก็ไม่ต่างจากใช้ sqlite3 โดยตรง อาจไม่มีความหมายที่จะใช้ sqlalchemy นัก&lt;/p&gt;
+
+&lt;p&gt;.execute() อาจจะใช้แค่บางส่วน แค่ในกรณีที่ต้องการสั่งคำสั่งที่ไม่สะดวกจะทำผ่านเมธอดต่างๆของ sqlalchemy เอง ซึ่งอาจมีความจำเป็นบ้างเพราะโค้ดจับคู่เชื่อมต่อก็ไม่ได้ทำทุกอย่างไว้สมบูรณ์แบบทั้งหมด&lt;/p&gt;
+
+&lt;p&gt;หลักการใช้ยังมีรายละเอียดอีกมากมาย นี่เป็นเพียงแค่เบื้องต้นส่วนหนึ่งเท่านั้น อาจอ่านเพิ่มเติมได้ใน&lt;a href=&#34;https://www.sqlalchemy.org/&#34; target=&#34;_blank&#34;&gt;เว็บหลักของ sqlalchemy&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Reference : &lt;a href=&#34;https://phyblas.hinaboshi.com/20200529&#34; target=&#34;_blank&#34;&gt;https://phyblas.hinaboshi.com/20200529&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
     
     <item>
       <title>Flask 101 พัฒนาเว็บด้วยภาษาไพธอน(Flask Framework)</title>

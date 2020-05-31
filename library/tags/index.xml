@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Library</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 31 May 2020 00:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="https://dragon-library.github.io/docs/library/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cheat Sheet</title>
+      <link>https://dragon-library.github.io/docs/library/tags/cheat-sheet/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/docs/library/tags/cheat-sheet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>database</title>
+      <link>https://dragon-library.github.io/docs/library/tags/database/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/docs/library/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sqlalchemy</title>
+      <link>https://dragon-library.github.io/docs/library/tags/sqlalchemy/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/docs/library/tags/sqlalchemy/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Google Translate</title>
