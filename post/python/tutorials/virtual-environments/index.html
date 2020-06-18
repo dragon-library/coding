@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academia 4.3.1">
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Little Dragon">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Virtual environments can be described as isolated installation directories. This isolation allows you to localized the installation of your project’s dependencies, without forcing you to install them system-wide.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://dragon-library.github.io/docs/post/python/tutorials/virtual-environments/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#c7254e">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:400,700|Sarabun|Roboto&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/docs/css/academia.min.ff05a21b53038f9dccb7f30aedbfb6d7.css">
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="manifest" href="/docs/site.webmanifest">
+  <link rel="icon" type="image/png" href="/docs/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/docs/img/icon-192.png">
+
+  <link rel="canonical" href="https://dragon-library.github.io/docs/post/python/tutorials/virtual-environments/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Library">
+  <meta property="og:url" content="https://dragon-library.github.io/docs/post/python/tutorials/virtual-environments/">
+  <meta property="og:title" content="Python Virtual Environments Explained with Examples | Library">
+  <meta property="og:description" content="Virtual environments can be described as isolated installation directories. This isolation allows you to localized the installation of your project’s dependencies, without forcing you to install them system-wide."><meta property="og:image" content="https://dragon-library.github.io/docs/post/python/tutorials/virtual-environments/featured.jpg">
+  <meta property="twitter:image" content="https://dragon-library.github.io/docs/post/python/tutorials/virtual-environments/featured.jpg"><meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2020-01-31T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2020-06-18T02:48:28&#43;07:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>Python Virtual Environments Explained with Examples | Library</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/docs/">Library</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/docs/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/docs/python/"><span>Python</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/docs/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/docs/tutorials/"><span>Tutorials</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/docs/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/docs/book/"><span>Book</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/docs/courses/"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/docs/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article py-5" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+    
+    
+    <div class="article-container py-3">
+      <h1 itemprop="name">Python Virtual Environments Explained with Examples</h1>
+
+      
+      <p class="page-subtitle">Virtual environments can be described as isolated installation directories. This isolation allows you to localized the installation of your project’s dependencies, without forcing you to install them system-wide.</p>
+      
+
+      
+      
+
+
+
+<meta content="2020-01-31 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2020-06-18 02:48:28 &#43;0700 &#43;07" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/docs/authors/admin/">Little Dragon</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    <time>Jun 18, 2020</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    3 min read
+  </span>
+  
+
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    <a href="/docs/categories/tutorials/">Tutorials</a>, <a href="/docs/categories/python/">Python</a></span>
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://dragon-library.github.io/docs/post/python/tutorials/virtual-environments/&amp;text=Python%20Virtual%20Environments%20Explained%20with%20Examples" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://dragon-library.github.io/docs/post/python/tutorials/virtual-environments/&amp;t=Python%20Virtual%20Environments%20Explained%20with%20Examples" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Python%20Virtual%20Environments%20Explained%20with%20Examples&amp;body=https://dragon-library.github.io/docs/post/python/tutorials/virtual-environments/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://dragon-library.github.io/docs/post/python/tutorials/virtual-environments/&amp;title=Python%20Virtual%20Environments%20Explained%20with%20Examples" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Python%20Virtual%20Environments%20Explained%20with%20Examples%20https://dragon-library.github.io/docs/post/python/tutorials/virtual-environments/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://dragon-library.github.io/docs/post/python/tutorials/virtual-environments/&amp;title=Python%20Virtual%20Environments%20Explained%20with%20Examples" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      
+    </div>
+  </div>
+</div>
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p><img src="featured.jpg" alt="Python Virtual Environments Explained with Examples" /></p>
+
+<p>Virtual environments can be described as isolated installation directories. This isolation allows you to localized the installation of your project’s dependencies, without forcing you to install them system-wide.</p>
+
+<p>Imagine you have two applications, App1 and App2. Both use the package Pak, but require different versions. If you install Pak version 2.3 for App1, you would not be able to run App2 because it requires version 3.1.</p>
+
+<p>This is where virtual environments come in handy.</p>
+
+<p>Benefits:</p>
+
+<ul>
+<li>You can have multiple environments, with multiple sets of packages, without conflicts among them. This way, different projects’ requirements can be satisfied at the same time.</li>
+<li>You can easily release your project with its own dependent modules.</li>
+</ul>
+
+<p>Here are two ways you can create Python virtual environments.</p>
+
+<h2 id="virtualenv"><strong>Virtualenv</strong></h2>
+
+<p><code>[virtualenv](https://virtualenv.pypa.io/en/stable/)</code>  is a tool used to create isolated Python environments. It creates a folder which contains all the necessary executables to use the packages that a Python project would need.</p>
+
+<p>You can install it with  <code>pip</code>:</p>
+
+<pre><code class="language-text">pip install virtualenv
+</code></pre>
+
+<p>Verify the installation with the following command:</p>
+
+<pre><code class="language-text">virtualenv --version
+</code></pre>
+
+<h3 id="create-an-environment"><strong>Create an Environment</strong></h3>
+
+<p>To create a virtual environment use:</p>
+
+<pre><code class="language-text">virtualenv --no-site-packages my-env
+</code></pre>
+
+<p>This creates a folder in the current directory with the name of the environment (<code>my-env/</code>). This folder contains the directories for installing modules and Python executables.</p>
+
+<p>You can also specify the Python version you want to work with. Just use the argument  <code>--python=/path/to/python/version</code>. For instance,  <code>python2.7</code>:</p>
+
+<pre><code class="language-text">virtualenv --python=/usr/bin/python2.7 my-env
+</code></pre>
+
+<h3 id="list-environments"><strong>List Environments</strong></h3>
+
+<p>You can list the available environments with:</p>
+
+<pre><code class="language-text">lsvirtualenv
+</code></pre>
+
+<h3 id="activate-an-environment"><strong>Activate an Environment</strong></h3>
+
+<p>Before you can start using the environment you need to activate it:</p>
+
+<pre><code class="language-text">source my-env/bin/activate
+</code></pre>
+
+<p>This ensures that only packages under  <code>my-env/</code>  are used.</p>
+
+<p>You will notice that the name of the environment is shown on the left of the prompt. This way you can see which is the active environment.</p>
+
+<h3 id="install-packages"><strong>Install Packages</strong></h3>
+
+<p>You can install packages one by one, or by setting a  <code>requirements.txt</code>  file for your project.</p>
+
+<pre><code class="language-text">pip install some-package
+pip install -r requirements.txt
+</code></pre>
+
+<p>If you want to create a  <code>requirements.txt</code>  file from the already installed packages, run the following command:</p>
+
+<pre><code class="language-text">pip freeze &gt; requirements.txt
+</code></pre>
+
+<p>The file will contain the list of all the packages installed in the current environment, and their respective versions. This will help you release your project with its own dependent modules.</p>
+
+<h3 id="deactivate-an-environment"><strong>Deactivate an Environment</strong></h3>
+
+<p>If you are done working with the virtual environment you can deactivate it with:</p>
+
+<pre><code class="language-text">deactivate
+</code></pre>
+
+<p>This puts you back to the system’s default Python interpreter with all its installed libraries.</p>
+
+<h3 id="delete-an-environment"><strong>Delete an Environment</strong></h3>
+
+<p>Simply delete the environment folder.</p>
+
+<h2 id="conda"><strong>Conda</strong></h2>
+
+<p><a href="https://conda.io/docs/index.html" target="_blank"><code>Conda</code></a>  is a package, dependency and environment management for many languages, including Python.</p>
+
+<p>To install Conda, follow these  <a href="https://conda.io/docs/user-guide/install/index.html" target="_blank">instructions</a>.</p>
+
+<h3 id="create-an-environment-1"><strong>Create an Environment</strong></h3>
+
+<p>To create a virtual environment use:</p>
+
+<pre><code class="language-text">conda create --name my-env
+</code></pre>
+
+<p>Conda will create the corresponding folder inside the Conda installation directory.</p>
+
+<p>You can also specify which version of Python you want to work with:</p>
+
+<pre><code class="language-text">conda create --name my-env python=3.6
+</code></pre>
+
+<h3 id="list-environments-1"><strong>List Environments</strong></h3>
+
+<p>You can list all the available environments with:</p>
+
+<pre><code class="language-text">conda info --envs
+</code></pre>
+
+<h3 id="activate-an-environment-1"><strong>Activate an Environment</strong></h3>
+
+<p>Before you can start using the environment you need to activate it:</p>
+
+<pre><code class="language-text">source activate my-env
+</code></pre>
+
+<h3 id="install-packages-1"><strong>Install Packages</strong></h3>
+
+<p>The same as with  <code>virtualenv</code>.</p>
+
+<h3 id="deactivate-an-environment-1"><strong>Deactivate an Environment</strong></h3>
+
+<p>If you are done working with the virtual environment you can deactivate it with:</p>
+
+<pre><code class="language-text">source deactivate
+</code></pre>
+
+<h3 id="remove-an-environment"><strong>Remove an Environment</strong></h3>
+
+<p>If you want to remove an environment from Conda use:</p>
+
+<pre><code class="language-text">conda remove --name my-env
+</code></pre>
+
+<blockquote>
+<p>Reference : <a href="https://www.freecodecamp.org/news/python-virtual-environments-explained-with-examples/" target="_blank">freeCodeCamp</a></p>
+</blockquote>
+
+    </div>
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/docs/tags/beginner/">Beginner</a>
+  
+  <a class="badge badge-light" href="/docs/tags/freecodecamp/">freeCodeCamp</a>
+  
+  <a class="badge badge-light" href="/docs/tags/virtual-environments/">Virtual Environments</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="https://dragon-library.github.io/docs/">Little Dragon</a></h5>
+      <h6 class="card-subtitle">Professor of Artificial Intelligence</h6>
+      <p class="card-text" itemprop="description">My research interests include distributed robotics, mobile computing and programmable matter.</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="/docs/#contact" >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/GeorgeCushen" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ" target="_blank" rel="noopener">
+              <i class="ai ai-google-scholar"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://github.com/gcushen" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+      <div class="article-widget">
+        <div class="hr-light"></div>
+        <h3>Related</h3>
+        <ul>
+          
+          <li><a href="/docs/post/python/tutorials/python-lists-explained/">Python Lists Explained</a></li>
+          
+          <li><a href="/docs/post/python/tutorials/zero_to_hero/">Learning Python From Zero to Hero</a></li>
+          
+          <li><a href="/docs/post/python/tutorials/python-function-guide/">Python Function Guide</a></li>
+          
+          <li><a href="/docs/post/css-handbook/">The CSS Handbook</a></li>
+          
+        </ul>
+      </div>
+      
+    
+
+    
+    <div class="article-widget">
+      
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item box ">
+    <div class="meta-nav meta-prev">Next <br>
+    <a href="/docs/post/python/tutorials/python-lists-explained/" rel="next">Python Lists Explained</a></div>
+  </div>
+  
+  
+  
+  <div class="post-nav-item box">
+    <div class="meta-nav meta-next" >Previous <br>
+    <a href="/docs/post/python/tutorials/string-strip-method/" rel="prev">Python String Methods Explained with Examples.</a></div>
+  </div>
+  
+  <br>
+  <br>
+</div>
+
+    </div>
+    
+
+    
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+    <script src="/docs/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/python.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/docs/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/docs/js/academia.min.e4fc229c2f28284fc2dfa5b66a52b765.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        
+        <p>
+          
+          Powered by
+          <a href="https://themefisher.com" target="_blank" rel="noopener">themefisher</a> for
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-inline network-icon text-right">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/Twitter" target="_blank" rel="noopener" title="DM Me"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="skype:echo123?call"  title="Skype Me"><i class="fab fa-skype" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://keybase.io/" target="_blank" rel="noopener" title="Chat on Keybase"><i class="fab fa-keybase" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://discourse.gohugo.io" target="_blank" rel="noopener" title="Discuss on Forum"><i class="fas fa-comments" aria-hidden="true"></i></a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

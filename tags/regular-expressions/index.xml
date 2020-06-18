@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Regular Expressions on Library</title>
+    <link>https://dragon-library.github.io/docs/tags/regular-expressions/</link>
+    <description>Recent content in Regular Expressions on Library</description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Apr 2020 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="https://dragon-library.github.io/docs/tags/regular-expressions/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Regular Expressions</title>
+      <link>https://dragon-library.github.io/docs/post/python/tutorials/regular-expressions/</link>
+      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/docs/post/python/tutorials/regular-expressions/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Regular expressions are essentially a highly specialized programming language embedded inside Python that empowers you to specify the rules for the set of possible strings that you want to match.&lt;/p&gt;
+
+&lt;p&gt;In Python you need the  &lt;strong&gt;re&lt;/strong&gt;  module for regular expressions usage. The grammar overview is on the bottom of this page.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Related course:&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&#34;https://gum.co/dcsp&#34; target=&#34;_blank&#34;&gt;Python Programming Bootcamp: Go from zero to hero&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;the-match-function&#34;&gt;The Match function&lt;/h2&gt;
+
+&lt;p&gt;The match function is defined as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;re.match(pattern, string)  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The parameters are:.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameters&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;pattern&lt;/td&gt;
+&lt;td&gt;a regular expression&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;the input string&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;If you want to match a string to a numberic sequence of exactly five, you can use this code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;#!/usr/bin/python  
+import re  
+  
+input = raw_input(&amp;quot;Enter an input string:&amp;quot;)  
+m = re.match(&#39;\d{5}\Z&#39;,input)  
+  
+if m:  
+ print(&amp;quot;True&amp;quot;)  
+else:  
+ print(&amp;quot;False&amp;quot;)  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Example outputs:&lt;/p&gt;
+
+&lt;h2 id=&#34;email-validation-regex&#34;&gt;Email validation regex&lt;/h2&gt;
+
+&lt;p&gt;We can use the same function to validate  &lt;em&gt;email address&lt;/em&gt;. The grammar rules are seen in re.compile and in the grammar table.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;String	Match
+12345	True
+12358	True
+55555	True
+123	False
+123K5	False
+5555555	False
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;#!/usr/bin/python  
+import re  
+  
+input = raw_input(&amp;quot;Enter an input string:&amp;quot;)  
+m = re.match(&#39;[^@]+@[^@]+\.[^@]+&#39;,input)  
+  
+if m:  
+ print(&amp;quot;True&amp;quot;)  
+else:  
+ print(&amp;quot;False&amp;quot;)  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;the-search-function&#34;&gt;The Search Function&lt;/h2&gt;
+
+&lt;p&gt;The search function is defined as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;re.search(pattern, string)  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The parameters are:&lt;br /&gt;
+Parameter   Description.&lt;br /&gt;
+pattern a regular expression, defines the string to be searched
+string  the search space&lt;/p&gt;
+
+&lt;p&gt;To search if an e-mail address is in a string:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;#!/usr/bin/python  
+import re  
+  
+input = &amp;quot;Contact me by test@example.com or at the office.&amp;quot;  
+  
+m = re.search(&#39;[^@]+@[^@]+\.[^@]+&#39;,input)  
+  
+if m:  
+ print(&amp;quot;String found.&amp;quot;)  
+else:  
+ print(&amp;quot;Nothing found.&amp;quot;)  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;regular-expression-examples&#34;&gt;Regular Expression Examples&lt;/h2&gt;
+
+&lt;p&gt;A few examples of regular expressions:&lt;/p&gt;
+
+&lt;h2 id=&#34;regular-expression-grammar&#34;&gt;Regular Expression Grammar&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Example&lt;/th&gt;
+&lt;th&gt;Regex&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;IP address&lt;/td&gt;
+&lt;td&gt;(([2][5][0-5].)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Email&lt;/td&gt;
+&lt;td&gt;[^@]+@[^@]+.[^@]+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Date&lt;/td&gt;
+&lt;td&gt;MM/DD/YY (\d+/\d+/\d+)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Integer (positive)&lt;/td&gt;
+&lt;td&gt;(?&amp;lt;![-.])\b[0-9]+\b(?!.[0-9])&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Integer&lt;/td&gt;
+&lt;td&gt;[+-]?(?&amp;lt;!.)\b[0-9]+\b(?!.[0-9])&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Float&lt;/td&gt;
+&lt;td&gt;(?&amp;lt;=&amp;gt;)\d+.\d+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Hexadecimal&lt;/td&gt;
+&lt;td&gt;\s–([0-9a-fA-F]+)(?:–)?\s&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Overview of the regex grammar:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Regex&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;\d&lt;/td&gt;
+&lt;td&gt;Matches any decimal digit; this is equivalent to the class [0-9]&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;\D&lt;/td&gt;
+&lt;td&gt;Matches any non-digit character; this is equivalent to the class [^0-9].&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;\s&lt;/td&gt;
+&lt;td&gt;Matches any whitespace character; this is equivalent to the class [ \t\n\r\f\v].&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;\S&lt;/td&gt;
+&lt;td&gt;Matches any non-whitespace character; this is equivalent to the class [^ \t\n\r\f\v].&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;\w&lt;/td&gt;
+&lt;td&gt;Matches any alphanumeric character; this is equivalent to the class [a-zA-Z0-9_].&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;\W&lt;/td&gt;
+&lt;td&gt;Matches any non-alphanumeric character; this is equivalent to the class [^a-zA-Z0-9_].&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;\Z&lt;/td&gt;
+&lt;td&gt;Matches only at end of string&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;[..]&lt;/td&gt;
+&lt;td&gt;Match single character in brackets&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;[^..]&lt;/td&gt;
+&lt;td&gt;Match any single character not in brackets&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;.&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Match any character except newline&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$&lt;/td&gt;
+&lt;td&gt;Match the end of the string&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;*&lt;/td&gt;
+&lt;td&gt;Match 0 or more repetitions&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;+&lt;/td&gt;
+&lt;td&gt;1 or more repetitions&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;{m}&lt;/td&gt;
+&lt;td&gt;Exactly m copies of the previous RE should be matched.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;`&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;?&lt;/td&gt;
+&lt;td&gt;0 or 1 repetitions of the preceding RE&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;[a-z]&lt;/td&gt;
+&lt;td&gt;Any lowercase character&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;[A-Z]&lt;/td&gt;
+&lt;td&gt;Any uppercase character&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;[a-zA-Z]&lt;/td&gt;
+&lt;td&gt;Any character&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;[0-9]&lt;/td&gt;
+&lt;td&gt;Any digit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Reference : &lt;a href=&#34;https://pythonspot.com/regular-expressions/&#34; target=&#34;_blank&#34;&gt;pythonspot.com&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Regular Expressions Explained</title>
+      <link>https://dragon-library.github.io/docs/post/python/tutorials/regular-expressions-explained/</link>
+      <pubDate>Sun, 07 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/docs/post/python/tutorials/regular-expressions-explained/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;featured.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.thedataschool.co.uk/natalia-miteva/regex-what-why-and-how/&#34; target=&#34;_blank&#34;&gt;Source&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I bet you all have encountered regular expressions at some points. They are very powerful tools that are universally supported in many platforms, including programming languages like Python, R, Java, SQL, Scala.&lt;/p&gt;
+
+&lt;p&gt;As a data scientist/developer, having a solid understanding of Regex can help you perform various data munging and text mining tasks very easily. Personally, I use them for lots of random stuffs, mostly when I have to work with text data or do Natural Language Processing projects.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/max/687/1*ZXTb1lt1LYysa1yki__0Aw.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Regular expressions can seem intimidating at first, but they are very rewarding once you grasp the basics and apply them to your work properly.&lt;/p&gt;
+
+&lt;h1 id=&#34;what-is-regular-expression-regex&#34;&gt;What is Regular Expression (RegEx)?&lt;/h1&gt;
+
+&lt;p&gt;A regular expression or regex is a text string that defines a  &lt;em&gt;search pattern.&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;&amp;quot;\w+&amp;quot; # this is a regex
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Typically, these patterns are used for four main tasks:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Find&lt;/strong&gt;  text within a larger body of text&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Validate&lt;/strong&gt;  that a string conforms to a desired format&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Replace&lt;/strong&gt; or  &lt;strong&gt;insert&lt;/strong&gt; text&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Split&lt;/strong&gt;  strings&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Let’s take a quick look at some common regex patterns before we apply them to our codes.&lt;/p&gt;
+
+&lt;h1 id=&#34;common-patterns&#34;&gt;Common Patterns&lt;/h1&gt;
+
+&lt;p&gt;Earlier, we have this regex example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;\w+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;“w” here means  &lt;em&gt;word&lt;/em&gt;. “+” means  &lt;em&gt;one or more.&lt;/em&gt; The backlash character “\” is the escape character for regular expressions.  This regex matches word characters, including ASCII letter, digit, or underscore. Now, suppose we want to match the first word we can find in a string. First, we import the  &lt;code&gt;re&lt;/code&gt; module.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;import re
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then we define a pattern, and use the function  &lt;code&gt;re.match()&lt;/code&gt;  to match the first word it finds:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;# define a regex pattern  
+word_regex = &#39;\w+&#39;re.match(word_regex, &#39;hello world!&#39;) _# this matches the first word it finds  
+_&amp;gt;&amp;gt;&amp;gt;&amp;lt;re.Match object; span=(0, 2), match=&#39;hi&#39;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Some common patterns:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;w&lt;/strong&gt;  matches word characters&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;d&lt;/strong&gt;  matches digits, while  &lt;strong&gt;D&lt;/strong&gt;  matches non-digit characters&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;s&lt;/strong&gt;  matches whitespace characters, while  &lt;strong&gt;S&lt;/strong&gt;  matches non-whitespace characters&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;.&lt;/strong&gt;  (dot) matches any letter or symbol (wildcard)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[a-z]&lt;/strong&gt;  matches lowercase group. The bracket [] matches characters in it&lt;/li&gt;
+&lt;li&gt;Use  &lt;strong&gt;()&lt;/strong&gt;  to define a group&lt;/li&gt;
+&lt;li&gt;Use  &lt;strong&gt;[]&lt;/strong&gt;  to define explicit character ranges&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now as you already have some regex patterns in hand, let’s move on to some important functions.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-match-function&#34;&gt;The match() function&lt;/h2&gt;
+
+&lt;p&gt;This function matches  &lt;em&gt;pattern&lt;/em&gt;  to  &lt;em&gt;string&lt;/em&gt;. It returns a  &lt;strong&gt;match&lt;/strong&gt;  object on success,  &lt;strong&gt;&lt;em&gt;None&lt;/em&gt;&lt;/strong&gt;  on failure.
+The match function is defined as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;re.match(&#39;\w+&#39;, &#39;hello world!&#39;)  
+&amp;gt;&amp;gt;&amp;gt;&amp;lt;re.Match object; span=(0, 5), match=&#39;hello&#39;&amp;gt;
+The match function is defined as:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;the-findall-function&#34;&gt;The findall() function&lt;/h2&gt;
+
+&lt;p&gt;This function returns a list of all instances of the pattern in the string. Matches are returned in the order left-to-right of the original string.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;re.findall(&#39;[A-Z]\w+&#39;, &#39;hello World!&#39;)  
+&amp;gt;&amp;gt;&amp;gt;[&#39;World&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;The search() function&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The  &lt;strong&gt;search()&lt;/strong&gt;  function scans through string, looking for instances of the pattern in the string. It returns a  &lt;strong&gt;match&lt;/strong&gt;  object on success,  &lt;strong&gt;&lt;em&gt;None&lt;/em&gt;&lt;/strong&gt;  on failure. This function is like the match() function, but it goes through the whole string. See  &lt;a href=&#34;https://docs.python.org/3/library/re.html#search-vs-match&#34; target=&#34;_blank&#34;&gt;search() vs match()&lt;/a&gt;  for more details.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;re.search(&#39;ef&#39;, &#39;abcdef&#39;)  
+&amp;gt;&amp;gt;&amp;gt;&amp;lt;re.Match object; span=(4, 6), match=&#39;ef&#39;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;The split() function&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This function splits  &lt;em&gt;string&lt;/em&gt;  by the occurrences of  &lt;em&gt;pattern.&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;re.split(&#39;\s+&#39;, &#39;hello world this is andre&#39;)  
+&amp;gt;&amp;gt;&amp;gt;[&#39;hello&#39;, &#39;world&#39;, &#39;this&#39;, &#39;is&#39;, &#39;andre&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;random-thoughts&#34;&gt;Random Thoughts&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/max/60/1*rD8bpKAGWGct2ThM2jKOaw.png?q=20&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://miro.medium.com/max/921/1*rD8bpKAGWGct2ThM2jKOaw.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Who else loves Regex?&lt;/p&gt;
+
+&lt;p&gt;I love regular expressions. However, it is important to remember that while regex are very powerful tools, it is extraordinarily easy to overuse them. A few things to note:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Start small. Use them responsibly. Break it down into smaller regexes if needed. You would not want to end up with one huge multiple-line regex. It decreases visibility of your codes and is just not worth it.&lt;/li&gt;
+&lt;li&gt;Comment your regex! No one wants to waste time staring at your 20-line monster regex trying to figure out what it means.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;In this article, you have learned the main concept of regex, common patterns, and how to apply regex using  &lt;strong&gt;re&lt;/strong&gt;  functions. Regex is a small computer language of their own, and it requires practice too. Here are my favorite resources to get you started:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.rexegg.com/regex-quickstart.html&#34; target=&#34;_blank&#34;&gt;https://www.rexegg.com/regex-quickstart.html&lt;/a&gt;: your go-to regex cheatsheet&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.regular-expressions.info/&#34; target=&#34;_blank&#34;&gt;https://www.regular-expressions.info&lt;/a&gt;: another comprehensive regex tutorial site&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://regexr.com/&#34; target=&#34;_blank&#34;&gt;https://regexr.com&lt;/a&gt;: an online tool to learn, build, and test your regex&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pythex.org/&#34; target=&#34;_blank&#34;&gt;https://pythex.org&lt;/a&gt;: a Python regular expression editor. A quick way to test regular expressions as you write them&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.python.org/3/library/re.html&#34; target=&#34;_blank&#34;&gt;https://docs.python.org/3/library/re.html&lt;/a&gt;: official Python docs on regex&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;This is my first post on Towards Data Science. Leave comments if you have any suggestions for how to improve this post. Follow me up at  &lt;a href=&#34;https://medium.com/@andreduong07&#34; target=&#34;_blank&#34;&gt;Medium&lt;/a&gt;  or connect with me on  &lt;a href=&#34;https://www.linkedin.com/in/andreduong/&#34; target=&#34;_blank&#34;&gt;LinkedIn&lt;/a&gt;  for more quality content!&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Reference : &lt;a href=&#34;https://towardsdatascience.com/regular-expressions-explained-c9bce508e672&#34; target=&#34;_blank&#34;&gt;towardsdatascience.com&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

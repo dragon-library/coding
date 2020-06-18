@@ -1,0 +1,1139 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pandas on Library</title>
+    <link>https://dragon-library.github.io/docs/categories/pandas/</link>
+    <description>Recent content in Pandas on Library</description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="https://dragon-library.github.io/docs/categories/pandas/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>การอ่านเขียนข้อมูลจากฐานข้อมูล sql</title>
+      <link>https://dragon-library.github.io/docs/post/python/tutorials/read-write-database-sql/</link>
+      <pubDate>Tue, 02 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/docs/post/python/tutorials/read-write-database-sql/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;เขียนเมื่อ 2020/06/02 19:13&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ฐานข้อมูล sql เป็นรูปแบบการเก็บข้อมูลที่ใช้กันอย่างกว้างขวาง การเก็บข้อมูลของ sql นั้นมีลักษณะเป็นตารางข้อมูลเป็นแถวๆ คล้ายกับ pandas&lt;/p&gt;
+
+&lt;p&gt;pandas มีคำสั่งที่ช่วยให้ติดต่อกับฐานข้อมูล sql ได้อย่างง่ายดายขึ้น โดยสามารถเอาตารางจาก pandas เขียนลงใน sql และอ่านตารางจาก sql เข้ามาเป็นตารางใน pandas  ความสามารถส่วนใหญ่ในส่วนนี้จะใช้กับมอดูล sqlalchemy เป็นหลัก ดังนั้นจำเป็นต้องติดตั้งมอดูล sqlalchemy ด้วย&lt;/p&gt;
+
+&lt;p&gt;เกี่ยวกับการใช้ sqlalchemy อ่านได้ใน  &lt;a href=&#34;https://phyblas.hinaboshi.com/20200529&#34; target=&#34;_blank&#34;&gt;https://phyblas.hinaboshi.com/20200529&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;เพียงแต่ว่าก็อาจไม่ต้องเรียกใช้ sqlalchemy โดยตรง แค่มีลงมอดูล sqlalchamy ไว้ก็สามารถใช้ความสามารถนี้ได้แล้ว&lt;/p&gt;
+
+&lt;p&gt;ฐานข้อมูล sql ยังแบ่งออกเป็นหลายแบบ เช่น sqlite, posgresql, mysql ซึ่ง sqlalchemy ก็รองรับฐานข้อมูลหลายชนิด ซึ่งก็ทำให้ใช้ใน pandas ได้ด้วยเช่นกัน ในที่นี้จะใช้ sqlite ซึ่งเป็นฐานข้อมูล sql แบบที่ง่ายที่สุด มีติดตัวอยู่ตั้งแต่แรกไม่ต้องติดตั้งเพิ่ม  เมื่อมีตารางข้อมูลเก็บอยู่ในเดตาเฟรมแล้วต้องการบันทึกลงฐานข้อมูล sql สามารถทำได้โดยใช้เมธอด .to_sql() จากตัวเดตาเฟรมนั้น&lt;/p&gt;
+
+&lt;p&gt;การใช้คำสั่งนี้มีการเขียนอยู่หลายวิธี ที่ง่ายที่สุดก็คือใส่ชื่อตารางและตามด้วยชื่อตารางที่เก็บข้อมูลนั้นอยู่  วิธีที่ง่ายที่สุดคือแค่ใส่ชื่อตาราง แล้วตามด้วยชื่อตัวฐานข้อมูลที่จะเก็บตารางข้อมูลนั้นไว้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.to_sql(ชื่อตาราง,ชื่อฐานข้อมูล)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ตัวอย่างการใช้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+p = {&#39;สายพันธุ์&#39;:[&#39;ซันกูส&#39;,&#39;ฮาบุเนก&#39;,&#39;ลูนาโทน&#39;],
+     &#39;ส่วนสูง&#39;:[1.3,2.7,1],
+     &#39;น้ำหนัก&#39;:[40.3,52.5,168]}
+pokedf = pd.DataFrame(p,index=[335,336,337])
+pokedf.to_sql(&#39;pokemon&#39;,&#39;sqlite:///pkdata.db&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ในที่นี้ใช้กับฐานข้อมูล sqlite ในส่วนของชื่อฐานข้อมูลจะเขียนเป็น  &lt;code&gt;&#39;sqlite:///ชื่อไฟล์&#39;&lt;/code&gt;  แบบนี้  อนึ่ง เดิมทีแล้ว .to_sql() ควรจะใช้กับตัวออบเจ็กต์เชื่อมต่อ ซึ่งใน sqlalchemy เรียกว่า engine  หากเขียนแบบเต็มๆตั้งแต่ขั้นตอนการสร้าง engine ก็อาจเขียนแบบนี้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sqlalchemy
+
+engine = sqlalchemy.create_engine(&#39;sqlite:///pkdata.db&#39;)
+pokedf.to_sql(&#39;pokemon&#39;,engine)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;เพียงแต่ว่าสามารถเขียนย่อเป็นแบบใส่แค่ชื่อฐานข้อมูลไปโดยตรงก็ได้ ดังนั้นจึงสะดวกกว่ามาก ไม่จำเป็นต้อง import sqlalchemy มาโดยตรงเลยด้วย  ส่วนการอ่านข้อมูลจากตารางใน sql ทำได้โดยฟังก์ชัน pd.read_sql_table() วิธีใช้ก็เช่นเดียวกับตอนเขียนข้อมูลลง sql นั่นคือใส่ชื่อตารางกับชื่อฐานข้อมูล&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df = pd.read_sql_table(ชื่อตาราง,ชื่อฐานข้อมูล)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ตัวอย่างเช่นถ้าต้องการอ่านข้อมูลที่บันทึกลงไปในฐานข้อมูลในตัวอย่างที่แล้ว&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df = pd.read_sql_table(&#39;pokemon&#39;,&#39;sqlite:///pkdata.db&#39;)
+print(df)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;index	สายพันธุ์	ส่วนสูง	น้ำหนัก
+0	335	ซันกูส	1.3	40.3
+1	336	ฮาบุเนก	2.7	52.5
+2	337	ลูนาโทน	1.0	168.0  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;จากในตัวอย่างที่แล้วทั้งตอนเขียนและอ่านล้วนไม่ได้ใส่ตัวเลือกเสริมอะไรลงไปเลย ทุกอย่างจึงเป็นไปตามค่าตั้งต้น&lt;/p&gt;
+
+&lt;p&gt;ซึ่งจะเห็นว่าตอนที่ใช้ .to_sql() นั้นตัวดัชนีก็ถูกเปลี่ยนเป็นคอลัมน์หนึ่งใน sql ไปด้วย โดยชื่อคอลัมน์ดัชนีก็จะกลายเป็นชื่อคอลัมน์ใน sql ด้วย  หากต้องการเปลี่ยนชื่อคอลัมน์ดัชนีใหม่อาจทำได้โดยใส่ในตัวเลือกเสริม index_label เช่น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pk = {&#39;สายพันธุ์&#39;:[&#39;โซลร็อก&#39;,&#39;โดจ็อช&#39;],
+      &#39;ส่วนสูง&#39;:[1.2,0.4],
+      &#39;น้ำหนัก&#39;:[154,1.9]}
+index = pd.Series([338,339],name=&#39;หมายเลข&#39;)
+pokedf = pd.DataFrame(pk,index=index)
+pokedf.to_sql(&#39;pokemon&#39;,&#39;sqlite:///pkdt.db&#39;,index_label=&#39;id&#39;)
+print(pd.read_sql_table(&#39;pokemon&#39;,&#39;sqlite:///pkdt.db&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;id	สายพันธุ์	ส่วนสูง	น้ำหนัก
+0	338	โซลร็อก	1.2	154.0
+1	339	โดจ็อช	0.4	1.9  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;นอกจากนี้ถ้าหากไม่ได้ตั้งชื่อให้คอลัมน์ดัชนี แล้วก็ไม่ได้กำหนด index_label ก็จะถูกตั้งชื่อเป็น index โดยอัตโนมัติ  หากจะให้ทิ้งส่วนดัชนีไปเลยก็ใส่ตัวเลขเสริม index เป็น index=False&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pk = {&#39;สายพันธุ์&#39;:[&#39;นามาซึน&#39;,&#39;เฮย์งานิ&#39;],
+      &#39;ส่วนสูง&#39;:[0.9,0.6],
+      &#39;น้ำหนัก&#39;:[23.6,11.5]}
+pokedf = pd.DataFrame(pk,index=[340,341])
+pokedf.to_sql(&#39;pokemon&#39;,&#39;sqlite:///pkdex.db&#39;,index=False)
+print(pd.read_sql_table(&#39;pokemon&#39;,&#39;sqlite:///pkdex.db&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt; สายพันธุ์	ส่วนสูง	น้ำหนัก
+0	นามาซึน	0.9	23.6
+1	เฮย์งานิ	0.6	11.5
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;หากชื่อตารางที่ใส่ไปนั้นซ้ำกับที่มีอยู่ในฐานข้อมูลนั้นแล้ว ปกติจะเกิดข้อผิดพลาดขึ้น&lt;br /&gt;
+หากไม่ต้องการให้เป็นเช่นนั้น ก็อาจกำหนดไปในตัวเลือกเสริม if_exists เพิ่มเติม โดยถ้า id_exists=&amp;lsquo;replace&amp;rsquo; ตารางเดิมจะหายไปแล้วเอาข้อมูลใหม่ใส่ลงไปแทน เช่นลองใส่ตารางเดิมซ้ำในฐานข้อมูลเดียวกับตัวอย่างที่แล้ว&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pk = {&#39;สายพันธุ์&#39;:[&#39;เนนดอล&#39;,&#39;ลีลีลา&#39;],
+      &#39;ส่วนสูง&#39;:[1.5,1],
+      &#39;น้ำหนัก&#39;:[108,23.8]}
+pokedf = pd.DataFrame(pk,index=[344,345])
+pokedf.to_sql(&#39;pokemon&#39;,&#39;sqlite:///pkdex.db&#39;,if_exists=&#39;replace&#39;)
+print(pd.read_sql_table(&#39;pokemon&#39;,&#39;sqlite:///pkdex.db&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;index	สายพันธุ์	ส่วนสูง	น้ำหนัก
+0	344	เนนดอล	1.5	108.0
+1	345	ลีลีลา	1.0	23.8
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;จะเห็นว่าข้อมูลเก่าหายไปแล้วกลายเป็นข้อมูลใหม่  ตรงนี้ถ้าไม่ได้ใส่ หรือใส่ if_exists=&amp;lsquo;fail&amp;rsquo; ก็จะขึ้นมาว่า&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;ValueError: Table &#39;pokemon&#39; already exists.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;นอกจากนี้ ถ้า id_exists=&amp;lsquo;append&amp;rsquo; จะเป็นการเพิ่มข้อมูลเข้าไปในตารางที่มีอยู่แล้ว   เช่น ลองใส่ตารางเดิมซ้ำในฐานข้อมูลเดียวกับตัวอย่างที่แล้ว&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pk = {&#39;สายพันธุ์&#39;:[&#39;ชิซาริเกอร์&#39;,&#39;ยาจิลอน&#39;],
+      &#39;ส่วนสูง&#39;:[1.1,0.5]}
+pokedf = pd.DataFrame(pk,index=[342,343])
+pokedf.to_sql(&#39;pokemon&#39;,&#39;sqlite:///pkdex.db&#39;,if_exists=&#39;append&#39;)
+print(pd.read_sql_table(&#39;pokemon&#39;,&#39;sqlite:///pkdex.db&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;index	สายพันธุ์	ส่วนสูง	น้ำหนัก
+0	344	เนนดอล	1.5	108.0
+1	345	ลีลีลา	1.0	23.8
+2	342	ชิซาริเกอร์	1.1	NaN
+3	343	ยาจิลอน	0.5	NaN
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ข้อมูลที่ใส่ต่อเข้าไปนั้นควรจะมีคอลัมน์ซ้ำกับตารางเดิม หรือจะขาดไปบางคอลัมน์ก็ได้ ค่าที่ขาดจะว่างไว้ แต่ถ้าหากมีคอลัมน์ที่ไม่มีอยู่เดิมก็จะเกิดข้อผิดพลาด  สำหรับชนิดของข้อมูลนั้น ถ้าไม่ได้กำหนดอะไรก็จะเป็นไปตามชนิดของข้อมูลที่สัมพันธ์กับที่อยู่ในเดตาเฟรม  เช่น ตัวอย่างนี้ เมื่อไม่ได้กำหนด dtype ก็จะเป็นแบบนี้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pk = {&#39;สายพันธุ์&#39;:[&#39;มิโลคารอส&#39;,&#39;คาคุเรออน&#39;],
+      &#39;ส่วนสูง&#39;:[6.2,1],
+      &#39;น้ำหนัก&#39;:[162.0,22.0]}
+pokedf = pd.DataFrame(pk,pd.Series([350,352],name=&#39;เลข&#39;))
+
+pokedf.to_sql(&#39;pokemon&#39;,&#39;sqlite:///pkdex.db&#39;,if_exists=&#39;replace&#39;)
+df = pd.read_sql_table(&#39;pokemon&#39;,&#39;sqlite:///pkdex.db&#39;,coerce_float=False)
+print(df.values)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;[[350 &#39;มิโลคารอส&#39; 6.2 162.0]
+ [352 &#39;คาคุเรออน&#39; 1.0 22.0]]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;แต่หากต้องการให้เปลี่ยนชนิดข้อมูลเป็นแบบที่ต้องการก็สามารถกำหนดได้โดยตัวเลือกเสริม dtype  การใส่ชนิดข้อมูลนั้นให้ใส่ในรูปของชนิดข้อมูล sqlalchemy (ต้อง import มาใช้)  จากตัวอย่างที่แล้ว ลองกำหนด dtype เข้าไปได้ดังนี้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sqlalchemy
+
+dtype = {&#39;ส่วนสูง&#39;:sqlalchemy.String,
+         &#39;น้ำหนัก&#39;:sqlalchemy.Integer,
+         &#39;เลข&#39;:sqlalchemy.Float}
+
+pokedf.to_sql(&#39;pokemon&#39;,&#39;sqlite:///pkdex.db&#39;,if_exists=&#39;replace&#39;,dtype=dtype)
+df = pd.read_sql_table(&#39;pokemon&#39;,&#39;sqlite:///pkdex.db&#39;)
+print(df.values)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;[[350.0 &#39;มิโลคารอส&#39; &#39;6.2&#39; 162]
+ [352.0 &#39;คาคุเรออน&#39; &#39;1.0&#39; 22]]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;เวลาอ่านข้อมูลจาก sql ด้วย pd.read_sql_table() ก็มีตัวเลือกเสริมมากมายเพื่ออำนวยความสะดวกในการการกำหนดลักษณะการอ่าน  เช่น index_col ใช้กำหนดคอลัมน์ที่จะเป็นดัชนี ถ้าหากไม่กำหนดอะไรไปก็จะไม่มีคอลัมน์ไหนกลายเป็นดัชนี แล้วเป็นตัวเลข 0,1,2 ไป&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pk = {&#39;สายพันธุ์&#39;:[&#39;ฮินบาส&#39;,&#39;โปวาเลิน&#39;,&#39;คาเงะโบวซึ&#39;],
+      &#39;ส่วนสูง&#39;:[0.6,0.3,0.6],
+      &#39;น้ำหนัก&#39;:[7.4,0.8,2.3]}
+pokedf = pd.DataFrame(pk,pd.Series([349,351,353],name=&#39;เลข&#39;))
+pokedf.to_sql(&#39;pokemon&#39;,&#39;sqlite:///pkdex.db&#39;,if_exists=&#39;replace&#39;)
+
+print(pd.read_sql_table(&#39;pokemon&#39;,&#39;sqlite:///pkdex.db&#39;))
+print(pd.read_sql_table(&#39;pokemon&#39;,&#39;sqlite:///pkdex.db&#39;,index_col=&#39;เลข&#39;))
+print(pd.read_sql_table(&#39;pokemon&#39;,&#39;sqlite:///pkdex.db&#39;,index_col=&#39;สายพันธุ์&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; เลข	สายพันธุ์	ส่วนสูง	น้ำหนัก
+0	349	ฮินบาส	0.6	7.4
+1	351	โปวาเลิน	0.3	0.8
+2	353	คาเงะโบวซึ	0.6	2.3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt; สายพันธุ์	ส่วนสูง น้ำหนัก เลข	 	 	 
+349	ฮินบาส	0.6	7.4
+351	โปวาเลิน	0.3	0.8
+353	คาเงะโบวซึ	0.6	2.3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;
+ 	 เลข	ส่วนสูง	น้ำหนัก
+สายพันธุ์	 	 	 
+ฮินบาส	349	0.6	7.4
+โปวาเลิน	351	0.3	0.8
+คาเงะโบวซึ	353	0.6	2.3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ส่วนการเลือกเอาข้อมูลเฉพาะแค่บางคอลัมน์ทำได้โดยใส่ตัวเลือกเสริม columns&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pk = {&#39;สายพันธุ์&#39;:[&#39;ยูเรเดิล&#39;,&#39;อาโนปธ์&#39;,&#39;อาร์มัลโด&#39;],
+      &#39;ส่วนสูง&#39;:[1.5,0.7,1.5],
+      &#39;น้ำหนัก&#39;:[60.4,12.5,68.2]}
+pokedf = pd.DataFrame(pk,index=[346,347,348])
+pokedf.to_sql(&#39;pokemon&#39;,&#39;sqlite:///pkdex.db&#39;,if_exists=&#39;replace&#39;)
+
+print(pd.read_sql_table(&#39;pokemon&#39;,&#39;sqlite:///pkdex.db&#39;,columns=[&#39;index&#39;,&#39;สายพันธุ์&#39;]))
+print(pd.read_sql_table(&#39;pokemon&#39;,&#39;sqlite:///pkdex.db&#39;,columns=[&#39;index&#39;,&#39;สายพันธุ์&#39;],index_col=&#39;index&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; 	index	สายพันธุ์
+0	346	ยูเรเดิล
+1	347	อาโนปธ์
+2	348	อาร์มัลโด
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;	 	สายพันธุ์
+index	 
+346		ยูเรเดิล
+347		อาโนปธ์
+348		อาร์มัลโดแต่ 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;pd.read_sql_table() นั้นไม่สามารถกำหนดเงื่อนไขให้ข้อมูลออกมาเฉพาะบางแถวได้ จะอ่านข้อมูลออกมาทุกแถวเสมอ (เหมือนการใส่ where ในโค้ด sql)&lt;/p&gt;
+
+&lt;p&gt;ฟังก์ชันอีกตัวที่ใช้สำหรับอ่านข้อมูลคือ pd.read_sql_query() ซึ่งใช้เขียนโค้ด sql เพื่อสั่งอ่านข้อมูลเข้ามาโดยตรง  การจะใช้ฟังก์ชันนี้ได้จึงต้องรู้โค้ด sql ด้วยทำให้อาจใช้ยากกว่า แต่ข้อดีคือเขียนได้ยืดหยุ่นกว่า สามารถเขียน where เพื่อกำหนดเงื่อนไขได้ หรือเขียน order by เพื่อเรียงลำดับข้อมูลได้  การกำหนดคอลัมน์ที่จะใช้เป็นดัชนีก็ทำได้ด้วยการใส่ index_col เช่นกัน&lt;/p&gt;
+
+&lt;p&gt;ตัวอย่าง&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pk = {&#39;สายพันธุ์&#39;:[&#39;จูเพ็ตตา&#39;,&#39;โยมาวารุ&#39;,&#39;ซามาโยวรุ&#39;,&#39;โทรปิอุส&#39;],
+      &#39;ส่วนสูง&#39;:[1.1,0.8,1.6,2],
+      &#39;น้ำหนัก&#39;:[12.5,35,30.6,100]}
+pokedf = pd.DataFrame(pk,index=[354,355,356,357])
+pokedf.to_sql(&#39;pokemon&#39;,&#39;sqlite:///pkdex.db&#39;,if_exists=&#39;replace&#39;)
+
+sql = &#39;select * from pokemon where น้ำหนัก&amp;gt;32&#39;
+print(pd.read_sql_query(sql,&#39;sqlite:///pkdex.db&#39;))
+sql = &#39;select สายพันธุ์,น้ำหนัก from pokemon order by น้ำหนัก desc&#39;
+print(pd.read_sql_query(sql,&#39;sqlite:///pkdex.db&#39;))
+sql = &#39;select * from pokemon&#39;
+print(pd.read_sql_query(sql,&#39;sqlite:///pkdex.db&#39;,index_col=&#39;index&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; 	index	สายพันธุ์	ส่วนสูง	น้ำหนัก
+0	355	โยมาวารุ	0.8	35.0
+1	357	โทรปิอุส	2.0	100.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;  	สายพันธุ์	น้ำหนัก
+0	โทรปิอุส	100.0
+1	โยมาวารุ	35.0
+2	ซามาโยวรุ	30.6
+3	จูเพ็ตตา	12.5 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;
+ 	สายพันธุ์	ส่วนสูง	น้ำหนัก
+index	 	 	 
+354	จูเพ็ตตา	1.1	12.5
+355	โยมาวารุ	0.8	35.0
+356	ซามาโยวรุ	1.6	30.6
+357	โทรปิอุส	2.0	100.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;หากใน โค้ดมีการใช้เครื่องหมายคำถาม ? ซึ่งแทนตัวพารามิเตอร์ สามารถใส่ค่าลงไปได้โดยเติมลิสต์ของพารามิเตอร์ที่ต้องการแทนใส่ในคีย์เวิร์ด params เช่น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pk = {&#39;สายพันธุ์&#39;:[&#39;ชิรีน&#39;,&#39;อับโซล&#39;,&#39;โซนาโน&#39;],
+      &#39;ส่วนสูง&#39;:[0.6,1.2,0.6],
+      &#39;น้ำหนัก&#39;:[1,47,14]}
+pokedf = pd.DataFrame(pk,pd.Series([358,359,360],name=&#39;เลข&#39;))
+pokedf.to_sql(&#39;pokemon&#39;,&#39;sqlite:///pkdex.db&#39;,if_exists=&#39;replace&#39;)
+
+sql = &#39;select * from pokemon where สายพันธุ์==?&#39;
+print(pd.read_sql_query(sql,&#39;sqlite:///pkdex.db&#39;,params=[&#39;ชิรีน&#39;]))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;		 เลข	สายพันธุ์	ส่วนสูง	น้ำหนัก
+0		358		ชิรีน		0.6	1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;หรือใส่ในรูปของตัวแปรที่ชื่อขึ้นต้นด้วยโคลอน : ก็ได้ กรณีนี้ให้ใส่ params เป็นดิกชันนารี เช่น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;sql = &#39;select * from pokemon where เลข=:lek&#39;
+print(pd.read_sql_query(sql,&#39;sqlite:///pkdex.db&#39;,params={&#39;lek&#39;: 359}))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; 	เลข	สายพันธุ์	ส่วนสูง	น้ำหนัก
+0	359	อับโซล	1.2		47
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;นอกจากนี้มีฟังก์ชัน &lt;code&gt;pd.read_sql()&lt;/code&gt; ซึ่งอาจใช้เพื่อแทน &lt;code&gt;pd.read_sql_table()&lt;/code&gt; หรือ &lt;code&gt;pd.read_sql_query()&lt;/code&gt; ได้&lt;/p&gt;
+
+&lt;p&gt;โดย &lt;code&gt;pd.read_sql()&lt;/code&gt; จะดูจากค่าที่ใส่ไปเองว่าควรจะเรียก &lt;code&gt;pd.read_sql_table()&lt;/code&gt; หรือ pd.read_sql_query() ดังนั้นในทางปฏิบัติแล้วถ้าไม่อยากเขียนยาวจะใช้&lt;code&gt;pd.read_sql()&lt;/code&gt;อย่างเดียวตลอดก็ได้&lt;/p&gt;
+
+&lt;p&gt;ตัวอย่าง&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pk = {&#39;สายพันธุ์&#39;:[&#39;ยุกิวาราชิ&#39;,&#39;โอนิโกริ&#39;,&#39;ทามะซาราชิ&#39;],
+      &#39;ส่วนสูง&#39;:[0.7,1.5,0.8],
+      &#39;น้ำหนัก&#39;:[16.8,256.5,39.5]}
+pokedf = pd.DataFrame(pk,pd.Series([361,362,363],name=&#39;เลข&#39;))
+pokedf.to_sql(&#39;pokemon&#39;,&#39;sqlite:///pkdex.db&#39;,if_exists=&#39;replace&#39;)
+
+print(pd.read_sql(&#39;pokemon&#39;,&#39;sqlite:///pkdex.db&#39;,columns=[&#39;เลข&#39;,&#39;สายพันธุ์&#39;]))
+sql = &#39;select * from pokemon where น้ำหนัก&amp;lt;40&#39;
+
+print(pd.read_sql(sql,&#39;sqlite:///pkdex.db&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; 	เลข	สายพันธุ์
+0	361	ยุกิวาราชิ
+1	362	โอนิโกริ
+2	363	ทามะซาราชิ
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt; 	เลข	สายพันธุ์		ส่วนสูง	น้ำหนัก
+0	361	ยุกิวาราชิ		0.7		16.8
+1	363	ทามะซาราชิ	0.8		39.5
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;เช่นเดียวกับ .to_sql() ฟังก์ชัน pd.read_sql_table(), pd.read_sql_query() และ pd.read_sql() เองก็เดิมทีควรใช้กับ engine ของ sqlalchemy เช่นกัน การเขียนแบบตัวอย่างที่ยกมาจึงเป็นแค่การเขียนย่อ&lt;/p&gt;
+
+&lt;p&gt;หากเขียนเต็มๆตั้งแต่สร้าง engine ของ sqlalchemy ก็อาจเขียนได้แบบนี้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sqlalchemy
+
+engine = sqlalchemy.create_engine(&#39;sqlite:///pkdex.db&#39;)
+print(pd.read_sql(&#39;pokemon&#39;,engine))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;นอกจากนี้ pd.read_sql_query() หรือ pd.read_sql() สามารถใช้กับมอดูล sqlite3 ได้ด้วย ดังนั้นจึงอาจเขียนแบบนี้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sqlite3
+
+conn = sqlite3.connect(&#39;pkdex.db&#39;)
+print(pd.read_sql(&#39;select * from pokemon&#39;,conn))
+conn.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;เพียงแต่ .to_sql() กับ df.read_sql_table จะใช้ได้กับ sqlalchemy เท่านั้น ใช้กับ sqlite3 ไม่ได้&lt;/p&gt;
+
+&lt;p&gt;อ้างอิง&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_sql.html&#34; target=&#34;_blank&#34;&gt;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_sql.html&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql_table.html&#34; target=&#34;_blank&#34;&gt;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql_table.html&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql_query.html&#34; target=&#34;_blank&#34;&gt;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql_query.html&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql.html&#34; target=&#34;_blank&#34;&gt;https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql.html&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://www.cjavapy.com/article/143&#34; target=&#34;_blank&#34;&gt;https://www.cjavapy.com/article/143&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://qiita.com/orengeo/items/36e8809e07be7c1b145e&#34; target=&#34;_blank&#34;&gt;https://qiita.com/orengeo/items/36e8809e07be7c1b145e&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Reference : &lt;a href=&#34;https://phyblas.hinaboshi.com/yancham20&#34; target=&#34;_blank&#34;&gt;https://phyblas.hinaboshi.com/yancham20&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ปรับเปลี่ยนการแสดงผล pandas ใน jupyter</title>
+      <link>https://dragon-library.github.io/docs/post/python/tutorials/change-output-pandas-in-jupyter/</link>
+      <pubDate>Tue, 02 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/docs/post/python/tutorials/change-output-pandas-in-jupyter/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;เขียนเมื่อ 2016/10/23 12:11&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ในเนื้อหา  &lt;a href=&#34;https://phyblas.hinaboshi.com/yancham02&#34; target=&#34;_blank&#34;&gt;pandas เบื้องต้นบทที่ ๒&lt;/a&gt;  ได้มีเขียนถึงไปว่าเดตาเฟรมใน jupyter จะแสดงผลในลักษณะตารางที่สร้างขึ้นจากโค้ด html&lt;/p&gt;
+
+&lt;p&gt;เกี่ยวกับการติดตั้งและใช้งาน jupyter มีคนเขียนถึงไว้แล้วอ่านได้ใน&lt;br /&gt;
+&lt;a href=&#34;https://python3.wannaphong.com/2015/09/%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%A1%E0%B8%B7%E0%B8%AD-python.html&#34; target=&#34;_blank&#34;&gt;https://python3.wannaphong.com/2015/09/ติดตั้งเครื่องมือ-python.html&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://naiwaen.debuggingsoft.com/2016/08/jupyter-with-python-part2&#34; target=&#34;_blank&#34;&gt;http://naiwaen.debuggingsoft.com/2016/08/jupyter-with-python-part2&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;นอกจากแค่ใช้แสดงผลเป็นตารางได้ธรรมดาแล้ว การแสดงผลของเดตาเฟรมใน jupyter นั้นยังสามารถปรับแต่งใส่ลูกเล่นต่างๆได้ด้วย&lt;/p&gt;
+
+&lt;p&gt;สำหรับบทความนี้จะพูดถึงการปรับเปลี่ยนรูปแบบการแสดงผล โดยใช้เมธอดต่างๆที่อยู่ภายในตัวเดตาเฟรม&lt;/p&gt;
+
+&lt;p&gt;เนื้อหาแปลและตัดต่อเรียบเรียงจาก  &lt;a href=&#34;http://sinhrks.hatenablog.com/entry/2015/11/22/202640&#34; target=&#34;_blank&#34;&gt;http://sinhrks.hatenablog.com/entry/2015/11/22/202640&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ลองสร้างเดตาเฟรมขึ้นมาอันหนึ่งเพื่อใช้เป็นตัวอย่าง โดยประกอบด้วยคอลัมน์ที่เป็นตัวเลข แล้วก็ที่เป็นตัวหนังสือ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;import  pandas  as  pd  
+pokemon = pd.DataFrame([  
+[&#39;ฟุชิงิดาเนะ&#39;,&#39;พืช/พิษ&#39;,0.7,6.9],  
+[&#39;ฟุชิงิโซว&#39;,&#39;พืช/พิษ&#39;,1.0,13.0],  
+[&#39;ฟุชิงิบานะ&#39;,&#39;พืช/พิษ&#39;,2.4,155.5],  
+[&#39;ฮิโตคาเงะ&#39;,&#39;ไฟ&#39;,0.6,8.5],  
+[&#39;ลิซาร์โด&#39;,&#39;ไฟ&#39;,1.1,19.0],  
+[&#39;ลิซาร์ดอน&#39;,&#39;ไฟ/บิน&#39;,1.7,101.5],  
+[&#39;เซนิงาเมะ&#39;,&#39;น้ำ&#39;,0.5,9.0],  
+[&#39;คาเมล&#39;,&#39;น้ำ&#39;,1.0,22.5],  
+[&#39;คาเม็กซ์&#39;,&#39;น้ำ&#39;,1.6,101.1]],  
+columns=[&#39;สายพันธุ์&#39;,&#39;ชนิด&#39;,&#39;ส่วนสูง&#39;,&#39;น้ำหนัก&#39;],  
+index=[1,2,3,4,5,6,7,8,9])  
+pokemon
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;โดยปกติจะได้ตารางเรียบๆออกมาแบบนี้&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b01.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;การปรับการแสดงผลนั้นทำได้โดยพิมพ์คำว่า .style ต่อท้ายตัวแปรที่เก็บเดตาเฟรมอยู่ แล้วตามด้วยเมธอดที่ต้องการ&lt;/p&gt;
+
+&lt;p&gt;ในที่นี้จะยกตัวอย่างแค่ส่วนหนึ่งขึ้นมาลองใช้ ได้แก่&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;.style.set_properties() ปรับค่าการแสดงผลทุกช่องตารางเหมือนกัน  
+.style.apply() ปรับค่าการแสดงผลโดยแยกแต่ละแถวหรือแต่ละคอลัมน์ตามค่าโดยกำหนดด้วยฟังก์ชัน  
+.style.applymap() ปรับค่าการแสดงผลโดยแยกตามค่าของแต่ละช่องโดยกำหนดด้วยฟังก์ชัน  
+.style.highlight_max() เติมสีให้ช่องที่ค่าสูงสุด  
+.style.highlight_min() เติมสีให้ช่องที่ค่าต่ำสุด  
+.style.highlight_null() เติมสีให้ช่องที่ค่าเป็น NaN  
+.style.background_gradient() เปลี่ยนสีฉากหลังแต่ละช่องตามค่าตัวเลข  
+.style.bar() แสดงแผนภูมิแท่งขึ้นภายในตารางตามค่าตัวเลข  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;เริ่มจาก style.set_properties คำสั่งนี้จะปรับการแสดงผลโดยใช้โค้ด css หากใครใช้ css เป็นอยู่แล้วก็สามารถปรับแต่งอะไรต่างๆได้ตามใจชอบโดยไม่ต้องจำอะไรเพิ่มเติม&lt;/p&gt;
+
+&lt;p&gt;ค่าคุณสมบัติต่างๆเขียนในรูปแบบ .style.set_properties(คุณสมบัติ1=ค่า1,คุณสมบัติ2=ค่า2,&amp;hellip;=&amp;hellip;) แบบนี้ได้&lt;/p&gt;
+
+&lt;p&gt;ตัวอย่าง ลองเปลี่ยนสีอักษรในตาราง&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;pokemon.style.set_properties(color=&#39;#aa7711&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b02.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;เพียงแต่ว่าหากชื่อมีขีด - อยู่ด้วยจะใช้วิธีนี้ไม่ได้ ต้องใช้การเขียนในรูปดิกชันนารีแทน โดยใส่ดอกจันสองอันนำหน้า .style.set_properties(**{คุณสมบัติ1:ค่า1,คุณสมบัติ2:ค่า2,&amp;hellip;:&amp;hellip;}) แบบนี้&lt;/p&gt;
+
+&lt;p&gt;ตัวอย่าง&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;pokemon.style.set_properties(**{&#39;background-color&#39;:&#39;#ff2266&#39;,&#39;color&#39;:&#39;#11ff00&#39;,&#39;font-size&#39;:&#39;20px&#39;})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b03.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;การใช้ style.set_properties แบบนี้จะเป็นการเปลี่ยนทุกแถวทุกหลักเหมือนกันหมด แต่ถ้าต้องการกำหนดรูปแบบโดยขึ้นอยู่กับค่าในแต่ละช่องก็ให้ใช้ style.applymap&lt;/p&gt;
+
+&lt;p&gt;ก่อนอื่นต้องสร้างฟังก์ชันที่ให้ค่าคืนกลับเป็นโค้ด css จากนั้นจึงนำฟังก์ชันนี้ไปใช้ style.applymap ฟังก์ชันจะถูกเรียกใช้โดยมีค่าของแต่ช่องตารางเป็นอาร์กิวเมนต์&lt;/p&gt;
+
+&lt;p&gt;ตัวอย่าง&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;def  f(x):  
+if(type(x)==str):  
+return  &#39;color: #00aa00&#39;  
+elif(x&amp;gt;50):  
+return  &#39;color: #ff0000&#39;  
+else:  
+return  &#39;&#39;  
+pokemon.style.applymap(f)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b04.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;แต่หากต้องการแยกเป็นแต่ละคอลัมน์ให้ใช้ style.apply เพียงแต่ว่าค่าที่ฟังก์ชันคืนกลับมาจะต้องเป็นลิสต์ของโค้ด css ที่มีจำนวนสมาชิกเท่ากับจำนวนแถว&lt;/p&gt;
+
+&lt;p&gt;ตัวอย่าง&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;def  f(x):  
+z =  &#39;color: #110099; font-size: %dpx&#39;%(50*len(str(x.max()))**-0.5)  
+return  [z]*len(x)  
+pokemon.style.apply(f)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b06.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;หากต้องการแยกเป็นแต่ละแถวก็ใช้ style.apply แล้วใส่ axis=1 เช่น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;def  f(x):  
+if(&#39;พืช&#39;  in  x[&#39;ชนิด&#39;]):  
+return  [&#39;&#39;,&#39;color: #00ee00&#39;,&#39;&#39;,&#39;&#39;]  
+if(&#39;ไฟ&#39;  in  x[&#39;ชนิด&#39;]):  
+return  [&#39;&#39;,&#39;color: #ee0000&#39;,&#39;&#39;,&#39;&#39;]  
+if(x[&#39;ชนิด&#39;]==&#39;น้ำ&#39;):  
+return  [&#39;&#39;,&#39;color: #0000ee&#39;,&#39;&#39;,&#39;&#39;]  
+pokemon.style.apply(f,axis=1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b05.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;หากต้องการระบายสีช่องที่มีค่าสูงสุดหรือต่ำสุดให้ใช้ style.highlight_max หรือ style.highlight_min โดยระบุค่าสีที่ต้องการด้วยคีย์เวิร์ด color คำสั่งนี้จะมีผลเฉพาะคอลัมน์ที่เป็นค่าตัวเลขเท่านั้น&lt;/p&gt;
+
+&lt;p&gt;ตัวอย่าง&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;pokemon.style.highlight_max(color=&#39;#aaaaff&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b07.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;สามารถใส่ซ้อนกันได้หากต้องการแสดงทั้งค่า max และ min&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;pokemon.style.highlight_max(color=&#39;#cc0000&#39;).highlight_min(color=&#39;#00cc00&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b08.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ส่วน style.highlight_null จะระบายสีช่องที่ค่าเป็น None หรือ NaN&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;pokemon.loc[10] = [None]*4  
+pokemon.style.highlight_null()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b09.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;สำหรับ style.background_gradient จะเป็นการใส่สีให้แต่ละช่องของแต่ละแถงโดยเรียงตามค่าตัวเลขโดยเรียงสีตามคัลเลอร์แม็ป ให้ใส่คัลเลอร์แม็ปที่ต้องการลงในคีย์เวิร์ด cmap (เกี่ยวกับคัลเลอร์แม็ปได้อธิบายไว้ใน  &lt;a href=&#34;https://phyblas.hinaboshi.com/numa24&#34; target=&#34;_blank&#34;&gt;numpy &amp;amp; matplotlib เบื้องต้นบทที่ ๒๔&lt;/a&gt;)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;pokemon.style.background_gradient(cmap=&#39;summer&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b10.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ปกติสีจะถูกใส่ให้กับทุกคอลัมน์ที่เป็นค่าตัวเลข แต่หากต้องการให้ใส่แค่บางคอลัมน์ก็ทำได้โดยใช้คีย์เวิร์ด subset แล้วระบุเฉพาะชื่อคอลัมน์ที่ต้องการ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;pokemon.style.background_gradient(cmap=&#39;autumn&#39;,subset=[&#39;น้ำหนัก&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b11.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;สุดท้าย style.bar จะเป็นการสร้างแท่งสีขึ้นมาเป็นฉากหลังในตาราง โดยมีความยาวตามค่า&lt;/p&gt;
+
+&lt;p&gt;ตัวอย่าง&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;pokemon.style.bar(color=&#39;#aaffaa&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b12.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;การแสดงผลของตารางทั้งหมดมาจากโค้ด html ซึ่งหากต้องการได้ตัวโค้ด html ออกมาในรูปสายอักขระทันทีก็ให้ใช้เมธอด render() พิมพ์ต่อท้ายไปอีก&lt;/p&gt;
+
+&lt;p&gt;เช่น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;pokemon.style.bar(color=&#39;#aaffaa&#39;).render()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;แบบนี้จะได้ตัวโค้ด html มา&lt;/p&gt;
+
+&lt;p&gt;นอกจากนี้แล้วยังมีความสามารถอื่นๆที่ทำได้อีกมากใน jupyter ที่ไม่ได้กล่าวถึงในนี้ สำหรับผู้ที่สนใจก็ไปลองๆใช้และศึกษากันดูเพิ่มเติมได้&lt;/p&gt;
+
+&lt;p&gt;Reference : &lt;a href=&#34;https://phyblas.hinaboshi.com/20161023&#34; target=&#34;_blank&#34;&gt;https://phyblas.hinaboshi.com/20161023&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pandas Cheat Sheet</title>
+      <link>https://dragon-library.github.io/docs/post/python/tutorials/pandas-cheat-sheet/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/docs/post/python/tutorials/pandas-cheat-sheet/</guid>
+      <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/2017/11/05/&#34; target=&#34;_blank&#34;&gt;November 5, 2017&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Image by www.reddit.com&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Pandas ถือเป็นเครื่องมือหลักในการทำ Data Wrangling บน Python และสามารถนำไปใช้ประโยชน์คู่กับ Package อื่น เช่น เอาไปเตรียมข้อมูลก่อนทำ Model ใน SKLearn ได้ด้วย&lt;/p&gt;
+
+&lt;p&gt;วันนี้แอดมินเลยเอาคำสั่ง Pandas ที่ใช้บ่อย ๆ มารวบรวมให้renameหาง่าย ๆ ตั้งแต่อ่านไฟล์ข้อมูล เลือกข้อมูล แก้ไขข้อมูล ไปจนถึงเซฟไฟล์ข้อมูลเพื่อนำไปใช้ต่อเลยทีเดียว หวังว่าจะเป็นประโยชน์กับทุกท่านนะครับ :)&lt;/p&gt;
+
+&lt;p&gt;และเนื่องจากหน้านี้เป็น Cheatsheet รวมเทคนิคเยอะแยะมากมาย ถ้าไล่อ่านกันอาจจะหายาก ผมเลยเตรียมสารบัญมาให้ด้านล่างนี้ครับ&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Contents&lt;/strong&gt;  &lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#&#34; target=&#34;_blank&#34;&gt;hide&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#Pandas_khux_xari&#34; target=&#34;_blank&#34;&gt;1  Pandas คืออะไร?&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#thekhnikh_kar_chi_Pandas&#34; target=&#34;_blank&#34;&gt;2  เทคนิคการใช้ Pandas&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_chekh_Version_Pandas&#34; target=&#34;_blank&#34;&gt;2.1  วิธีเช็ค Version Pandas&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_kar_hold_fil_CSV_Import&#34; target=&#34;_blank&#34;&gt;2.2  วิธีการโหลดไฟล์ CSV (Import)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_sum_khxmul_sahrab_chekh_Sample&#34; target=&#34;_blank&#34;&gt;2.3  วิธีสุ่มข้อมูลสำหรับเช็ค (Sample)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_chekh_khxmul_hakhwam_phid_pkti_ni_DataFrame_beuxng_tn&#34; target=&#34;_blank&#34;&gt;2.4  วิธีเช็คข้อมูลหาความผิดปกติใน DataFrame เบื้องต้น&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_paelng_prapheth_khxmul_Data_Type_ni_Data_Frame&#34; target=&#34;_blank&#34;&gt;2.5  วิธีแปลงประเภทข้อมูล (Data Type) ใน Data Frame&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_chekh_Summary_khxng_taela_khxlamn_count_min_max_mean&#34; target=&#34;_blank&#34;&gt;2.6  วิธีเช็ค Summary ของแต่ละคอลัมน์ (count, min, max, mean)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_chekh_Summary_count_min_max_mean_baeb_yaek_klum&#34; target=&#34;_blank&#34;&gt;2.7  วิธีเช็ค Summary (count, min, max, mean) แบบแยกกลุ่ม&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_srang_DataFrame_him&#34; target=&#34;_blank&#34;&gt;2.8  วิธีสร้าง DataFrame ใหม่&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_leuxk_hlay_khxlamn_cak_DataFrame&#34; target=&#34;_blank&#34;&gt;2.9  วิธีเลือกหลายคอลัมน์จาก DataFrame&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_leuxk_khxlamn_tam_ngeuxnkhi_thi_txngkar&#34; target=&#34;_blank&#34;&gt;2.10  วิธีเลือกคอลัมน์ตามเงื่อนไขที่ต้องการ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_leuxk_thaew_tam_ngeuxnkhi_thi_txngkar&#34; target=&#34;_blank&#34;&gt;2.11  วิธีเลือกแถวตามเงื่อนไขที่ต้องการ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_pheim_khxlamn_him&#34; target=&#34;_blank&#34;&gt;2.12  วิธีเพิ่มคอลัมน์ใหม่&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#kar_slab_Row_-_Column_Transpose&#34; target=&#34;_blank&#34;&gt;2.13  การสลับ Row &amp;lt;-&amp;gt; Column (Transpose)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#kar_tx_DataFrame&#34; target=&#34;_blank&#34;&gt;2.14  การต่อ DataFrame&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#kar_tx_DataFrame_baeb_Join&#34; target=&#34;_blank&#34;&gt;2.15  การต่อ DataFrame แบบ Join&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#kar_ha_kha_Mean_Sum_Max_Aggregate_baeb_thang_DataFrame&#34; target=&#34;_blank&#34;&gt;2.16  การหาค่า Mean, Sum, Max (Aggregate) แบบทั้ง DataFrame&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#kar_Aggregate_baeb_tam_klum_thi_txngkar&#34; target=&#34;_blank&#34;&gt;2.17  การ Aggregate แบบตามกลุ่มที่ต้องการ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#kar_ran_Function_deiywkan_thuk_thaew_hrux_thuk_khxlamn&#34; target=&#34;_blank&#34;&gt;2.18  การรัน Function เดียวกันทุกแถว หรือทุกคอลัมน์&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#ran_kha_sang_thi_kheiyn_xeng_kab_thuk_thaew_ni_1_khxlamn&#34; target=&#34;_blank&#34;&gt;2.19  รันคำสั่งที่เขียนเองกับทุกแถวใน 1 คอลัมน์&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#ran_kha_sang_thi_kheiyn_xeng_kab_thuk_kha&#34; target=&#34;_blank&#34;&gt;2.20  รันคำสั่งที่เขียนเองกับทุกค่า&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#khanwn_Correlation_Covariance&#34; target=&#34;_blank&#34;&gt;2.21  คำนวณ Correlation &amp;amp; Covariance&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#khanwn_Cross_Tabulation&#34; target=&#34;_blank&#34;&gt;2.22  คำนวณ Cross Tabulation&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_ha_kha_Unique_ni_taela_khxlamn&#34; target=&#34;_blank&#34;&gt;2.23  วิธีหาค่า Unique ในแต่ละคอลัมน์&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_chekh_wa_mi_thaew_hin_khxmul_sa_may_Duplicated&#34; target=&#34;_blank&#34;&gt;2.24  วิธีเช็คว่ามีแถวไหนข้อมูลซ้ำมั้ย (Duplicated)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_kar_nab_canwn_Duplicate&#34; target=&#34;_blank&#34;&gt;2.25  วิธีการนับจำนวน Duplicate&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_kar_lb_Duplicate&#34; target=&#34;_blank&#34;&gt;2.26  วิธีการลบ Duplicate&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_kar_lb_thaew_laea_lb_khxlamn&#34; target=&#34;_blank&#34;&gt;2.27  วิธีการลบแถว และลบคอลัมน์&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_kar_lb_thaew_thi_mi_Missing_Value&#34; target=&#34;_blank&#34;&gt;2.28  วิธีการลบแถวที่มี Missing Value&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_thaen_kha_Missing_Value_dwy_kha_cheliy_Mean_Imputation&#34; target=&#34;_blank&#34;&gt;2.29  วิธีแทนค่า Missing Value ด้วยค่าเฉลี่ย (Mean Imputation)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#kar_lup_khxmul_taela_khxlamn_laea_taela_thaew&#34; target=&#34;_blank&#34;&gt;2.30  การลูปข้อมูลแต่ละคอลัมน์ และแต่ละแถว&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_peliyn_DataFrame_cak_baeb_Wide_pen_Long_Melt&#34; target=&#34;_blank&#34;&gt;2.31  วิธีเปลี่ยน DataFrame จากแบบ Wide เป็น Long (Melt)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_kar_peliyn_chux_khxlamn_Rename&#34; target=&#34;_blank&#34;&gt;2.32  วิธีการเปลี่ยนชื่อคอลัมน์ (Rename)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_kar_si_khana_hna_khxlamn_Prefix&#34; target=&#34;_blank&#34;&gt;2.33  วิธีการใส่คำนำหน้าคอลัมน์ (Prefix)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_kar_thaen_kha_ni_DataFrame&#34; target=&#34;_blank&#34;&gt;2.34  วิธีการแทนค่าใน DataFrame&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#withi_kar_Export_DataFrame_pen_fil_CSV&#34; target=&#34;_blank&#34;&gt;2.35  วิธีการ Export DataFrame เป็นไฟล์ CSV&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/#srup_kar_chi_ngan_Pandas&#34; target=&#34;_blank&#34;&gt;3  สรุปการใช้งาน Pandas&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;pandas-ค-ออะไร&#34;&gt;Pandas คืออะไร?&lt;/h2&gt;
+
+&lt;p&gt;Pandas เป็น Library ใน Python ที่ทำให้เราเล่นกับข้อมูลได้ง่ายขึ้น เหมาะมากสำหรับทำ  &lt;a href=&#34;https://www.facebook.com/datasciencechill/photos/a.251751741876557.1073741828.250303472021384/388914871493576/?type=3&#34; target=&#34;_blank&#34;&gt;Data Cleaning / Wrangling&lt;/a&gt;  ครับผม&lt;/p&gt;
+
+&lt;p&gt;วิธีการใช้งาน Pandas คือ โหลดไฟล์ข้อมูล เช่น CSV เข้าไป แล้วเราจะได้ข้อมูลในรูปแบบตาราง (DataFrame) ที่แบ่งข้อมูลตามแถวและคอลัมน์ หรือเหมือน Excel ที่เราใช้กันนั่นเอง&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/example-dataframe-pandas/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_998/https://blog.datath.com/wp-content/uploads/2017/11/example-dataframe-pandas.jpg&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ตัวอย่าง DataFrame ของ Pandas เป็นตารางเหมือน Excel เลยครับ&lt;/p&gt;
+
+&lt;p&gt;ป.ล. Pandas ไม่เกี่ยวกับหมีแพนด้านะฮะ จริง ๆ แล้วมาจากคำว่า PANel DAta ซึ่งหมายถึงข้อมูลที่มีหลายมิตินั่นเอง&lt;/p&gt;
+
+&lt;h2 id=&#34;เทคน-คการใช-pandas&#34;&gt;เทคนิคการใช้ Pandas&lt;/h2&gt;
+
+&lt;p&gt;อย่างที่&lt;a href=&#34;https://www.facebook.com/datasciencechill/photos/a.251751741876557.1073741828.250303472021384/388914871493576/?type=3&#34; target=&#34;_blank&#34;&gt;แอดมินเคยเล่า&lt;/a&gt; ว่าการทำ Data Wrangling เป็นงานที่ค่อนข้างถึกครับ วันนี้เลยรวบรวมโค้ดต่าง ๆ ในการใช้ Pandas มาให้ ซึ่งน่าจะครอบคลุมการใช้งานประมาณ 80 – 90% แล้วครับผม&lt;/p&gt;
+
+&lt;p&gt;โค้ดบางส่วนมาจากคลาส Data Wrangling ที่แอดมินเรียน และจากเว็บไซต์ &lt;a href=&#34;https://mycheatsheets.com/pandas&#34; target=&#34;_blank&#34;&gt;MyCheatSheet&lt;/a&gt; ครับ&lt;/p&gt;
+
+&lt;h3 id=&#34;ว-ธ-เช-ค-version-pandas&#34;&gt;วิธีเช็ค Version Pandas&lt;/h3&gt;
+
+&lt;p&gt;โค้ดนี้เหมือนไม่สำคัญ แต่จริง ๆ แล้วสำคัญมากเวลาเราอ่าน Documentation ครับ เพราะถ้าเกิดมีอะไรพัง เราจะเทียบได้ว่า Pandas ของเราเป็นเวอร์ชั่นตามใน Documentation มั้ย&lt;/p&gt;
+
+&lt;p&gt;print  (&amp;laquo;Pandas version&amp;raquo;,pandas.&lt;strong&gt;version&lt;/strong&gt;)&lt;/p&gt;
+
+&lt;h3 id=&#34;ว-ธ-การโหลดไฟล-csv-import&#34;&gt;วิธีการโหลดไฟล์ CSV (Import)&lt;/h3&gt;
+
+&lt;p&gt;จุดเริ่มต้นของการทำ Data Exploration &amp;amp; Analysis ใน Pandas ก็คือการโหลดไฟล์ข้อมูลแบบ CSV มาใช้งานนั่นเองครับ&lt;/p&gt;
+
+&lt;p&gt;เราสามารถใช้คำสั่ง .head หรือ .tail เพื่อดูข้อมูลแถวบนสุด หรือแถวล่างสุดได้&lt;/p&gt;
+
+&lt;h1 id=&#34;read-df&#34;&gt;Read DF&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;csvdf = pd.read_csv(&#39;data.csv&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;sometimes-reading-csv-for-excel-need-encoding&#34;&gt;Sometimes reading CSV for Excel need encoding&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;csvdf = pd.read_csv(&#39;data.csv&#39;,encoding = &amp;quot;ISO-8859-1&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;print-head-and-tail&#34;&gt;Print head and tail&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;csvdf.head()
+
+csvdf.tail()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-ส-มข-อม-ลสำหร-บเช-ค-sample&#34;&gt;วิธีสุ่มข้อมูลสำหรับเช็ค (Sample)&lt;/h3&gt;
+
+&lt;p&gt;ปกติเราเช็คข้อมูลว่าถูกต้องมั้ยด้วย head กับ tail ซึ่งเป็นการเช็คจากด้านบนหรือด้านล่าง อีกวิธีที่น่าสนใจ คือ เช็คแบบสุ่มข้อมูลขึ้นมานั่นเองครับ ทำได้ง่าย ๆ โดยใช้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;csvdf.sample()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-เช-คข-อม-ลหาความผ-ดปกต-ใน-dataframe-เบ-องต-น&#34;&gt;วิธีเช็คข้อมูลหาความผิดปกติใน DataFrame เบื้องต้น&lt;/h3&gt;
+
+&lt;p&gt;หลังจากโหลดข้อมูลมาแล้ว เราอยากรู้ว่าข้อมูลมีกี่แถว, Missing value เท่าไหร่, แต่ละคอลัมน์เป็น Data Type อะไรบ้าง ก็รันคำสั่งนี้ได้เลย มีประโยชน์มากครับ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df.info()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_525/https://blog.datath.com/wp-content/uploads/2017/11/sample-info-pandas.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;df.info() จะแสดงสรุปข้อมูลมาให้&lt;/p&gt;
+
+&lt;p&gt;นอกจากนั้นยังมีคำสั่ง df.dtypes (ไม่มีวงเล็บ) สำหรับดู Data Type แต่ละคอลัมน์อย่างเดียว&lt;/p&gt;
+
+&lt;h3 id=&#34;ว-ธ-แปลงประเภทข-อม-ล-data-type-ใน-data-frame&#34;&gt;วิธีแปลงประเภทข้อมูล (Data Type) ใน Data Frame&lt;/h3&gt;
+
+&lt;p&gt;บางครั้งประเภทข้อมูลของคอลัมน์เป็น String แต่เราต้องการ Integer หรือเราต้องการ Date เราสามารถแปลงข้อมูลได้ง่าย ๆ ดังนี้เลยครับ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df[&#39;hour&#39;] = pd.to_numeric(df[&#39;hour&#39;]) # แปลงเป็น Numeric
+
+df[&#39;hour&#39;] = df[&#39;hour&#39;].astype(&#39;int&#39;) # อีกวิธีในการแปลงค่า สามารถใช้วิธีนี้แปลงเป็น float ได้
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-เช-ค-summary-ของแต-ละคอล-มน-count-min-max-mean&#34;&gt;วิธีเช็ค Summary ของแต่ละคอลัมน์ (count, min, max, mean)&lt;/h3&gt;
+
+&lt;p&gt;ถ้าเราอยากรู้ Distribution คร่าว ๆ ของแต่ละคอลัมน์ว่าเป็นอย่างไร สามารถใช้คำสั่ง describe() ได้&lt;/p&gt;
+
+&lt;p&gt;df.describe()&lt;/p&gt;
+
+&lt;h3 id=&#34;ว-ธ-เช-ค-summary-count-min-max-mean-แบบแยกกล-ม&#34;&gt;วิธีเช็ค Summary (count, min, max, mean) แบบแยกกลุ่ม&lt;/h3&gt;
+
+&lt;p&gt;บางครั้งเราไม่ได้ต้องการรู้ Summary ของทั้งคอลัมน์ แต่อยากให้แยกตามแต่ละค่าในคอลัมน์นั้น ๆ ครับ ซึ่งมีประโยชน์มากเวลาเราทำ Data Analysis แล้วอยากรู้ว่าบางกลุ่มมีอะไรผิดปกติหรือเปล่า&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;test = df.groupby([&#39;Gender&#39;])
+
+test.describe()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-สร-าง-dataframe-ใหม&#34;&gt;วิธีสร้าง DataFrame ใหม่&lt;/h3&gt;
+
+&lt;p&gt;วิธีสร้างแบบง่ายที่สุด ถ้าต้องการข้อมูลหลายรูปแบบ เราสามารถใช้ Dictionary แบบนี้เลยครับ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe = pandas.DataFrame({
+
+&#39;C1&#39;: pandas.date_range(&#39;20170101&#39;, periods=4),
+
+&#39;C2&#39; : [10,20,30,40],
+
+&#39;C3&#39;: pandas.Categorical([&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;]),
+
+&#39;C4&#39;: 1})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;แต่ถ้าเราต้องการแค่เป็นแบบตัวเลขทั่วไป ใช้ Numpy แบบนี้ได้เลย&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;array = numpy.array([(1,2,3), (4,5,6),(7,8,9)])
+
+dataframe = pandas.DataFrame(array,columns=[&#39;C1&#39;,&#39;C2&#39;,&#39;C3&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-เล-อกหลายคอล-มน-จาก-dataframe&#34;&gt;วิธีเลือกหลายคอลัมน์จาก DataFrame&lt;/h3&gt;
+
+&lt;p&gt;ปกติถ้าเราต้องการเลือกแค่ 1 Column ก็เขียนแบบนี้ได้เลย&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df[&#39;C1&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;แต่ถ้าต้องการเลือกหลายคอลัมน์ ให้ทำแบบนี้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df[[&#39;C1&#39;,&#39;C2&#39;]]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-เล-อกคอล-มน-ตามเง-อนไขท-ต-องการ&#34;&gt;วิธีเลือกคอลัมน์ตามเงื่อนไขที่ต้องการ&lt;/h3&gt;
+
+&lt;p&gt;บางทีเราอยาก Filter เฉพาะคอลัมน์ที่มีค่าตามที่เราต้องการโดยใช้ .loc ได้ โดยสามารถเลือก Filter แบบ .all() (ทุกค่าในคอลัมน์ต้องตรงตามเงื่อนไข) หรือ .any() (บางค่าในคอลัมน์ต้องตรงตามเงื่อนไข)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe2 = dataframe.loc[:,(dataframe&amp;gt;50).any()]
+
+dataframe3 = dataframe.loc[:,(dataframe&amp;gt;50).all()]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;เราสามารถใช้หาคอลัมน์ที่มี Missing Values หรือหาคอลัมน์ที่ไม่มี Missing Values เลยก็ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe2 = dataframe.loc[:,dataframe.isnull().any()]
+
+dataframe3 = dataframe.loc[:,dataframe.notnull().all()]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-เล-อกแถวตามเง-อนไขท-ต-องการ&#34;&gt;วิธีเลือกแถวตามเงื่อนไขที่ต้องการ&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe[dataframe[&#39;C1&#39;]&amp;gt;50] # เงื่อนไขแบบง่าย ๆ
+
+dataframe2 = dataframe.loc[dataframe.C1.isin([1,2,3])] # เงื่อนไขแบบซับซ้อน
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ถ้ามีหลายเงื่อนไขเราสามารถใช้ &amp;amp; (and) หรือ | (or) ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe[(dataframe[&#39;C1&#39;]&amp;gt;50) &amp;amp; ((dataframe[&#39;C2&#39;]&amp;lt;25) | (dataframe[&#39;C2&#39;]&amp;gt;75))]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;หรือใช้ Query เป็นเงื่อนไขได้ด้วย มีประโยชน์มากเวลาเรามีเงื่อนไขแปลก ๆ ไม่ต้องเขียนลูปขึ้นมาเองเลยครับ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe2 = dataframe.query(&#39;C1 &amp;gt; C2&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-เพ-มคอล-มน-ใหม&#34;&gt;วิธีเพิ่มคอลัมน์ใหม่&lt;/h3&gt;
+
+&lt;p&gt;สามารถเพิ่มคอลัมน์ใหม่ได้ 2 แบบ คือ&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;เพิ่มโดยอิงจากคอลัมน์เดิม (เช่น เอาคอลัมน์เดิม + 10 หรือ เอาคอลัมน์ A – คอลัมน์ B มีประโยชน์มากตอนทำ Feature Engineering)&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;เพิ่มคอลัมน์โดยตั้งค่า Fix ไปเลยสำหรับทุกแถว ส่วนใหญ่จะใช้วิธีนี้เวลาเราอยากได้ค่าอะไรแปลก ๆ ที่ต้องเขียนลูปเพื่อใส่ค่า ก็สร้างคอลัมน์แบบ Fix ค่าก่อน แล้วต่อด้วยลูป&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df[&#39;new&#39;] = dataframe[&#39;old&#39;] + 10 # use old values
+
+df[&#39;new2&#39;] = 5 # apply the same value
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;การสล-บ-row-column-transpose&#34;&gt;การสลับ Row &amp;lt;-&amp;gt; Column (Transpose)&lt;/h3&gt;
+
+&lt;p&gt;ถ้าเราต้องการ Transpose (อารมณ์เหมือน Vector) เราสามารถใช้คำสั่งนี้ได้เลย&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe.T
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;การต-อ-dataframe&#34;&gt;การต่อ DataFrame&lt;/h3&gt;
+
+&lt;p&gt;การต่อ Data Frame คือการเอา Data Set 2 ชุดมาต่อกันในแถวตั้งหรือแนวนอน สำหรับการต่อแบบปะติดไปเลย&lt;/p&gt;
+
+&lt;p&gt;มี 2 คำสั่งที่เหมือนกัน คือ concat กับ append แต่ให้ใช้ concat ไปเลย เพราะ append เป็นคำสั่งที่ไม่ Memory Efficient&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;pd.concat([df1,df2], axis=1) # รวมกัน 2 คอลัมน์ (axis = 0 คือแถว, axis = 1 คือคอลัมน์)
+
+pd.concat([df1,df2,df3)] # รวมมากกว่า 2 คอลัมน์ก็ได้
+
+pd.concat(…, ignore_index=True) # รวมเสร็จแล้ว reset index ให้ด้วย ควรใช้ ไม่งั้นจะเจอ row ID ซ้ำกันตอนรวมร่าง
+
+pd.concat(…, join=&#39;inner&#39;) # รวมร่างเฉพาะคอลัมน์ที่ df1 กับ df2 มีทั้งคู่
+
+pd.concat(…, keys=[&#39;source1&#39;, &#39;source2&#39;]) # เพิ่มคอลัมน์เข้าไปด้วยเพื่อระบุว่า Row แต่ละอันมาจาก Data Frame อันไหน
+
+pd.concat(…, join_axes=[df2.index]) # เลือกรวมร่างเฉพาะ row index ที่เรากำหนดได้
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;การต-อ-dataframe-แบบ-join&#34;&gt;การต่อ DataFrame แบบ Join&lt;/h3&gt;
+
+&lt;p&gt;ถ้าต้องการต่อ DataFrame แบบ Advance หน่อย เราก็สามารถ Join DataFrame ได้เหมือน Join Table ใครเขียน SQL มาก่อนน่าจะถนัดเลย&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;pd.merge(df1, df2, left_on=&amp;quot;col1&amp;quot;, right_on=&amp;quot;col2&amp;quot;, how=&amp;quot;inner&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;เราสามารถเปลี่ยนตรง how=”inner” เป็น “outer”, “left”, “right” เพื่อเปลี่ยนเป็น Outer Join, Left Join, Right Join ได้อีกด้วย&lt;/p&gt;
+
+&lt;h3 id=&#34;การหาค-า-mean-sum-max-aggregate-แบบท-ง-dataframe&#34;&gt;การหาค่า Mean, Sum, Max (Aggregate) แบบทั้ง DataFrame&lt;/h3&gt;
+
+&lt;p&gt;Pandas สามารถสั่ง Aggregate เพื่อหาค่า Mean, Sum, และ Max ได้เลย เหมาะมากเวลาเราต้องการรวบข้อมูลก่อนเอาไป Visualize หรือต้องการทำ Feature Engineering ก็ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;newdf = df.agg([&#39;sum&#39;, &#39;max&#39;,&#39;mean&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;การ-aggregate-แบบตามกล-มท-ต-องการ&#34;&gt;การ Aggregate แบบตามกลุ่มที่ต้องการ&lt;/h3&gt;
+
+&lt;p&gt;บางทีเราอยาก Aggregate ข้อมูลตามการจัดกลุ่มในคอลัมน์อื่น เช่น เราอยากได้รายจ่ายทั้งหมดของแต่ละคน (ต้อง aggregate sum ของคอลัมน์รายจ่าย โดยแบ่งกลุ่มตามคอลัมน์ User ID) ใช้แบบนี้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;aggregate = dataframe.groupby(&#39;C1&#39;).sum()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;การร-น-function-เด-ยวก-นท-กแถว-หร-อท-กคอล-มน&#34;&gt;การรัน Function เดียวกันทุกแถว หรือทุกคอลัมน์&lt;/h3&gt;
+
+&lt;p&gt;เวลาเราอยากรันคำสั่งอะไรสักอย่างสำหรับทุกแถว หรือทุกคอลัมน์ เราสามารถเขียนได้แบบนี้&lt;/p&gt;
+
+&lt;h1 id=&#34;sum-for-columns&#34;&gt;sum for columns&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;sum_columns = dataframe[[&#39;C1&#39;,&#39;C2&#39;]].apply(sum,axis=0)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;sum-for-rows&#34;&gt;sum for rows&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;sum_rows = dataframe[[&#39;C1&#39;,&#39;C2&#39;]].apply(sum,axis=1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;เหมือนกับฟังก์ชั่น apply() ใน R นั่นเอง&lt;/p&gt;
+
+&lt;h3 id=&#34;ร-นคำส-งท-เข-ยนเองก-บท-กแถวใน-1-คอล-มน&#34;&gt;รันคำสั่งที่เขียนเองกับทุกแถวใน 1 คอลัมน์&lt;/h3&gt;
+
+&lt;p&gt;ถ้าต้องการรันคำสั่ง (Function) ที่เขียนเอง สำหรับทุกแถวในคอลัมน์อันใดอันหนึ่ง ใช้แบบนี้ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe[&#39;C1&#39;] = dataframe[&#39;C1&#39;].map(lambda x: x-100)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ร-นคำส-งท-เข-ยนเองก-บท-กค-า&#34;&gt;รันคำสั่งที่เขียนเองกับทุกค่า&lt;/h3&gt;
+
+&lt;p&gt;ถ้าต้องการรันคำสั่งที่เขียนเองกับทุกค่าใน DataFrame ใช้โค้ดนี้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;function_result = dataframe.applymap(lambda x: x*10)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;หรือใช้ transform ก็ได้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;new_dataframe = dataframe.transform(lambda x: x*100)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;คำนวณ-correlation-covariance&#34;&gt;คำนวณ Correlation &amp;amp; Covariance&lt;/h3&gt;
+
+&lt;p&gt;เวลาเราอยากรู้ว่าค่าต่าง ๆ ใน Data Set เรา Correlate กันมั้ย&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe.corr() # Correlation
+
+dataframe.cov() # Covariance
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;แต่ค่าที่ออกมาเป็นตัวเลขอาจจะดูยากนิดนึง เราสามารถพลอตสวย ๆ ด้วย Seaborn ได้ครับ สามารถใช้โค้ดด้านล่างนี้ได้เลย&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;import seaborn as sns
+
+corr = modeldf.corr()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;set-up-the-matplotlib-figure&#34;&gt;Set up the matplotlib figure&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;f, ax = plt.subplots(figsize=(15, 8))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;generate-a-custom-diverging-colormap&#34;&gt;Generate a custom diverging colormap&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;cmap = sns.diverging_palette(10, 10, as_cmap=True)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;draw-the-heatmap-with-the-mask-and-correct-aspect-ratio&#34;&gt;Draw the heatmap with the mask and correct aspect ratio&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;sns.heatmap(corr, annot=True)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://cdn.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_861/https://blog.datath.com/wp-content/uploads/2017/11/seaborn-correlation-heatmap.jpg&#34; alt=&#34;&#34; /&gt;
+Correlation Plot สวย ๆ ด้วย Seaborn&lt;/p&gt;
+
+&lt;h3 id=&#34;คำนวณ-cross-tabulation&#34;&gt;คำนวณ Cross Tabulation&lt;/h3&gt;
+
+&lt;p&gt;Cross Tabulation มีประโยชน์มากเวลาเราอยากรู้ว่ามี Data ที่ตรงกับกรุ๊ป A ของคอลัมน์ 1 และกรุ๊ป B ของคอลัมน์ 2 เท่าไหร่ เช่น มีนักเรียนผู้ชาย (คอลัมน์ gender) กี่คนในมัธยมปลาย (คอลัมน์ education) แบบนี้เป็นต้น&lt;/p&gt;
+
+&lt;p&gt;หรือถ้าใครใช้ PivotTable ใน Excel มาก่อน ก็เหมือนกันเลยครับ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;aggregate = pandas.crosstab(dataframe.C1, dataframe.C2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-หาค-า-unique-ในแต-ละคอล-มน&#34;&gt;วิธีหาค่า Unique ในแต่ละคอลัมน์&lt;/h3&gt;
+
+&lt;p&gt;คำสั่งนี้มีประโยชน์มาก เอาไว้ใช้เช็คว่าแต่ละคอลัมน์มีค่าแปลก ๆ มั้ย&lt;/p&gt;
+
+&lt;p&gt;ตัวอย่างการใช้งานก็คือ เราอยากรู้ว่า มีบ้านไหนที่มีจำนวนห้องนอนแปลก ๆ มั้ย (เช่น 50 ห้องนอน หรือ -5 ห้องนอน) ก็หาค่า unique จากคอลัมน์ “bedrooms”&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe[&#39;C1&#39;].unique()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-เช-คว-าม-แถวไหนข-อม-ลซ-ำม-ย-duplicated&#34;&gt;วิธีเช็คว่ามีแถวไหนข้อมูลซ้ำมั้ย (Duplicated)&lt;/h3&gt;
+
+&lt;p&gt;อันนี้มีประโยชน์มาก เอาไว้ใช้เช็คว่ามีข้อมูลแปลก ๆ มั้ย เช่น ทุกคอลัมน์ซ้ำกันหมด (อันนี้มีโอกาสว่าเป็นข้อมูลซ้ำ อาจจะต้องลบออก) หรือซ้ำกันบางคอลัมน์ (อันนี้ต้องเช็คอีกทีว่าคืออะไร)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe.duplicated() # หาอันที่เหมือนกันทุกคอลัมน์
+
+dataframe.duplicated(&#39;C1&#39;) # หาอันที่ซ้ำกันเฉพาะคอลัมน์ C1
+
+dataframe.duplicated([&#39;C1&#39;, &#39;C2&#39;]) # หาอันที่ซ้ำกันเฉพาะคอลัมน์ C1 และ C2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ปกติแล้วถ้ามีไอเทมซ้ำ คำสั่งนี้จะไม่แสดงไอเทมแรกในกลุ่มที่ซ้ำ (เช่น ถ้า C1=5 มี 2 แถว มันจะแสดงเฉพาะแถวที่ 2) เราสามารถใส่ Argument  &lt;strong&gt;keep=False&lt;/strong&gt;  เข้าไปเพื่อบังคับให้มันแสดงทุกแถวได้&lt;/p&gt;
+
+&lt;p&gt;นอกจากนั้นเรายังสามารถนับจำนวนแถวที่ Duplicate และลบทิ้งได้ด้วย&lt;/p&gt;
+
+&lt;h3 id=&#34;ว-ธ-การน-บจำนวน-duplicate&#34;&gt;วิธีการนับจำนวน Duplicate&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;len(df[ df.duplicated([&#39;A&#39;, &#39;B&#39;, &#39;C&#39;], keep = False)  ])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-การลบ-duplicate&#34;&gt;วิธีการลบ Duplicate&lt;/h3&gt;
+
+&lt;p&gt;เอาไว้ใช้ตอนเราเจอว่าทุกคอลัมน์ซ้ำกันหมดเลย ซึ่งเป็นเคสที่บอกว่าข้อมูลน่าจะซ้ำ ลบออกได้ (ขึ้นอยู่กับข้อมูลด้วยนะครับ บางข้อมูลอาจจะไม่ได้แปลว่าซ้ำแล้วลบได้):&lt;/p&gt;
+
+&lt;h1 id=&#34;remove-the-duplicates&#34;&gt;Remove the duplicates&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df.drop_duplicates([&#39;A&#39;, &#39;B&#39;, &#39;C&#39;], inplace=True)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;reset-dataframe-index-after-drop-duplicates&#34;&gt;Reset dataframe index after drop_duplicates.&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df.reset_index(drop=True, inplace=True)
+
+len(df)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;สำหรับโค้ดข้างบน จะเห็นว่าเราต้อง reset index หลังลบ duplicate ด้วยนะครับ&lt;/p&gt;
+
+&lt;h3 id=&#34;ว-ธ-การลบแถว-และลบคอล-มน&#34;&gt;วิธีการลบแถว และลบคอลัมน์&lt;/h3&gt;
+
+&lt;p&gt;ลบคอลัมน์สามารถทำได้แบบนี้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe = dataframe.drop(&#39;C1&#39;, axis=1)
+
+df.drop([&#39;C1&#39;], axis=1, inplace=True) # แบบนี้ก็ได้
+
+df.drop([&#39;C1&#39;, &#39;C2&#39;, &#39;C3&#39;], 1, inplace=True) # ลบทีละหลายคอลัมน์ก็ได้
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ส่วนการลบแถวจะลำบากหน่อย เพราะต้องใส่ Row Index (เลขที่อยู่ซ้ายสุดเวลาเราปรินท์ DataFrame)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe = dataframe.drop(5, axis=0)
+
+dataframe.reset_index(drop=True) # Reset index
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ลบแถวแล้วอย่าลืมเช็คด้วยว่าที่ลบไปถูกต้องมั้ย และหลังจากลบแถวต้อง Reset Index ด้วย&lt;/p&gt;
+
+&lt;h3 id=&#34;ว-ธ-การลบแถวท-ม-missing-value&#34;&gt;วิธีการลบแถวที่มี Missing Value&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;ข้อควรระวัง:&lt;/strong&gt;  การที่อยู่ ๆ เราลบแถวที่มี Missing Value ทิ้งไปเลยอาจจะไม่ใช่วิธีที่ดีที่สุดในการทำ Data Analysis เสมอไปนะครับ บางเคสการ Impute (คำนวณหาค่าไปใส่) จะดีกว่าครับ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe2 = dataframe.dropna(axis=0)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-แทนค-า-missing-value-ด-วยค-าเฉล-ย-mean-imputation&#34;&gt;วิธีแทนค่า Missing Value ด้วยค่าเฉลี่ย (Mean Imputation)&lt;/h3&gt;
+
+&lt;p&gt;วิธีหนึ่งในการแทนค่าที่หายไป คือการทำสิ่งที่เรียกว่า Mean Imputation หรือหาค่าเฉลี่ยของคอลัมน์นั้น แล้วเอามาแทนค่าที่หายไปนั่นเองครับ&lt;/p&gt;
+
+&lt;p&gt;ข้อดีของการทำ Mean Imputation คือ สามารถทำได้ง่าย แต่ก็ต้องระวังเรื่องข้อเสีย เช่น ทำแบบนี้จะเป็นการไม่สนใจความสัมพันธ์ระหว่างตัวแปร ทำให้เกิด Bias สูง ควรใช้เฉพาะเวลา Missing Value ไม่เยอะเท่านั้นครับ&lt;/p&gt;
+
+&lt;p&gt;สามารถรันโค้ดด้านล่างเพื่อทำ Mean Imputation ได้ง่าย ๆ เลย&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;import numpy as np
+
+meanAge = np.mean(df.Age) # Get mean value
+
+df.Age = df.Age.fillna(meanAge) # Fill missing values with mean
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;การล-ปข-อม-ลแต-ละคอล-มน-และแต-ละแถว&#34;&gt;การลูปข้อมูลแต่ละคอลัมน์ และแต่ละแถว&lt;/h3&gt;
+
+&lt;p&gt;การลูปมีประโยชน์มากถ้าเราต้องการเขียนฟังก์ชั่นแปลก ๆ ใช้เองที่ Pandas ไม่รองรับ (หรืออาจจะรองรับแต่เราหาไม่เจอ เขียนเองง่ายกว่า) สามารถลูปได้ทั้งแต่ละคอลัมน์ และแต่ละแถว&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;for col_idx,data in dataframe.iteritems():
+
+	print  (&amp;quot;column:&amp;quot;,col_idx)
+	print  (&amp;quot;column data:&amp;quot;)
+	print  (data,&amp;quot;\n&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;การลูปข้อมูลแต่ละแถว&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;for col_idx,data in dataframe.iterrows():
+
+print  (&amp;quot;row:&amp;quot;,col_idx)
+print  (&amp;quot;row data:&amp;quot;)
+print  (data,&amp;quot;\n&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-เปล-ยน-dataframe-จากแบบ-wide-เป-น-long-melt&#34;&gt;วิธีเปลี่ยน DataFrame จากแบบ Wide เป็น Long (Melt)&lt;/h3&gt;
+
+&lt;p&gt;การ Melt Data มีประโยชน์มากเวลาเราต้องการเอาข้อมูลไปพลอต Data Visualization หรือเราต้องการ Aggregate ครับ&lt;/p&gt;
+
+&lt;p&gt;dataframe2 = dataframe.melt()&lt;/p&gt;
+
+&lt;h3 id=&#34;ว-ธ-การเปล-ยนช-อคอล-มน-rename&#34;&gt;วิธีการเปลี่ยนชื่อคอลัมน์ (Rename)&lt;/h3&gt;
+
+&lt;p&gt;บางทีเราต้องการเปลี่ยนชื่อเพื่อให้สั้นลง ให้พิมพ์สะดวกขึ้น สามารถทำได้ดังนี้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe.rename(columns={&#39;old&#39;:&#39;new&#39;},inplace=True)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-การใส-คำนำหน-าคอล-มน-prefix&#34;&gt;วิธีการใส่คำนำหน้าคอลัมน์ (Prefix)&lt;/h3&gt;
+
+&lt;p&gt;อันนี้มีประโยชน์มากตอนเรามีข้อมูลหลาย ๆ ชุด และต้องการ Merge โดยอยากให้ชื่อคอลัมน์ไม่ซ้ำกัน&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;thisdata = thisdata.add_prefix(&#39;data_&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-การแทนค-าใน-dataframe&#34;&gt;วิธีการแทนค่าใน DataFrame&lt;/h3&gt;
+
+&lt;p&gt;เหมาะมากเวลาต้องการแก้ Typo Error เช่น เราอยากได้ค่า Bangkok แต่เรารู้ว่ามีคนเขียนเป็น BKK อะไรแบบนี้ (รันคำสั่ง .unique เพื่อดูก่อน)&lt;/p&gt;
+
+&lt;p&gt;เราสามารถ Replace ทั้ง DataFrame ได้เลยแบบนี้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe2 = dataframe.replace(1, -100)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;เราสามารถ Replace หลายค่าพร้อมกันได้ด้วยครับ และสามารถกำหนด Column ที่ต้องการให้แทนค่าได้ด้วย&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;df[&#39;city&#39;].replace({
+
+&#39;BKK&#39;:&#39;Bangkok&#39;,
+
+&#39;BNK&#39;:&#39;Bangkok&#39;
+
+}, inplace=True)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ว-ธ-การ-export-dataframe-เป-นไฟล-csv&#34;&gt;วิธีการ Export DataFrame เป็นไฟล์ CSV&lt;/h3&gt;
+
+&lt;p&gt;หลังจากที่เราจัดการ Data เรียบร้อยแล้ว ก็สามารถ Export เป็น CSV เอาไปใช้ต่อกับโปรแกรมอื่น หรืองานส่วนอื่น ๆ ได้ (แอดทำบ่อยเพราะบางทีต้องสลับ Python &amp;lt;-&amp;gt; R รัว ๆ)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;dataframe.to_csv(&#39;dataframe.csv&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Reference : &lt;a href=&#34;https://blog.datath.com/cheatsheet-pandas/&#34; target=&#34;_blank&#34;&gt;https://blog.datath.com/cheatsheet-pandas/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
