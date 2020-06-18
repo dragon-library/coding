@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Package Index on Library</title>
+    <link>https://dragon-library.github.io/docs/library/tags/package-index/</link>
+    <description>Recent content in Package Index on Library</description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="https://dragon-library.github.io/docs/library/tags/package-index/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python Package Index.</title>
+      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/package_index/</link>
+      <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/package_index/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;featured.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;While  &lt;a href=&#34;https://docs.python.org/3.8/reference/index.html#reference-index&#34; target=&#34;_blank&#34;&gt;The Python Language Reference&lt;/a&gt;  describes the exact syntax and semantics of the Python language, this library reference manual describes the standard library that is distributed with Python. It also describes some of the optional components that are commonly included in Python distributions.&lt;/p&gt;
+
+&lt;p&gt;Python’s standard library is very extensive, offering a wide range of facilities as indicated by the long table of contents listed below. The library contains built-in modules (written in C) that provide access to system functionality such as file I/O that would otherwise be inaccessible to Python programmers, as well as modules written in Python that provide standardized solutions for many problems that occur in everyday programming. Some of these modules are explicitly designed to encourage and enhance the portability of Python programs by abstracting away platform-specifics into platform-neutral APIs.&lt;/p&gt;
+
+&lt;p&gt;The Python installers for the Windows platform usually include the entire standard library and often also include many additional components. For Unix-like operating systems Python is normally provided as a collection of packages, so it may be necessary to use the packaging tools provided with the operating system to obtain some or all of the optional components.&lt;/p&gt;
+
+&lt;p&gt;In addition to the standard library, there is a growing collection of several thousand components (from individual programs and modules to packages and entire application development frameworks), available from the  &lt;a href=&#34;https://pypi.org/&#34; target=&#34;_blank&#34;&gt;Python Package Index&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.python.org/3.8/library/intro.html&#34; target=&#34;_blank&#34;&gt;Introduction&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.python.org/3.8/library/intro.html#notes-on-availability&#34; target=&#34;_blank&#34;&gt;Notes on availability&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/functions&#34; target=&#34;_blank&#34;&gt;Built-in Functions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/constants&#34; target=&#34;_blank&#34;&gt;Built-in Constants&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/constants#constants-added-by-the-site-module&#34; target=&#34;_blank&#34;&gt;Constants added by the  &lt;code&gt;site&lt;/code&gt;  module&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/stdtypes&#34; target=&#34;_blank&#34;&gt;Built-in Types&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/stdtypes#truth-value-testing&#34; target=&#34;_blank&#34;&gt;Truth Value Testing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/stdtypes#boolean-operations-and-or-not&#34; target=&#34;_blank&#34;&gt;Boolean Operations —  &lt;code&gt;and&lt;/code&gt;,  &lt;code&gt;or&lt;/code&gt;,  &lt;code&gt;not&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/stdtypes#comparisons&#34; target=&#34;_blank&#34;&gt;Comparisons&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/stdtypes#numeric-types-int-float-complex&#34; target=&#34;_blank&#34;&gt;Numeric Types —  &lt;code&gt;int&lt;/code&gt;,  &lt;code&gt;float&lt;/code&gt;,  &lt;code&gt;complex&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/stdtypes#iterator-types&#34; target=&#34;_blank&#34;&gt;Iterator Types&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/stdtypes#sequence-types-list-tuple-range&#34; target=&#34;_blank&#34;&gt;Sequence Types —  &lt;code&gt;list&lt;/code&gt;,  &lt;code&gt;tuple&lt;/code&gt;,  &lt;code&gt;range&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/stdtypes#text-sequence-type-str&#34; target=&#34;_blank&#34;&gt;Text Sequence Type —  &lt;code&gt;str&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/stdtypes#binary-sequence-types-bytes-bytearray-memoryview&#34; target=&#34;_blank&#34;&gt;Binary Sequence Types —  &lt;code&gt;bytes&lt;/code&gt;,  &lt;code&gt;bytearray&lt;/code&gt;,  &lt;code&gt;memoryview&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/stdtypes#set-types-set-frozenset&#34; target=&#34;_blank&#34;&gt;Set Types —  &lt;code&gt;set&lt;/code&gt;,  &lt;code&gt;frozenset&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/stdtypes#mapping-types-dict&#34; target=&#34;_blank&#34;&gt;Mapping Types —  &lt;code&gt;dict&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/stdtypes#context-manager-types&#34; target=&#34;_blank&#34;&gt;Context Manager Types&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/stdtypes#other-built-in-types&#34; target=&#34;_blank&#34;&gt;Other Built-in Types&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/stdtypes#special-attributes&#34; target=&#34;_blank&#34;&gt;Special Attributes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/exceptions&#34; target=&#34;_blank&#34;&gt;Built-in Exceptions&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/exceptions#base-classes&#34; target=&#34;_blank&#34;&gt;Base classes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/exceptions#concrete-exceptions&#34; target=&#34;_blank&#34;&gt;Concrete exceptions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/exceptions#warnings&#34; target=&#34;_blank&#34;&gt;Warnings&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/exceptions#exception-hierarchy&#34; target=&#34;_blank&#34;&gt;Exception hierarchy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/text&#34; target=&#34;_blank&#34;&gt;Text Processing Services&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/string&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;string&lt;/code&gt;  — Common string operations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/re&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;re&lt;/code&gt;  — Regular expression operations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/difflib&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;difflib&lt;/code&gt;  — Helpers for computing deltas&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/textwrap&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;textwrap&lt;/code&gt;  — Text wrapping and filling&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/unicodedata&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;unicodedata&lt;/code&gt;  — Unicode Database&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/stringprep&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;stringprep&lt;/code&gt;  — Internet String Preparation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/readline&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;readline&lt;/code&gt;  — GNU readline interface&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/rlcompleter&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;rlcompleter&lt;/code&gt;  — Completion function for GNU readline&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/binary&#34; target=&#34;_blank&#34;&gt;Binary Data Services&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/struct&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;struct&lt;/code&gt;  — Interpret bytes as packed binary data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/codecs&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;codecs&lt;/code&gt;  — Codec registry and base classes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/datatypes&#34; target=&#34;_blank&#34;&gt;Data Types&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/datetime&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;datetime&lt;/code&gt;  — Basic date and time types&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/calendar&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;calendar&lt;/code&gt;  — General calendar-related functions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/collections&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;collections&lt;/code&gt;  — Container datatypes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/collections.abc&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;collections.abc&lt;/code&gt;  — Abstract Base Classes for Containers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/heapq&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;heapq&lt;/code&gt;  — Heap queue algorithm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/bisect&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;bisect&lt;/code&gt;  — Array bisection algorithm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/array&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;array&lt;/code&gt;  — Efficient arrays of numeric values&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/weakref&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;weakref&lt;/code&gt;  — Weak references&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/types&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;types&lt;/code&gt;  — Dynamic type creation and names for built-in types&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/copy&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;copy&lt;/code&gt;  — Shallow and deep copy operations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/pprint&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;pprint&lt;/code&gt;  — Data pretty printer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/reprlib&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;reprlib&lt;/code&gt;  — Alternate  &lt;code&gt;repr()&lt;/code&gt;  implementation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/enum&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;enum&lt;/code&gt;  — Support for enumerations&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/numeric&#34; target=&#34;_blank&#34;&gt;Numeric and Mathematical Modules&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/numbers&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;numbers&lt;/code&gt;  — Numeric abstract base classes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/math&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;math&lt;/code&gt;  — Mathematical functions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/cmath&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;cmath&lt;/code&gt;  — Mathematical functions for complex numbers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/decimal&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;decimal&lt;/code&gt;  — Decimal fixed point and floating point arithmetic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/fractions&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;fractions&lt;/code&gt;  — Rational numbers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/random&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;random&lt;/code&gt;  — Generate pseudo-random numbers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/statistics&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;statistics&lt;/code&gt;  — Mathematical statistics functions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/functional&#34; target=&#34;_blank&#34;&gt;Functional Programming Modules&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/itertools&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;itertools&lt;/code&gt;  — Functions creating iterators for efficient looping&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/functools&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;functools&lt;/code&gt;  — Higher-order functions and operations on callable objects&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/operator&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;operator&lt;/code&gt;  — Standard operators as functions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/filesys&#34; target=&#34;_blank&#34;&gt;File and Directory Access&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/pathlib&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;pathlib&lt;/code&gt;  — Object-oriented filesystem paths&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/os.path&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;os.path&lt;/code&gt;  — Common pathname manipulations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/fileinput&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;fileinput&lt;/code&gt;  — Iterate over lines from multiple input streams&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/stat&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;stat&lt;/code&gt;  — Interpreting  &lt;code&gt;stat()&lt;/code&gt;  results&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/filecmp&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;filecmp&lt;/code&gt;  — File and Directory Comparisons&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/tempfile&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;tempfile&lt;/code&gt;  — Generate temporary files and directories&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/glob&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;glob&lt;/code&gt;  — Unix style pathname pattern expansion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/fnmatch&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;fnmatch&lt;/code&gt;  — Unix filename pattern matching&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/linecache&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;linecache&lt;/code&gt;  — Random access to text lines&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/shutil&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;shutil&lt;/code&gt;  — High-level file operations&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/persistence&#34; target=&#34;_blank&#34;&gt;Data Persistence&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/pickle&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;pickle&lt;/code&gt;  — Python object serialization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/copyreg&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;copyreg&lt;/code&gt;  — Register  &lt;code&gt;pickle&lt;/code&gt;  support functions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/shelve&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;shelve&lt;/code&gt;  — Python object persistence&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/marshal&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;marshal&lt;/code&gt;  — Internal Python object serialization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/dbm&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;dbm&lt;/code&gt;  — Interfaces to Unix “databases”&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/sqlite3&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;sqlite3&lt;/code&gt;  — DB-API 2.0 interface for SQLite databases&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/archiving&#34; target=&#34;_blank&#34;&gt;Data Compression and Archiving&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/zlib&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;zlib&lt;/code&gt;  — Compression compatible with  &lt;strong&gt;gzip&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/gzip&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;gzip&lt;/code&gt;  — Support for  &lt;strong&gt;gzip&lt;/strong&gt;  files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/bz2&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;bz2&lt;/code&gt;  — Support for  &lt;strong&gt;bzip2&lt;/strong&gt;  compression&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/lzma&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;lzma&lt;/code&gt;  — Compression using the LZMA algorithm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/zipfile&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;zipfile&lt;/code&gt;  — Work with ZIP archives&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/tarfile&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;tarfile&lt;/code&gt;  — Read and write tar archive files&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/fileformats&#34; target=&#34;_blank&#34;&gt;File Formats&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/csv&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;csv&lt;/code&gt;  — CSV File Reading and Writing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/configparser&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;configparser&lt;/code&gt;  — Configuration file parser&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/netrc&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;netrc&lt;/code&gt;  — netrc file processing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/xdrlib&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;xdrlib&lt;/code&gt;  — Encode and decode XDR data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/plistlib&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;plistlib&lt;/code&gt;  — Generate and parse Mac OS X  &lt;code&gt;.plist&lt;/code&gt;  files&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/crypto&#34; target=&#34;_blank&#34;&gt;Cryptographic Services&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/hashlib&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;hashlib&lt;/code&gt;  — Secure hashes and message digests&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/hmac&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;hmac&lt;/code&gt;  — Keyed-Hashing for Message Authentication&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/secrets&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;secrets&lt;/code&gt;  — Generate secure random numbers for managing secrets&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/allos&#34; target=&#34;_blank&#34;&gt;Generic Operating System Services&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/os&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;os&lt;/code&gt;  — Miscellaneous operating system interfaces&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/io&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;io&lt;/code&gt;  — Core tools for working with streams&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/time&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;time&lt;/code&gt;  — Time access and conversions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/argparse&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;argparse&lt;/code&gt;  — Parser for command-line options, arguments and sub-commands&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/getopt&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;getopt&lt;/code&gt;  — C-style parser for command line options&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/logging&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;logging&lt;/code&gt;  — Logging facility for Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/logging.config&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;logging.config&lt;/code&gt;  — Logging configuration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/logging.handlers&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;logging.handlers&lt;/code&gt;  — Logging handlers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/getpass&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;getpass&lt;/code&gt;  — Portable password input&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/curses&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;curses&lt;/code&gt;  — Terminal handling for character-cell displays&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/curses#module-curses.textpad&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;curses.textpad&lt;/code&gt;  — Text input widget for curses programs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/curses.ascii&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;curses.ascii&lt;/code&gt;  — Utilities for ASCII characters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/curses.panel&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;curses.panel&lt;/code&gt;  — A panel stack extension for curses&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/platform&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;platform&lt;/code&gt;  — Access to underlying platform’s identifying data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/errno&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;errno&lt;/code&gt;  — Standard errno system symbols&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/ctypes&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;ctypes&lt;/code&gt;  — A foreign function library for Python&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/concurrency&#34; target=&#34;_blank&#34;&gt;Concurrent Execution&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/threading&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;threading&lt;/code&gt;  — Thread-based parallelism&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/multiprocessing&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;multiprocessing&lt;/code&gt;  — Process-based parallelism&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/multiprocessing.shared_memory&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;multiprocessing.shared_memory&lt;/code&gt;  — Provides shared memory for direct access across processes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/concurrent&#34; target=&#34;_blank&#34;&gt;The  &lt;code&gt;concurrent&lt;/code&gt;  package&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/concurrent.futures&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;concurrent.futures&lt;/code&gt;  — Launching parallel tasks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/subprocess&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;subprocess&lt;/code&gt;  — Subprocess management&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/sched&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;sched&lt;/code&gt;  — Event scheduler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/queue&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;queue&lt;/code&gt;  — A synchronized queue class&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/_thread&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;_thread&lt;/code&gt;  — Low-level threading API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/_dummy_thread&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;_dummy_thread&lt;/code&gt;  — Drop-in replacement for the  &lt;code&gt;_thread&lt;/code&gt;  module&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/dummy_threading&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;dummy_threading&lt;/code&gt;  — Drop-in replacement for the  &lt;code&gt;threading&lt;/code&gt;  module&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/contextvars&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;contextvars&lt;/code&gt;  — Context Variables&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/contextvars#context-variables&#34; target=&#34;_blank&#34;&gt;Context Variables&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/contextvars#manual-context-management&#34; target=&#34;_blank&#34;&gt;Manual Context Management&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/contextvars#asyncio-support&#34; target=&#34;_blank&#34;&gt;asyncio support&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/ipc&#34; target=&#34;_blank&#34;&gt;Networking and Interprocess Communication&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/asyncio&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;asyncio&lt;/code&gt;  — Asynchronous I/O&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/socket&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;socket&lt;/code&gt;  — Low-level networking interface&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/ssl&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;ssl&lt;/code&gt;  — TLS/SSL wrapper for socket objects&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/select&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;select&lt;/code&gt;  — Waiting for I/O completion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/selectors&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;selectors&lt;/code&gt;  — High-level I/O multiplexing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/asyncore&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;asyncore&lt;/code&gt;  — Asynchronous socket handler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/asynchat&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;asynchat&lt;/code&gt;  — Asynchronous socket command/response handler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/signal&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;signal&lt;/code&gt;  — Set handlers for asynchronous events&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/mmap&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;mmap&lt;/code&gt;  — Memory-mapped file support&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/netdata&#34; target=&#34;_blank&#34;&gt;Internet Data Handling&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/email&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;email&lt;/code&gt;  — An email and MIME handling package&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/json&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;json&lt;/code&gt;  — JSON encoder and decoder&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/mailcap&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;mailcap&lt;/code&gt;  — Mailcap file handling&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/mailbox&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;mailbox&lt;/code&gt;  — Manipulate mailboxes in various formats&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/mimetypes&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;mimetypes&lt;/code&gt;  — Map filenames to MIME types&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/base64&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;base64&lt;/code&gt;  — Base16, Base32, Base64, Base85 Data Encodings&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/binhex&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;binhex&lt;/code&gt;  — Encode and decode binhex4 files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/binascii&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;binascii&lt;/code&gt;  — Convert between binary and ASCII&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/quopri&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;quopri&lt;/code&gt;  — Encode and decode MIME quoted-printable data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/uu&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;uu&lt;/code&gt;  — Encode and decode uuencode files&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/markup&#34; target=&#34;_blank&#34;&gt;Structured Markup Processing Tools&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/html&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;html&lt;/code&gt;  — HyperText Markup Language support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/html.parser&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;html.parser&lt;/code&gt;  — Simple HTML and XHTML parser&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/html.entities&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;html.entities&lt;/code&gt;  — Definitions of HTML general entities&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/xml&#34; target=&#34;_blank&#34;&gt;XML Processing Modules&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/xml.etree.elementtree&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;xml.etree.ElementTree&lt;/code&gt;  — The ElementTree XML API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/xml.dom&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;xml.dom&lt;/code&gt;  — The Document Object Model API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/xml.dom.minidom&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;xml.dom.minidom&lt;/code&gt;  — Minimal DOM implementation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/xml.dom.pulldom&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;xml.dom.pulldom&lt;/code&gt;  — Support for building partial DOM trees&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/xml.sax&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;xml.sax&lt;/code&gt;  — Support for SAX2 parsers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/xml.sax.handler&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;xml.sax.handler&lt;/code&gt;  — Base classes for SAX handlers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/xml.sax.utils&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;xml.sax.saxutils&lt;/code&gt;  — SAX Utilities&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/xml.sax.reader&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;xml.sax.xmlreader&lt;/code&gt;  — Interface for XML parsers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/pyexpat&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;xml.parsers.expat&lt;/code&gt;  — Fast XML parsing using Expat&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/internet&#34; target=&#34;_blank&#34;&gt;Internet Protocols and Support&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/webbrowser&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;webbrowser&lt;/code&gt;  — Convenient Web-browser controller&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/cgi&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;cgi&lt;/code&gt;  — Common Gateway Interface support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/cgitb&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;cgitb&lt;/code&gt;  — Traceback manager for CGI scripts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/wsgiref&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;wsgiref&lt;/code&gt;  — WSGI Utilities and Reference Implementation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/urllib&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;urllib&lt;/code&gt;  — URL handling modules&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/urllib.request&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;urllib.request&lt;/code&gt;  — Extensible library for opening URLs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/urllib.request#module-urllib.response&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;urllib.response&lt;/code&gt;  — Response classes used by urllib&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/urllib.parse&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;urllib.parse&lt;/code&gt;  — Parse URLs into components&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/urllib.error&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;urllib.error&lt;/code&gt;  — Exception classes raised by urllib.request&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/urllib.robotparser&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;urllib.robotparser&lt;/code&gt;  — Parser for robots.txt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/http&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;http&lt;/code&gt;  — HTTP modules&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/http.client&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;http.client&lt;/code&gt;  — HTTP protocol client&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/ftplib&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;ftplib&lt;/code&gt;  — FTP protocol client&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/poplib&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;poplib&lt;/code&gt;  — POP3 protocol client&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/imaplib&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;imaplib&lt;/code&gt;  — IMAP4 protocol client&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/nntplib&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;nntplib&lt;/code&gt;  — NNTP protocol client&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/smtplib&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;smtplib&lt;/code&gt;  — SMTP protocol client&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/smtpd&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;smtpd&lt;/code&gt;  — SMTP Server&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/telnetlib&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;telnetlib&lt;/code&gt;  — Telnet client&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/uuid&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;uuid&lt;/code&gt;  — UUID objects according to  &lt;strong&gt;RFC 4122&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/socketserver&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;socketserver&lt;/code&gt;  — A framework for network servers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/http.server&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;http.server&lt;/code&gt;  — HTTP servers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/http.cookies&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;http.cookies&lt;/code&gt;  — HTTP state management&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/http.cookiejar&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;http.cookiejar&lt;/code&gt;  — Cookie handling for HTTP clients&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/xmlrpc&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;xmlrpc&lt;/code&gt;  — XMLRPC server and client modules&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/xmlrpc.client&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;xmlrpc.client&lt;/code&gt;  — XML-RPC client access&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/xmlrpc.server&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;xmlrpc.server&lt;/code&gt;  — Basic XML-RPC servers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/ipaddress&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;ipaddress&lt;/code&gt;  — IPv4/IPv6 manipulation library&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/mm&#34; target=&#34;_blank&#34;&gt;Multimedia Services&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/audioop&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;audioop&lt;/code&gt;  — Manipulate raw audio data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/aifc&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;aifc&lt;/code&gt;  — Read and write AIFF and AIFC files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.python.org/3.8/library/sunau.html&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;sunau&lt;/code&gt;  — Read and write Sun AU files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/wave&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;wave&lt;/code&gt;  — Read and write WAV files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/chunk&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;chunk&lt;/code&gt;  — Read IFF chunked data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/colorsys&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;colorsys&lt;/code&gt;  — Conversions between color systems&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/imghdr&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;imghdr&lt;/code&gt;  — Determine the type of an image&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/sndhdr&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;sndhdr&lt;/code&gt;  — Determine type of sound file&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/ossaudiodev&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;ossaudiodev&lt;/code&gt;  — Access to OSS-compatible audio devices&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/i18n&#34; target=&#34;_blank&#34;&gt;Internationalization&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/gettext&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;gettext&lt;/code&gt;  — Multilingual internationalization services&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/locale&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;locale&lt;/code&gt;  — Internationalization services&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/frameworks&#34; target=&#34;_blank&#34;&gt;Program Frameworks&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/turtle&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;turtle&lt;/code&gt;  — Turtle graphics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/cmd&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;cmd&lt;/code&gt;  — Support for line-oriented command interpreters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/shlex&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;shlex&lt;/code&gt;  — Simple lexical analysis&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/tk&#34; target=&#34;_blank&#34;&gt;Graphical User Interfaces with Tk&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/tkinter&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;tkinter&lt;/code&gt;  — Python interface to Tcl/Tk&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/tkinter.ttk&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;tkinter.ttk&lt;/code&gt;  — Tk themed widgets&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/tkinter.tix&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;tkinter.tix&lt;/code&gt;  — Extension widgets for Tk&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/tkinter.scrolledtext&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;tkinter.scrolledtext&lt;/code&gt;  — Scrolled Text Widget&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/idle&#34; target=&#34;_blank&#34;&gt;IDLE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/othergui&#34; target=&#34;_blank&#34;&gt;Other Graphical User Interface Packages&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/development&#34; target=&#34;_blank&#34;&gt;Development Tools&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/typing&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;typing&lt;/code&gt;  — Support for type hints&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/pydoc&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;pydoc&lt;/code&gt;  — Documentation generator and online help system&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/doctest&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;doctest&lt;/code&gt;  — Test interactive Python examples&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/unittest&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;unittest&lt;/code&gt;  — Unit testing framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/unittest.mock&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;unittest.mock&lt;/code&gt;  — mock object library&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.python.org/3.8/library/unittest.mock-examples.html&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;unittest.mock&lt;/code&gt;  — getting started&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.python.org/3.8/library/2to3.html&#34; target=&#34;_blank&#34;&gt;2to3 - Automated Python 2 to 3 code translation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/test&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;test&lt;/code&gt;  — Regression tests package for Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/test#module-test.support&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;test.support&lt;/code&gt;  — Utilities for the Python test suite&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/test#module-test.support.script_helper&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;test.support.script_helper&lt;/code&gt;  — Utilities for the Python execution tests&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/debug&#34; target=&#34;_blank&#34;&gt;Debugging and Profiling&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/audit_events&#34; target=&#34;_blank&#34;&gt;Audit events table&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/bdb&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;bdb&lt;/code&gt;  — Debugger framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/faulthandler&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;faulthandler&lt;/code&gt;  — Dump the Python traceback&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/pdb&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;pdb&lt;/code&gt;  — The Python Debugger&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/profile&#34; target=&#34;_blank&#34;&gt;The Python Profilers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/timeit&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;timeit&lt;/code&gt;  — Measure execution time of small code snippets&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/trace&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;trace&lt;/code&gt;  — Trace or track Python statement execution&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/tracemalloc&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;tracemalloc&lt;/code&gt;  — Trace memory allocations&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/distribution&#34; target=&#34;_blank&#34;&gt;Software Packaging and Distribution&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/distutils&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;distutils&lt;/code&gt;  — Building and installing Python modules&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/ensurepip&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;ensurepip&lt;/code&gt;  — Bootstrapping the  &lt;code&gt;pip&lt;/code&gt;  installer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/venv&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;venv&lt;/code&gt;  — Creation of virtual environments&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/zipapp&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;zipapp&lt;/code&gt;  — Manage executable Python zip archives&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/python&#34; target=&#34;_blank&#34;&gt;Python Runtime Services&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/sys&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;sys&lt;/code&gt;  — System-specific parameters and functions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/sysconfig&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;sysconfig&lt;/code&gt;  — Provide access to Python’s configuration information&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/builtins&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;builtins&lt;/code&gt;  — Built-in objects&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/__main__&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;__main__&lt;/code&gt;  — Top-level script environment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/warnings&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;warnings&lt;/code&gt;  — Warning control&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/dataclasses&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;dataclasses&lt;/code&gt;  — Data Classes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/contextlib&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;contextlib&lt;/code&gt;  — Utilities for  &lt;code&gt;with&lt;/code&gt;-statement contexts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/abc&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;abc&lt;/code&gt;  — Abstract Base Classes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/atexit&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;atexit&lt;/code&gt;  — Exit handlers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/traceback&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;traceback&lt;/code&gt;  — Print or retrieve a stack traceback&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/__future__&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;__future__&lt;/code&gt;  — Future statement definitions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/gc&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;gc&lt;/code&gt;  — Garbage Collector interface&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/inspect&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;inspect&lt;/code&gt;  — Inspect live objects&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/site&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;site&lt;/code&gt;  — Site-specific configuration hook&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/custominterp&#34; target=&#34;_blank&#34;&gt;Custom Python Interpreters&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/code&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;code&lt;/code&gt;  — Interpreter base classes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/codeop&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;codeop&lt;/code&gt;  — Compile Python code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/modules&#34; target=&#34;_blank&#34;&gt;Importing Modules&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/zipimport&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;zipimport&lt;/code&gt;  — Import modules from Zip archives&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/pkgutil&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;pkgutil&lt;/code&gt;  — Package extension utility&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/modulefinder&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;modulefinder&lt;/code&gt;  — Find modules used by a script&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/runpy&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;runpy&lt;/code&gt;  — Locating and executing Python modules&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/importlib&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;importlib&lt;/code&gt;  — The implementation of  &lt;code&gt;import&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/importlib.metadata&#34; target=&#34;_blank&#34;&gt;Using importlib.metadata&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/language&#34; target=&#34;_blank&#34;&gt;Python Language Services&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/parser&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;parser&lt;/code&gt;  — Access Python parse trees&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/ast&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;ast&lt;/code&gt;  — Abstract Syntax Trees&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/symtable&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;symtable&lt;/code&gt;  — Access to the compiler’s symbol tables&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/symbol&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;symbol&lt;/code&gt;  — Constants used with Python parse trees&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/token&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;token&lt;/code&gt;  — Constants used with Python parse trees&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/keyword&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;keyword&lt;/code&gt;  — Testing for Python keywords&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/tokenize&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;tokenize&lt;/code&gt;  — Tokenizer for Python source&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/tabnanny&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;tabnanny&lt;/code&gt;  — Detection of ambiguous indentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/pyclbr&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;pyclbr&lt;/code&gt;  — Python class browser support&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/py_compile&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;py_compile&lt;/code&gt;  — Compile Python source files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/compileall&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;compileall&lt;/code&gt;  — Byte-compile Python libraries&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/dis&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;dis&lt;/code&gt;  — Disassembler for Python bytecode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/pickletools&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;pickletools&lt;/code&gt;  — Tools for pickle developers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/misc&#34; target=&#34;_blank&#34;&gt;Miscellaneous Services&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.python.org/3.8/library/formatter.html&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;formatter&lt;/code&gt;  — Generic output formatting&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/windows&#34; target=&#34;_blank&#34;&gt;MS Windows Specific Services&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/msilib&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;msilib&lt;/code&gt;  — Read and write Microsoft Installer files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/msvcrt&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;msvcrt&lt;/code&gt;  — Useful routines from the MS VC++ runtime&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/winreg&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;winreg&lt;/code&gt;  — Windows registry access&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/winsound&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;winsound&lt;/code&gt;  — Sound-playing interface for Windows&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/unix&#34; target=&#34;_blank&#34;&gt;Unix Specific Services&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/posix&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;posix&lt;/code&gt;  — The most common POSIX system calls&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/pwd&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;pwd&lt;/code&gt;  — The password database&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/spwd&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;spwd&lt;/code&gt;  — The shadow password database&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/grp&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;grp&lt;/code&gt;  — The group database&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/crypt&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;crypt&lt;/code&gt;  — Function to check Unix passwords&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/termios&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;termios&lt;/code&gt;  — POSIX style tty control&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/tty&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;tty&lt;/code&gt;  — Terminal control functions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/pty&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;pty&lt;/code&gt;  — Pseudo-terminal utilities&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/fcntl&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;fcntl&lt;/code&gt;  — The  &lt;code&gt;fcntl&lt;/code&gt;  and  &lt;code&gt;ioctl&lt;/code&gt;  system calls&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/pipes&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;pipes&lt;/code&gt;  — Interface to shell pipelines&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/resource&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;resource&lt;/code&gt;  — Resource usage information&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/nis&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;nis&lt;/code&gt;  — Interface to Sun’s NIS (Yellow Pages)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/syslog&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;syslog&lt;/code&gt;  — Unix syslog library routines&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/superseded&#34; target=&#34;_blank&#34;&gt;Superseded Modules&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/optparse&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;optparse&lt;/code&gt;  — Parser for command line options&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://devdocs.io/python~3.8/library/imp&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;imp&lt;/code&gt;  — Access the  import  internals&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.python.org/3.8/library/undoc.html&#34; target=&#34;_blank&#34;&gt;Undocumented Modules&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.python.org/3.8/library/undoc.html#platform-specific-modules&#34; target=&#34;_blank&#34;&gt;Platform specific modules&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Reference : &lt;a href=&#34;https://devdocs.io/python~3.8/&#34; target=&#34;_blank&#34;&gt;devdocs.io&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

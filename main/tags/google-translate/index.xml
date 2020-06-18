@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google Translate on Library</title>
+    <link>https://dragon-library.github.io/docs/library/tags/google-translate/</link>
+    <description>Recent content in Google Translate on Library</description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 28 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="https://dragon-library.github.io/docs/library/tags/google-translate/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google Translate.</title>
+      <link>https://dragon-library.github.io/docs/library/post/google-translate/</link>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/docs/library/post/google-translate/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;featured.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://pypi.org/project/googletrans/?fbclid=IwAR2nJome20RmcX1UMc6GCrslpIXn-Uj9TgpnJrfS4etUVd4q9SgZKVpuM6w&#34; target=&#34;_blank&#34;&gt;Document:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;install: &lt;code&gt;pip install googletrans&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;install: &lt;code&gt;conda install -c conda-forge googletrans&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;author: &lt;a href=&#34;prasert.k@chula.ac.th&#34; target=&#34;_blank&#34;&gt;Prasert Kanawattanachai&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;YouTube: &lt;a href=&#34;https://www.youtube.com/prasertcbs&#34; target=&#34;_blank&#34;&gt;https://www.youtube.com/prasertcbs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cbs.chula.ac.th/en/&#34; target=&#34;_blank&#34;&gt;Chulalongkorn Business School&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from IPython.display import YouTubeVideo
+YouTubeVideo(&#39;9tR1aqQEwGY&#39;, width=720, height=405)
+&lt;/code&gt;&lt;/pre&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/9tR1aqQEwGY&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from googletrans import Translator
+import pandas as pd
+
+# pandas display options
+pd.set_option(&#39;display.max_rows&#39;, 100)
+
+dlang = pd.read_csv(&#39;https://github.com/prasertcbs/basic-dataset/raw/master/google_translate_language_code.csv&#39;)
+dlang
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;language&lt;/th&gt;
+      &lt;th&gt;code&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;Afrikaans&lt;/td&gt;
+      &lt;td&gt;af&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;Irish&lt;/td&gt;
+      &lt;td&gt;ga&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;Albanian&lt;/td&gt;
+      &lt;td&gt;sq&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;Italian&lt;/td&gt;
+      &lt;td&gt;it&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;Arabic&lt;/td&gt;
+      &lt;td&gt;ar&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;td&gt;Japanese&lt;/td&gt;
+      &lt;td&gt;ja&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;6&lt;/th&gt;
+      &lt;td&gt;Azerbaijani&lt;/td&gt;
+      &lt;td&gt;az&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;7&lt;/th&gt;
+      &lt;td&gt;Kannada&lt;/td&gt;
+      &lt;td&gt;kn&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;8&lt;/th&gt;
+      &lt;td&gt;Basque&lt;/td&gt;
+      &lt;td&gt;eu&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;9&lt;/th&gt;
+      &lt;td&gt;Korean&lt;/td&gt;
+      &lt;td&gt;ko&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;10&lt;/th&gt;
+      &lt;td&gt;Bengali&lt;/td&gt;
+      &lt;td&gt;bn&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;11&lt;/th&gt;
+      &lt;td&gt;Latin&lt;/td&gt;
+      &lt;td&gt;la&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;12&lt;/th&gt;
+      &lt;td&gt;Belarusian&lt;/td&gt;
+      &lt;td&gt;be&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;13&lt;/th&gt;
+      &lt;td&gt;Latvian&lt;/td&gt;
+      &lt;td&gt;lv&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;14&lt;/th&gt;
+      &lt;td&gt;Bulgarian&lt;/td&gt;
+      &lt;td&gt;bg&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;15&lt;/th&gt;
+      &lt;td&gt;Lithuanian&lt;/td&gt;
+      &lt;td&gt;lt&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;16&lt;/th&gt;
+      &lt;td&gt;Catalan&lt;/td&gt;
+      &lt;td&gt;ca&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;17&lt;/th&gt;
+      &lt;td&gt;Macedonian&lt;/td&gt;
+      &lt;td&gt;mk&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;18&lt;/th&gt;
+      &lt;td&gt;Chinese Simplified&lt;/td&gt;
+      &lt;td&gt;zh-CN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;19&lt;/th&gt;
+      &lt;td&gt;Malay&lt;/td&gt;
+      &lt;td&gt;ms&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;20&lt;/th&gt;
+      &lt;td&gt;Chinese Traditional&lt;/td&gt;
+      &lt;td&gt;zh-TW&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;21&lt;/th&gt;
+      &lt;td&gt;Maltese&lt;/td&gt;
+      &lt;td&gt;mt&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;22&lt;/th&gt;
+      &lt;td&gt;Croatian&lt;/td&gt;
+      &lt;td&gt;hr&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;23&lt;/th&gt;
+      &lt;td&gt;Norwegian&lt;/td&gt;
+      &lt;td&gt;no&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;24&lt;/th&gt;
+      &lt;td&gt;Czech&lt;/td&gt;
+      &lt;td&gt;cs&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;25&lt;/th&gt;
+      &lt;td&gt;Persian&lt;/td&gt;
+      &lt;td&gt;fa&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;26&lt;/th&gt;
+      &lt;td&gt;Danish&lt;/td&gt;
+      &lt;td&gt;da&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;27&lt;/th&gt;
+      &lt;td&gt;Polish&lt;/td&gt;
+      &lt;td&gt;pl&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;28&lt;/th&gt;
+      &lt;td&gt;Dutch&lt;/td&gt;
+      &lt;td&gt;nl&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;29&lt;/th&gt;
+      &lt;td&gt;Portuguese&lt;/td&gt;
+      &lt;td&gt;pt&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;30&lt;/th&gt;
+      &lt;td&gt;English&lt;/td&gt;
+      &lt;td&gt;en&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;31&lt;/th&gt;
+      &lt;td&gt;Romanian&lt;/td&gt;
+      &lt;td&gt;ro&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;32&lt;/th&gt;
+      &lt;td&gt;Esperanto&lt;/td&gt;
+      &lt;td&gt;eo&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;33&lt;/th&gt;
+      &lt;td&gt;Russian&lt;/td&gt;
+      &lt;td&gt;ru&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;34&lt;/th&gt;
+      &lt;td&gt;Estonian&lt;/td&gt;
+      &lt;td&gt;et&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;35&lt;/th&gt;
+      &lt;td&gt;Serbian&lt;/td&gt;
+      &lt;td&gt;sr&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;36&lt;/th&gt;
+      &lt;td&gt;Filipino&lt;/td&gt;
+      &lt;td&gt;tl&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;37&lt;/th&gt;
+      &lt;td&gt;Slovak&lt;/td&gt;
+      &lt;td&gt;sk&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;38&lt;/th&gt;
+      &lt;td&gt;Finnish&lt;/td&gt;
+      &lt;td&gt;fi&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;39&lt;/th&gt;
+      &lt;td&gt;Slovenian&lt;/td&gt;
+      &lt;td&gt;sl&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;40&lt;/th&gt;
+      &lt;td&gt;French&lt;/td&gt;
+      &lt;td&gt;fr&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;41&lt;/th&gt;
+      &lt;td&gt;Spanish&lt;/td&gt;
+      &lt;td&gt;es&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;42&lt;/th&gt;
+      &lt;td&gt;Galician&lt;/td&gt;
+      &lt;td&gt;gl&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;43&lt;/th&gt;
+      &lt;td&gt;Swahili&lt;/td&gt;
+      &lt;td&gt;sw&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;44&lt;/th&gt;
+      &lt;td&gt;Georgian&lt;/td&gt;
+      &lt;td&gt;ka&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;45&lt;/th&gt;
+      &lt;td&gt;Swedish&lt;/td&gt;
+      &lt;td&gt;sv&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;46&lt;/th&gt;
+      &lt;td&gt;German&lt;/td&gt;
+      &lt;td&gt;de&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;47&lt;/th&gt;
+      &lt;td&gt;Tamil&lt;/td&gt;
+      &lt;td&gt;ta&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;48&lt;/th&gt;
+      &lt;td&gt;Greek&lt;/td&gt;
+      &lt;td&gt;el&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;49&lt;/th&gt;
+      &lt;td&gt;Telugu&lt;/td&gt;
+      &lt;td&gt;te&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;50&lt;/th&gt;
+      &lt;td&gt;Gujarati&lt;/td&gt;
+      &lt;td&gt;gu&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;51&lt;/th&gt;
+      &lt;td&gt;Thai&lt;/td&gt;
+      &lt;td&gt;th&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;52&lt;/th&gt;
+      &lt;td&gt;Haitian Creole&lt;/td&gt;
+      &lt;td&gt;ht&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;53&lt;/th&gt;
+      &lt;td&gt;Turkish&lt;/td&gt;
+      &lt;td&gt;tr&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;54&lt;/th&gt;
+      &lt;td&gt;Hebrew&lt;/td&gt;
+      &lt;td&gt;iw&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;55&lt;/th&gt;
+      &lt;td&gt;Ukrainian&lt;/td&gt;
+      &lt;td&gt;uk&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;56&lt;/th&gt;
+      &lt;td&gt;Hindi&lt;/td&gt;
+      &lt;td&gt;hi&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;57&lt;/th&gt;
+      &lt;td&gt;Urdu&lt;/td&gt;
+      &lt;td&gt;ur&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;58&lt;/th&gt;
+      &lt;td&gt;Hungarian&lt;/td&gt;
+      &lt;td&gt;hu&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;59&lt;/th&gt;
+      &lt;td&gt;Vietnamese&lt;/td&gt;
+      &lt;td&gt;vi&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;60&lt;/th&gt;
+      &lt;td&gt;Icelandic&lt;/td&gt;
+      &lt;td&gt;is&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;61&lt;/th&gt;
+      &lt;td&gt;Welsh&lt;/td&gt;
+      &lt;td&gt;cy&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;62&lt;/th&gt;
+      &lt;td&gt;Indonesian&lt;/td&gt;
+      &lt;td&gt;id&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;63&lt;/th&gt;
+      &lt;td&gt;Yiddish&lt;/td&gt;
+      &lt;td&gt;yi&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;translator = Translator() # create object/instance from Translator class
+r=translator.translate(&#39;สวัสดี&#39;, dest=&#39;ja&#39;, src=&#39;th&#39;)
+print(f&#39;{r.text}: {r.pronunciation}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こんにちは！: Kon&amp;rsquo;nichiwa!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;r=translator.translate(&#39;こんにちは&#39;, dest=&#39;ko&#39;)
+print(f&#39;{r.text}: {r.pronunciation}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;안녕하세요: annyeonghaseyo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;r=translator.translate(&#39;안녕하세요&#39;, dest=&#39;th&#39;)
+print(f&#39;{r.text}: {r.pronunciation}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;สวัสดี: S̄wạs̄dī
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;r=translator.translate(&amp;quot;life is beautiful&amp;quot;, dest=&#39;th&#39;)
+r.text
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;&#39;ชีวิตช่างสวยงาม&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;r=translator.translate(&amp;quot;life is beautiful&amp;quot;, dest=&#39;it&#39;)
+r.text
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;&#39;la vita è bella&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;r=translator.translate(&amp;quot;ฉันรักคุณ&amp;quot;, dest=&#39;ja&#39;)
+print(f&#39;{r.text}: {r.pronunciation}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;わたしは、あなたを愛しています: Watashi wa, anata o aishiteimasu
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;r=translator.translate(&#39;わたしは、あなたを愛しています&#39;, dest=&#39;th&#39;)
+print(f&#39;{r.text}: {r.pronunciation}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;ฉันรักคุณ: C̄hạn rạk khuṇ
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;words=[&#39;water&#39;, &#39;toilet&#39;, &#39;thank you&#39;]
+translations = translator.translate(words, dest=&#39;th&#39;)
+for t in translations:
+    print(f&#39;{t.origin} -&amp;gt; {t.text} ({t.pronunciation})&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt; water -&amp;gt; น้ำ (N̂ả)
+toilet -&amp;gt; ห้องน้ำ (H̄̂xngn̂ả)
+thank you -&amp;gt; ขอบคุณ (None)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;words=[&#39;hello&#39;, &#39;thank you&#39;, &#39;water&#39;, &#39;toilet&#39;, &#39;thank you&#39;, &#39;egg tart&#39;, &#39;muffin&#39;, &#39;green tea&#39;]
+
+for w in words:
+    for lang in [&#39;th&#39;, &#39;ja&#39;, &#39;de&#39;]:
+        t=translator.translate(w, dest=lang)
+        print(f&#39;{w} -&amp;gt; {t.text} ({t.pronunciation})&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;  hello -&amp;gt; สวัสดี (S̄wạs̄dī)
+  hello -&amp;gt; こんにちは (Kon&#39;nichiwa)
+  hello -&amp;gt; Hallo (None)
+  thank you -&amp;gt; ขอบคุณ (None)
+  thank you -&amp;gt; ありがとうございました (None)
+  thank you -&amp;gt; Vielen Dank (thank you)
+  water -&amp;gt; น้ำ (N̂ả)
+  water -&amp;gt; 水 (Mizu)
+  water -&amp;gt; Wasser (None)
+  toilet -&amp;gt; トイレ (Toire)
+  toilet -&amp;gt; Toilette (None)
+  thank you -&amp;gt; ขอบคุณ (None)
+  thank you -&amp;gt; ありがとうございました (None)
+  thank you -&amp;gt; Vielen Dank (thank you)
+  egg tart -&amp;gt; ทาร์ตไข่ (None)
+  egg tart -&amp;gt; エッグタルト (None)
+  egg tart -&amp;gt; Eitörtchen (egg tart)
+  muffin -&amp;gt; มัฟฟิน (Mạffin)
+  muffin -&amp;gt; マフィン (Mafin)
+   muffin -&amp;gt; Muffin (None)
+  green tea -&amp;gt; ชาเขียว (None)
+  green tea -&amp;gt; 緑茶 (None)
+  green tea -&amp;gt; grüner Tee (green tea)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;words=[&#39;สวัสดี&#39;, &#39;ขอบคุณ&#39;, &#39;ข้าว&#39;, &#39;น้ำ&#39;, &#39;ชา&#39;, &#39;กาแฟ&#39;]
+
+for w in words:
+    for lang in [&#39;en&#39;, &#39;ja&#39;, &#39;fr&#39;]:
+        t=translator.translate(w, dest=lang)
+        print(f&#39;{w} -&amp;gt; {t.text} | {t.pronunciation} ({lang})&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;สวัสดี -&amp;gt; Hello! | None (en)
+สวัสดี -&amp;gt; こんにちは！ | Kon&#39;nichiwa! (ja)
+สวัสดี -&amp;gt; salut! | None (fr)
+ขอบคุณ -&amp;gt; thank | None (en)
+ขอบคุณ -&amp;gt; 感謝 | Kansha (ja)
+ขอบคุณ -&amp;gt; remercier | None (fr)
+ข้าว -&amp;gt; rice | None (en)
+ข้าว -&amp;gt; ご飯 | Gohan (ja)
+ข้าว -&amp;gt; riz | None (fr)
+น้ำ -&amp;gt; water | None (en)
+น้ำ -&amp;gt; 水 | Mizu (ja)
+น้ำ -&amp;gt; l&#39;eau | None (fr)
+ชา -&amp;gt; tea | None (en)
+ชา -&amp;gt; お茶 | Ocha (ja)
+ชา -&amp;gt; thé | None (fr)
+กาแฟ -&amp;gt; coffee | None (en)
+กาแฟ -&amp;gt; コーヒー | Kōhī (ja)
+กาแฟ -&amp;gt; café | None (fr)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;translate-and-save-to-csv-excel&#34;&gt;translate and save to CSV, Excel&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;words=[&#39;สวัสดี&#39;, &#39;ขอบคุณ&#39;, &#39;ข้าว&#39;, &#39;น้ำ&#39;, &#39;ชา&#39;, &#39;กาแฟ&#39;, &#39;โรงแรม&#39;, &#39;ห้องน้ำ&#39;, &#39;สนามบิน&#39;, &#39;ร้านอาหาร&#39;]
+df=pd.DataFrame(words, columns=[&#39;th&#39;])
+df
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;th&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;สวัสดี&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;ขอบคุณ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;ข้าว&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;น้ำ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;ชา&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;td&gt;กาแฟ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;6&lt;/th&gt;
+      &lt;td&gt;โรงแรม&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;7&lt;/th&gt;
+      &lt;td&gt;ห้องน้ำ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;8&lt;/th&gt;
+      &lt;td&gt;สนามบิน&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;9&lt;/th&gt;
+      &lt;td&gt;ร้านอาหาร&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.to_csv(&#39;basic_th.csv&#39;, index=False)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df = pd.read_csv(&#39;basic_th.csv&#39;)
+df
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;th&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;สวัสดี&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;ขอบคุณ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;ข้าว&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;น้ำ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;ชา&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;td&gt;กาแฟ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;6&lt;/th&gt;
+      &lt;td&gt;โรงแรม&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;7&lt;/th&gt;
+      &lt;td&gt;ห้องน้ำ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;8&lt;/th&gt;
+      &lt;td&gt;สนามบิน&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;9&lt;/th&gt;
+      &lt;td&gt;ร้านอาหาร&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;lang=[&#39;en&#39;, &#39;la&#39;, &#39;fr&#39;, &#39;ja&#39;, &#39;zh-CN&#39;, &#39;fa&#39;]
+for dest in lang:
+    df[dest]=df.apply(lambda r: translator.translate(r[&#39;th&#39;], dest=dest).text, axis=1)
+df
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;th&lt;/th&gt;
+      &lt;th&gt;en&lt;/th&gt;
+      &lt;th&gt;la&lt;/th&gt;
+      &lt;th&gt;fr&lt;/th&gt;
+      &lt;th&gt;ja&lt;/th&gt;
+      &lt;th&gt;zh-CN&lt;/th&gt;
+      &lt;th&gt;fa&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;สวัสดี&lt;/td&gt;
+      &lt;td&gt;Hello!&lt;/td&gt;
+      &lt;td&gt;Salve!&lt;/td&gt;
+      &lt;td&gt;salut!&lt;/td&gt;
+      &lt;td&gt;こんにちは！&lt;/td&gt;
+      &lt;td&gt;你好！&lt;/td&gt;
+      &lt;td&gt;سلام!&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;ขอบคุณ&lt;/td&gt;
+      &lt;td&gt;thank&lt;/td&gt;
+      &lt;td&gt;gratias ago&lt;/td&gt;
+      &lt;td&gt;remercier&lt;/td&gt;
+      &lt;td&gt;感謝&lt;/td&gt;
+      &lt;td&gt;谢谢&lt;/td&gt;
+      &lt;td&gt;تشکر&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;ข้าว&lt;/td&gt;
+      &lt;td&gt;rice&lt;/td&gt;
+      &lt;td&gt;rice&lt;/td&gt;
+      &lt;td&gt;riz&lt;/td&gt;
+      &lt;td&gt;ご飯&lt;/td&gt;
+      &lt;td&gt;白饭&lt;/td&gt;
+      &lt;td&gt;برنج&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;น้ำ&lt;/td&gt;
+      &lt;td&gt;water&lt;/td&gt;
+      &lt;td&gt;aqua&lt;/td&gt;
+      &lt;td&gt;l&#39;eau&lt;/td&gt;
+      &lt;td&gt;水&lt;/td&gt;
+      &lt;td&gt;水&lt;/td&gt;
+      &lt;td&gt;اب&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;ชา&lt;/td&gt;
+      &lt;td&gt;tea&lt;/td&gt;
+      &lt;td&gt;tea&lt;/td&gt;
+      &lt;td&gt;thé&lt;/td&gt;
+      &lt;td&gt;お茶&lt;/td&gt;
+      &lt;td&gt;茶&lt;/td&gt;
+      &lt;td&gt;چای&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;td&gt;กาแฟ&lt;/td&gt;
+      &lt;td&gt;coffee&lt;/td&gt;
+      &lt;td&gt;capulus&lt;/td&gt;
+      &lt;td&gt;café&lt;/td&gt;
+      &lt;td&gt;コーヒー&lt;/td&gt;
+      &lt;td&gt;咖啡&lt;/td&gt;
+      &lt;td&gt;قهوه&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;6&lt;/th&gt;
+      &lt;td&gt;โรงแรม&lt;/td&gt;
+      &lt;td&gt;hotel&lt;/td&gt;
+      &lt;td&gt;deversorium&lt;/td&gt;
+      &lt;td&gt;Hôtel&lt;/td&gt;
+      &lt;td&gt;ホテル&lt;/td&gt;
+      &lt;td&gt;旅馆&lt;/td&gt;
+      &lt;td&gt;هتل&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;7&lt;/th&gt;
+      &lt;td&gt;ห้องน้ำ&lt;/td&gt;
+      &lt;td&gt;toilet&lt;/td&gt;
+      &lt;td&gt;CULTUS&lt;/td&gt;
+      &lt;td&gt;toilette&lt;/td&gt;
+      &lt;td&gt;トイレ&lt;/td&gt;
+      &lt;td&gt;厕所&lt;/td&gt;
+      &lt;td&gt;توالت&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;8&lt;/th&gt;
+      &lt;td&gt;สนามบิน&lt;/td&gt;
+      &lt;td&gt;airport&lt;/td&gt;
+      &lt;td&gt;aeroportus&lt;/td&gt;
+      &lt;td&gt;aéroport&lt;/td&gt;
+      &lt;td&gt;空港&lt;/td&gt;
+      &lt;td&gt;飞机场&lt;/td&gt;
+      &lt;td&gt;فرودگاه&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;9&lt;/th&gt;
+      &lt;td&gt;ร้านอาหาร&lt;/td&gt;
+      &lt;td&gt;Restaurant&lt;/td&gt;
+      &lt;td&gt;popina&lt;/td&gt;
+      &lt;td&gt;Restaurant&lt;/td&gt;
+      &lt;td&gt;飲食店&lt;/td&gt;
+      &lt;td&gt;餐厅&lt;/td&gt;
+      &lt;td&gt;رستوران&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.to_csv(&#39;translation.csv&#39;, index=False)
+df.to_excel(&#39;translation.xlsx&#39;, index=False)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;อีกหนึ่งตัวอย่างการนำไปใช้งาน&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;‘’’
+Create By Joompot Sriyapan
+Date 29/3/2019
+Name
+  Google Translate Example 1
+Description
+  แปลภาษาอังกฤษเป็นไทยด้วย Python
+Required
+  python 3.7.3
+  googletrans 2.4.0
+Pre-programmed
+  pip install googletrans
+‘’’
+from googletrans import Translator
+T = Translator()
+source = “Hello, world”
+try:
+  dest = T.translate(source,src=”en”,dest=”th”).text
+  print(dest)
+except:
+  print (“Error!!!”)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Reference : - &lt;a href=&#34;https://medium.com/@JoTaijiquan/google-translate-with-python-2b4db669f6fa&#34; target=&#34;_blank&#34;&gt;https://medium.com/@JoTaijiquan/google-translate-with-python-2b4db669f6fa&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;goslate&#34;&gt;goslate&lt;/h2&gt;
+
+&lt;p&gt;ิอีกโมดูลหนึ่งคือ goslate เป็นโมดูลที่นำ Google Translate มาใช้งานร่วมกับ Python รองรับทั้ง Python 2 และ Python 3 (License: MIT) &lt;a href=&#34;https://pypi.python.org/pypi/goslate&#34; target=&#34;_blank&#34;&gt;https://pypi.python.org/pypi/goslate&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;สามารถติดตั้งได้ง่าย ๆ โดยใช้คำสั่ง pip ดังนี้ครับ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pip install goslate
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ในการใช้งานสามารถใช้งานได้ง่าย ๆ ดังนี้ครับ&lt;/p&gt;
+
+&lt;p&gt;gs.translate(&amp;lsquo;ข้อความ&amp;rsquo;, &amp;lsquo;รหัสภาษา เช่น en คือ ภาษาอังกฤษ th คือ ภาษาไทย&amp;rsquo;)&lt;/p&gt;
+
+&lt;p&gt;ตัวอย่าง&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import goslate
+&amp;gt;&amp;gt;&amp;gt; gs = goslate.Goslate()
+&amp;gt;&amp;gt;&amp;gt; print(gs.translate(&#39;hello world&#39;, &#39;th&#39;)) #
+สวัสดีชาวโลก
+&amp;gt;&amp;gt;&amp;gt; print(gs.translate(&#39;สวัสดีชาวโลก&#39;, &#39;en&#39;))
+Hello world!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ตัวอย่างการนำไปประยุกต์ใช้&lt;/p&gt;
+
+&lt;p&gt;นำโมดูล SpeechRecognition มาใช้รับเสียงจากชาวต่างชาติ แล้วใช้โมดูล goslate มาแปลเป็นข้อความภาษาไทย&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;import goslate
+import speech_recognition as sr
+gs = goslate.Goslate()
+r = sr.Recognizer()
+with sr.Microphone() as source:                # เรียกใช้  Microphone พื้นฐานของระบบ
+    audio = r.listen(source)                   # รับเสียงเข้ามาแล้วประมวลผลส่งไปยัง Google Speech Recognition API
+try:
+    a = r.recognize(audio)
+    b = gs.translate(a, &#39;th&#39;)     # แสดงข้อความจากเสียงด้วย Google Speech Recognition
+    print(b)
+except LookupError:                            # ประมวลผลแล้วไม่รู้จักหรือเข้าใจเสียง
+        print(&amp;quot;Could not understand audio&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Reference : &lt;a href=&#34;https://python3.wannaphong.com/2015/01/python.html&#34; target=&#34;_blank&#34;&gt;https://python3.wannaphong.com/2015/01/python.html&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
