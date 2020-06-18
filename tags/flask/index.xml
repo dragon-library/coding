@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Flask on Library</title>
-    <link>https://dragon-library.github.io/docs/tags/flask/</link>
+    <link>https://dragon-library.github.io/tags/flask/</link>
     <description>Recent content in Flask on Library</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 27 May 2020 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="https://dragon-library.github.io/docs/tags/flask/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://dragon-library.github.io/tags/flask/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Flask 101 พัฒนาเว็บด้วยภาษาไพธอน(Flask Framework)</title>
-      <link>https://dragon-library.github.io/docs/post/python/tutorials/flask-101/</link>
+      <link>https://dragon-library.github.io/post/python/tutorials/flask-101/</link>
       <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/post/python/tutorials/flask-101/</guid>
+      <guid>https://dragon-library.github.io/post/python/tutorials/flask-101/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
