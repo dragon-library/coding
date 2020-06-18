@@ -135,7 +135,7 @@
 
 &lt;p&gt;โค้ดนี้เหมือนไม่สำคัญ แต่จริง ๆ แล้วสำคัญมากเวลาเราอ่าน Documentation ครับ เพราะถ้าเกิดมีอะไรพัง เราจะเทียบได้ว่า Pandas ของเราเป็นเวอร์ชั่นตามใน Documentation มั้ย&lt;/p&gt;
 
-&lt;p&gt;print  (&amp;ldquo;Pandas version&amp;rdquo;,pandas.&lt;strong&gt;version&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;print  (&amp;laquo;Pandas version&amp;raquo;,pandas.&lt;strong&gt;version&lt;/strong&gt;)&lt;/p&gt;
 
 &lt;h3 id=&#34;ว-ธ-การโหลดไฟล-csv-import&#34;&gt;วิธีการโหลดไฟล์ CSV (Import)&lt;/h3&gt;
 

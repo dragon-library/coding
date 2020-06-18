@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academia 4.3.1">
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Little Dragon">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Professor of Artificial Intelligence">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://dragon-library.github.io/docs/library/pandas/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#fc6f5c">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/docs/library/css/academia.min.8a8fc77db51e2dcbd947b9facbceddb0.css">
+
+  
+
+  
+  
+  
+
+  
+  <link rel="alternate" href="/docs/library/pandas/index.xml" type="application/rss+xml" title="Library">
+  <link rel="feed" href="/docs/library/pandas/index.xml" type="application/rss+xml" title="Library">
+  
+
+  <link rel="manifest" href="/docs/library/site.webmanifest">
+  <link rel="icon" type="image/png" href="/docs/library/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/docs/library/img/icon-192.png">
+
+  <link rel="canonical" href="https://dragon-library.github.io/docs/library/pandas/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Library">
+  <meta property="og:url" content="https://dragon-library.github.io/docs/library/pandas/">
+  <meta property="og:title" content="Pandas Tutorials | Library">
+  <meta property="og:description" content="Professor of Artificial Intelligence"><meta property="og:image" content="https://dragon-library.github.io/docs/library/img/icon-192.png">
+  <meta property="twitter:image" content="https://dragon-library.github.io/docs/library/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+  <meta property="og:updated_time" content="2020-06-17T00:00:00&#43;00:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>Pandas Tutorials | Library</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/docs/library/">Library</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/docs/library/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/docs/library/python/"><span>Python</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/docs/library/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/docs/library/pandas/"><span>Pandas</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/docs/library/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/docs/library/book/"><span>Book</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/docs/library/courses/"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/docs/library/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" id="search-query" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/docs/library/pandas/">tutorials</a>
+    <ul class="nav docs-sidenav">
+      
+      <li class="active">
+        <a href="/docs/library/pandas/">QuickGuide</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#environment-setup">Environment Setup</a></li>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#linux">Linux</a></li>
+<li><a href="#dataframe">DataFrame</a>
+<ul>
+<li><a href="#features-of-dataframe">Features of DataFrame</a></li>
+<li><a href="#structure">Structure</a></li>
+</ul></li>
+<li><a href="#pandas-dataframe">pandas.DataFrame</a></li>
+<li><a href="#create-dataframe">Create DataFrame</a></li>
+<li><a href="#create-an-empty-dataframe">Create an Empty DataFrame</a>
+<ul>
+<li><a href="#example">Example</a></li>
+</ul></li>
+<li><a href="#create-a-dataframe-from-lists">Create a DataFrame from Lists</a>
+<ul>
+<li><a href="#example-1">Example 1</a></li>
+<li><a href="#example-2">Example 2</a></li>
+<li><a href="#example-3">Example 3</a></li>
+</ul></li>
+<li><a href="#create-a-dataframe-from-dict-of-ndarrays-lists">Create a DataFrame from Dict of ndarrays / Lists</a>
+<ul>
+<li><a href="#example-1-1">Example 1</a></li>
+<li><a href="#example-2-1">Example 2</a></li>
+</ul></li>
+<li><a href="#create-a-dataframe-from-list-of-dicts">Create a DataFrame from List of Dicts</a>
+<ul>
+<li><a href="#example-1-2">Example 1</a></li>
+<li><a href="#example-2-2">Example 2</a></li>
+<li><a href="#example-3-1">Example 3</a></li>
+</ul></li>
+<li><a href="#create-a-dataframe-from-dict-of-series">Create a DataFrame from Dict of Series</a>
+<ul>
+<li><a href="#example-1-3">Example</a></li>
+</ul></li>
+<li><a href="#column-selection">Column Selection</a>
+<ul>
+<li><a href="#example-1-4">Example</a></li>
+</ul></li>
+<li><a href="#column-addition">Column Addition</a>
+<ul>
+<li><a href="#example-1-5">Example</a></li>
+</ul></li>
+<li><a href="#column-deletion">Column Deletion</a>
+<ul>
+<li><a href="#example-1-6">Example</a></li>
+</ul></li>
+<li><a href="#row-selection-addition-and-deletion">Row Selection, Addition, and Deletion</a>
+<ul>
+<li><a href="#selection-by-label">Selection by Label</a></li>
+<li><a href="#selection-by-integer-location">Selection by integer location</a></li>
+<li><a href="#slice-rows">Slice Rows</a></li>
+<li><a href="#addition-of-rows">Addition of Rows</a></li>
+<li><a href="#deletion-of-rows">Deletion of Rows</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article" itemscope itemtype="http://schema.org/Article">
+
+        <div class="docs-article-container">
+          <h1 itemprop="name">Pandas Tutorials</h1>
+
+          <div class="article-style" itemprop="articleBody">
+            
+
+<h2 id="environment-setup">Environment Setup</h2>
+
+<p>Standard Python distribution doesn&rsquo;t come bundled with Pandas module. A lightweight alternative is to install NumPy using popular Python package installer,  <strong>pip.</strong></p>
+
+<pre><code class="language-py">pip install pandas
+</code></pre>
+
+<p>If you install Anaconda Python package, Pandas will be installed by default with the following −</p>
+
+<h2 id="windows">Windows</h2>
+
+<ul>
+<li><p><strong>Anaconda</strong>  (from  <a href="https://www.continuum.io/" target="_blank">https://www.continuum.io</a>) is a free Python distribution for SciPy stack. It is also available for Linux and Mac.</p></li>
+
+<li><p><strong>Canopy</strong>  (<a href="https://www.enthought.com/products/canopy" target="_blank">https://www.enthought.com/products/canopy/</a>) is available as free as well as commercial distribution with full SciPy stack for Windows, Linux and Mac.</p></li>
+
+<li><p><strong>Python</strong>  (x,y) is a free Python distribution with SciPy stack and Spyder IDE for Windows OS. (Downloadable from  <a href="http://python-xy.github.io/" target="_blank">http://python-xy.github.io/</a>)</p></li>
+</ul>
+
+<h2 id="linux">Linux</h2>
+
+<p>Package managers of respective Linux distributions are used to install one or more packages in SciPy stack.</p>
+
+<p><strong>For Ubuntu Users</strong></p>
+
+<pre><code class="language-py">sudo apt-get install python-numpy python-scipy python-matplotlibipythonipythonnotebook
+python-pandas python-sympy python-nose
+</code></pre>
+
+<p><strong>For Fedora Users</strong></p>
+
+<pre><code class="language-py">sudo yum install numpyscipy python-matplotlibipython python-pandas sympy
+python-nose atlas-devel
+</code></pre>
+
+<h2 id="dataframe">DataFrame</h2>
+
+<p>A Data frame is a two-dimensional data structure, i.e., data is aligned in a tabular fashion in rows and columns.</p>
+
+<h3 id="features-of-dataframe">Features of DataFrame</h3>
+
+<ul>
+<li>Potentially columns are of different types</li>
+<li>Size – Mutable</li>
+<li>Labeled axes (rows and columns)</li>
+<li>Can Perform Arithmetic operations on rows and columns</li>
+</ul>
+
+<h3 id="structure">Structure</h3>
+
+<p>Let us assume that we are creating a data frame with student’s data.</p>
+
+<p><img src="https://www.tutorialspoint.com/python_pandas/images/structure_table.jpg" alt="Structure Table" /></p>
+
+<p>You can think of it as an SQL table or a spreadsheet data representation.</p>
+
+<h2 id="pandas-dataframe">pandas.DataFrame</h2>
+
+<p>A pandas DataFrame can be created using the following constructor −</p>
+
+<pre><code class="language-py">pandas.DataFrame( data, index, columns, dtype, copy)
+</code></pre>
+
+<p>The parameters of the constructor are as follows −</p>
+
+<table>
+<thead>
+<tr>
+<th>Sr.No</th>
+<th>Parameter &amp; Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>data</strong> data takes various forms like ndarray, series, map, lists, dict, constants and also another DataFrame.</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td><strong>index</strong> For the row labels, the Index to be used for the resulting frame is Optional Default np.arange(n) if no index is passed.</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td><strong>columns</strong>  For column labels, the optional default syntax is - np.arange(n). This is only true if no index is passed.</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td><strong>dtype</strong>  Data type of each column.</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td><strong>copy</strong>  This command (or whatever it is) is used for copying of data, if the default is False.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="create-dataframe">Create DataFrame</h2>
+
+<p>A pandas DataFrame can be created using various inputs like −</p>
+
+<ul>
+<li>Lists</li>
+<li>dict</li>
+<li>Series</li>
+<li>Numpy ndarrays</li>
+<li>Another DataFrame</li>
+</ul>
+
+<p>In the subsequent sections of this chapter, we will see how to create a DataFrame using these inputs.</p>
+
+<h2 id="create-an-empty-dataframe">Create an Empty DataFrame</h2>
+
+<p>A basic DataFrame, which can be created is an Empty Dataframe.</p>
+
+<h3 id="example">Example</h3>
+
+<pre><code class="language-py">#import the pandas library and aliasing as pd  import pandas as pd
+df = pd.DataFrame()  print df
+</code></pre>
+
+<p>Its  <strong>output</strong>  is as follows −</p>
+
+<pre><code class="language-py">Empty DataFrame
+Columns: []
+Index: []
+</code></pre>
+
+<h2 id="create-a-dataframe-from-lists">Create a DataFrame from Lists</h2>
+
+<p>The DataFrame can be created using a single list or a list of lists.</p>
+
+<h3 id="example-1">Example 1</h3>
+
+<pre><code class="language-py">import pandas as pd
+data =  [1,2,3,4,5] 
+df = pd.DataFrame(data)  
+print df
+</code></pre>
+
+<p>Its  <strong>output</strong>  is as follows −</p>
+
+<pre><code class="language-py">     0
+0    1
+1    2
+2    3
+3    4
+4    5
+</code></pre>
+
+<h3 id="example-2">Example 2</h3>
+
+<pre><code class="language-py">import pandas as pd
+data =  [['Alex',10],['Bob',12],['Clarke',13]] 
+df = pd.DataFrame(data,columns=['Name','Age'])  
+print (df)
+</code></pre>
+
+<p>Its  <strong>output</strong>  is as follows −</p>
+
+<pre><code class="language-py">      Name      Age
+0     Alex      10
+1     Bob       12
+2     Clarke    13
+</code></pre>
+
+<h3 id="example-3">Example 3</h3>
+
+<pre><code class="language-py">import pandas as pd
+data =  [['Alex',10],['Bob',12],['Clarke',13]] 
+df = pd.DataFrame(data,columns=['Name','Age'],dtype=float)  
+print (df)
+</code></pre>
+
+<p>Its  <strong>output</strong>  is as follows −</p>
+
+<pre><code class="language-py">      Name     Age
+0     Alex     10.0
+1     Bob      12.0
+2     Clarke   13.0
+</code></pre>
+
+<p>*Note**  − Observe, the  <strong>dtype</strong>  parameter changes the type of Age column to floating point.</p>
+
+<h2 id="create-a-dataframe-from-dict-of-ndarrays-lists">Create a DataFrame from Dict of ndarrays / Lists</h2>
+
+<p>All the  <strong>ndarrays</strong>  must be of same length. If index is passed, then the length of the index should equal to the length of the arrays.</p>
+
+<p>If no index is passed, then by default, index will be range(n), where  <strong>n</strong>  is the array length.</p>
+
+<h3 id="example-1-1">Example 1</h3>
+
+<pre><code class="language-py">import pandas as pd
+data =  {'Name':['Tom',  'Jack',  'Steve',  
+'Ricky'],'Age':[28,34,29,42]} 
+df = pd.DataFrame(data)  
+print (df)
+</code></pre>
+
+<p>Its  <strong>output</strong>  is as follows −</p>
+
+<pre><code class="language-py">      Age      Name
+0     28        Tom
+1     34       Jack
+2     29      Steve
+3     42      Ricky
+</code></pre>
+
+<p><strong>Note</strong>  − Observe the values 0,1,2,3. They are the default index assigned to each using the function range(n).</p>
+
+<h3 id="example-2-1">Example 2</h3>
+
+<p>Let us now create an indexed DataFrame using arrays.</p>
+
+<pre><code class="language-py">import pandas as pd
+data =  {'Name':['Tom',  'Jack',  'Steve',  'Ricky'],'Age':[28,34,29,42]} 
+df = pd.DataFrame(data, 
+index=['rank1','rank2','rank3','rank4'])  
+print df
+</code></pre>
+
+<p>Its  <strong>output</strong>  is as follows −</p>
+
+<pre><code class="language-py">         Age    Name
+rank1    28      Tom
+rank2    34     Jack
+rank3    29    Steve
+rank4    42    Ricky
+</code></pre>
+
+<p><strong>Note</strong>  − Observe, the  <strong>index</strong>  parameter assigns an index to each row.</p>
+
+<h2 id="create-a-dataframe-from-list-of-dicts">Create a DataFrame from List of Dicts</h2>
+
+<p>List of Dictionaries can be passed as input data to create a DataFrame. The dictionary keys are by default taken as column names.</p>
+
+<h3 id="example-1-2">Example 1</h3>
+
+<p>The following example shows how to create a DataFrame by passing a list of dictionaries.</p>
+
+<pre><code class="language-py">import pandas as pd
+data =  [{'a':  1,  'b':  2},{'a':  5,  'b':  10,  'c':  20}] 
+df = pd.DataFrame(data)  
+print df
+</code></pre>
+
+<p>Its  <strong>output</strong>  is as follows −</p>
+
+<pre><code class="language-py">    a    b      c
+0   1   2     NaN
+1   5   10   20.0
+</code></pre>
+
+<p><strong>Note</strong>  − Observe, NaN (Not a Number) is appended in missing areas.</p>
+
+<h3 id="example-2-2">Example 2</h3>
+
+<p>The following example shows how to create a DataFrame by passing a list of dictionaries and the row indices.</p>
+
+<pre><code class="language-py">import pandas as pd
+data =  [{'a':  1,  'b':  2},{'a':  5,  'b':  10,  'c':  20}] 
+df = pd.DataFrame(data, index=['first',  'second'])  
+print df
+</code></pre>
+
+<p>Its  <strong>output</strong>  is as follows −</p>
+
+<pre><code class="language-py">        a   b       c
+first   1   2     NaN
+second  5   10   20.0
+</code></pre>
+
+<h3 id="example-3-1">Example 3</h3>
+
+<p>The following example shows how to create a DataFrame with a list of dictionaries, row indices, and column indices.</p>
+
+<pre><code class="language-py">import pandas as pd
+data =  [{'a':  1,  'b':  2},{'a':  5,  'b':  10,  'c':  20}]  
+#With two column indices, values same as dictionary keys 
+df1 = pd.DataFrame(data, 
+index=['first',  'second'], columns=['a',  'b'])  #With two column indices with one index with other name 
+df2 = pd.DataFrame(data, 
+index=['first',  'second'], columns=['a',  'b1']) 
+print df1 
+print df2
+</code></pre>
+
+<p>Its  <strong>output</strong>  is as follows −</p>
+
+<pre><code class="language-py">#df1 output
+         a  b
+first    1  2
+second   5  10
+
+#df2 output
+         a  b1
+first    1  NaN
+second   5  NaN
+</code></pre>
+
+<p><strong>Note</strong>  − Observe, df2 DataFrame is created with a column index other than the dictionary key; thus, appended the NaN’s in place. Whereas, df1 is created with column indices same as dictionary keys, so NaN’s appended.</p>
+
+<h2 id="create-a-dataframe-from-dict-of-series">Create a DataFrame from Dict of Series</h2>
+
+<p>Dictionary of Series can be passed to form a DataFrame. The resultant index is the union of all the series indexes passed.</p>
+
+<h3 id="example-1-3">Example</h3>
+
+<pre><code class="language-py">import pandas as pd
+
+d =  {'one'  : pd.Series([1,  2,  3], 
+index=['a',  'b',  'c']),  'two'  : pd.Series([1,  2,  3,  4], 
+index=['a',  'b',  'c',  'd'])} 
+df = pd.DataFrame(d)  
+print df
+</code></pre>
+
+<p>Its  <strong>output</strong>  is as follows −</p>
+
+<pre><code class="language-py">      one    two
+a     1.0    1
+b     2.0    2
+c     3.0    3
+d     NaN    4
+</code></pre>
+
+<p><strong>Note</strong>  − Observe, for the series one, there is no label  <strong>‘d’</strong>  passed, but in the result, for the  <strong>d</strong>  label, NaN is appended with NaN.</p>
+
+<p>Let us now understand  <strong>column selection, addition</strong>, and  <strong>deletion</strong>  through examples.</p>
+
+<h2 id="column-selection">Column Selection</h2>
+
+<p>We will understand this by selecting a column from the DataFrame.</p>
+
+<h3 id="example-1-4">Example</h3>
+
+<pre><code class="language-py">
+import pandas as pd
+
+d =  {'one'  : pd.Series([1,  2,  3], 
+index=['a',  'b',  'c']),  'two'  : pd.Series([1,  2,  3,  4], 
+index=['a',  'b',  'c',  'd'])} 
+df = pd.DataFrame(d)  
+print df ['one']
+</code></pre>
+
+<p>Its  <strong>output</strong>  is as follows −</p>
+
+<pre><code class="language-py">a     1.0
+b     2.0
+c     3.0
+d     NaN
+Name: one, dtype: float64
+</code></pre>
+
+<h2 id="column-addition">Column Addition</h2>
+
+<p>We will understand this by adding a new column to an existing data frame.</p>
+
+<h3 id="example-1-5">Example</h3>
+
+<pre><code class="language-py">import pandas as pd
+
+d =  {'one'  : pd.Series([1,  2,  3], 
+index=['a',  'b',  'c']),  
+'two'  : pd.Series([1,  2,  3,  4], 
+index=['a',  'b',  'c',  'd'])} 
+df = pd.DataFrame(d)  # Adding a new column to an existing DataFrame object with column label by passing new series  
+print  (&quot;Adding a new column by passing as Series:&quot;) df['three']=pd.Series([10,20,30],index=['a','b','c'])  
+print df 
+print (&quot;Adding a new column using the existing columns in DataFrame:&quot;) 
+df['four']=df['one']+df['three'] 
+print df
+</code></pre>
+
+<p>Its  <strong>output</strong>  is as follows −</p>
+
+<pre><code class="language-py">Adding a new column by passing as Series:
+     one   two   three
+a    1.0    1    10.0
+b    2.0    2    20.0
+c    3.0    3    30.0
+d    NaN    4    NaN
+</code></pre>
+
+<p>Adding a new column using the existing columns in DataFrame:</p>
+
+<pre><code class="language-py">      one   two   three    four
+a     1.0    1    10.0     11.0
+b     2.0    2    20.0     22.0
+c     3.0    3    30.0     33.0
+d     NaN    4     NaN     NaN
+</code></pre>
+
+<h2 id="column-deletion">Column Deletion</h2>
+
+<p>Columns can be deleted or popped; let us take an example to understand how.</p>
+
+<h3 id="example-1-6">Example</h3>
+
+<pre><code class="language-py"># Using the previous DataFrame, we will delete a column  
+# using del function  
+import pandas as pd
+
+d =  {'one'  : pd.Series([1,  2,  3], 
+index=['a',  'b',  'c']),  'two'  : pd.Series([1,  2,  3,  4], 
+index=['a',  'b',  'c',  'd']),  'three'  : pd.Series([10,20,30], 
+index=['a','b','c'])} 
+df = pd.DataFrame(d)  
+print  (&quot;Our dataframe is:&quot;)  
+print df # using del function  print  (&quot;Deleting the first column using DEL function:&quot;)  
+del df['one']  
+print df # using pop function  
+print  (&quot;Deleting another column using POP function:&quot;) df.pop('two')  
+print df
+</code></pre>
+
+<p>Its  <strong>output</strong>  is as follows −</p>
+
+<p>Our dataframe is:</p>
+
+<pre><code class="language-py">      one   three  two
+a     1.0    10.0   1
+b     2.0    20.0   2
+c     3.0    30.0   3
+d     NaN     NaN   4
+</code></pre>
+
+<p>Deleting the first column using DEL function:</p>
+
+<pre><code class="language-py">      three    two
+a     10.0     1
+b     20.0     2
+c     30.0     3
+d     NaN      4
+</code></pre>
+
+<p>Deleting another column using POP function:</p>
+
+<pre><code class="language-py">   three
+a  10.0
+b  20.0
+c  30.0
+d  NaN
+</code></pre>
+
+<h2 id="row-selection-addition-and-deletion">Row Selection, Addition, and Deletion</h2>
+
+<p>We will now understand row selection, addition and deletion through examples. Let us begin with the concept of selection.</p>
+
+<h3 id="selection-by-label">Selection by Label</h3>
+
+<p>Rows can be selected by passing row label to a  <strong>loc</strong>  function.</p>
+
+<pre><code class="language-py">import pandas as pd
+
+d =  {'one'  : pd.Series([1,  2,  3], 
+index=['a',  'b',  'c']),  'two'  : pd.Series([1,  2,  3,  4], 
+index=['a',  'b',  'c',  'd'])} 
+df = pd.DataFrame(d)  
+print df.loc['b']
+</code></pre>
+
+<p>Its  <strong>output</strong>  is as follows −</p>
+
+<pre><code class="language-py">one 2.0
+two 2.0
+Name: b, dtype: float64
+</code></pre>
+
+<p>The result is a series with labels as column names of the DataFrame. And, the Name of the series is the label with which it is retrieved.</p>
+
+<h3 id="selection-by-integer-location">Selection by integer location</h3>
+
+<p>Rows can be selected by passing integer location to an  <strong>iloc</strong>  function.</p>
+
+<pre><code class="language-py">import pandas as pd
+
+d =  {'one'  : pd.Series([1,  2,  3], 
+index=['a',  'b',  'c']),  'two'  : pd.Series([1,  2,  3,  4], 
+index=['a',  'b',  'c',  'd'])} 
+df = pd.DataFrame(d)  
+print df.iloc[2]
+</code></pre>
+
+<p>Its  <strong>output</strong>  is as follows −</p>
+
+<pre><code class="language-py">one   3.0
+two   3.0
+Name: c, dtype: float64
+</code></pre>
+
+<h3 id="slice-rows">Slice Rows</h3>
+
+<p>Multiple rows can be selected using ‘ : ’ operator.</p>
+
+<pre><code class="language-py">import pandas as pd
+
+d =  {'one'  : pd.Series([1,  2,  3], 
+index=['a',  'b',  'c']),  'two'  : pd.Series([1,  2,  3,  4], 
+index=['a',  'b',  'c',  'd'])} 
+df = pd.DataFrame(d)  
+print df[2:4]
+</code></pre>
+
+<p>Its  <strong>output</strong>  is as follows −</p>
+
+<pre><code class="language-py">   one  two
+c  3.0    3
+d  NaN    4
+</code></pre>
+
+<h3 id="addition-of-rows">Addition of Rows</h3>
+
+<p>Add new rows to a DataFrame using the  <strong>append</strong>  function. This function will append the rows at the end.</p>
+
+<pre><code class="language-py">import pandas as pd
+
+df = pd.DataFrame([[1,  2],  [3,  4]], columns =  ['a','b']) 
+df2 = pd.DataFrame([[5,  6],  [7,  8]], columns =  ['a','b']) 
+df = df.append(df2)  
+print df
+</code></pre>
+
+<p>Its  <strong>output</strong>  is as follows −</p>
+
+<pre><code class="language-py">   a  b
+0  1  2
+1  3  4
+0  5  6
+1  7  8
+</code></pre>
+
+<h3 id="deletion-of-rows">Deletion of Rows</h3>
+
+<p>Use index label to delete or drop rows from a DataFrame. If label is duplicated, then multiple rows will be dropped.</p>
+
+<p>If you observe, in the above example, the labels are duplicate. Let us drop a label and will see how many rows will get dropped.</p>
+
+<pre><code class="language-py">import pandas as pd
+
+df = pd.DataFrame([[1,  2],  [3,  4]], columns =  ['a','b']) 
+df2 = pd.DataFrame([[5,  6],  [7,  8]], columns =  ['a','b']) 
+df = df.append(df2)  # Drop rows with label 0 
+df = df.drop(0)  
+print df
+</code></pre>
+
+<p>Its  <strong>output</strong>  is as follows −</p>
+
+<pre><code class="language-py">  a b
+1 3 4
+1 7 8
+</code></pre>
+
+<p>In the above example, two rows were dropped because those two contain the same label 0.</p>
+
+<blockquote>
+<p>Reference : <a href="https://www.tutorialspoint.com/python_pandas/python_pandas_dataframe.htm" target="_blank">tutorialspoint.com</a></p>
+</blockquote>
+
+          </div>
+
+          
+
+
+
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  <br>
+  <br>
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          Last updated on Jun 17, 2020
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        
+        <p>
+          
+          Powered by
+          <a href="https://themefisher.com" target="_blank" rel="noopener">themefisher</a> for
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-inline network-icon text-right">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/Twitter" target="_blank" rel="noopener" title="DM Me"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="skype:echo123?call"  title="Skype Me"><i class="fab fa-skype" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://keybase.io/" target="_blank" rel="noopener" title="Chat on Keybase"><i class="fab fa-keybase" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://discourse.gohugo.io" target="_blank" rel="noopener" title="Discuss on Forum"><i class="fas fa-comments" aria-hidden="true"></i></a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </main>
+  </div>
+</div>
+
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/docs/library/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/docs/library/js/academia.min.e4fc229c2f28284fc2dfa5b66a52b765.js"></script>
+
+    
+
+
+
+
+
+
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

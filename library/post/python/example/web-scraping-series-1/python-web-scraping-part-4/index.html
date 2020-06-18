@@ -62,10 +62,8 @@
     
       
       
-        
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-dark" disabled>
       
     
 
@@ -77,13 +75,13 @@
 
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:400,700|Sarabun|Roboto+Mono&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:400,700|Sarabun|Roboto&display=swap">
   
 
   
   
   
-  <link rel="stylesheet" href="/docs/library/css/academia.min.1793e6c314ad93524174c58f830b9319.css">
+  <link rel="stylesheet" href="/docs/library/css/academia.min.ff05a21b53038f9dccb7f30aedbfb6d7.css">
 
   
 
@@ -115,7 +113,7 @@
   
   <meta property="article:published_time" content="2020-05-14T00:00:00&#43;00:00">
   
-  <meta property="article:modified_time" content="2020-05-14T00:00:00&#43;00:00">
+  <meta property="article:modified_time" content="2020-06-18T02:48:28&#43;07:00">
   
 
   
@@ -279,16 +277,9 @@
         
         
         
-          
-          
-          
-            
-          
-          
-        
 
         <li class="nav-item">
-          <a class="nav-link " href="/docs/library/#projects"><span>Projects</span></a>
+          <a class="nav-link " href="/docs/library/tutorials/"><span>Tutorials</span></a>
         </li>
 
         
@@ -454,7 +445,7 @@
 
 
 <meta content="2020-05-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-<meta content="2020-05-14 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+<meta content="2020-06-18 02:48:28 &#43;0700 &#43;07" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -478,8 +469,10 @@
     
     
       
+          Last updated on
+      
     
-    <time>May 14, 2020</time>
+    <time>Jun 18, 2020</time>
   </span>
   
 
@@ -626,13 +619,13 @@
 
 <p>ท่านที่พอจะมีประสบการณ์การทำเว็บมาบ้าง พอเห็น XPath สัก 1 หรือ 2 อัน ก็อาจจะเดาได้แล้ว ว่า XPath ที่เหมาะสม ที่น่าจะครอบคลุมทุก ๆ element นั้น ควรจะเป็นอะไร แต่ถึงจะเดาไม่ออกก็ไม่เป็นไรครับ เพราะอย่างบาง website ที่ซับซ้อนขึ้นหน่อย ต่อให้มีประสบการณ์ก็คงเดาไม่ออกในทีแรกเช่นกัน</p>
 
-<p>สำหรับในบทความนี้ก็จะสอนวิธีหนึ่งที่สามารถทำได้ เพื่อหา XPath ที่  <strong>&ldquo;น่าจะ&rdquo;</strong>  ครอบคลุมข้อมูลทั้งหมดที่เราต้องการมานะครับ ซึ่งเป็นวิธีที่ผู้เขียนเองก็ใช้งานอยู่จริงในการ scrape website ในหลาย ๆ ครั้งครับ (ที่บอกว่า  <strong>&ldquo;น่าจะ&rdquo;</strong>  เนี่ย เพราะว่าในความเป็นจริงไม่มีใครรู้หรอกครับ ว่า website เป้าหมายนี้ ถูกเขียน หรือถูกสร้างมาอย่างไร แต่ด้วยวิธีดังกล่าว+หลักของสถิติ เราก็จะมั่นใจได้ในระดับหนึ่งว่า XPath ของเรามัน  <strong>&ldquo;น่าจะ&rdquo;</strong>  ดีเพียงพอครับ)</p>
+<p>สำหรับในบทความนี้ก็จะสอนวิธีหนึ่งที่สามารถทำได้ เพื่อหา XPath ที่  <strong>&laquo;น่าจะ&raquo;</strong>  ครอบคลุมข้อมูลทั้งหมดที่เราต้องการมานะครับ ซึ่งเป็นวิธีที่ผู้เขียนเองก็ใช้งานอยู่จริงในการ scrape website ในหลาย ๆ ครั้งครับ (ที่บอกว่า  <strong>&laquo;น่าจะ&raquo;</strong>  เนี่ย เพราะว่าในความเป็นจริงไม่มีใครรู้หรอกครับ ว่า website เป้าหมายนี้ ถูกเขียน หรือถูกสร้างมาอย่างไร แต่ด้วยวิธีดังกล่าว+หลักของสถิติ เราก็จะมั่นใจได้ในระดับหนึ่งว่า XPath ของเรามัน  <strong>&laquo;น่าจะ&raquo;</strong>  ดีเพียงพอครับ)</p>
 
 <p>วิธีหนึ่งที่ผมทำก็คือ sample XPath ออกมาดู เอามา  <strong>สำรวจ</strong>  เพิ่มอีกเยอะ ๆ ก็จะช่วยให้เห็นภาพมากขึ้นครับ จากนั้นเราก็จะใช้ syntax ของ XPath ในการ select และระบุ condition เพื่อให้ครอบคลุมกรณีที่เรา sample ออกมา ให้มากที่สุดครับ</p>
 
 <h2 id="get-started">Get Started!</h2>
 
-<p>ทบทวนสักเล็กน้อย ใน part นี้เราก็ยังอยู่กับเว็บ Wikipedia  <a href="https://th.wikipedia.org/wiki/%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%95%E0%B8%B3%E0%B8%9A%E0%B8%A5%E0%B9%83%E0%B8%99%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B9%84%E0%B8%97%E0%B8%A2" target="_blank">https://th.wikipedia.org/wiki/รายชื่อเทศบาลตำบลในประเทศไทย</a>  กันเหมือนเดิมนะครับ โดยเป้าหมายคือ  <strong>หา XPath สำหรับ extract รายชื่อเทศบาลตำบลทั้งหมด</strong>  ซึ่งใน  <a href="https://dev.to/copypasteengineer/python-web-scraping-part-2-chrome-s-code-inspector-3ok6" target="_blank">part ที่แล้ว</a>  เราใช้ Chrome Inspector ในการแกะ XPath ของ  <strong>&ldquo;Element&rdquo; หนึ่ง ๆ</strong>  มาได้แบบง่าย ๆ แล้วนะครับ ในตอนนี้เรากำลังจะหา XPath ที่สามารถ extract ข้อมูลทั้งหมดได้  <strong>(คือครอบคลุมทุก element ไม่ใช่แค่ 1 element)</strong></p>
+<p>ทบทวนสักเล็กน้อย ใน part นี้เราก็ยังอยู่กับเว็บ Wikipedia  <a href="https://th.wikipedia.org/wiki/%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%95%E0%B8%B3%E0%B8%9A%E0%B8%A5%E0%B9%83%E0%B8%99%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B9%84%E0%B8%97%E0%B8%A2" target="_blank">https://th.wikipedia.org/wiki/รายชื่อเทศบาลตำบลในประเทศไทย</a>  กันเหมือนเดิมนะครับ โดยเป้าหมายคือ  <strong>หา XPath สำหรับ extract รายชื่อเทศบาลตำบลทั้งหมด</strong>  ซึ่งใน  <a href="https://dev.to/copypasteengineer/python-web-scraping-part-2-chrome-s-code-inspector-3ok6" target="_blank">part ที่แล้ว</a>  เราใช้ Chrome Inspector ในการแกะ XPath ของ  <strong>&laquo;Element&raquo; หนึ่ง ๆ</strong>  มาได้แบบง่าย ๆ แล้วนะครับ ในตอนนี้เรากำลังจะหา XPath ที่สามารถ extract ข้อมูลทั้งหมดได้  <strong>(คือครอบคลุมทุก element ไม่ใช่แค่ 1 element)</strong></p>
 
 <h3 id="1-sample-xpath-มาเพ-ม">1. Sample XPath มาเพิ่ม</h3>
 
@@ -940,6 +933,9 @@
 
     
     
+    
+    <script src="/docs/library/js/mathjax-config.js"></script>
+    
 
     
     
@@ -955,9 +951,13 @@
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
         
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/python.min.js"></script>
+        
       
 
       
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
       
     
 

@@ -494,7 +494,7 @@ print(session.query(Pokemon.chue).filter(Pokemon.chue!=&#39;เบย์ลี�
 # ได้ [(&#39;ชิโครีตา&#39;,), (&#39;เมกาเนียม&#39;,), (&#39;ฮิโนอาราชิ&#39;,), (&#39;วานิโนโกะ&#39;,)]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;สามารถใส่มากกว่าเงื่อนไขพร้อมกันได้ โดยจะมีความหมายเป็น &amp;ldquo;และ&amp;rdquo; คือต้องเข้าทุกเงื่อนไข&lt;/p&gt;
+&lt;p&gt;สามารถใส่มากกว่าเงื่อนไขพร้อมกันได้ โดยจะมีความหมายเป็น &amp;laquo;และ&amp;raquo; คือต้องเข้าทุกเงื่อนไข&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(session.query(Pokemon).filter(Pokemon.nak&amp;gt;8,Pokemon.nak&amp;lt;20).all())
 # ได้ [153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 158. วานิโนโกะ หนัก 9.5 สูง 60 ซม.]
@@ -502,7 +502,7 @@ print(session.query(Pokemon.chue).filter(Pokemon.chue!=&#39;ชิโครี�
 # [(&#39;เมกาเนียม&#39;,), (&#39;ฮิโนอาราชิ&#39;,), (&#39;วานิโนโกะ&#39;,)]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;นอกจากนี้ในการรวมหรือจัดการเงื่อนไขอาจใช้ and&lt;em&gt;, or&lt;/em&gt;, not_ เพื่อแทน &amp;ldquo;และ&amp;rdquo;, &amp;ldquo;หรือ&amp;rdquo;, &amp;ldquo;ไม่&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;นอกจากนี้ในการรวมหรือจัดการเงื่อนไขอาจใช้ and&lt;em&gt;, or&lt;/em&gt;, not_ เพื่อแทน &amp;laquo;และ&amp;raquo;, &amp;laquo;หรือ&amp;raquo;, &amp;laquo;ไม่&amp;raquo;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(session.query(Pokemon).filter(sqlalchemy.or_(Pokemon.chue==&amp;quot;เบย์ลีฟ&amp;quot;,Pokemon.chue==&amp;quot;เมกาเนียม&amp;quot;)).all())
 # ได้ [153. เบย์ลีฟ หนัก 15.8 สูง 120 ซม., 154. เมกาเนียม หนัก 100.5 สูง 180 ซม.]
@@ -2388,7 +2388,7 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 &lt;li&gt;It can be only one word.&lt;/li&gt;
 &lt;li&gt;It can use only letters, numbers, and the underscore (&lt;code&gt;_&lt;/code&gt;) character.&lt;/li&gt;
 &lt;li&gt;It can’t begin with a number.&lt;/li&gt;
-&lt;li&gt;Variable name starting with an underscore (&lt;code&gt;_&lt;/code&gt;) are considered as &amp;ldquo;unuseful`.&lt;/li&gt;
+&lt;li&gt;Variable name starting with an underscore (&lt;code&gt;_&lt;/code&gt;) are considered as &amp;laquo;unuseful`.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;Example:&lt;/p&gt;
@@ -7419,13 +7419,13 @@ pprint(cell)
 
 &lt;p&gt;ท่านที่พอจะมีประสบการณ์การทำเว็บมาบ้าง พอเห็น XPath สัก 1 หรือ 2 อัน ก็อาจจะเดาได้แล้ว ว่า XPath ที่เหมาะสม ที่น่าจะครอบคลุมทุก ๆ element นั้น ควรจะเป็นอะไร แต่ถึงจะเดาไม่ออกก็ไม่เป็นไรครับ เพราะอย่างบาง website ที่ซับซ้อนขึ้นหน่อย ต่อให้มีประสบการณ์ก็คงเดาไม่ออกในทีแรกเช่นกัน&lt;/p&gt;
 
-&lt;p&gt;สำหรับในบทความนี้ก็จะสอนวิธีหนึ่งที่สามารถทำได้ เพื่อหา XPath ที่  &lt;strong&gt;&amp;ldquo;น่าจะ&amp;rdquo;&lt;/strong&gt;  ครอบคลุมข้อมูลทั้งหมดที่เราต้องการมานะครับ ซึ่งเป็นวิธีที่ผู้เขียนเองก็ใช้งานอยู่จริงในการ scrape website ในหลาย ๆ ครั้งครับ (ที่บอกว่า  &lt;strong&gt;&amp;ldquo;น่าจะ&amp;rdquo;&lt;/strong&gt;  เนี่ย เพราะว่าในความเป็นจริงไม่มีใครรู้หรอกครับ ว่า website เป้าหมายนี้ ถูกเขียน หรือถูกสร้างมาอย่างไร แต่ด้วยวิธีดังกล่าว+หลักของสถิติ เราก็จะมั่นใจได้ในระดับหนึ่งว่า XPath ของเรามัน  &lt;strong&gt;&amp;ldquo;น่าจะ&amp;rdquo;&lt;/strong&gt;  ดีเพียงพอครับ)&lt;/p&gt;
+&lt;p&gt;สำหรับในบทความนี้ก็จะสอนวิธีหนึ่งที่สามารถทำได้ เพื่อหา XPath ที่  &lt;strong&gt;&amp;laquo;น่าจะ&amp;raquo;&lt;/strong&gt;  ครอบคลุมข้อมูลทั้งหมดที่เราต้องการมานะครับ ซึ่งเป็นวิธีที่ผู้เขียนเองก็ใช้งานอยู่จริงในการ scrape website ในหลาย ๆ ครั้งครับ (ที่บอกว่า  &lt;strong&gt;&amp;laquo;น่าจะ&amp;raquo;&lt;/strong&gt;  เนี่ย เพราะว่าในความเป็นจริงไม่มีใครรู้หรอกครับ ว่า website เป้าหมายนี้ ถูกเขียน หรือถูกสร้างมาอย่างไร แต่ด้วยวิธีดังกล่าว+หลักของสถิติ เราก็จะมั่นใจได้ในระดับหนึ่งว่า XPath ของเรามัน  &lt;strong&gt;&amp;laquo;น่าจะ&amp;raquo;&lt;/strong&gt;  ดีเพียงพอครับ)&lt;/p&gt;
 
 &lt;p&gt;วิธีหนึ่งที่ผมทำก็คือ sample XPath ออกมาดู เอามา  &lt;strong&gt;สำรวจ&lt;/strong&gt;  เพิ่มอีกเยอะ ๆ ก็จะช่วยให้เห็นภาพมากขึ้นครับ จากนั้นเราก็จะใช้ syntax ของ XPath ในการ select และระบุ condition เพื่อให้ครอบคลุมกรณีที่เรา sample ออกมา ให้มากที่สุดครับ&lt;/p&gt;
 
 &lt;h2 id=&#34;get-started&#34;&gt;Get Started!&lt;/h2&gt;
 
-&lt;p&gt;ทบทวนสักเล็กน้อย ใน part นี้เราก็ยังอยู่กับเว็บ Wikipedia  &lt;a href=&#34;https://th.wikipedia.org/wiki/%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%95%E0%B8%B3%E0%B8%9A%E0%B8%A5%E0%B9%83%E0%B8%99%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B9%84%E0%B8%97%E0%B8%A2&#34; target=&#34;_blank&#34;&gt;https://th.wikipedia.org/wiki/รายชื่อเทศบาลตำบลในประเทศไทย&lt;/a&gt;  กันเหมือนเดิมนะครับ โดยเป้าหมายคือ  &lt;strong&gt;หา XPath สำหรับ extract รายชื่อเทศบาลตำบลทั้งหมด&lt;/strong&gt;  ซึ่งใน  &lt;a href=&#34;https://dev.to/copypasteengineer/python-web-scraping-part-2-chrome-s-code-inspector-3ok6&#34; target=&#34;_blank&#34;&gt;part ที่แล้ว&lt;/a&gt;  เราใช้ Chrome Inspector ในการแกะ XPath ของ  &lt;strong&gt;&amp;ldquo;Element&amp;rdquo; หนึ่ง ๆ&lt;/strong&gt;  มาได้แบบง่าย ๆ แล้วนะครับ ในตอนนี้เรากำลังจะหา XPath ที่สามารถ extract ข้อมูลทั้งหมดได้  &lt;strong&gt;(คือครอบคลุมทุก element ไม่ใช่แค่ 1 element)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;ทบทวนสักเล็กน้อย ใน part นี้เราก็ยังอยู่กับเว็บ Wikipedia  &lt;a href=&#34;https://th.wikipedia.org/wiki/%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%95%E0%B8%B3%E0%B8%9A%E0%B8%A5%E0%B9%83%E0%B8%99%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B9%84%E0%B8%97%E0%B8%A2&#34; target=&#34;_blank&#34;&gt;https://th.wikipedia.org/wiki/รายชื่อเทศบาลตำบลในประเทศไทย&lt;/a&gt;  กันเหมือนเดิมนะครับ โดยเป้าหมายคือ  &lt;strong&gt;หา XPath สำหรับ extract รายชื่อเทศบาลตำบลทั้งหมด&lt;/strong&gt;  ซึ่งใน  &lt;a href=&#34;https://dev.to/copypasteengineer/python-web-scraping-part-2-chrome-s-code-inspector-3ok6&#34; target=&#34;_blank&#34;&gt;part ที่แล้ว&lt;/a&gt;  เราใช้ Chrome Inspector ในการแกะ XPath ของ  &lt;strong&gt;&amp;laquo;Element&amp;raquo; หนึ่ง ๆ&lt;/strong&gt;  มาได้แบบง่าย ๆ แล้วนะครับ ในตอนนี้เรากำลังจะหา XPath ที่สามารถ extract ข้อมูลทั้งหมดได้  &lt;strong&gt;(คือครอบคลุมทุก element ไม่ใช่แค่ 1 element)&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;1-sample-xpath-มาเพ-ม&#34;&gt;1. Sample XPath มาเพิ่ม&lt;/h3&gt;
 
@@ -7623,7 +7623,7 @@ pprint(cell)
 
 &lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-9.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The names.txt file is in the &amp;ldquo;data&amp;rdquo; folder&lt;/p&gt;
+&lt;p&gt;The names.txt file is in the &amp;laquo;data&amp;raquo; folder&lt;/p&gt;
 
 &lt;p&gt;Then we need to use a specific path to tell the function that the file is within another folder.&lt;/p&gt;
 
@@ -7634,7 +7634,7 @@ pprint(cell)
 
 &lt;p&gt;Notice that we are writing  &lt;code&gt;data/&lt;/code&gt;  first (the name of the folder followed by a  &lt;code&gt;/&lt;/code&gt;) and then  &lt;code&gt;names.txt&lt;/code&gt;  (the name of the file with the extension).&lt;/p&gt;
 
-&lt;p&gt;💡  &lt;strong&gt;Tip:&lt;/strong&gt; The three letters  &lt;code&gt;.txt&lt;/code&gt;  that follow the dot in  &lt;code&gt;names.txt&lt;/code&gt;  is the &amp;ldquo;extension&amp;rdquo; of the file, or its type. In this case,  &lt;code&gt;.txt&lt;/code&gt;  indicates that it&amp;rsquo;s a text file.&lt;/p&gt;
+&lt;p&gt;💡  &lt;strong&gt;Tip:&lt;/strong&gt; The three letters  &lt;code&gt;.txt&lt;/code&gt;  that follow the dot in  &lt;code&gt;names.txt&lt;/code&gt;  is the &amp;laquo;extension&amp;raquo; of the file, or its type. In this case,  &lt;code&gt;.txt&lt;/code&gt;  indicates that it&amp;rsquo;s a text file.&lt;/p&gt;
 
 &lt;h3 id=&#34;second-parameter-mode&#34;&gt;Second Parameter: Mode&lt;/h3&gt;
 
@@ -7658,7 +7658,7 @@ pprint(cell)
 
 &lt;p&gt;To use text or binary mode, you would need to add these characters to the main mode. For example:  &lt;code&gt;&amp;quot;wb&amp;quot;&lt;/code&gt;  means writing in binary mode.&lt;/p&gt;
 
-&lt;p&gt;💡  &lt;strong&gt;Tip:&lt;/strong&gt;  The default modes are read (&lt;code&gt;&amp;quot;r&amp;quot;&lt;/code&gt;) and text (&lt;code&gt;&amp;quot;t&amp;quot;&lt;/code&gt;), which means &amp;ldquo;open for reading text&amp;rdquo; (&lt;code&gt;&amp;quot;rt&amp;quot;&lt;/code&gt;), so you don&amp;rsquo;t need to specify them in  &lt;code&gt;**open()**&lt;/code&gt;  if you want to use them because they are assigned by default. You can simply write  &lt;code&gt;open(&amp;lt;file&amp;gt;)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;💡  &lt;strong&gt;Tip:&lt;/strong&gt;  The default modes are read (&lt;code&gt;&amp;quot;r&amp;quot;&lt;/code&gt;) and text (&lt;code&gt;&amp;quot;t&amp;quot;&lt;/code&gt;), which means &amp;laquo;open for reading text&amp;raquo; (&lt;code&gt;&amp;quot;rt&amp;quot;&lt;/code&gt;), so you don&amp;rsquo;t need to specify them in  &lt;code&gt;**open()**&lt;/code&gt;  if you want to use them because they are assigned by default. You can simply write  &lt;code&gt;open(&amp;lt;file&amp;gt;)&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Why Modes?&lt;/strong&gt;&lt;/p&gt;
 
@@ -7715,7 +7715,7 @@ print(f.mode) # Output: &amp;quot;a&amp;quot;
 
 &lt;h3 id=&#34;methods-to-read-a-file&#34;&gt;Methods to Read a File&lt;/h3&gt;
 
-&lt;p&gt;For us to be able to work file objects, we need to have a way to &amp;ldquo;interact&amp;rdquo; with them in our program and that is exactly what methods do. Let&amp;rsquo;s see some of them.&lt;/p&gt;
+&lt;p&gt;For us to be able to work file objects, we need to have a way to &amp;laquo;interact&amp;raquo; with them in our program and that is exactly what methods do. Let&amp;rsquo;s see some of them.&lt;/p&gt;
 
 &lt;h3 id=&#34;read&#34;&gt;&lt;strong&gt;Read()&lt;/strong&gt;&lt;/h3&gt;
 
@@ -7833,7 +7833,7 @@ f.close()
 
 &lt;h2 id=&#34;how-to-create-a-file&#34;&gt;How to Create a File&lt;/h2&gt;
 
-&lt;p&gt;If you need to create a file &amp;ldquo;dynamically&amp;rdquo; using Python, you can do it with the  &lt;code&gt;&amp;quot;x&amp;quot;&lt;/code&gt;  mode.&lt;/p&gt;
+&lt;p&gt;If you need to create a file &amp;laquo;dynamically&amp;raquo; using Python, you can do it with the  &lt;code&gt;&amp;quot;x&amp;quot;&lt;/code&gt;  mode.&lt;/p&gt;
 
 &lt;p&gt;Let&amp;rsquo;s see how. This is the basic syntax:&lt;/p&gt;
 
@@ -7878,7 +7878,7 @@ FileExistsError: [Errno 17] File exists: &#39;new_file.txt&#39;
 
 &lt;h3 id=&#34;append&#34;&gt;Append&lt;/h3&gt;
 
-&lt;p&gt;&amp;ldquo;Appending&amp;rdquo; means adding something to the end of another thing. The  &lt;code&gt;&amp;quot;a&amp;quot;&lt;/code&gt;  mode allows you to open a file to append some content to it.&lt;/p&gt;
+&lt;p&gt;&amp;laquo;Appending&amp;raquo; means adding something to the end of another thing. The  &lt;code&gt;&amp;quot;a&amp;quot;&lt;/code&gt;  mode allows you to open a file to append some content to it.&lt;/p&gt;
 
 &lt;p&gt;For example, if we have this file:&lt;/p&gt;
 
@@ -8019,7 +8019,7 @@ os.remove(&amp;quot;sample_file.txt&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
-&lt;li&gt;The first line:  &lt;code&gt;import os&lt;/code&gt;  is called an &amp;ldquo;import statement&amp;rdquo;. This statement is written at the top of your file and it gives you access to the functions defined in the  &lt;code&gt;os&lt;/code&gt;  module.&lt;/li&gt;
+&lt;li&gt;The first line:  &lt;code&gt;import os&lt;/code&gt;  is called an &amp;laquo;import statement&amp;raquo;. This statement is written at the top of your file and it gives you access to the functions defined in the  &lt;code&gt;os&lt;/code&gt;  module.&lt;/li&gt;
 &lt;li&gt;The second line:  &lt;code&gt;os.remove(&amp;quot;sample_file.txt&amp;quot;)&lt;/code&gt;  removes the file specified.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -8142,7 +8142,7 @@ PermissionError: [Errno 13] Permission denied: &#39;data&#39;
 
 &lt;h3 id=&#34;how-to-handle-exceptions&#34;&gt;How to Handle Exceptions&lt;/h3&gt;
 
-&lt;p&gt;To handle these exceptions, you can use a  &lt;strong&gt;try/except&lt;/strong&gt;  statement. With this statement, you can &amp;ldquo;tell&amp;rdquo; your program what to do in case something unexpected happens.&lt;/p&gt;
+&lt;p&gt;To handle these exceptions, you can use a  &lt;strong&gt;try/except&lt;/strong&gt;  statement. With this statement, you can &amp;laquo;tell&amp;raquo; your program what to do in case something unexpected happens.&lt;/p&gt;
 
 &lt;p&gt;This is the basic syntax:&lt;/p&gt;
 
@@ -8192,7 +8192,7 @@ finally:
 
 &lt;p&gt;There are many ways to customize the try/except/finally statement and you can even add an  &lt;code&gt;else&lt;/code&gt;  block to run a block of code only if no exceptions were raised in the  &lt;code&gt;try&lt;/code&gt;  block.&lt;/p&gt;
 
-&lt;p&gt;💡 &lt;strong&gt;Tip:&lt;/strong&gt;  To learn more about exception handling in Python, you may like to read my article:  &lt;a href=&#34;https://www.freecodecamp.org/news/exception-handling-python/&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;How to Handle Exceptions in Python: A Detailed Visual Introduction&amp;rdquo;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;💡 &lt;strong&gt;Tip:&lt;/strong&gt;  To learn more about exception handling in Python, you may like to read my article:  &lt;a href=&#34;https://www.freecodecamp.org/news/exception-handling-python/&#34; target=&#34;_blank&#34;&gt;&amp;laquo;How to Handle Exceptions in Python: A Detailed Visual Introduction&amp;raquo;&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&#34;in-summary&#34;&gt;In Summary&lt;/h2&gt;
 
@@ -8338,8 +8338,8 @@ finally:
 &lt;li&gt;Go to  &lt;a href=&#34;https://www.python.org/downloads/&#34; target=&#34;_blank&#34;&gt;Python&amp;rsquo;s official website&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Click on the download button ( Download Python 3.8.2 ) [  &lt;strong&gt;Note:&lt;/strong&gt;  The version may differ based on when you are reading this article ]&lt;/li&gt;
 &lt;li&gt;Go to the path where the package is downloaded and double-click the installer.&lt;/li&gt;
-&lt;li&gt;Check the box indicating to &amp;ldquo;Add Python 3.x to PATH&amp;rdquo; and then click on &amp;ldquo;Install Now&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;Once done you&amp;rsquo;ll get a prompt that &amp;ldquo;Setup was successful&amp;rdquo;. Check again if python is configured properly using the above command.&lt;/li&gt;
+&lt;li&gt;Check the box indicating to &amp;laquo;Add Python 3.x to PATH&amp;raquo; and then click on &amp;laquo;Install Now&amp;raquo;.&lt;/li&gt;
+&lt;li&gt;Once done you&amp;rsquo;ll get a prompt that &amp;laquo;Setup was successful&amp;raquo;. Check again if python is configured properly using the above command.&lt;/li&gt;
 &lt;li&gt;To confirm if Python is installed and configured properly, use the command  &lt;code&gt;python3 --version&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -8406,7 +8406,7 @@ Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&
 
 &lt;p&gt;In this tutorial, we will learn some concepts with the help of the python3 shell which you can see above. From now on, whenever I mention  &lt;strong&gt;go to the Python shell&lt;/strong&gt;, it means that you have to use the  &lt;code&gt;python3&lt;/code&gt;  command.&lt;/p&gt;
 
-&lt;p&gt;To learn the remaining concepts we will create a file called &amp;ldquo;testing&amp;rdquo; with the extension  &lt;code&gt;.py&lt;/code&gt;. To run this file we will use the following command:&lt;/p&gt;
+&lt;p&gt;To learn the remaining concepts we will create a file called &amp;laquo;testing&amp;raquo; with the extension  &lt;code&gt;.py&lt;/code&gt;. To run this file we will use the following command:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;python3 testing.py
 &lt;/code&gt;&lt;/pre&gt;
@@ -8640,7 +8640,7 @@ True
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; It is not compulsory to check that two conditions are equal in the  &lt;code&gt;if&lt;/code&gt;  condition. You can do it in the  &lt;code&gt;elif&lt;/code&gt;  also.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Condition Number 2:&lt;/strong&gt; We have a boolean and 2 conditions here. Have you noticed how we are checking if the condition is true? If  &lt;code&gt;is_available&lt;/code&gt;, then print &amp;ldquo;Yes it is available&amp;rdquo;, else print &amp;ldquo;Not available&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Condition Number 2:&lt;/strong&gt; We have a boolean and 2 conditions here. Have you noticed how we are checking if the condition is true? If  &lt;code&gt;is_available&lt;/code&gt;, then print &amp;laquo;Yes it is available&amp;raquo;, else print &amp;laquo;Not available&amp;raquo;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&amp;gt;&amp;gt;&amp;gt; is_available = True
 &amp;gt;&amp;gt;&amp;gt; if is_available:
@@ -8808,7 +8808,7 @@ Hello
 Hello
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&amp;ldquo;Hello&amp;rdquo; is only printed two times as we have specified the range here. Think of the range as  &lt;code&gt;Number on right - Number on left&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&amp;laquo;Hello&amp;raquo; is only printed two times as we have specified the range here. Think of the range as  &lt;code&gt;Number on right - Number on left&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Well, you can also add an else statement in the for loop.&lt;/p&gt;
 
@@ -9466,7 +9466,7 @@ bye
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Here we are declaring a function which, when called, prints a &amp;ldquo;Hello world&amp;rdquo; statement. To call a function we use the following syntax:&lt;/p&gt;
+&lt;p&gt;Here we are declaring a function which, when called, prints a &amp;laquo;Hello world&amp;raquo; statement. To call a function we use the following syntax:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&amp;gt;&amp;gt;&amp;gt; hello_world()
 &lt;/code&gt;&lt;/pre&gt;
@@ -9620,7 +9620,7 @@ Age is 100
 Age is Sharvin
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This does not look right. What happened is  &lt;code&gt;username&lt;/code&gt;  took the value of 100 while  &lt;code&gt;age&lt;/code&gt;  took the value of &amp;ldquo;Sharvin&amp;rdquo;. In scenarios like this where we don&amp;rsquo;t know the order of arguments we can use keyword arguments when calling the function:&lt;/p&gt;
+&lt;p&gt;This does not look right. What happened is  &lt;code&gt;username&lt;/code&gt;  took the value of 100 while  &lt;code&gt;age&lt;/code&gt;  took the value of &amp;laquo;Sharvin&amp;raquo;. In scenarios like this where we don&amp;rsquo;t know the order of arguments we can use keyword arguments when calling the function:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&amp;gt;&amp;gt;&amp;gt; user_details(age=100, username=&amp;quot;Sharvin&amp;quot;)
 
@@ -9885,7 +9885,7 @@ NameError: name &#39;greet&#39; is not defined
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Inheritance:&lt;/strong&gt;  This is one of the most useful concepts in OOP. It specifies that the child object will have all the properties and behavior of the parent object. Thus Inheritance allows us to define a class that inherits all the methods and properties from another class.&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Polymorphism:&lt;/strong&gt;  To understand polymorphism let’s divide the word into two parts. The first part &amp;ldquo;poly&amp;rdquo; means many and &amp;ldquo;morph&amp;rdquo; means to form or shape. Thus polymorphism means one task can be performed in many different ways.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Polymorphism:&lt;/strong&gt;  To understand polymorphism let’s divide the word into two parts. The first part &amp;laquo;poly&amp;raquo; means many and &amp;laquo;morph&amp;raquo; means to form or shape. Thus polymorphism means one task can be performed in many different ways.&lt;/p&gt;
 
 &lt;p&gt;For example, you have a class  &lt;code&gt;animal&lt;/code&gt;, and all animals speak. But they speak differently. Here, the “speak” behavior is polymorphic and depends on the animal. So, the abstract “animal” concept does not actually “speak”, but specific animals (like dogs and cats) have a concrete implementation of the action “speak”.&lt;/p&gt;
 
@@ -10504,7 +10504,7 @@ Hello I am line Number 2
 Line Number 3
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;See the magic the line &amp;ldquo;Hello I am line Number 2&amp;rdquo; gets printed in between Line Number 1 and 3 because the function call gets executed there.&lt;/p&gt;
+&lt;p&gt;See the magic the line &amp;laquo;Hello I am line Number 2&amp;raquo; gets printed in between Line Number 1 and 3 because the function call gets executed there.&lt;/p&gt;
 
 &lt;p&gt;Method 1 is clunky, and because of that many people prefer a different approach.&lt;/p&gt;
 
@@ -10568,7 +10568,7 @@ except:
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;Something went wrong
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;You may be thinking that the line &amp;ldquo;something went wrong&amp;rdquo; is not that helpful. So how can we know what went wrong here?&lt;/p&gt;
+&lt;p&gt;You may be thinking that the line &amp;laquo;something went wrong&amp;raquo; is not that helpful. So how can we know what went wrong here?&lt;/p&gt;
 
 &lt;p&gt;We can print the exception and use it to find out what went wrong. Let&amp;rsquo;s test this in our example:&lt;/p&gt;
 
@@ -10625,7 +10625,7 @@ if __name__ == &amp;quot;__main__&amp;quot;:
     hello.say_hello()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;In  &lt;code&gt;hello.py&lt;/code&gt;  we have declared a  &lt;code&gt;say_hello()&lt;/code&gt;  function which prints &amp;ldquo;Hello world&amp;rdquo;. In  &lt;code&gt;main.py&lt;/code&gt;  you&amp;rsquo;ll see an import statement. We are importing the hello module and calling the  &lt;code&gt;say_hello()&lt;/code&gt;  function from that module.&lt;/p&gt;
+&lt;p&gt;In  &lt;code&gt;hello.py&lt;/code&gt;  we have declared a  &lt;code&gt;say_hello()&lt;/code&gt;  function which prints &amp;laquo;Hello world&amp;raquo;. In  &lt;code&gt;main.py&lt;/code&gt;  you&amp;rsquo;ll see an import statement. We are importing the hello module and calling the  &lt;code&gt;say_hello()&lt;/code&gt;  function from that module.&lt;/p&gt;
 
 &lt;p&gt;Run our program using the following command:&lt;/p&gt;
 
@@ -10639,7 +10639,7 @@ if __name__ == &amp;quot;__main__&amp;quot;:
 
 &lt;p&gt;Now let&amp;rsquo;s understand how to import a module which is in another directory.&lt;/p&gt;
 
-&lt;p&gt;Let&amp;rsquo;s create a directory named &amp;ldquo;data&amp;rdquo; and move our  &lt;code&gt;hello.py&lt;/code&gt;  inside that directory.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s create a directory named &amp;laquo;data&amp;raquo; and move our  &lt;code&gt;hello.py&lt;/code&gt;  inside that directory.&lt;/p&gt;
 
 &lt;p&gt;Go to the  &lt;code&gt;main.py&lt;/code&gt;  and change the previous import statement.&lt;/p&gt;
 
@@ -11136,11 +11136,11 @@ else:
 
 &lt;p&gt;After the download, double-click the installer.&lt;/p&gt;
 
-&lt;p&gt;On the first screen, check the box indicating to &amp;ldquo;Add Python 3.x to PATH&amp;rdquo; and then click on &amp;ldquo;Install Now&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;On the first screen, check the box indicating to &amp;laquo;Add Python 3.x to PATH&amp;raquo; and then click on &amp;laquo;Install Now&amp;raquo;.&lt;/p&gt;
 
-&lt;p&gt;Wait for the installation process to finish until the next screen with the message &amp;ldquo;Setup was successful&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Wait for the installation process to finish until the next screen with the message &amp;laquo;Setup was successful&amp;raquo;.&lt;/p&gt;
 
-&lt;p&gt;Click on &amp;ldquo;Close&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Click on &amp;laquo;Close&amp;raquo;.&lt;/p&gt;
 
 &lt;h2 id=&#34;installing-python-3-on-mac&#34;&gt;Installing Python 3 on Mac&lt;/h2&gt;
 
@@ -12229,7 +12229,7 @@ if bob_age &amp;gt; sarah_age:
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;We have two variables indicating the ages of Bob and Sarah. The condition in plain English says &amp;ldquo;if Bob&amp;rsquo;s age is greater than Sarah&amp;rsquo;s age, then print the phrase &amp;lsquo;Bob is older than Sarah&amp;rsquo;&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;We have two variables indicating the ages of Bob and Sarah. The condition in plain English says &amp;laquo;if Bob&amp;rsquo;s age is greater than Sarah&amp;rsquo;s age, then print the phrase &amp;lsquo;Bob is older than Sarah&amp;rsquo;&amp;raquo;.&lt;/p&gt;
 
 &lt;p&gt;Since the condition returns  &lt;code&gt;True&lt;/code&gt;, the phrase will be printed on the console.&lt;/p&gt;
 
@@ -12277,7 +12277,7 @@ else:
 
 &lt;p&gt;Once again we changed their ages and now both are 32 years old.&lt;/p&gt;
 
-&lt;p&gt;As such, the condition in the  &lt;code&gt;elif&lt;/code&gt;  is met. Since both have the same age the program will print &amp;ldquo;Bob and Sarah have the same age&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;As such, the condition in the  &lt;code&gt;elif&lt;/code&gt;  is met. Since both have the same age the program will print &amp;laquo;Bob and Sarah have the same age&amp;raquo;.&lt;/p&gt;
 
 &lt;p&gt;Notice you can have as many  &lt;code&gt;elif&lt;/code&gt;s as you want, just put them in sequence.&lt;/p&gt;
 
@@ -12307,7 +12307,7 @@ else:
 
 &lt;p&gt;In this case, you can nest your  &lt;code&gt;if&lt;/code&gt;  statements.&lt;/p&gt;
 
-&lt;p&gt;For instance, the second phrase &amp;ldquo;Bob is the oldest&amp;rdquo; is printed only if both  &lt;code&gt;if&lt;/code&gt;s pass.&lt;/p&gt;
+&lt;p&gt;For instance, the second phrase &amp;laquo;Bob is the oldest&amp;raquo; is printed only if both  &lt;code&gt;if&lt;/code&gt;s pass.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;bob_age = 32
 sarah_age = 28
@@ -13597,7 +13597,7 @@ print(new_list)
 
 &lt;h2 id=&#34;basic-syntax-3&#34;&gt;Basic Syntax&lt;/h2&gt;
 
-&lt;p&gt;The basic syntax is very simple: just use the  &lt;code&gt;lambda&lt;/code&gt;  keyword, define the parameters needed, and use &amp;ldquo;:&amp;rdquo; to separate the parameters from the expression.&lt;/p&gt;
+&lt;p&gt;The basic syntax is very simple: just use the  &lt;code&gt;lambda&lt;/code&gt;  keyword, define the parameters needed, and use &amp;laquo;:&amp;raquo; to separate the parameters from the expression.&lt;/p&gt;
 
 &lt;p&gt;The general forms is:&lt;/p&gt;
 
@@ -13933,7 +13933,7 @@ my_program
 
 &lt;p&gt;The first argument is the name of the file we are handling, the second refers to the operation we are using.&lt;/p&gt;
 
-&lt;p&gt;The code below creates the file &amp;ldquo;people.txt&amp;rdquo;, the  &lt;code&gt;x&lt;/code&gt;  argument is used when we just want to create the file. If a file with the same name already exists, it will throw an exception.&lt;/p&gt;
+&lt;p&gt;The code below creates the file &amp;laquo;people.txt&amp;raquo;, the  &lt;code&gt;x&lt;/code&gt;  argument is used when we just want to create the file. If a file with the same name already exists, it will throw an exception.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;people_file = open(&amp;quot;people.txt&amp;quot;, &amp;quot;x&amp;quot;)
 
@@ -13967,7 +13967,7 @@ people_file.close()
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;We use  &lt;code&gt;\n&lt;/code&gt;  at the end to break the line, otherwise the content in the file will stay in the same line as &amp;ldquo;BobMarySarah&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;We use  &lt;code&gt;\n&lt;/code&gt;  at the end to break the line, otherwise the content in the file will stay in the same line as &amp;laquo;BobMarySarah&amp;raquo;.&lt;/p&gt;
 
 &lt;p&gt;One more detail is to  &lt;em&gt;close()&lt;/em&gt;  the file. This is not only a good practice, but also ensures that your changes were applied to the file.&lt;/p&gt;
 
@@ -13977,7 +13977,7 @@ people_file.close()
 
 &lt;p&gt;The  &lt;code&gt;a&lt;/code&gt;  mode appends new data to the file, keeping the existing one.&lt;/p&gt;
 
-&lt;p&gt;In this example, after the first writing with  &lt;code&gt;w&lt;/code&gt;  mode, we are using the  &lt;code&gt;a&lt;/code&gt;  mode to append. The result is that each name will appear twice in the file &amp;ldquo;people.txt&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;In this example, after the first writing with  &lt;code&gt;w&lt;/code&gt;  mode, we are using the  &lt;code&gt;a&lt;/code&gt;  mode to append. The result is that each name will appear twice in the file &amp;laquo;people.txt&amp;raquo;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#first write
 people_file = open(&amp;quot;people.txt&amp;quot;, &amp;quot;w&amp;quot;)
@@ -14000,7 +14000,7 @@ people_file.close()
 
 &lt;p&gt;Reading the file is also very straightforward: just use the  &lt;code&gt;r&lt;/code&gt;  mode like so.&lt;/p&gt;
 
-&lt;p&gt;If you read the &amp;ldquo;people.txt&amp;rdquo; file created in the last example, you should see 6 names in your output.&lt;/p&gt;
+&lt;p&gt;If you read the &amp;laquo;people.txt&amp;raquo; file created in the last example, you should see 6 names in your output.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;people_file = open(&amp;quot;people.txt&amp;quot;, &amp;quot;r&amp;quot;)
 print(people_file.read())
@@ -14615,13 +14615,13 @@ Finally block
 
 &lt;p&gt;ท่านที่พอจะมีประสบการณ์การทำเว็บมาบ้าง พอเห็น XPath สัก 1 หรือ 2 อัน ก็อาจจะเดาได้แล้ว ว่า XPath ที่เหมาะสม ที่น่าจะครอบคลุมทุก ๆ element นั้น ควรจะเป็นอะไร แต่ถึงจะเดาไม่ออกก็ไม่เป็นไรครับ เพราะอย่างบาง website ที่ซับซ้อนขึ้นหน่อย ต่อให้มีประสบการณ์ก็คงเดาไม่ออกในทีแรกเช่นกัน&lt;/p&gt;
 
-&lt;p&gt;สำหรับในบทความนี้ก็จะสอนวิธีหนึ่งที่สามารถทำได้ เพื่อหา XPath ที่  &lt;strong&gt;&amp;ldquo;น่าจะ&amp;rdquo;&lt;/strong&gt;  ครอบคลุมข้อมูลทั้งหมดที่เราต้องการมานะครับ ซึ่งเป็นวิธีที่ผู้เขียนเองก็ใช้งานอยู่จริงในการ scrape website ในหลาย ๆ ครั้งครับ (ที่บอกว่า  &lt;strong&gt;&amp;ldquo;น่าจะ&amp;rdquo;&lt;/strong&gt;  เนี่ย เพราะว่าในความเป็นจริงไม่มีใครรู้หรอกครับ ว่า website เป้าหมายนี้ ถูกเขียน หรือถูกสร้างมาอย่างไร แต่ด้วยวิธีดังกล่าว+หลักของสถิติ เราก็จะมั่นใจได้ในระดับหนึ่งว่า XPath ของเรามัน  &lt;strong&gt;&amp;ldquo;น่าจะ&amp;rdquo;&lt;/strong&gt;  ดีเพียงพอครับ)&lt;/p&gt;
+&lt;p&gt;สำหรับในบทความนี้ก็จะสอนวิธีหนึ่งที่สามารถทำได้ เพื่อหา XPath ที่  &lt;strong&gt;&amp;laquo;น่าจะ&amp;raquo;&lt;/strong&gt;  ครอบคลุมข้อมูลทั้งหมดที่เราต้องการมานะครับ ซึ่งเป็นวิธีที่ผู้เขียนเองก็ใช้งานอยู่จริงในการ scrape website ในหลาย ๆ ครั้งครับ (ที่บอกว่า  &lt;strong&gt;&amp;laquo;น่าจะ&amp;raquo;&lt;/strong&gt;  เนี่ย เพราะว่าในความเป็นจริงไม่มีใครรู้หรอกครับ ว่า website เป้าหมายนี้ ถูกเขียน หรือถูกสร้างมาอย่างไร แต่ด้วยวิธีดังกล่าว+หลักของสถิติ เราก็จะมั่นใจได้ในระดับหนึ่งว่า XPath ของเรามัน  &lt;strong&gt;&amp;laquo;น่าจะ&amp;raquo;&lt;/strong&gt;  ดีเพียงพอครับ)&lt;/p&gt;
 
 &lt;p&gt;วิธีหนึ่งที่ผมทำก็คือ sample XPath ออกมาดู เอามา  &lt;strong&gt;สำรวจ&lt;/strong&gt;  เพิ่มอีกเยอะ ๆ ก็จะช่วยให้เห็นภาพมากขึ้นครับ จากนั้นเราก็จะใช้ syntax ของ XPath ในการ select และระบุ condition เพื่อให้ครอบคลุมกรณีที่เรา sample ออกมา ให้มากที่สุดครับ&lt;/p&gt;
 
 &lt;h2 id=&#34;get-started&#34;&gt;Get Started!&lt;/h2&gt;
 
-&lt;p&gt;ทบทวนสักเล็กน้อย ใน part นี้เราก็ยังอยู่กับเว็บ Wikipedia  &lt;a href=&#34;https://th.wikipedia.org/wiki/%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%95%E0%B8%B3%E0%B8%9A%E0%B8%A5%E0%B9%83%E0%B8%99%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B9%84%E0%B8%97%E0%B8%A2&#34; target=&#34;_blank&#34;&gt;https://th.wikipedia.org/wiki/รายชื่อเทศบาลตำบลในประเทศไทย&lt;/a&gt;  กันเหมือนเดิมนะครับ โดยเป้าหมายคือ  &lt;strong&gt;หา XPath สำหรับ extract รายชื่อเทศบาลตำบลทั้งหมด&lt;/strong&gt;  ซึ่งใน  &lt;a href=&#34;https://dev.to/copypasteengineer/python-web-scraping-part-2-chrome-s-code-inspector-3ok6&#34; target=&#34;_blank&#34;&gt;part ที่แล้ว&lt;/a&gt;  เราใช้ Chrome Inspector ในการแกะ XPath ของ  &lt;strong&gt;&amp;ldquo;Element&amp;rdquo; หนึ่ง ๆ&lt;/strong&gt;  มาได้แบบง่าย ๆ แล้วนะครับ ในตอนนี้เรากำลังจะหา XPath ที่สามารถ extract ข้อมูลทั้งหมดได้  &lt;strong&gt;(คือครอบคลุมทุก element ไม่ใช่แค่ 1 element)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;ทบทวนสักเล็กน้อย ใน part นี้เราก็ยังอยู่กับเว็บ Wikipedia  &lt;a href=&#34;https://th.wikipedia.org/wiki/%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%95%E0%B8%B3%E0%B8%9A%E0%B8%A5%E0%B9%83%E0%B8%99%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B9%84%E0%B8%97%E0%B8%A2&#34; target=&#34;_blank&#34;&gt;https://th.wikipedia.org/wiki/รายชื่อเทศบาลตำบลในประเทศไทย&lt;/a&gt;  กันเหมือนเดิมนะครับ โดยเป้าหมายคือ  &lt;strong&gt;หา XPath สำหรับ extract รายชื่อเทศบาลตำบลทั้งหมด&lt;/strong&gt;  ซึ่งใน  &lt;a href=&#34;https://dev.to/copypasteengineer/python-web-scraping-part-2-chrome-s-code-inspector-3ok6&#34; target=&#34;_blank&#34;&gt;part ที่แล้ว&lt;/a&gt;  เราใช้ Chrome Inspector ในการแกะ XPath ของ  &lt;strong&gt;&amp;laquo;Element&amp;raquo; หนึ่ง ๆ&lt;/strong&gt;  มาได้แบบง่าย ๆ แล้วนะครับ ในตอนนี้เรากำลังจะหา XPath ที่สามารถ extract ข้อมูลทั้งหมดได้  &lt;strong&gt;(คือครอบคลุมทุก element ไม่ใช่แค่ 1 element)&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;1-sample-xpath-มาเพ-ม&#34;&gt;1. Sample XPath มาเพิ่ม&lt;/h3&gt;
 
@@ -15061,7 +15061,7 @@ print(tambon_list)
 &lt;li&gt;Within parentheses, the item that will be added to the end of the list.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;💡  &lt;strong&gt;Tips:&lt;/strong&gt; The dot is very important. This is called &amp;ldquo;dot notation&amp;rdquo;. The dot basically says &amp;ldquo;call this method on this particular list&amp;rdquo;, so the effect of the method will be applied to the list that is located before the dot.&lt;/p&gt;
+&lt;p&gt;💡  &lt;strong&gt;Tips:&lt;/strong&gt; The dot is very important. This is called &amp;laquo;dot notation&amp;raquo;. The dot basically says &amp;laquo;call this method on this particular list&amp;raquo;, so the effect of the method will be applied to the list that is located before the dot.&lt;/p&gt;
 
 &lt;h3 id=&#34;examples&#34;&gt;Examples&lt;/h3&gt;
 
@@ -15220,7 +15220,7 @@ print(tambon_list)
 &lt;li&gt;Within parentheses, an  &lt;strong&gt;iterable&lt;/strong&gt; (list, tuple, dictionary, set, or string) that contains the items that will be added as individual elements of the list.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;💡 &lt;strong&gt;Tips:&lt;/strong&gt;  According to the  &lt;a href=&#34;https://docs.python.org/3/glossary.html&#34; target=&#34;_blank&#34;&gt;Python documentation&lt;/a&gt;, an iterable is defined as &amp;ldquo;an object capable of returning its members one at a time&amp;rdquo;. Iterables can be used in a for loop and because they return their elements one at a time, we can &amp;ldquo;do something&amp;rdquo; with each one of them, one per iteration.&lt;/p&gt;
+&lt;p&gt;💡 &lt;strong&gt;Tips:&lt;/strong&gt;  According to the  &lt;a href=&#34;https://docs.python.org/3/glossary.html&#34; target=&#34;_blank&#34;&gt;Python documentation&lt;/a&gt;, an iterable is defined as &amp;laquo;an object capable of returning its members one at a time&amp;raquo;. Iterables can be used in a for loop and because they return their elements one at a time, we can &amp;laquo;do something&amp;raquo; with each one of them, one per iteration.&lt;/p&gt;
 
 &lt;h3 id=&#34;behind-the-scenes&#34;&gt;Behind the Scenes&lt;/h3&gt;
 
@@ -15312,7 +15312,7 @@ The same occurs if you pass a set. The elements of the set are appended one by o
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;strong&gt;For strings:&lt;/strong&gt;&lt;br /&gt;
-Strings work a little bit different with the  &lt;code&gt;.extend()&lt;/code&gt;  method. Each character of the string is considered an &amp;ldquo;item&amp;rdquo;, so the characters are appended one by one in the order that they appear in the string.&lt;/p&gt;
+Strings work a little bit different with the  &lt;code&gt;.extend()&lt;/code&gt;  method. Each character of the string is considered an &amp;laquo;item&amp;raquo;, so the characters are appended one by one in the order that they appear in the string.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# List that will be extended
 &amp;gt;&amp;gt;&amp;gt; a = [&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;]
@@ -15331,7 +15331,7 @@ Strings work a little bit different with the  &lt;code&gt;.extend()&lt;/code&gt;
 &lt;p&gt;&lt;strong&gt;For dictionaries:&lt;/strong&gt;&lt;br /&gt;
 Dictionaries have a particular behavior when you pass them as arguments to  &lt;code&gt;.extend()&lt;/code&gt;. In this case, the  &lt;strong&gt;keys&lt;/strong&gt; of the dictionary are appended one by one. The values of the corresponding key-value pairs are not appended.&lt;/p&gt;
 
-&lt;p&gt;In this example (below), the keys are &amp;ldquo;d&amp;rdquo;, &amp;ldquo;e&amp;rdquo;, and &amp;ldquo;f&amp;rdquo;. These values are appended to the list  &lt;code&gt;a&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In this example (below), the keys are &amp;laquo;d&amp;raquo;, &amp;laquo;e&amp;raquo;, and &amp;laquo;f&amp;raquo;. These values are appended to the list  &lt;code&gt;a&lt;/code&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# List that will be extended
 &amp;gt;&amp;gt;&amp;gt; a = [&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;]

@@ -62,10 +62,8 @@
     
       
       
-        
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-dark" disabled>
       
     
 
@@ -77,13 +75,13 @@
 
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:400,700|Sarabun|Roboto+Mono&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:400,700|Sarabun|Roboto&display=swap">
   
 
   
   
   
-  <link rel="stylesheet" href="/docs/library/css/academia.min.1793e6c314ad93524174c58f830b9319.css">
+  <link rel="stylesheet" href="/docs/library/css/academia.min.ff05a21b53038f9dccb7f30aedbfb6d7.css">
 
   
 
@@ -115,7 +113,7 @@
   
   <meta property="article:published_time" content="2020-03-22T00:00:00&#43;00:00">
   
-  <meta property="article:modified_time" content="2020-03-22T00:00:00&#43;00:00">
+  <meta property="article:modified_time" content="2020-06-18T02:48:28&#43;07:00">
   
 
   
@@ -279,16 +277,9 @@
         
         
         
-          
-          
-          
-            
-          
-          
-        
 
         <li class="nav-item">
-          <a class="nav-link " href="/docs/library/#projects"><span>Projects</span></a>
+          <a class="nav-link  active" href="/docs/library/tutorials/"><span>Tutorials</span></a>
         </li>
 
         
@@ -455,7 +446,7 @@
 
 
 <meta content="2020-03-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-<meta content="2020-03-22 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+<meta content="2020-06-18 02:48:28 &#43;0700 &#43;07" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -479,8 +470,10 @@
     
     
       
+          Last updated on
+      
     
-    <time>Mar 22, 2020</time>
+    <time>Jun 18, 2020</time>
   </span>
   
 
@@ -663,7 +656,7 @@
 <li>Within parentheses, the item that will be added to the end of the list.</li>
 </ul>
 
-<p>💡  <strong>Tips:</strong> The dot is very important. This is called &ldquo;dot notation&rdquo;. The dot basically says &ldquo;call this method on this particular list&rdquo;, so the effect of the method will be applied to the list that is located before the dot.</p>
+<p>💡  <strong>Tips:</strong> The dot is very important. This is called &laquo;dot notation&raquo;. The dot basically says &laquo;call this method on this particular list&raquo;, so the effect of the method will be applied to the list that is located before the dot.</p>
 
 <h3 id="examples">Examples</h3>
 
@@ -822,7 +815,7 @@
 <li>Within parentheses, an  <strong>iterable</strong> (list, tuple, dictionary, set, or string) that contains the items that will be added as individual elements of the list.</li>
 </ul>
 
-<p>💡 <strong>Tips:</strong>  According to the  <a href="https://docs.python.org/3/glossary.html" target="_blank">Python documentation</a>, an iterable is defined as &ldquo;an object capable of returning its members one at a time&rdquo;. Iterables can be used in a for loop and because they return their elements one at a time, we can &ldquo;do something&rdquo; with each one of them, one per iteration.</p>
+<p>💡 <strong>Tips:</strong>  According to the  <a href="https://docs.python.org/3/glossary.html" target="_blank">Python documentation</a>, an iterable is defined as &laquo;an object capable of returning its members one at a time&raquo;. Iterables can be used in a for loop and because they return their elements one at a time, we can &laquo;do something&raquo; with each one of them, one per iteration.</p>
 
 <h3 id="behind-the-scenes">Behind the Scenes</h3>
 
@@ -914,7 +907,7 @@ The same occurs if you pass a set. The elements of the set are appended one by o
 </code></pre>
 
 <p><strong>For strings:</strong><br />
-Strings work a little bit different with the  <code>.extend()</code>  method. Each character of the string is considered an &ldquo;item&rdquo;, so the characters are appended one by one in the order that they appear in the string.</p>
+Strings work a little bit different with the  <code>.extend()</code>  method. Each character of the string is considered an &laquo;item&raquo;, so the characters are appended one by one in the order that they appear in the string.</p>
 
 <pre><code class="language-python"># List that will be extended
 &gt;&gt;&gt; a = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]
@@ -933,7 +926,7 @@ Strings work a little bit different with the  <code>.extend()</code>  method. Ea
 <p><strong>For dictionaries:</strong><br />
 Dictionaries have a particular behavior when you pass them as arguments to  <code>.extend()</code>. In this case, the  <strong>keys</strong> of the dictionary are appended one by one. The values of the corresponding key-value pairs are not appended.</p>
 
-<p>In this example (below), the keys are &ldquo;d&rdquo;, &ldquo;e&rdquo;, and &ldquo;f&rdquo;. These values are appended to the list  <code>a</code>.</p>
+<p>In this example (below), the keys are &laquo;d&raquo;, &laquo;e&raquo;, and &laquo;f&raquo;. These values are appended to the list  <code>a</code>.</p>
 
 <pre><code class="language-python"># List that will be extended
 &gt;&gt;&gt; a = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]
@@ -1182,6 +1175,9 @@ Dictionaries have a particular behavior when you pass them as arguments to  <cod
 
     
     
+    
+    <script src="/docs/library/js/mathjax-config.js"></script>
+    
 
     
     
@@ -1197,9 +1193,13 @@ Dictionaries have a particular behavior when you pass them as arguments to  <cod
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
         
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/python.min.js"></script>
+        
       
 
       
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
       
     
 

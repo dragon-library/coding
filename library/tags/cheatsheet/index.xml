@@ -473,7 +473,7 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 &lt;li&gt;It can be only one word.&lt;/li&gt;
 &lt;li&gt;It can use only letters, numbers, and the underscore (&lt;code&gt;_&lt;/code&gt;) character.&lt;/li&gt;
 &lt;li&gt;It can’t begin with a number.&lt;/li&gt;
-&lt;li&gt;Variable name starting with an underscore (&lt;code&gt;_&lt;/code&gt;) are considered as &amp;ldquo;unuseful`.&lt;/li&gt;
+&lt;li&gt;Variable name starting with an underscore (&lt;code&gt;_&lt;/code&gt;) are considered as &amp;laquo;unuseful`.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;Example:&lt;/p&gt;

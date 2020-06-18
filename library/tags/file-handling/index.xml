@@ -72,7 +72,7 @@
 
 &lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-9.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The names.txt file is in the &amp;ldquo;data&amp;rdquo; folder&lt;/p&gt;
+&lt;p&gt;The names.txt file is in the &amp;laquo;data&amp;raquo; folder&lt;/p&gt;
 
 &lt;p&gt;Then we need to use a specific path to tell the function that the file is within another folder.&lt;/p&gt;
 
@@ -83,7 +83,7 @@
 
 &lt;p&gt;Notice that we are writing  &lt;code&gt;data/&lt;/code&gt;  first (the name of the folder followed by a  &lt;code&gt;/&lt;/code&gt;) and then  &lt;code&gt;names.txt&lt;/code&gt;  (the name of the file with the extension).&lt;/p&gt;
 
-&lt;p&gt;💡  &lt;strong&gt;Tip:&lt;/strong&gt; The three letters  &lt;code&gt;.txt&lt;/code&gt;  that follow the dot in  &lt;code&gt;names.txt&lt;/code&gt;  is the &amp;ldquo;extension&amp;rdquo; of the file, or its type. In this case,  &lt;code&gt;.txt&lt;/code&gt;  indicates that it&amp;rsquo;s a text file.&lt;/p&gt;
+&lt;p&gt;💡  &lt;strong&gt;Tip:&lt;/strong&gt; The three letters  &lt;code&gt;.txt&lt;/code&gt;  that follow the dot in  &lt;code&gt;names.txt&lt;/code&gt;  is the &amp;laquo;extension&amp;raquo; of the file, or its type. In this case,  &lt;code&gt;.txt&lt;/code&gt;  indicates that it&amp;rsquo;s a text file.&lt;/p&gt;
 
 &lt;h3 id=&#34;second-parameter-mode&#34;&gt;Second Parameter: Mode&lt;/h3&gt;
 
@@ -107,7 +107,7 @@
 
 &lt;p&gt;To use text or binary mode, you would need to add these characters to the main mode. For example:  &lt;code&gt;&amp;quot;wb&amp;quot;&lt;/code&gt;  means writing in binary mode.&lt;/p&gt;
 
-&lt;p&gt;💡  &lt;strong&gt;Tip:&lt;/strong&gt;  The default modes are read (&lt;code&gt;&amp;quot;r&amp;quot;&lt;/code&gt;) and text (&lt;code&gt;&amp;quot;t&amp;quot;&lt;/code&gt;), which means &amp;ldquo;open for reading text&amp;rdquo; (&lt;code&gt;&amp;quot;rt&amp;quot;&lt;/code&gt;), so you don&amp;rsquo;t need to specify them in  &lt;code&gt;**open()**&lt;/code&gt;  if you want to use them because they are assigned by default. You can simply write  &lt;code&gt;open(&amp;lt;file&amp;gt;)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;💡  &lt;strong&gt;Tip:&lt;/strong&gt;  The default modes are read (&lt;code&gt;&amp;quot;r&amp;quot;&lt;/code&gt;) and text (&lt;code&gt;&amp;quot;t&amp;quot;&lt;/code&gt;), which means &amp;laquo;open for reading text&amp;raquo; (&lt;code&gt;&amp;quot;rt&amp;quot;&lt;/code&gt;), so you don&amp;rsquo;t need to specify them in  &lt;code&gt;**open()**&lt;/code&gt;  if you want to use them because they are assigned by default. You can simply write  &lt;code&gt;open(&amp;lt;file&amp;gt;)&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Why Modes?&lt;/strong&gt;&lt;/p&gt;
 
@@ -164,7 +164,7 @@ print(f.mode) # Output: &amp;quot;a&amp;quot;
 
 &lt;h3 id=&#34;methods-to-read-a-file&#34;&gt;Methods to Read a File&lt;/h3&gt;
 
-&lt;p&gt;For us to be able to work file objects, we need to have a way to &amp;ldquo;interact&amp;rdquo; with them in our program and that is exactly what methods do. Let&amp;rsquo;s see some of them.&lt;/p&gt;
+&lt;p&gt;For us to be able to work file objects, we need to have a way to &amp;laquo;interact&amp;raquo; with them in our program and that is exactly what methods do. Let&amp;rsquo;s see some of them.&lt;/p&gt;
 
 &lt;h3 id=&#34;read&#34;&gt;&lt;strong&gt;Read()&lt;/strong&gt;&lt;/h3&gt;
 
@@ -282,7 +282,7 @@ f.close()
 
 &lt;h2 id=&#34;how-to-create-a-file&#34;&gt;How to Create a File&lt;/h2&gt;
 
-&lt;p&gt;If you need to create a file &amp;ldquo;dynamically&amp;rdquo; using Python, you can do it with the  &lt;code&gt;&amp;quot;x&amp;quot;&lt;/code&gt;  mode.&lt;/p&gt;
+&lt;p&gt;If you need to create a file &amp;laquo;dynamically&amp;raquo; using Python, you can do it with the  &lt;code&gt;&amp;quot;x&amp;quot;&lt;/code&gt;  mode.&lt;/p&gt;
 
 &lt;p&gt;Let&amp;rsquo;s see how. This is the basic syntax:&lt;/p&gt;
 
@@ -327,7 +327,7 @@ FileExistsError: [Errno 17] File exists: &#39;new_file.txt&#39;
 
 &lt;h3 id=&#34;append&#34;&gt;Append&lt;/h3&gt;
 
-&lt;p&gt;&amp;ldquo;Appending&amp;rdquo; means adding something to the end of another thing. The  &lt;code&gt;&amp;quot;a&amp;quot;&lt;/code&gt;  mode allows you to open a file to append some content to it.&lt;/p&gt;
+&lt;p&gt;&amp;laquo;Appending&amp;raquo; means adding something to the end of another thing. The  &lt;code&gt;&amp;quot;a&amp;quot;&lt;/code&gt;  mode allows you to open a file to append some content to it.&lt;/p&gt;
 
 &lt;p&gt;For example, if we have this file:&lt;/p&gt;
 
@@ -468,7 +468,7 @@ os.remove(&amp;quot;sample_file.txt&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
-&lt;li&gt;The first line:  &lt;code&gt;import os&lt;/code&gt;  is called an &amp;ldquo;import statement&amp;rdquo;. This statement is written at the top of your file and it gives you access to the functions defined in the  &lt;code&gt;os&lt;/code&gt;  module.&lt;/li&gt;
+&lt;li&gt;The first line:  &lt;code&gt;import os&lt;/code&gt;  is called an &amp;laquo;import statement&amp;raquo;. This statement is written at the top of your file and it gives you access to the functions defined in the  &lt;code&gt;os&lt;/code&gt;  module.&lt;/li&gt;
 &lt;li&gt;The second line:  &lt;code&gt;os.remove(&amp;quot;sample_file.txt&amp;quot;)&lt;/code&gt;  removes the file specified.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -591,7 +591,7 @@ PermissionError: [Errno 13] Permission denied: &#39;data&#39;
 
 &lt;h3 id=&#34;how-to-handle-exceptions&#34;&gt;How to Handle Exceptions&lt;/h3&gt;
 
-&lt;p&gt;To handle these exceptions, you can use a  &lt;strong&gt;try/except&lt;/strong&gt;  statement. With this statement, you can &amp;ldquo;tell&amp;rdquo; your program what to do in case something unexpected happens.&lt;/p&gt;
+&lt;p&gt;To handle these exceptions, you can use a  &lt;strong&gt;try/except&lt;/strong&gt;  statement. With this statement, you can &amp;laquo;tell&amp;raquo; your program what to do in case something unexpected happens.&lt;/p&gt;
 
 &lt;p&gt;This is the basic syntax:&lt;/p&gt;
 
@@ -641,7 +641,7 @@ finally:
 
 &lt;p&gt;There are many ways to customize the try/except/finally statement and you can even add an  &lt;code&gt;else&lt;/code&gt;  block to run a block of code only if no exceptions were raised in the  &lt;code&gt;try&lt;/code&gt;  block.&lt;/p&gt;
 
-&lt;p&gt;💡 &lt;strong&gt;Tip:&lt;/strong&gt;  To learn more about exception handling in Python, you may like to read my article:  &lt;a href=&#34;https://www.freecodecamp.org/news/exception-handling-python/&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;How to Handle Exceptions in Python: A Detailed Visual Introduction&amp;rdquo;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;💡 &lt;strong&gt;Tip:&lt;/strong&gt;  To learn more about exception handling in Python, you may like to read my article:  &lt;a href=&#34;https://www.freecodecamp.org/news/exception-handling-python/&#34; target=&#34;_blank&#34;&gt;&amp;laquo;How to Handle Exceptions in Python: A Detailed Visual Introduction&amp;raquo;&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&#34;in-summary&#34;&gt;In Summary&lt;/h2&gt;
 

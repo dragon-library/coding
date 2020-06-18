@@ -62,10 +62,8 @@
     
       
       
-        
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-dark" disabled>
       
     
 
@@ -77,13 +75,13 @@
 
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:400,700|Sarabun|Roboto+Mono&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:400,700|Sarabun|Roboto&display=swap">
   
 
   
   
   
-  <link rel="stylesheet" href="/docs/library/css/academia.min.1793e6c314ad93524174c58f830b9319.css">
+  <link rel="stylesheet" href="/docs/library/css/academia.min.ff05a21b53038f9dccb7f30aedbfb6d7.css">
 
   
 
@@ -115,7 +113,7 @@
   
   <meta property="article:published_time" content="2020-05-07T00:00:00&#43;00:00">
   
-  <meta property="article:modified_time" content="2020-05-07T00:00:00&#43;00:00">
+  <meta property="article:modified_time" content="2020-06-18T02:48:28&#43;07:00">
   
 
   
@@ -279,16 +277,9 @@
         
         
         
-          
-          
-          
-            
-          
-          
-        
 
         <li class="nav-item">
-          <a class="nav-link " href="/docs/library/#projects"><span>Projects</span></a>
+          <a class="nav-link  active" href="/docs/library/tutorials/"><span>Tutorials</span></a>
         </li>
 
         
@@ -454,7 +445,7 @@
 
 
 <meta content="2020-05-07 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-<meta content="2020-05-07 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+<meta content="2020-06-18 02:48:28 &#43;0700 &#43;07" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -478,8 +469,10 @@
     
     
       
+          Last updated on
+      
     
-    <time>May 7, 2020</time>
+    <time>Jun 18, 2020</time>
   </span>
   
 
@@ -673,7 +666,7 @@
 
 <p><img src="https://www.freecodecamp.org/news/content/images/2020/05/image-9.png" alt="" /></p>
 
-<p>The names.txt file is in the &ldquo;data&rdquo; folder</p>
+<p>The names.txt file is in the &laquo;data&raquo; folder</p>
 
 <p>Then we need to use a specific path to tell the function that the file is within another folder.</p>
 
@@ -684,7 +677,7 @@
 
 <p>Notice that we are writing  <code>data/</code>  first (the name of the folder followed by a  <code>/</code>) and then  <code>names.txt</code>  (the name of the file with the extension).</p>
 
-<p>💡  <strong>Tip:</strong> The three letters  <code>.txt</code>  that follow the dot in  <code>names.txt</code>  is the &ldquo;extension&rdquo; of the file, or its type. In this case,  <code>.txt</code>  indicates that it&rsquo;s a text file.</p>
+<p>💡  <strong>Tip:</strong> The three letters  <code>.txt</code>  that follow the dot in  <code>names.txt</code>  is the &laquo;extension&raquo; of the file, or its type. In this case,  <code>.txt</code>  indicates that it&rsquo;s a text file.</p>
 
 <h3 id="second-parameter-mode">Second Parameter: Mode</h3>
 
@@ -708,7 +701,7 @@
 
 <p>To use text or binary mode, you would need to add these characters to the main mode. For example:  <code>&quot;wb&quot;</code>  means writing in binary mode.</p>
 
-<p>💡  <strong>Tip:</strong>  The default modes are read (<code>&quot;r&quot;</code>) and text (<code>&quot;t&quot;</code>), which means &ldquo;open for reading text&rdquo; (<code>&quot;rt&quot;</code>), so you don&rsquo;t need to specify them in  <code>**open()**</code>  if you want to use them because they are assigned by default. You can simply write  <code>open(&lt;file&gt;)</code>.</p>
+<p>💡  <strong>Tip:</strong>  The default modes are read (<code>&quot;r&quot;</code>) and text (<code>&quot;t&quot;</code>), which means &laquo;open for reading text&raquo; (<code>&quot;rt&quot;</code>), so you don&rsquo;t need to specify them in  <code>**open()**</code>  if you want to use them because they are assigned by default. You can simply write  <code>open(&lt;file&gt;)</code>.</p>
 
 <p><strong>Why Modes?</strong></p>
 
@@ -765,7 +758,7 @@ print(f.mode) # Output: &quot;a&quot;
 
 <h3 id="methods-to-read-a-file">Methods to Read a File</h3>
 
-<p>For us to be able to work file objects, we need to have a way to &ldquo;interact&rdquo; with them in our program and that is exactly what methods do. Let&rsquo;s see some of them.</p>
+<p>For us to be able to work file objects, we need to have a way to &laquo;interact&raquo; with them in our program and that is exactly what methods do. Let&rsquo;s see some of them.</p>
 
 <h3 id="read"><strong>Read()</strong></h3>
 
@@ -883,7 +876,7 @@ f.close()
 
 <h2 id="how-to-create-a-file">How to Create a File</h2>
 
-<p>If you need to create a file &ldquo;dynamically&rdquo; using Python, you can do it with the  <code>&quot;x&quot;</code>  mode.</p>
+<p>If you need to create a file &laquo;dynamically&raquo; using Python, you can do it with the  <code>&quot;x&quot;</code>  mode.</p>
 
 <p>Let&rsquo;s see how. This is the basic syntax:</p>
 
@@ -928,7 +921,7 @@ FileExistsError: [Errno 17] File exists: 'new_file.txt'
 
 <h3 id="append">Append</h3>
 
-<p>&ldquo;Appending&rdquo; means adding something to the end of another thing. The  <code>&quot;a&quot;</code>  mode allows you to open a file to append some content to it.</p>
+<p>&laquo;Appending&raquo; means adding something to the end of another thing. The  <code>&quot;a&quot;</code>  mode allows you to open a file to append some content to it.</p>
 
 <p>For example, if we have this file:</p>
 
@@ -1069,7 +1062,7 @@ os.remove(&quot;sample_file.txt&quot;)
 </code></pre>
 
 <ul>
-<li>The first line:  <code>import os</code>  is called an &ldquo;import statement&rdquo;. This statement is written at the top of your file and it gives you access to the functions defined in the  <code>os</code>  module.</li>
+<li>The first line:  <code>import os</code>  is called an &laquo;import statement&raquo;. This statement is written at the top of your file and it gives you access to the functions defined in the  <code>os</code>  module.</li>
 <li>The second line:  <code>os.remove(&quot;sample_file.txt&quot;)</code>  removes the file specified.</li>
 </ul>
 
@@ -1192,7 +1185,7 @@ PermissionError: [Errno 13] Permission denied: 'data'
 
 <h3 id="how-to-handle-exceptions">How to Handle Exceptions</h3>
 
-<p>To handle these exceptions, you can use a  <strong>try/except</strong>  statement. With this statement, you can &ldquo;tell&rdquo; your program what to do in case something unexpected happens.</p>
+<p>To handle these exceptions, you can use a  <strong>try/except</strong>  statement. With this statement, you can &laquo;tell&raquo; your program what to do in case something unexpected happens.</p>
 
 <p>This is the basic syntax:</p>
 
@@ -1242,7 +1235,7 @@ finally:
 
 <p>There are many ways to customize the try/except/finally statement and you can even add an  <code>else</code>  block to run a block of code only if no exceptions were raised in the  <code>try</code>  block.</p>
 
-<p>💡 <strong>Tip:</strong>  To learn more about exception handling in Python, you may like to read my article:  <a href="https://www.freecodecamp.org/news/exception-handling-python/" target="_blank">&ldquo;How to Handle Exceptions in Python: A Detailed Visual Introduction&rdquo;</a>.</p>
+<p>💡 <strong>Tip:</strong>  To learn more about exception handling in Python, you may like to read my article:  <a href="https://www.freecodecamp.org/news/exception-handling-python/" target="_blank">&laquo;How to Handle Exceptions in Python: A Detailed Visual Introduction&raquo;</a>.</p>
 
 <h2 id="in-summary">In Summary</h2>
 
@@ -1436,6 +1429,9 @@ finally:
 
     
     
+    
+    <script src="/docs/library/js/mathjax-config.js"></script>
+    
 
     
     
@@ -1451,9 +1447,13 @@ finally:
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
         
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/python.min.js"></script>
+        
       
 
       
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
       
     
 

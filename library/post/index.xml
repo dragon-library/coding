@@ -3019,7 +3019,7 @@ section {
 
 &lt;h4 id=&#34;text-align&#34;&gt;&lt;code&gt;text-align&lt;/code&gt;&lt;/h4&gt;
 
-&lt;p&gt;By default text align has the  &lt;code&gt;start&lt;/code&gt;  value, meaning the text starts at the &amp;ldquo;start&amp;rdquo;, origin 0, 0 of the box that contains it. This means top left in left-to-right languages, and top right in right-to-left languages.&lt;/p&gt;
+&lt;p&gt;By default text align has the  &lt;code&gt;start&lt;/code&gt;  value, meaning the text starts at the &amp;laquo;start&amp;raquo;, origin 0, 0 of the box that contains it. This means top left in left-to-right languages, and top right in right-to-left languages.&lt;/p&gt;
 
 &lt;p&gt;Possible values are  &lt;code&gt;start&lt;/code&gt;,  &lt;code&gt;end&lt;/code&gt;,  &lt;code&gt;left&lt;/code&gt;,  &lt;code&gt;right&lt;/code&gt;,  &lt;code&gt;center&lt;/code&gt;,  &lt;code&gt;justify&lt;/code&gt;  (nice to have a consistent spacing at the line ends):&lt;/p&gt;
 

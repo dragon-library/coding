@@ -140,8 +140,8 @@
 &lt;li&gt;Go to  &lt;a href=&#34;https://www.python.org/downloads/&#34; target=&#34;_blank&#34;&gt;Python&amp;rsquo;s official website&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Click on the download button ( Download Python 3.8.2 ) [  &lt;strong&gt;Note:&lt;/strong&gt;  The version may differ based on when you are reading this article ]&lt;/li&gt;
 &lt;li&gt;Go to the path where the package is downloaded and double-click the installer.&lt;/li&gt;
-&lt;li&gt;Check the box indicating to &amp;ldquo;Add Python 3.x to PATH&amp;rdquo; and then click on &amp;ldquo;Install Now&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;Once done you&amp;rsquo;ll get a prompt that &amp;ldquo;Setup was successful&amp;rdquo;. Check again if python is configured properly using the above command.&lt;/li&gt;
+&lt;li&gt;Check the box indicating to &amp;laquo;Add Python 3.x to PATH&amp;raquo; and then click on &amp;laquo;Install Now&amp;raquo;.&lt;/li&gt;
+&lt;li&gt;Once done you&amp;rsquo;ll get a prompt that &amp;laquo;Setup was successful&amp;raquo;. Check again if python is configured properly using the above command.&lt;/li&gt;
 &lt;li&gt;To confirm if Python is installed and configured properly, use the command  &lt;code&gt;python3 --version&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -208,7 +208,7 @@ Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&
 
 &lt;p&gt;In this tutorial, we will learn some concepts with the help of the python3 shell which you can see above. From now on, whenever I mention  &lt;strong&gt;go to the Python shell&lt;/strong&gt;, it means that you have to use the  &lt;code&gt;python3&lt;/code&gt;  command.&lt;/p&gt;
 
-&lt;p&gt;To learn the remaining concepts we will create a file called &amp;ldquo;testing&amp;rdquo; with the extension  &lt;code&gt;.py&lt;/code&gt;. To run this file we will use the following command:&lt;/p&gt;
+&lt;p&gt;To learn the remaining concepts we will create a file called &amp;laquo;testing&amp;raquo; with the extension  &lt;code&gt;.py&lt;/code&gt;. To run this file we will use the following command:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;python3 testing.py
 &lt;/code&gt;&lt;/pre&gt;
@@ -442,7 +442,7 @@ True
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; It is not compulsory to check that two conditions are equal in the  &lt;code&gt;if&lt;/code&gt;  condition. You can do it in the  &lt;code&gt;elif&lt;/code&gt;  also.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Condition Number 2:&lt;/strong&gt; We have a boolean and 2 conditions here. Have you noticed how we are checking if the condition is true? If  &lt;code&gt;is_available&lt;/code&gt;, then print &amp;ldquo;Yes it is available&amp;rdquo;, else print &amp;ldquo;Not available&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Condition Number 2:&lt;/strong&gt; We have a boolean and 2 conditions here. Have you noticed how we are checking if the condition is true? If  &lt;code&gt;is_available&lt;/code&gt;, then print &amp;laquo;Yes it is available&amp;raquo;, else print &amp;laquo;Not available&amp;raquo;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&amp;gt;&amp;gt;&amp;gt; is_available = True
 &amp;gt;&amp;gt;&amp;gt; if is_available:
@@ -610,7 +610,7 @@ Hello
 Hello
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&amp;ldquo;Hello&amp;rdquo; is only printed two times as we have specified the range here. Think of the range as  &lt;code&gt;Number on right - Number on left&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&amp;laquo;Hello&amp;raquo; is only printed two times as we have specified the range here. Think of the range as  &lt;code&gt;Number on right - Number on left&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Well, you can also add an else statement in the for loop.&lt;/p&gt;
 
@@ -1268,7 +1268,7 @@ bye
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Here we are declaring a function which, when called, prints a &amp;ldquo;Hello world&amp;rdquo; statement. To call a function we use the following syntax:&lt;/p&gt;
+&lt;p&gt;Here we are declaring a function which, when called, prints a &amp;laquo;Hello world&amp;raquo; statement. To call a function we use the following syntax:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&amp;gt;&amp;gt;&amp;gt; hello_world()
 &lt;/code&gt;&lt;/pre&gt;
@@ -1422,7 +1422,7 @@ Age is 100
 Age is Sharvin
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This does not look right. What happened is  &lt;code&gt;username&lt;/code&gt;  took the value of 100 while  &lt;code&gt;age&lt;/code&gt;  took the value of &amp;ldquo;Sharvin&amp;rdquo;. In scenarios like this where we don&amp;rsquo;t know the order of arguments we can use keyword arguments when calling the function:&lt;/p&gt;
+&lt;p&gt;This does not look right. What happened is  &lt;code&gt;username&lt;/code&gt;  took the value of 100 while  &lt;code&gt;age&lt;/code&gt;  took the value of &amp;laquo;Sharvin&amp;raquo;. In scenarios like this where we don&amp;rsquo;t know the order of arguments we can use keyword arguments when calling the function:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&amp;gt;&amp;gt;&amp;gt; user_details(age=100, username=&amp;quot;Sharvin&amp;quot;)
 
@@ -1687,7 +1687,7 @@ NameError: name &#39;greet&#39; is not defined
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Inheritance:&lt;/strong&gt;  This is one of the most useful concepts in OOP. It specifies that the child object will have all the properties and behavior of the parent object. Thus Inheritance allows us to define a class that inherits all the methods and properties from another class.&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Polymorphism:&lt;/strong&gt;  To understand polymorphism let’s divide the word into two parts. The first part &amp;ldquo;poly&amp;rdquo; means many and &amp;ldquo;morph&amp;rdquo; means to form or shape. Thus polymorphism means one task can be performed in many different ways.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Polymorphism:&lt;/strong&gt;  To understand polymorphism let’s divide the word into two parts. The first part &amp;laquo;poly&amp;raquo; means many and &amp;laquo;morph&amp;raquo; means to form or shape. Thus polymorphism means one task can be performed in many different ways.&lt;/p&gt;
 
 &lt;p&gt;For example, you have a class  &lt;code&gt;animal&lt;/code&gt;, and all animals speak. But they speak differently. Here, the “speak” behavior is polymorphic and depends on the animal. So, the abstract “animal” concept does not actually “speak”, but specific animals (like dogs and cats) have a concrete implementation of the action “speak”.&lt;/p&gt;
 
@@ -2306,7 +2306,7 @@ Hello I am line Number 2
 Line Number 3
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;See the magic the line &amp;ldquo;Hello I am line Number 2&amp;rdquo; gets printed in between Line Number 1 and 3 because the function call gets executed there.&lt;/p&gt;
+&lt;p&gt;See the magic the line &amp;laquo;Hello I am line Number 2&amp;raquo; gets printed in between Line Number 1 and 3 because the function call gets executed there.&lt;/p&gt;
 
 &lt;p&gt;Method 1 is clunky, and because of that many people prefer a different approach.&lt;/p&gt;
 
@@ -2370,7 +2370,7 @@ except:
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;Something went wrong
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;You may be thinking that the line &amp;ldquo;something went wrong&amp;rdquo; is not that helpful. So how can we know what went wrong here?&lt;/p&gt;
+&lt;p&gt;You may be thinking that the line &amp;laquo;something went wrong&amp;raquo; is not that helpful. So how can we know what went wrong here?&lt;/p&gt;
 
 &lt;p&gt;We can print the exception and use it to find out what went wrong. Let&amp;rsquo;s test this in our example:&lt;/p&gt;
 
@@ -2427,7 +2427,7 @@ if __name__ == &amp;quot;__main__&amp;quot;:
     hello.say_hello()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;In  &lt;code&gt;hello.py&lt;/code&gt;  we have declared a  &lt;code&gt;say_hello()&lt;/code&gt;  function which prints &amp;ldquo;Hello world&amp;rdquo;. In  &lt;code&gt;main.py&lt;/code&gt;  you&amp;rsquo;ll see an import statement. We are importing the hello module and calling the  &lt;code&gt;say_hello()&lt;/code&gt;  function from that module.&lt;/p&gt;
+&lt;p&gt;In  &lt;code&gt;hello.py&lt;/code&gt;  we have declared a  &lt;code&gt;say_hello()&lt;/code&gt;  function which prints &amp;laquo;Hello world&amp;raquo;. In  &lt;code&gt;main.py&lt;/code&gt;  you&amp;rsquo;ll see an import statement. We are importing the hello module and calling the  &lt;code&gt;say_hello()&lt;/code&gt;  function from that module.&lt;/p&gt;
 
 &lt;p&gt;Run our program using the following command:&lt;/p&gt;
 
@@ -2441,7 +2441,7 @@ if __name__ == &amp;quot;__main__&amp;quot;:
 
 &lt;p&gt;Now let&amp;rsquo;s understand how to import a module which is in another directory.&lt;/p&gt;
 
-&lt;p&gt;Let&amp;rsquo;s create a directory named &amp;ldquo;data&amp;rdquo; and move our  &lt;code&gt;hello.py&lt;/code&gt;  inside that directory.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s create a directory named &amp;laquo;data&amp;raquo; and move our  &lt;code&gt;hello.py&lt;/code&gt;  inside that directory.&lt;/p&gt;
 
 &lt;p&gt;Go to the  &lt;code&gt;main.py&lt;/code&gt;  and change the previous import statement.&lt;/p&gt;
 
@@ -2652,11 +2652,11 @@ ImportError: No module named data
 
 &lt;p&gt;After the download, double-click the installer.&lt;/p&gt;
 
-&lt;p&gt;On the first screen, check the box indicating to &amp;ldquo;Add Python 3.x to PATH&amp;rdquo; and then click on &amp;ldquo;Install Now&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;On the first screen, check the box indicating to &amp;laquo;Add Python 3.x to PATH&amp;raquo; and then click on &amp;laquo;Install Now&amp;raquo;.&lt;/p&gt;
 
-&lt;p&gt;Wait for the installation process to finish until the next screen with the message &amp;ldquo;Setup was successful&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Wait for the installation process to finish until the next screen with the message &amp;laquo;Setup was successful&amp;raquo;.&lt;/p&gt;
 
-&lt;p&gt;Click on &amp;ldquo;Close&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Click on &amp;laquo;Close&amp;raquo;.&lt;/p&gt;
 
 &lt;h2 id=&#34;installing-python-3-on-mac&#34;&gt;Installing Python 3 on Mac&lt;/h2&gt;
 
@@ -3745,7 +3745,7 @@ if bob_age &amp;gt; sarah_age:
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;We have two variables indicating the ages of Bob and Sarah. The condition in plain English says &amp;ldquo;if Bob&amp;rsquo;s age is greater than Sarah&amp;rsquo;s age, then print the phrase &amp;lsquo;Bob is older than Sarah&amp;rsquo;&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;We have two variables indicating the ages of Bob and Sarah. The condition in plain English says &amp;laquo;if Bob&amp;rsquo;s age is greater than Sarah&amp;rsquo;s age, then print the phrase &amp;lsquo;Bob is older than Sarah&amp;rsquo;&amp;raquo;.&lt;/p&gt;
 
 &lt;p&gt;Since the condition returns  &lt;code&gt;True&lt;/code&gt;, the phrase will be printed on the console.&lt;/p&gt;
 
@@ -3793,7 +3793,7 @@ else:
 
 &lt;p&gt;Once again we changed their ages and now both are 32 years old.&lt;/p&gt;
 
-&lt;p&gt;As such, the condition in the  &lt;code&gt;elif&lt;/code&gt;  is met. Since both have the same age the program will print &amp;ldquo;Bob and Sarah have the same age&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;As such, the condition in the  &lt;code&gt;elif&lt;/code&gt;  is met. Since both have the same age the program will print &amp;laquo;Bob and Sarah have the same age&amp;raquo;.&lt;/p&gt;
 
 &lt;p&gt;Notice you can have as many  &lt;code&gt;elif&lt;/code&gt;s as you want, just put them in sequence.&lt;/p&gt;
 
@@ -3823,7 +3823,7 @@ else:
 
 &lt;p&gt;In this case, you can nest your  &lt;code&gt;if&lt;/code&gt;  statements.&lt;/p&gt;
 
-&lt;p&gt;For instance, the second phrase &amp;ldquo;Bob is the oldest&amp;rdquo; is printed only if both  &lt;code&gt;if&lt;/code&gt;s pass.&lt;/p&gt;
+&lt;p&gt;For instance, the second phrase &amp;laquo;Bob is the oldest&amp;raquo; is printed only if both  &lt;code&gt;if&lt;/code&gt;s pass.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;bob_age = 32
 sarah_age = 28
@@ -5113,7 +5113,7 @@ print(new_list)
 
 &lt;h2 id=&#34;basic-syntax-3&#34;&gt;Basic Syntax&lt;/h2&gt;
 
-&lt;p&gt;The basic syntax is very simple: just use the  &lt;code&gt;lambda&lt;/code&gt;  keyword, define the parameters needed, and use &amp;ldquo;:&amp;rdquo; to separate the parameters from the expression.&lt;/p&gt;
+&lt;p&gt;The basic syntax is very simple: just use the  &lt;code&gt;lambda&lt;/code&gt;  keyword, define the parameters needed, and use &amp;laquo;:&amp;raquo; to separate the parameters from the expression.&lt;/p&gt;
 
 &lt;p&gt;The general forms is:&lt;/p&gt;
 
@@ -5449,7 +5449,7 @@ my_program
 
 &lt;p&gt;The first argument is the name of the file we are handling, the second refers to the operation we are using.&lt;/p&gt;
 
-&lt;p&gt;The code below creates the file &amp;ldquo;people.txt&amp;rdquo;, the  &lt;code&gt;x&lt;/code&gt;  argument is used when we just want to create the file. If a file with the same name already exists, it will throw an exception.&lt;/p&gt;
+&lt;p&gt;The code below creates the file &amp;laquo;people.txt&amp;raquo;, the  &lt;code&gt;x&lt;/code&gt;  argument is used when we just want to create the file. If a file with the same name already exists, it will throw an exception.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;people_file = open(&amp;quot;people.txt&amp;quot;, &amp;quot;x&amp;quot;)
 
@@ -5483,7 +5483,7 @@ people_file.close()
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;We use  &lt;code&gt;\n&lt;/code&gt;  at the end to break the line, otherwise the content in the file will stay in the same line as &amp;ldquo;BobMarySarah&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;We use  &lt;code&gt;\n&lt;/code&gt;  at the end to break the line, otherwise the content in the file will stay in the same line as &amp;laquo;BobMarySarah&amp;raquo;.&lt;/p&gt;
 
 &lt;p&gt;One more detail is to  &lt;em&gt;close()&lt;/em&gt;  the file. This is not only a good practice, but also ensures that your changes were applied to the file.&lt;/p&gt;
 
@@ -5493,7 +5493,7 @@ people_file.close()
 
 &lt;p&gt;The  &lt;code&gt;a&lt;/code&gt;  mode appends new data to the file, keeping the existing one.&lt;/p&gt;
 
-&lt;p&gt;In this example, after the first writing with  &lt;code&gt;w&lt;/code&gt;  mode, we are using the  &lt;code&gt;a&lt;/code&gt;  mode to append. The result is that each name will appear twice in the file &amp;ldquo;people.txt&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;In this example, after the first writing with  &lt;code&gt;w&lt;/code&gt;  mode, we are using the  &lt;code&gt;a&lt;/code&gt;  mode to append. The result is that each name will appear twice in the file &amp;laquo;people.txt&amp;raquo;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#first write
 people_file = open(&amp;quot;people.txt&amp;quot;, &amp;quot;w&amp;quot;)
@@ -5516,7 +5516,7 @@ people_file.close()
 
 &lt;p&gt;Reading the file is also very straightforward: just use the  &lt;code&gt;r&lt;/code&gt;  mode like so.&lt;/p&gt;
 
-&lt;p&gt;If you read the &amp;ldquo;people.txt&amp;rdquo; file created in the last example, you should see 6 names in your output.&lt;/p&gt;
+&lt;p&gt;If you read the &amp;laquo;people.txt&amp;raquo; file created in the last example, you should see 6 names in your output.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;people_file = open(&amp;quot;people.txt&amp;quot;, &amp;quot;r&amp;quot;)
 print(people_file.read())
@@ -6167,7 +6167,7 @@ Finally block
 &lt;li&gt;Within parentheses, the item that will be added to the end of the list.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;💡  &lt;strong&gt;Tips:&lt;/strong&gt; The dot is very important. This is called &amp;ldquo;dot notation&amp;rdquo;. The dot basically says &amp;ldquo;call this method on this particular list&amp;rdquo;, so the effect of the method will be applied to the list that is located before the dot.&lt;/p&gt;
+&lt;p&gt;💡  &lt;strong&gt;Tips:&lt;/strong&gt; The dot is very important. This is called &amp;laquo;dot notation&amp;raquo;. The dot basically says &amp;laquo;call this method on this particular list&amp;raquo;, so the effect of the method will be applied to the list that is located before the dot.&lt;/p&gt;
 
 &lt;h3 id=&#34;examples&#34;&gt;Examples&lt;/h3&gt;
 
@@ -6326,7 +6326,7 @@ Finally block
 &lt;li&gt;Within parentheses, an  &lt;strong&gt;iterable&lt;/strong&gt; (list, tuple, dictionary, set, or string) that contains the items that will be added as individual elements of the list.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;💡 &lt;strong&gt;Tips:&lt;/strong&gt;  According to the  &lt;a href=&#34;https://docs.python.org/3/glossary.html&#34; target=&#34;_blank&#34;&gt;Python documentation&lt;/a&gt;, an iterable is defined as &amp;ldquo;an object capable of returning its members one at a time&amp;rdquo;. Iterables can be used in a for loop and because they return their elements one at a time, we can &amp;ldquo;do something&amp;rdquo; with each one of them, one per iteration.&lt;/p&gt;
+&lt;p&gt;💡 &lt;strong&gt;Tips:&lt;/strong&gt;  According to the  &lt;a href=&#34;https://docs.python.org/3/glossary.html&#34; target=&#34;_blank&#34;&gt;Python documentation&lt;/a&gt;, an iterable is defined as &amp;laquo;an object capable of returning its members one at a time&amp;raquo;. Iterables can be used in a for loop and because they return their elements one at a time, we can &amp;laquo;do something&amp;raquo; with each one of them, one per iteration.&lt;/p&gt;
 
 &lt;h3 id=&#34;behind-the-scenes&#34;&gt;Behind the Scenes&lt;/h3&gt;
 
@@ -6418,7 +6418,7 @@ The same occurs if you pass a set. The elements of the set are appended one by o
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;strong&gt;For strings:&lt;/strong&gt;&lt;br /&gt;
-Strings work a little bit different with the  &lt;code&gt;.extend()&lt;/code&gt;  method. Each character of the string is considered an &amp;ldquo;item&amp;rdquo;, so the characters are appended one by one in the order that they appear in the string.&lt;/p&gt;
+Strings work a little bit different with the  &lt;code&gt;.extend()&lt;/code&gt;  method. Each character of the string is considered an &amp;laquo;item&amp;raquo;, so the characters are appended one by one in the order that they appear in the string.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# List that will be extended
 &amp;gt;&amp;gt;&amp;gt; a = [&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;]
@@ -6437,7 +6437,7 @@ Strings work a little bit different with the  &lt;code&gt;.extend()&lt;/code&gt;
 &lt;p&gt;&lt;strong&gt;For dictionaries:&lt;/strong&gt;&lt;br /&gt;
 Dictionaries have a particular behavior when you pass them as arguments to  &lt;code&gt;.extend()&lt;/code&gt;. In this case, the  &lt;strong&gt;keys&lt;/strong&gt; of the dictionary are appended one by one. The values of the corresponding key-value pairs are not appended.&lt;/p&gt;
 
-&lt;p&gt;In this example (below), the keys are &amp;ldquo;d&amp;rdquo;, &amp;ldquo;e&amp;rdquo;, and &amp;ldquo;f&amp;rdquo;. These values are appended to the list  &lt;code&gt;a&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In this example (below), the keys are &amp;laquo;d&amp;raquo;, &amp;laquo;e&amp;raquo;, and &amp;laquo;f&amp;raquo;. These values are appended to the list  &lt;code&gt;a&lt;/code&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# List that will be extended
 &amp;gt;&amp;gt;&amp;gt; a = [&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;]
