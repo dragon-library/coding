@@ -1,3 +1,3 @@
 "# markdown" 
 
--  https://dragon-library.github.io/docs/main/
+-  https://dragon-library.github.io/docs/library/
