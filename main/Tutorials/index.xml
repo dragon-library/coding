@@ -2,21 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tutorials on Library</title>
-    <link>https://dragon-library.github.io/docs/library/tutorials/</link>
+    <link>https://dragon-library.github.io/docs/main/tutorials/</link>
     <description>Recent content in Tutorials on Library</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Jun 2020 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="https://dragon-library.github.io/docs/library/tutorials/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://dragon-library.github.io/docs/main/tutorials/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Python Data Science Handbook</title>
-      <link>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/intro/_index/</link>
+      <link>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/intro/_index/</link>
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/intro/_index/</guid>
+      <guid>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/intro/_index/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;Jake VanderPlas&lt;/em&gt;&lt;/p&gt;
@@ -121,10 +120,10 @@ The text is released under the &lt;a href=&#34;https://creativecommons.org/licen
     
     <item>
       <title>Pandas Tutorials</title>
-      <link>https://dragon-library.github.io/docs/library/tutorials/quickguide/</link>
+      <link>https://dragon-library.github.io/docs/main/tutorials/quickguide/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/tutorials/quickguide/</guid>
+      <guid>https://dragon-library.github.io/docs/main/tutorials/quickguide/</guid>
       <description>
 
 &lt;h2 id=&#34;environment-setup&#34;&gt;Environment Setup&lt;/h2&gt;
@@ -696,10 +695,10 @@ print df
     
     <item>
       <title>Preface</title>
-      <link>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/intro/00.00-preface/</link>
+      <link>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/intro/00.00-preface/</link>
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/intro/00.00-preface/</guid>
+      <guid>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/intro/00.00-preface/</guid>
       <description>
 
 &lt;h2 id=&#34;what-is-data-science&#34;&gt;What Is Data Science?&lt;/h2&gt;
@@ -804,10 +803,10 @@ For more information on conda, including information about creating and using co
     
     <item>
       <title>1. IPython - Beyond Normal Python</title>
-      <link>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/1.ipython/main/</link>
+      <link>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/1.ipython/main/</link>
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/1.ipython/main/</guid>
+      <guid>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/1.ipython/main/</guid>
       <description>
 
 &lt;p&gt;There are many options for development environments for Python, and I&amp;rsquo;m often asked which one I use in my own work.
@@ -880,10 +879,10 @@ If the browser does not open automatically, you can open a window and manually o
     
     <item>
       <title>Help and Documentation in IPython</title>
-      <link>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/1.ipython/01.01-help-and-documentation/</link>
+      <link>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/1.ipython/01.01-help-and-documentation/</link>
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/1.ipython/01.01-help-and-documentation/</guid>
+      <guid>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/1.ipython/01.01-help-and-documentation/</guid>
       <description>
 
 &lt;p&gt;If you read no other section in this chapter, read this one: I find the tools discussed here to be the most transformative contributions of IPython to my daily workflow.&lt;/p&gt;
@@ -1111,10 +1110,10 @@ str.rfind
     
     <item>
       <title>Keyboard Shortcuts in the IPython Shell</title>
-      <link>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/1.ipython/01.02-shell-keyboard-shortcuts/</link>
+      <link>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/1.ipython/01.02-shell-keyboard-shortcuts/</link>
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/1.ipython/01.02-shell-keyboard-shortcuts/</guid>
+      <guid>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/1.ipython/01.02-shell-keyboard-shortcuts/</guid>
       <description>
 
 &lt;p&gt;If you spend any amount of time on the computer, you&amp;rsquo;ve probably found a use for keyboard shortcuts in your workflow.
@@ -1320,10 +1319,10 @@ Once you develop that muscle memory, I suspect you will even find yourself wishi
     
     <item>
       <title>3. Introducing Pandas Objects</title>
-      <link>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/intro/</link>
+      <link>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/intro/</link>
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/intro/</guid>
+      <guid>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/intro/</guid>
       <description>
 
 &lt;p&gt;At the very basic level, Pandas objects can be thought of as enhanced versions of NumPy structured arrays in which the rows and columns are identified with labels rather than simple integer indices.
@@ -1994,10 +1993,10 @@ indB = pd.Index([2, 3, 5, 7, 11])
     
     <item>
       <title>Data Indexing and Selection</title>
-      <link>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.02-data-indexing-and-selection/</link>
+      <link>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.02-data-indexing-and-selection/</link>
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.02-data-indexing-and-selection/</guid>
+      <guid>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.02-data-indexing-and-selection/</guid>
       <description>
 
 &lt;p&gt;In &lt;a href=&#34;02.00-Introduction-to-NumPy.ipynb&#34; target=&#34;_blank&#34;&gt;Chapter 2&lt;/a&gt;, we looked in detail at methods and tools to access, set, and modify values in NumPy arrays.
@@ -2725,10 +2724,10 @@ First, while &lt;em&gt;indexing&lt;/em&gt; refers to columns, &lt;em&gt;slicing&
     
     <item>
       <title>Operating on Data in Pandas</title>
-      <link>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.03-operations-in-pandas/</link>
+      <link>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.03-operations-in-pandas/</link>
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.03-operations-in-pandas/</guid>
+      <guid>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.03-operations-in-pandas/</guid>
       <description>
 
 &lt;p&gt;One of the essential pieces of NumPy is the ability to perform quick element-wise operations, both with basic arithmetic (addition, subtraction, multiplication, etc.) and with more sophisticated operations (trigonometric functions, exponential and logarithmic functions, etc.).
@@ -3283,10 +3282,10 @@ Name: 0, dtype: int64
     
     <item>
       <title>Handling Missing Data</title>
-      <link>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.04-missing-values/</link>
+      <link>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.04-missing-values/</link>
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.04-missing-values/</guid>
+      <guid>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.04-missing-values/</guid>
       <description>
 
 &lt;p&gt;The difference between data found in many tutorials and data in the real world is that real-world data is rarely clean and homogeneous.
@@ -3929,10 +3928,10 @@ dtype: float64
     
     <item>
       <title>Hierarchical Indexing</title>
-      <link>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.05-hierarchical-indexing/</link>
+      <link>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.05-hierarchical-indexing/</link>
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.05-hierarchical-indexing/</guid>
+      <guid>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.05-hierarchical-indexing/</guid>
       <description>
 
 &lt;p&gt;Up to this point we&amp;rsquo;ve been focused primarily on one-dimensional and two-dimensional data, stored in Pandas &lt;code&gt;Series&lt;/code&gt; and &lt;code&gt;DataFrame&lt;/code&gt; objects, respectively.
@@ -5505,10 +5504,10 @@ If you&amp;rsquo;d like to read more about the &lt;code&gt;Panel&lt;/code&gt; an
     
     <item>
       <title>Combining Datasets - Concat and Append</title>
-      <link>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.06-concat-and-append/</link>
+      <link>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.06-concat-and-append/</link>
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.06-concat-and-append/</guid>
+      <guid>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.06-concat-and-append/</guid>
       <description>
 
 &lt;p&gt;Some of the most interesting studies of data come from combining different data sources.
@@ -6561,10 +6560,10 @@ For more information on &lt;code&gt;concat()&lt;/code&gt;, &lt;code&gt;append()&
     
     <item>
       <title>Combining Datasets - Merge and Join</title>
-      <link>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.07-merge-and-join/</link>
+      <link>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.07-merge-and-join/</link>
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.07-merge-and-join/</guid>
+      <guid>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.07-merge-and-join/</guid>
       <description>
 
 &lt;p&gt;One essential feature offered by Pandas is its high-performance, in-memory join and merge operations.
@@ -8929,10 +8928,10 @@ I hope that this example has given you an idea of the ways you can combine tools
     
     <item>
       <title>Aggregation and Grouping</title>
-      <link>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.08-aggregation-and-grouping/</link>
+      <link>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.08-aggregation-and-grouping/</link>
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.08-aggregation-and-grouping/</guid>
+      <guid>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.08-aggregation-and-grouping/</guid>
       <description>
 
 &lt;p&gt;An essential piece of analysis of large data is efficient summarization: computing aggregations like &lt;code&gt;sum()&lt;/code&gt;, &lt;code&gt;mean()&lt;/code&gt;, &lt;code&gt;median()&lt;/code&gt;, &lt;code&gt;min()&lt;/code&gt;, and &lt;code&gt;max()&lt;/code&gt;, in which a single number gives insight into the nature of a potentially large dataset.
@@ -10640,10 +10639,10 @@ It&amp;rsquo;s certainly a somewhat complicated example, but understanding these
     
     <item>
       <title>Pivot Tables</title>
-      <link>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.09-pivot-tables/</link>
+      <link>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.09-pivot-tables/</link>
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.09-pivot-tables/</guid>
+      <guid>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.09-pivot-tables/</guid>
       <description>
 
 &lt;p&gt;We have seen how the &lt;code&gt;GroupBy&lt;/code&gt; abstraction lets us explore relationships within a dataset.
@@ -11416,10 +11415,10 @@ We will see some more sophisticated applications of these data manipulations in 
     
     <item>
       <title>Vectorized String Operations</title>
-      <link>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.10-working-with-strings/</link>
+      <link>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.10-working-with-strings/</link>
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.10-working-with-strings/</guid>
+      <guid>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.10-working-with-strings/</guid>
       <description>
 
 &lt;p&gt;One strength of Python is its relative ease in handling and manipulating string data.
@@ -12238,10 +12237,10 @@ This points to the truism that in data science, cleaning and munging of real-wor
     
     <item>
       <title>Working with Time Series</title>
-      <link>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.11-working-with-time-series/03.11-working-with-time-series/</link>
+      <link>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.11-working-with-time-series/03.11-working-with-time-series/</link>
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.11-working-with-time-series/03.11-working-with-time-series/</guid>
+      <guid>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.11-working-with-time-series/03.11-working-with-time-series/</guid>
       <description>
 
 &lt;p&gt;Pandas was developed in the context of financial modeling, so as you might expect, it contains a fairly extensive set of tools for working with dates, times, and time-indexed data.
@@ -13279,10 +13278,10 @@ We will also revisit this dataset in the context of modeling in &lt;a href=&#34;
     
     <item>
       <title>High-Performance Pandas - eval() and query()</title>
-      <link>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.12-performance-eval-and-query/</link>
+      <link>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.12-performance-eval-and-query/</link>
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.12-performance-eval-and-query/</guid>
+      <guid>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.12-performance-eval-and-query/</guid>
       <description>
 
 &lt;p&gt;As we&amp;rsquo;ve already seen in previous sections, the power of the PyData stack is built upon the ability of NumPy and Pandas to push basic operations into C via an intuitive syntax: examples are vectorized/broadcasted operations in NumPy, and grouping-type operations in Pandas.
@@ -13784,10 +13783,10 @@ In particular, different parsers and engines can be specified for running these 
     
     <item>
       <title>Further Resources</title>
-      <link>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.13-further-resources/</link>
+      <link>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.13-further-resources/</link>
       <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/tutorials/data-science-handbook/3.pandas/03.13-further-resources/</guid>
+      <guid>https://dragon-library.github.io/docs/main/tutorials/data-science-handbook/3.pandas/03.13-further-resources/</guid>
       <description>&lt;p&gt;In this chapter, we&amp;rsquo;ve covered many of the basics of using Pandas effectively for data analysis.
 Still, much has been omitted from our discussion.
 To learn more about Pandas, I recommend the following resources:&lt;/p&gt;

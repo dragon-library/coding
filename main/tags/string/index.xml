@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>String on Library</title>
-    <link>https://dragon-library.github.io/docs/library/tags/string/</link>
+    <link>https://dragon-library.github.io/docs/main/tags/string/</link>
     <description>Recent content in String on Library</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 30 Jan 2020 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="https://dragon-library.github.io/docs/library/tags/string/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://dragon-library.github.io/docs/main/tags/string/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Python String Methods Explained with Examples.</title>
-      <link>https://dragon-library.github.io/docs/library/post/python/tutorials/string-strip-method/</link>
+      <link>https://dragon-library.github.io/docs/main/post/python/tutorials/string-strip-method/</link>
       <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/post/python/tutorials/string-strip-method/</guid>
+      <guid>https://dragon-library.github.io/docs/main/post/python/tutorials/string-strip-method/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;Python String Methods Explained with Examples&#34; /&gt;&lt;/p&gt;

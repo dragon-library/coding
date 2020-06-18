@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Example on Library</title>
-    <link>https://dragon-library.github.io/docs/library/categories/example/</link>
+    <link>https://dragon-library.github.io/docs/main/categories/example/</link>
     <description>Recent content in Example on Library</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 May 2020 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="https://dragon-library.github.io/docs/library/categories/example/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://dragon-library.github.io/docs/main/categories/example/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Google Text-to-Speech.</title>
-      <link>https://dragon-library.github.io/docs/library/post/google-text-to-speech/</link>
+      <link>https://dragon-library.github.io/docs/main/post/google-text-to-speech/</link>
       <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/post/google-text-to-speech/</guid>
+      <guid>https://dragon-library.github.io/docs/main/post/google-text-to-speech/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -161,10 +161,10 @@ Audio(&#39;speech_it.mp3&#39;, autoplay=True)
     
     <item>
       <title>Google Translate.</title>
-      <link>https://dragon-library.github.io/docs/library/post/google-translate/</link>
+      <link>https://dragon-library.github.io/docs/main/post/google-translate/</link>
       <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/post/google-translate/</guid>
+      <guid>https://dragon-library.github.io/docs/main/post/google-translate/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -1046,10 +1046,10 @@ except LookupError:                            # ประมวลผลแล�
     
     <item>
       <title>Python Web Scraping Part IV - ทำไมถึง scrape บางเว็บไม่ได้</title>
-      <link>https://dragon-library.github.io/docs/library/post/python/example/web-scraping-series-1/python-web-scraping-part-4/</link>
+      <link>https://dragon-library.github.io/docs/main/post/python/example/web-scraping-series-1/python-web-scraping-part-4/</link>
       <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/post/python/example/web-scraping-series-1/python-web-scraping-part-4/</guid>
+      <guid>https://dragon-library.github.io/docs/main/post/python/example/web-scraping-series-1/python-web-scraping-part-4/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -1203,10 +1203,10 @@ except LookupError:                            # ประมวลผลแล�
     
     <item>
       <title>Python Web Scraping Part III - เทคนิคการ extract ข้อมูลด้วย XPath</title>
-      <link>https://dragon-library.github.io/docs/library/post/python/example/web-scraping-series-1/python-web-scraping-part-3/</link>
+      <link>https://dragon-library.github.io/docs/main/post/python/example/web-scraping-series-1/python-web-scraping-part-3/</link>
       <pubDate>Sun, 12 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/post/python/example/web-scraping-series-1/python-web-scraping-part-3/</guid>
+      <guid>https://dragon-library.github.io/docs/main/post/python/example/web-scraping-series-1/python-web-scraping-part-3/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -1360,10 +1360,10 @@ except LookupError:                            # ประมวลผลแล�
     
     <item>
       <title>Python Web Scraping Part II - Chrome&#39;s Code Inspector</title>
-      <link>https://dragon-library.github.io/docs/library/post/python/example/web-scraping-series-1/python-web-scraping-part-2/</link>
+      <link>https://dragon-library.github.io/docs/main/post/python/example/web-scraping-series-1/python-web-scraping-part-2/</link>
       <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/post/python/example/web-scraping-series-1/python-web-scraping-part-2/</guid>
+      <guid>https://dragon-library.github.io/docs/main/post/python/example/web-scraping-series-1/python-web-scraping-part-2/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -1459,10 +1459,10 @@ except LookupError:                            # ประมวลผลแล�
     
     <item>
       <title>Python Web Scraping Part I</title>
-      <link>https://dragon-library.github.io/docs/library/post/python/example/web-scraping-series-1/python-web-scraping-part-1/</link>
+      <link>https://dragon-library.github.io/docs/main/post/python/example/web-scraping-series-1/python-web-scraping-part-1/</link>
       <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/post/python/example/web-scraping-series-1/python-web-scraping-part-1/</guid>
+      <guid>https://dragon-library.github.io/docs/main/post/python/example/web-scraping-series-1/python-web-scraping-part-1/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Google sheet on Library</title>
-    <link>https://dragon-library.github.io/docs/library/tags/google-sheet/</link>
+    <link>https://dragon-library.github.io/docs/main/tags/google-sheet/</link>
     <description>Recent content in Google sheet on Library</description>
     <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 26 May 2020 00:00:00 +0000</lastBuildDate>
     
-	    <atom:link href="https://dragon-library.github.io/docs/library/tags/google-sheet/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://dragon-library.github.io/docs/main/tags/google-sheet/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>การใช้งาน Python ควบคุม Google sheet</title>
-      <link>https://dragon-library.github.io/docs/library/post/python/example/python-control-google-sheet/</link>
+      <link>https://dragon-library.github.io/docs/main/post/python/example/python-control-google-sheet/</link>
       <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dragon-library.github.io/docs/library/post/python/example/python-control-google-sheet/</guid>
+      <guid>https://dragon-library.github.io/docs/main/post/python/example/python-control-google-sheet/</guid>
       <description>
 
 &lt;p&gt;วันนี้ Stackpython จะมาบอกวิธีการดึงขอมูลหรือเเก้ไขปรับปรุง ข้อมูลใน Google sheet ด้วย Python&lt;/p&gt;
