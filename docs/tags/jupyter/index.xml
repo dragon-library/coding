@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jupyter on Library</title>
+    <link>https://dragon-library.github.io/coding/tags/jupyter/</link>
+    <description>Recent content in Jupyter on Library</description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="https://dragon-library.github.io/coding/tags/jupyter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ปรับเปลี่ยนการแสดงผล pandas ใน jupyter</title>
+      <link>https://dragon-library.github.io/coding/post/python/tutorials/change-output-pandas-in-jupyter/</link>
+      <pubDate>Tue, 02 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/post/python/tutorials/change-output-pandas-in-jupyter/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;เขียนเมื่อ 2016/10/23 12:11&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ในเนื้อหา  &lt;a href=&#34;https://phyblas.hinaboshi.com/yancham02&#34; target=&#34;_blank&#34;&gt;pandas เบื้องต้นบทที่ ๒&lt;/a&gt;  ได้มีเขียนถึงไปว่าเดตาเฟรมใน jupyter จะแสดงผลในลักษณะตารางที่สร้างขึ้นจากโค้ด html&lt;/p&gt;
+
+&lt;p&gt;เกี่ยวกับการติดตั้งและใช้งาน jupyter มีคนเขียนถึงไว้แล้วอ่านได้ใน&lt;br /&gt;
+&lt;a href=&#34;https://python3.wannaphong.com/2015/09/%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%A1%E0%B8%B7%E0%B8%AD-python.html&#34; target=&#34;_blank&#34;&gt;https://python3.wannaphong.com/2015/09/ติดตั้งเครื่องมือ-python.html&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://naiwaen.debuggingsoft.com/2016/08/jupyter-with-python-part2&#34; target=&#34;_blank&#34;&gt;http://naiwaen.debuggingsoft.com/2016/08/jupyter-with-python-part2&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;นอกจากแค่ใช้แสดงผลเป็นตารางได้ธรรมดาแล้ว การแสดงผลของเดตาเฟรมใน jupyter นั้นยังสามารถปรับแต่งใส่ลูกเล่นต่างๆได้ด้วย&lt;/p&gt;
+
+&lt;p&gt;สำหรับบทความนี้จะพูดถึงการปรับเปลี่ยนรูปแบบการแสดงผล โดยใช้เมธอดต่างๆที่อยู่ภายในตัวเดตาเฟรม&lt;/p&gt;
+
+&lt;p&gt;เนื้อหาแปลและตัดต่อเรียบเรียงจาก  &lt;a href=&#34;http://sinhrks.hatenablog.com/entry/2015/11/22/202640&#34; target=&#34;_blank&#34;&gt;http://sinhrks.hatenablog.com/entry/2015/11/22/202640&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ลองสร้างเดตาเฟรมขึ้นมาอันหนึ่งเพื่อใช้เป็นตัวอย่าง โดยประกอบด้วยคอลัมน์ที่เป็นตัวเลข แล้วก็ที่เป็นตัวหนังสือ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;import  pandas  as  pd  
+pokemon = pd.DataFrame([  
+[&#39;ฟุชิงิดาเนะ&#39;,&#39;พืช/พิษ&#39;,0.7,6.9],  
+[&#39;ฟุชิงิโซว&#39;,&#39;พืช/พิษ&#39;,1.0,13.0],  
+[&#39;ฟุชิงิบานะ&#39;,&#39;พืช/พิษ&#39;,2.4,155.5],  
+[&#39;ฮิโตคาเงะ&#39;,&#39;ไฟ&#39;,0.6,8.5],  
+[&#39;ลิซาร์โด&#39;,&#39;ไฟ&#39;,1.1,19.0],  
+[&#39;ลิซาร์ดอน&#39;,&#39;ไฟ/บิน&#39;,1.7,101.5],  
+[&#39;เซนิงาเมะ&#39;,&#39;น้ำ&#39;,0.5,9.0],  
+[&#39;คาเมล&#39;,&#39;น้ำ&#39;,1.0,22.5],  
+[&#39;คาเม็กซ์&#39;,&#39;น้ำ&#39;,1.6,101.1]],  
+columns=[&#39;สายพันธุ์&#39;,&#39;ชนิด&#39;,&#39;ส่วนสูง&#39;,&#39;น้ำหนัก&#39;],  
+index=[1,2,3,4,5,6,7,8,9])  
+pokemon
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;โดยปกติจะได้ตารางเรียบๆออกมาแบบนี้&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b01.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;การปรับการแสดงผลนั้นทำได้โดยพิมพ์คำว่า .style ต่อท้ายตัวแปรที่เก็บเดตาเฟรมอยู่ แล้วตามด้วยเมธอดที่ต้องการ&lt;/p&gt;
+
+&lt;p&gt;ในที่นี้จะยกตัวอย่างแค่ส่วนหนึ่งขึ้นมาลองใช้ ได้แก่&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;.style.set_properties() ปรับค่าการแสดงผลทุกช่องตารางเหมือนกัน  
+.style.apply() ปรับค่าการแสดงผลโดยแยกแต่ละแถวหรือแต่ละคอลัมน์ตามค่าโดยกำหนดด้วยฟังก์ชัน  
+.style.applymap() ปรับค่าการแสดงผลโดยแยกตามค่าของแต่ละช่องโดยกำหนดด้วยฟังก์ชัน  
+.style.highlight_max() เติมสีให้ช่องที่ค่าสูงสุด  
+.style.highlight_min() เติมสีให้ช่องที่ค่าต่ำสุด  
+.style.highlight_null() เติมสีให้ช่องที่ค่าเป็น NaN  
+.style.background_gradient() เปลี่ยนสีฉากหลังแต่ละช่องตามค่าตัวเลข  
+.style.bar() แสดงแผนภูมิแท่งขึ้นภายในตารางตามค่าตัวเลข  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;เริ่มจาก style.set_properties คำสั่งนี้จะปรับการแสดงผลโดยใช้โค้ด css หากใครใช้ css เป็นอยู่แล้วก็สามารถปรับแต่งอะไรต่างๆได้ตามใจชอบโดยไม่ต้องจำอะไรเพิ่มเติม&lt;/p&gt;
+
+&lt;p&gt;ค่าคุณสมบัติต่างๆเขียนในรูปแบบ .style.set_properties(คุณสมบัติ1=ค่า1,คุณสมบัติ2=ค่า2,&amp;hellip;=&amp;hellip;) แบบนี้ได้&lt;/p&gt;
+
+&lt;p&gt;ตัวอย่าง ลองเปลี่ยนสีอักษรในตาราง&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;pokemon.style.set_properties(color=&#39;#aa7711&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b02.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;เพียงแต่ว่าหากชื่อมีขีด - อยู่ด้วยจะใช้วิธีนี้ไม่ได้ ต้องใช้การเขียนในรูปดิกชันนารีแทน โดยใส่ดอกจันสองอันนำหน้า .style.set_properties(**{คุณสมบัติ1:ค่า1,คุณสมบัติ2:ค่า2,&amp;hellip;:&amp;hellip;}) แบบนี้&lt;/p&gt;
+
+&lt;p&gt;ตัวอย่าง&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;pokemon.style.set_properties(**{&#39;background-color&#39;:&#39;#ff2266&#39;,&#39;color&#39;:&#39;#11ff00&#39;,&#39;font-size&#39;:&#39;20px&#39;})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b03.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;การใช้ style.set_properties แบบนี้จะเป็นการเปลี่ยนทุกแถวทุกหลักเหมือนกันหมด แต่ถ้าต้องการกำหนดรูปแบบโดยขึ้นอยู่กับค่าในแต่ละช่องก็ให้ใช้ style.applymap&lt;/p&gt;
+
+&lt;p&gt;ก่อนอื่นต้องสร้างฟังก์ชันที่ให้ค่าคืนกลับเป็นโค้ด css จากนั้นจึงนำฟังก์ชันนี้ไปใช้ style.applymap ฟังก์ชันจะถูกเรียกใช้โดยมีค่าของแต่ช่องตารางเป็นอาร์กิวเมนต์&lt;/p&gt;
+
+&lt;p&gt;ตัวอย่าง&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;def  f(x):  
+if(type(x)==str):  
+return  &#39;color: #00aa00&#39;  
+elif(x&amp;gt;50):  
+return  &#39;color: #ff0000&#39;  
+else:  
+return  &#39;&#39;  
+pokemon.style.applymap(f)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b04.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;แต่หากต้องการแยกเป็นแต่ละคอลัมน์ให้ใช้ style.apply เพียงแต่ว่าค่าที่ฟังก์ชันคืนกลับมาจะต้องเป็นลิสต์ของโค้ด css ที่มีจำนวนสมาชิกเท่ากับจำนวนแถว&lt;/p&gt;
+
+&lt;p&gt;ตัวอย่าง&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;def  f(x):  
+z =  &#39;color: #110099; font-size: %dpx&#39;%(50*len(str(x.max()))**-0.5)  
+return  [z]*len(x)  
+pokemon.style.apply(f)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b06.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;หากต้องการแยกเป็นแต่ละแถวก็ใช้ style.apply แล้วใส่ axis=1 เช่น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;def  f(x):  
+if(&#39;พืช&#39;  in  x[&#39;ชนิด&#39;]):  
+return  [&#39;&#39;,&#39;color: #00ee00&#39;,&#39;&#39;,&#39;&#39;]  
+if(&#39;ไฟ&#39;  in  x[&#39;ชนิด&#39;]):  
+return  [&#39;&#39;,&#39;color: #ee0000&#39;,&#39;&#39;,&#39;&#39;]  
+if(x[&#39;ชนิด&#39;]==&#39;น้ำ&#39;):  
+return  [&#39;&#39;,&#39;color: #0000ee&#39;,&#39;&#39;,&#39;&#39;]  
+pokemon.style.apply(f,axis=1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b05.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;หากต้องการระบายสีช่องที่มีค่าสูงสุดหรือต่ำสุดให้ใช้ style.highlight_max หรือ style.highlight_min โดยระบุค่าสีที่ต้องการด้วยคีย์เวิร์ด color คำสั่งนี้จะมีผลเฉพาะคอลัมน์ที่เป็นค่าตัวเลขเท่านั้น&lt;/p&gt;
+
+&lt;p&gt;ตัวอย่าง&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;pokemon.style.highlight_max(color=&#39;#aaaaff&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b07.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;สามารถใส่ซ้อนกันได้หากต้องการแสดงทั้งค่า max และ min&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;pokemon.style.highlight_max(color=&#39;#cc0000&#39;).highlight_min(color=&#39;#00cc00&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b08.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ส่วน style.highlight_null จะระบายสีช่องที่ค่าเป็น None หรือ NaN&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;pokemon.loc[10] = [None]*4  
+pokemon.style.highlight_null()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b09.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;สำหรับ style.background_gradient จะเป็นการใส่สีให้แต่ละช่องของแต่ละแถงโดยเรียงตามค่าตัวเลขโดยเรียงสีตามคัลเลอร์แม็ป ให้ใส่คัลเลอร์แม็ปที่ต้องการลงในคีย์เวิร์ด cmap (เกี่ยวกับคัลเลอร์แม็ปได้อธิบายไว้ใน  &lt;a href=&#34;https://phyblas.hinaboshi.com/numa24&#34; target=&#34;_blank&#34;&gt;numpy &amp;amp; matplotlib เบื้องต้นบทที่ ๒๔&lt;/a&gt;)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;pokemon.style.background_gradient(cmap=&#39;summer&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b10.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ปกติสีจะถูกใส่ให้กับทุกคอลัมน์ที่เป็นค่าตัวเลข แต่หากต้องการให้ใส่แค่บางคอลัมน์ก็ทำได้โดยใช้คีย์เวิร์ด subset แล้วระบุเฉพาะชื่อคอลัมน์ที่ต้องการ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;pokemon.style.background_gradient(cmap=&#39;autumn&#39;,subset=[&#39;น้ำหนัก&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b11.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;สุดท้าย style.bar จะเป็นการสร้างแท่งสีขึ้นมาเป็นฉากหลังในตาราง โดยมีความยาวตามค่า&lt;/p&gt;
+
+&lt;p&gt;ตัวอย่าง&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;pokemon.style.bar(color=&#39;#aaffaa&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://phyblas.hinaboshi.com/rup/nayuki/ayu/b12.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;การแสดงผลของตารางทั้งหมดมาจากโค้ด html ซึ่งหากต้องการได้ตัวโค้ด html ออกมาในรูปสายอักขระทันทีก็ให้ใช้เมธอด render() พิมพ์ต่อท้ายไปอีก&lt;/p&gt;
+
+&lt;p&gt;เช่น&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;pokemon.style.bar(color=&#39;#aaffaa&#39;).render()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;แบบนี้จะได้ตัวโค้ด html มา&lt;/p&gt;
+
+&lt;p&gt;นอกจากนี้แล้วยังมีความสามารถอื่นๆที่ทำได้อีกมากใน jupyter ที่ไม่ได้กล่าวถึงในนี้ สำหรับผู้ที่สนใจก็ไปลองๆใช้และศึกษากันดูเพิ่มเติมได้&lt;/p&gt;
+
+&lt;p&gt;Reference : &lt;a href=&#34;https://phyblas.hinaboshi.com/20161023&#34; target=&#34;_blank&#34;&gt;https://phyblas.hinaboshi.com/20161023&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

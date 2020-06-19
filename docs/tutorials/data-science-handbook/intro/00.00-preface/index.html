@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academia 4.3.1">
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Little Dragon">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="What Is Data Science? This is a book about doing data science with Python, which immediately begs the question: what is data science? It&rsquo;s a surprisingly hard definition to nail down, especially given how ubiquitous the term has become. Vocal critics have variously dismissed the term as a superfluous label (after all, what science doesn&rsquo;t involve data?) or a simple buzzword that only exists to salt resumes and catch the eye of overzealous tech recruiters.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://dragon-library.github.io/coding/tutorials/data-science-handbook/intro/00.00-preface/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#c7254e">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:400,700|Sarabun|Roboto&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/coding/css/academia.min.ff05a21b53038f9dccb7f30aedbfb6d7.css">
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="manifest" href="/coding/site.webmanifest">
+  <link rel="icon" type="image/png" href="/coding/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/coding/img/icon-192.png">
+
+  <link rel="canonical" href="https://dragon-library.github.io/coding/tutorials/data-science-handbook/intro/00.00-preface/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Library">
+  <meta property="og:url" content="https://dragon-library.github.io/coding/tutorials/data-science-handbook/intro/00.00-preface/">
+  <meta property="og:title" content="Preface | Library">
+  <meta property="og:description" content="What Is Data Science? This is a book about doing data science with Python, which immediately begs the question: what is data science? It&rsquo;s a surprisingly hard definition to nail down, especially given how ubiquitous the term has become. Vocal critics have variously dismissed the term as a superfluous label (after all, what science doesn&rsquo;t involve data?) or a simple buzzword that only exists to salt resumes and catch the eye of overzealous tech recruiters."><meta property="og:image" content="https://dragon-library.github.io/coding/img/icon-192.png">
+  <meta property="twitter:image" content="https://dragon-library.github.io/coding/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2020-06-18T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2020-06-19T01:41:59&#43;07:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>Preface | Library</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/coding/">Library</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/python/"><span>Python</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/coding/tutorials/"><span>Tutorials</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/coding/book/"><span>Book</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/courses/"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" id="search-query" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/coding/tutorials/data-science-handbook/intro/_index/">DS Handbook</a>
+    <ul class="nav docs-sidenav">
+      
+      <li class="active">
+        <a href="/coding/tutorials/data-science-handbook/intro/00.00-preface/">Preface</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/coding/tutorials/data-science-handbook/1.ipython/main/">1. IPython</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/1.ipython/main/">Beyond Normal</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/1.ipython/01.01-help-and-documentation/">Help and Documentation</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/1.ipython/01.02-shell-keyboard-shortcuts/">Keyboard Shortcuts</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/coding/tutorials/data-science-handbook/3.pandas/intro/">3. Pandas</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/intro/">Introducing</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.02-data-indexing-and-selection/">Data Indexing and Selection</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.03-operations-in-pandas/">Operating on Data</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.04-missing-values/">Handling Missing Data</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.05-hierarchical-indexing/">Hierarchical Indexing</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.06-concat-and-append/">Concat and Append</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.07-merge-and-join/">Merge and Join</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.08-aggregation-and-grouping/">Grouping</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.09-pivot-tables/">Pivot Tables</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.10-working-with-strings/">String Operations</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.11-working-with-time-series/03.11-working-with-time-series/">Time Series</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.12-performance-eval-and-query/">eval() and query()</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.13-further-resources/">Further Resources</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article" itemscope itemtype="http://schema.org/Article">
+
+        <div class="docs-article-container">
+          <h1 itemprop="name">Preface</h1>
+
+          <div class="article-style" itemprop="articleBody">
+            
+
+<h2 id="what-is-data-science">What Is Data Science?</h2>
+
+<p>This is a book about doing data science with Python, which immediately begs the question: what is <em>data science</em>?
+It&rsquo;s a surprisingly hard definition to nail down, especially given how ubiquitous the term has become.
+Vocal critics have variously dismissed the term as a superfluous label (after all, what science doesn&rsquo;t involve data?) or a simple buzzword that only exists to salt resumes and catch the eye of overzealous tech recruiters.</p>
+
+<p>In my mind, these critiques miss something important.
+Data science, despite its hype-laden veneer, is perhaps the best label we have for the cross-disciplinary set of skills that are becoming increasingly important in many applications across industry and academia.
+This cross-disciplinary piece is key: in my mind, the best extisting definition of data science is illustrated by Drew Conway&rsquo;s Data Science Venn Diagram, first published on his blog in September 2010:</p>
+
+<p><img src="../img/Data_Science_VD.png" alt="Data Science Venn Diagram" /></p>
+
+<p><small>(Source: <a href="http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram" target="_blank">Drew Conway</a>. Used by permission.)</small></p>
+
+<p>While some of the intersection labels are a bit tongue-in-cheek, this diagram captures the essence of what I think people mean when they say &laquo;data science&raquo;: it is fundamentally an <em>interdisciplinary</em> subject.
+Data science comprises three distinct and overlapping areas: the skills of a <em>statistician</em> who knows how to model and summarize datasets (which are growing ever larger); the skills of a <em>computer scientist</em> who can design and use algorithms to efficiently store, process, and visualize this data; and the *domain expertise*—what we might think of as &laquo;classical&raquo; training in a subject—necessary both to formulate the right questions and to put their answers in context.</p>
+
+<p>With this in mind, I would encourage you to think of data science not as a new domain of knowledge to learn, but a new set of skills that you can apply within your current area of expertise.
+Whether you are reporting election results, forecasting stock returns, optimizing online ad clicks, identifying microorganisms in microscope photos, seeking new classes of astronomical objects, or working with data in any other field, the goal of this book is to give you the ability to ask and answer new questions about your chosen subject area.</p>
+
+<h2 id="who-is-this-book-for">Who Is This Book For?</h2>
+
+<p>In my teaching both at the University of Washington and at various tech-focused conferences and meetups, one of the most common questions I have heard is this: &laquo;how should I learn Python?&raquo;
+The people asking are generally technically minded students, developers, or researchers, often with an already strong background in writing code and using computational and numerical tools.
+Most of these folks don&rsquo;t want to learn Python <em>per se</em>, but want to learn the language with the aim of using it as a tool for data-intensive and computational science.
+While a large patchwork of videos, blog posts, and tutorials for this audience is available online, I&rsquo;ve long been frustrated by the lack of a single good answer to this question; that is what inspired this book.</p>
+
+<p>The book is not meant to be an introduction to Python or to programming in general; I assume the reader has familiarity with the Python language, including defining functions, assigning variables, calling methods of objects, controlling the flow of a program, and other basic tasks.
+Instead it is meant to help Python users learn to use Python&rsquo;s data science stack–libraries such as IPython, NumPy, Pandas, Matplotlib, Scikit-Learn, and related tools–to effectively store, manipulate, and gain insight from data.</p>
+
+<h2 id="why-python">Why Python?</h2>
+
+<p>Python has emerged over the last couple decades as a first-class tool for scientific computing tasks, including the analysis and visualization of large datasets.
+This may have come as a surprise to early proponents of the Python language: the language itself was not specifically designed with data analysis or scientific computing in mind.
+The usefulness of Python for data science stems primarily from the large and active ecosystem of third-party packages: <em>NumPy</em> for manipulation of homogeneous array-based data, <em>Pandas</em> for manipulation of heterogeneous and labeled data, <em>SciPy</em> for common scientific computing tasks, <em>Matplotlib</em> for publication-quality visualizations, <em>IPython</em> for interactive execution and sharing of code, <em>Scikit-Learn</em> for machine learning, and many more tools that will be mentioned in the following pages.</p>
+
+<p>If you are looking for a guide to the Python language itself, I would suggest the sister project to this book, &laquo;<a href="https://github.com/jakevdp/WhirlwindTourOfPython" target="_blank">A Whirlwind Tour of the Python Language</a>&raquo;.
+This short report provides a tour of the essential features of the Python language, aimed at data scientists who already are familiar with one or more other programming languages.</p>
+
+<h3 id="python-2-vs-python-3">Python 2 vs Python 3</h3>
+
+<p>This book uses the syntax of Python 3, which contains language enhancements that are not compatible with the 2.x series of Python.
+Though Python 3.0 was first released in 2008, adoption has been relatively slow, particularly in the scientific and web development communities.
+This is primarily because it took some time for many of the essential third-party packages and toolkits to be made compatible with the new language internals.
+Since early 2014, however, stable releases of the most important tools in the data science ecosystem have been fully compatible with both Python 2 and 3, and so this book will use the newer Python 3 syntax.
+However, the vast majority of code snippets in this book will also work without modification in Python 2: in cases where a Py2-incompatible syntax is used, I will make every effort to note it explicitly.</p>
+
+<h2 id="outline-of-the-book">Outline of the Book</h2>
+
+<p>Each chapter of this book focuses on a particular package or tool that contributes a fundamental piece of the Python Data Sciece story.</p>
+
+<ol>
+<li>IPython and Jupyter: these packages provide the computational environment in which many Python-using data scientists work.</li>
+<li>NumPy: this library provides the <code>ndarray</code> for efficient storage and manipulation of dense data arrays in Python.</li>
+<li>Pandas: this library provides the <code>DataFrame</code> for efficient storage and manipulation of labeled/columnar data in Python.</li>
+<li>Matplotlib: this library provides capabilities for a flexible range of data visualizations in Python.</li>
+<li>Scikit-Learn: this library provides efficient &amp; clean Python implementations of the most important and established machine learning algorithms.</li>
+</ol>
+
+<p>The PyData world is certainly much larger than these five packages, and is growing every day.
+With this in mind, I make every attempt through these pages to provide references to other interesting efforts, projects, and packages that are pushing the boundaries of what can be done in Python.
+Nevertheless, these five are currently fundamental to much of the work being done in the Python data science space, and I expect they will remain important even as the ecosystem continues growing around them.</p>
+
+<h2 id="using-code-examples">Using Code Examples</h2>
+
+<p>Supplemental material (code examples, figures, etc.) is available for download at <a href="http://github.com/jakevdp/PythonDataScienceHandbook/" target="_blank">http://github.com/jakevdp/PythonDataScienceHandbook/</a>. This book is here to help you get your job done. In general, if example code is offered with this book, you may use it in your programs and documentation. You do not need to contact us for permission unless you’re reproducing a significant portion of the code. For example, writing a program that uses several chunks of code from this book does not require permission. Selling or distributing a CD-ROM of examples from O’Reilly books does require permission. Answering a question by citing this book and quoting example code does not require permission. Incorporating a significant amount of example code from this book into your product’s documentation does require permission.</p>
+
+<p>We appreciate, but do not require, attribution. An attribution usually includes the title, author, publisher, and ISBN. For example:</p>
+
+<blockquote>
+<p><em>The Python Data Science Handbook</em> by Jake VanderPlas (O’Reilly). Copyright 2016 Jake VanderPlas, 978-1-491-91205-8.</p>
+</blockquote>
+
+<p>If you feel your use of code examples falls outside fair use or the per‐ mission given above, feel free to contact us at permissions@oreilly.com.</p>
+
+<h2 id="installation-considerations">Installation Considerations</h2>
+
+<p>Installing Python and the suite of libraries that enable scientific computing is straightforward . This section will outline some of the considerations when setting up your computer.</p>
+
+<p>Though there are various ways to install Python, the one I would suggest for use in data science is the Anaconda distribution, which works similarly whether you use Windows, Linux, or Mac OS X.
+The Anaconda distribution comes in two flavors:</p>
+
+<ul>
+<li><p><a href="http://conda.pydata.org/miniconda.html" target="_blank">Miniconda</a> gives you the Python interpreter itself, along with a command-line tool called <code>conda</code> which operates as a cross-platform package manager geared toward Python packages, similar in spirit to the apt or yum tools that Linux users might be familiar with.</p></li>
+
+<li><p><a href="https://www.continuum.io/downloads" target="_blank">Anaconda</a> includes both Python and conda, and additionally bundles a suite of other pre-installed packages geared toward scientific computing. Because of the size of this bundle, expect the installation to consume several gigabytes of disk space.</p></li>
+</ul>
+
+<p>Any of the packages included with Anaconda can also be installed manually on top of Miniconda; for this reason I suggest starting with Miniconda.</p>
+
+<p>To get started, download and install the Miniconda package–make sure to choose a version with Python 3–and then install the core packages used in this book:</p>
+
+<pre><code>[~]$ conda install numpy pandas scikit-learn matplotlib seaborn jupyter
+</code></pre>
+
+<p>Throughout the text, we will also make use of other more specialized tools in Python&rsquo;s scientific ecosystem; installation is usually as easy as typing <strong><code>conda install packagename</code></strong>.
+For more information on conda, including information about creating and using conda environments (which I would <em>highly</em> recommend), refer to <a href="http://conda.pydata.org/docs/" target="_blank">conda&rsquo;s online documentation</a>.</p>
+
+          </div>
+
+          
+
+
+
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item box ">
+    <div class="meta-nav meta-prev">Previous <br>
+    <a href="/coding/tutorials/quickguide/" rel="next">QuickGuide</a></div>
+  </div>
+  
+  
+  
+  <div class="post-nav-item box">
+    <div class="meta-nav meta-next" >Next <br>
+    <a href="/coding/tutorials/data-science-handbook/1.ipython/main/" rel="prev">Beyond Normal</a></div>
+  </div>
+  
+  <br>
+  <br>
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          Last updated on Jun 19, 2020
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        
+        <p>
+          
+          Powered by
+          <a href="https://themefisher.com" target="_blank" rel="noopener">themefisher</a> for
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-inline network-icon text-right">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/Twitter" target="_blank" rel="noopener" title="DM Me"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="skype:echo123?call"  title="Skype Me"><i class="fab fa-skype" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://keybase.io/" target="_blank" rel="noopener" title="Chat on Keybase"><i class="fab fa-keybase" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://discourse.gohugo.io" target="_blank" rel="noopener" title="Discuss on Forum"><i class="fas fa-comments" aria-hidden="true"></i></a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </main>
+  </div>
+</div>
+
+
+      
+
+    
+    
+    
+    <script src="/coding/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/python.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/coding/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/coding/js/academia.min.e4fc229c2f28284fc2dfa5b66a52b765.js"></script>
+
+    
+
+
+
+
+
+
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

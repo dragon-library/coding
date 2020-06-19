@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academia 4.3.1">
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Little Dragon">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="pandas มีคำสั่งที่ช่วยให้ติดต่อกับฐานข้อมูล sql ได้อย่างง่ายดายขึ้น โดยสามารถเอาตารางจาก pandas เขียนลงใน sql และอ่านตารางจาก sql เข้ามาเป็นตารางใน pandas  ความสามารถส่วนใหญ่ในส่วนนี้จะใช้กับมอดูล sqlalchemy เป็นหลัก ดังนั้นจำเป็นต้องติดตั้งมอดูล sqlalchemy ด้วย">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://dragon-library.github.io/coding/post/python/tutorials/read-write-database-sql/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#c7254e">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:400,700|Sarabun|Roboto&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/coding/css/academia.min.ff05a21b53038f9dccb7f30aedbfb6d7.css">
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="manifest" href="/coding/site.webmanifest">
+  <link rel="icon" type="image/png" href="/coding/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/coding/img/icon-192.png">
+
+  <link rel="canonical" href="https://dragon-library.github.io/coding/post/python/tutorials/read-write-database-sql/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Library">
+  <meta property="og:url" content="https://dragon-library.github.io/coding/post/python/tutorials/read-write-database-sql/">
+  <meta property="og:title" content="การอ่านเขียนข้อมูลจากฐานข้อมูล sql | Library">
+  <meta property="og:description" content="pandas มีคำสั่งที่ช่วยให้ติดต่อกับฐานข้อมูล sql ได้อย่างง่ายดายขึ้น โดยสามารถเอาตารางจาก pandas เขียนลงใน sql และอ่านตารางจาก sql เข้ามาเป็นตารางใน pandas  ความสามารถส่วนใหญ่ในส่วนนี้จะใช้กับมอดูล sqlalchemy เป็นหลัก ดังนั้นจำเป็นต้องติดตั้งมอดูล sqlalchemy ด้วย"><meta property="og:image" content="https://dragon-library.github.io/coding/post/python/tutorials/read-write-database-sql/featured.png">
+  <meta property="twitter:image" content="https://dragon-library.github.io/coding/post/python/tutorials/read-write-database-sql/featured.png"><meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2020-06-02T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2020-06-18T02:48:28&#43;07:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>การอ่านเขียนข้อมูลจากฐานข้อมูล sql | Library</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/coding/">Library</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/coding/python/"><span>Python</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/coding/tutorials/"><span>Tutorials</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/book/"><span>Book</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/courses/"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article py-5" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+    
+    
+    <div class="article-container py-3">
+      <h1 itemprop="name">การอ่านเขียนข้อมูลจากฐานข้อมูล sql</h1>
+
+      
+      <p class="page-subtitle">ฐานข้อมูล sql เป็นรูปแบบการเก็บข้อมูลที่ใช้กันอย่างกว้างขวาง การเก็บข้อมูลของ sql นั้นมีลักษณะเป็นตารางข้อมูลเป็นแถวๆ คล้ายกับ pandas</p>
+      
+
+      
+      
+
+
+
+<meta content="2020-06-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+<meta content="2020-06-18 02:48:28 &#43;0700 &#43;07" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/coding/authors/admin/">Little Dragon</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    <time>Jun 18, 2020</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    <a href="/coding/categories/tutorials/">Tutorials</a>, <a href="/coding/categories/pandas/">Pandas</a></span>
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://dragon-library.github.io/coding/post/python/tutorials/read-write-database-sql/&amp;text=%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%ad%e0%b9%88%e0%b8%b2%e0%b8%99%e0%b9%80%e0%b8%82%e0%b8%b5%e0%b8%a2%e0%b8%99%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%e0%b8%88%e0%b8%b2%e0%b8%81%e0%b8%90%e0%b8%b2%e0%b8%99%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%20sql" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://dragon-library.github.io/coding/post/python/tutorials/read-write-database-sql/&amp;t=%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%ad%e0%b9%88%e0%b8%b2%e0%b8%99%e0%b9%80%e0%b8%82%e0%b8%b5%e0%b8%a2%e0%b8%99%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%e0%b8%88%e0%b8%b2%e0%b8%81%e0%b8%90%e0%b8%b2%e0%b8%99%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%20sql" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%ad%e0%b9%88%e0%b8%b2%e0%b8%99%e0%b9%80%e0%b8%82%e0%b8%b5%e0%b8%a2%e0%b8%99%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%e0%b8%88%e0%b8%b2%e0%b8%81%e0%b8%90%e0%b8%b2%e0%b8%99%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%20sql&amp;body=https://dragon-library.github.io/coding/post/python/tutorials/read-write-database-sql/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://dragon-library.github.io/coding/post/python/tutorials/read-write-database-sql/&amp;title=%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%ad%e0%b9%88%e0%b8%b2%e0%b8%99%e0%b9%80%e0%b8%82%e0%b8%b5%e0%b8%a2%e0%b8%99%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%e0%b8%88%e0%b8%b2%e0%b8%81%e0%b8%90%e0%b8%b2%e0%b8%99%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%20sql" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%ad%e0%b9%88%e0%b8%b2%e0%b8%99%e0%b9%80%e0%b8%82%e0%b8%b5%e0%b8%a2%e0%b8%99%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%e0%b8%88%e0%b8%b2%e0%b8%81%e0%b8%90%e0%b8%b2%e0%b8%99%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%20sql%20https://dragon-library.github.io/coding/post/python/tutorials/read-write-database-sql/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://dragon-library.github.io/coding/post/python/tutorials/read-write-database-sql/&amp;title=%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%ad%e0%b9%88%e0%b8%b2%e0%b8%99%e0%b9%80%e0%b8%82%e0%b8%b5%e0%b8%a2%e0%b8%99%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%e0%b8%88%e0%b8%b2%e0%b8%81%e0%b8%90%e0%b8%b2%e0%b8%99%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%a1%e0%b8%b9%e0%b8%a5%20sql" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      
+    </div>
+  </div>
+</div>
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      <blockquote>
+<p>เขียนเมื่อ 2020/06/02 19:13</p>
+</blockquote>
+
+<p>ฐานข้อมูล sql เป็นรูปแบบการเก็บข้อมูลที่ใช้กันอย่างกว้างขวาง การเก็บข้อมูลของ sql นั้นมีลักษณะเป็นตารางข้อมูลเป็นแถวๆ คล้ายกับ pandas</p>
+
+<p>pandas มีคำสั่งที่ช่วยให้ติดต่อกับฐานข้อมูล sql ได้อย่างง่ายดายขึ้น โดยสามารถเอาตารางจาก pandas เขียนลงใน sql และอ่านตารางจาก sql เข้ามาเป็นตารางใน pandas  ความสามารถส่วนใหญ่ในส่วนนี้จะใช้กับมอดูล sqlalchemy เป็นหลัก ดังนั้นจำเป็นต้องติดตั้งมอดูล sqlalchemy ด้วย</p>
+
+<p>เกี่ยวกับการใช้ sqlalchemy อ่านได้ใน  <a href="https://phyblas.hinaboshi.com/20200529" target="_blank">https://phyblas.hinaboshi.com/20200529</a></p>
+
+<p>เพียงแต่ว่าก็อาจไม่ต้องเรียกใช้ sqlalchemy โดยตรง แค่มีลงมอดูล sqlalchamy ไว้ก็สามารถใช้ความสามารถนี้ได้แล้ว</p>
+
+<p>ฐานข้อมูล sql ยังแบ่งออกเป็นหลายแบบ เช่น sqlite, posgresql, mysql ซึ่ง sqlalchemy ก็รองรับฐานข้อมูลหลายชนิด ซึ่งก็ทำให้ใช้ใน pandas ได้ด้วยเช่นกัน ในที่นี้จะใช้ sqlite ซึ่งเป็นฐานข้อมูล sql แบบที่ง่ายที่สุด มีติดตัวอยู่ตั้งแต่แรกไม่ต้องติดตั้งเพิ่ม  เมื่อมีตารางข้อมูลเก็บอยู่ในเดตาเฟรมแล้วต้องการบันทึกลงฐานข้อมูล sql สามารถทำได้โดยใช้เมธอด .to_sql() จากตัวเดตาเฟรมนั้น</p>
+
+<p>การใช้คำสั่งนี้มีการเขียนอยู่หลายวิธี ที่ง่ายที่สุดก็คือใส่ชื่อตารางและตามด้วยชื่อตารางที่เก็บข้อมูลนั้นอยู่  วิธีที่ง่ายที่สุดคือแค่ใส่ชื่อตาราง แล้วตามด้วยชื่อตัวฐานข้อมูลที่จะเก็บตารางข้อมูลนั้นไว้</p>
+
+<pre><code class="language-python">df.to_sql(ชื่อตาราง,ชื่อฐานข้อมูล)
+</code></pre>
+
+<p>ตัวอย่างการใช้</p>
+
+<pre><code class="language-python">import pandas as pd
+
+p = {'สายพันธุ์':['ซันกูส','ฮาบุเนก','ลูนาโทน'],
+     'ส่วนสูง':[1.3,2.7,1],
+     'น้ำหนัก':[40.3,52.5,168]}
+pokedf = pd.DataFrame(p,index=[335,336,337])
+pokedf.to_sql('pokemon','sqlite:///pkdata.db')
+</code></pre>
+
+<p>ในที่นี้ใช้กับฐานข้อมูล sqlite ในส่วนของชื่อฐานข้อมูลจะเขียนเป็น  <code>'sqlite:///ชื่อไฟล์'</code>  แบบนี้  อนึ่ง เดิมทีแล้ว .to_sql() ควรจะใช้กับตัวออบเจ็กต์เชื่อมต่อ ซึ่งใน sqlalchemy เรียกว่า engine  หากเขียนแบบเต็มๆตั้งแต่ขั้นตอนการสร้าง engine ก็อาจเขียนแบบนี้</p>
+
+<pre><code class="language-python">import sqlalchemy
+
+engine = sqlalchemy.create_engine('sqlite:///pkdata.db')
+pokedf.to_sql('pokemon',engine)
+</code></pre>
+
+<p>เพียงแต่ว่าสามารถเขียนย่อเป็นแบบใส่แค่ชื่อฐานข้อมูลไปโดยตรงก็ได้ ดังนั้นจึงสะดวกกว่ามาก ไม่จำเป็นต้อง import sqlalchemy มาโดยตรงเลยด้วย  ส่วนการอ่านข้อมูลจากตารางใน sql ทำได้โดยฟังก์ชัน pd.read_sql_table() วิธีใช้ก็เช่นเดียวกับตอนเขียนข้อมูลลง sql นั่นคือใส่ชื่อตารางกับชื่อฐานข้อมูล</p>
+
+<pre><code class="language-python">df = pd.read_sql_table(ชื่อตาราง,ชื่อฐานข้อมูล)
+</code></pre>
+
+<p>ตัวอย่างเช่นถ้าต้องการอ่านข้อมูลที่บันทึกลงไปในฐานข้อมูลในตัวอย่างที่แล้ว</p>
+
+<pre><code class="language-python">df = pd.read_sql_table('pokemon','sqlite:///pkdata.db')
+print(df)
+</code></pre>
+
+<pre><code>index	สายพันธุ์	ส่วนสูง	น้ำหนัก
+0	335	ซันกูส	1.3	40.3
+1	336	ฮาบุเนก	2.7	52.5
+2	337	ลูนาโทน	1.0	168.0  
+</code></pre>
+
+<p>จากในตัวอย่างที่แล้วทั้งตอนเขียนและอ่านล้วนไม่ได้ใส่ตัวเลือกเสริมอะไรลงไปเลย ทุกอย่างจึงเป็นไปตามค่าตั้งต้น</p>
+
+<p>ซึ่งจะเห็นว่าตอนที่ใช้ .to_sql() นั้นตัวดัชนีก็ถูกเปลี่ยนเป็นคอลัมน์หนึ่งใน sql ไปด้วย โดยชื่อคอลัมน์ดัชนีก็จะกลายเป็นชื่อคอลัมน์ใน sql ด้วย  หากต้องการเปลี่ยนชื่อคอลัมน์ดัชนีใหม่อาจทำได้โดยใส่ในตัวเลือกเสริม index_label เช่น</p>
+
+<pre><code class="language-python">pk = {'สายพันธุ์':['โซลร็อก','โดจ็อช'],
+      'ส่วนสูง':[1.2,0.4],
+      'น้ำหนัก':[154,1.9]}
+index = pd.Series([338,339],name='หมายเลข')
+pokedf = pd.DataFrame(pk,index=index)
+pokedf.to_sql('pokemon','sqlite:///pkdt.db',index_label='id')
+print(pd.read_sql_table('pokemon','sqlite:///pkdt.db'))
+</code></pre>
+
+<pre><code>id	สายพันธุ์	ส่วนสูง	น้ำหนัก
+0	338	โซลร็อก	1.2	154.0
+1	339	โดจ็อช	0.4	1.9  
+</code></pre>
+
+<p>นอกจากนี้ถ้าหากไม่ได้ตั้งชื่อให้คอลัมน์ดัชนี แล้วก็ไม่ได้กำหนด index_label ก็จะถูกตั้งชื่อเป็น index โดยอัตโนมัติ  หากจะให้ทิ้งส่วนดัชนีไปเลยก็ใส่ตัวเลขเสริม index เป็น index=False</p>
+
+<pre><code class="language-python">pk = {'สายพันธุ์':['นามาซึน','เฮย์งานิ'],
+      'ส่วนสูง':[0.9,0.6],
+      'น้ำหนัก':[23.6,11.5]}
+pokedf = pd.DataFrame(pk,index=[340,341])
+pokedf.to_sql('pokemon','sqlite:///pkdex.db',index=False)
+print(pd.read_sql_table('pokemon','sqlite:///pkdex.db'))
+</code></pre>
+
+<pre><code> สายพันธุ์	ส่วนสูง	น้ำหนัก
+0	นามาซึน	0.9	23.6
+1	เฮย์งานิ	0.6	11.5
+</code></pre>
+
+<p>หากชื่อตารางที่ใส่ไปนั้นซ้ำกับที่มีอยู่ในฐานข้อมูลนั้นแล้ว ปกติจะเกิดข้อผิดพลาดขึ้น<br />
+หากไม่ต้องการให้เป็นเช่นนั้น ก็อาจกำหนดไปในตัวเลือกเสริม if_exists เพิ่มเติม โดยถ้า id_exists=&lsquo;replace&rsquo; ตารางเดิมจะหายไปแล้วเอาข้อมูลใหม่ใส่ลงไปแทน เช่นลองใส่ตารางเดิมซ้ำในฐานข้อมูลเดียวกับตัวอย่างที่แล้ว</p>
+
+<pre><code class="language-python">pk = {'สายพันธุ์':['เนนดอล','ลีลีลา'],
+      'ส่วนสูง':[1.5,1],
+      'น้ำหนัก':[108,23.8]}
+pokedf = pd.DataFrame(pk,index=[344,345])
+pokedf.to_sql('pokemon','sqlite:///pkdex.db',if_exists='replace')
+print(pd.read_sql_table('pokemon','sqlite:///pkdex.db'))
+</code></pre>
+
+<p>ได้</p>
+
+<pre><code>index	สายพันธุ์	ส่วนสูง	น้ำหนัก
+0	344	เนนดอล	1.5	108.0
+1	345	ลีลีลา	1.0	23.8
+</code></pre>
+
+<p>จะเห็นว่าข้อมูลเก่าหายไปแล้วกลายเป็นข้อมูลใหม่  ตรงนี้ถ้าไม่ได้ใส่ หรือใส่ if_exists=&lsquo;fail&rsquo; ก็จะขึ้นมาว่า</p>
+
+<pre><code class="language-javascript">ValueError: Table 'pokemon' already exists.
+</code></pre>
+
+<p>นอกจากนี้ ถ้า id_exists=&lsquo;append&rsquo; จะเป็นการเพิ่มข้อมูลเข้าไปในตารางที่มีอยู่แล้ว   เช่น ลองใส่ตารางเดิมซ้ำในฐานข้อมูลเดียวกับตัวอย่างที่แล้ว</p>
+
+<pre><code class="language-python">pk = {'สายพันธุ์':['ชิซาริเกอร์','ยาจิลอน'],
+      'ส่วนสูง':[1.1,0.5]}
+pokedf = pd.DataFrame(pk,index=[342,343])
+pokedf.to_sql('pokemon','sqlite:///pkdex.db',if_exists='append')
+print(pd.read_sql_table('pokemon','sqlite:///pkdex.db'))
+</code></pre>
+
+<p>ได้</p>
+
+<pre><code>index	สายพันธุ์	ส่วนสูง	น้ำหนัก
+0	344	เนนดอล	1.5	108.0
+1	345	ลีลีลา	1.0	23.8
+2	342	ชิซาริเกอร์	1.1	NaN
+3	343	ยาจิลอน	0.5	NaN
+</code></pre>
+
+<p>ข้อมูลที่ใส่ต่อเข้าไปนั้นควรจะมีคอลัมน์ซ้ำกับตารางเดิม หรือจะขาดไปบางคอลัมน์ก็ได้ ค่าที่ขาดจะว่างไว้ แต่ถ้าหากมีคอลัมน์ที่ไม่มีอยู่เดิมก็จะเกิดข้อผิดพลาด  สำหรับชนิดของข้อมูลนั้น ถ้าไม่ได้กำหนดอะไรก็จะเป็นไปตามชนิดของข้อมูลที่สัมพันธ์กับที่อยู่ในเดตาเฟรม  เช่น ตัวอย่างนี้ เมื่อไม่ได้กำหนด dtype ก็จะเป็นแบบนี้</p>
+
+<pre><code class="language-python">pk = {'สายพันธุ์':['มิโลคารอส','คาคุเรออน'],
+      'ส่วนสูง':[6.2,1],
+      'น้ำหนัก':[162.0,22.0]}
+pokedf = pd.DataFrame(pk,pd.Series([350,352],name='เลข'))
+
+pokedf.to_sql('pokemon','sqlite:///pkdex.db',if_exists='replace')
+df = pd.read_sql_table('pokemon','sqlite:///pkdex.db',coerce_float=False)
+print(df.values)
+</code></pre>
+
+<p>ได้</p>
+
+<pre><code class="language-javascript">[[350 'มิโลคารอส' 6.2 162.0]
+ [352 'คาคุเรออน' 1.0 22.0]]
+</code></pre>
+
+<p>แต่หากต้องการให้เปลี่ยนชนิดข้อมูลเป็นแบบที่ต้องการก็สามารถกำหนดได้โดยตัวเลือกเสริม dtype  การใส่ชนิดข้อมูลนั้นให้ใส่ในรูปของชนิดข้อมูล sqlalchemy (ต้อง import มาใช้)  จากตัวอย่างที่แล้ว ลองกำหนด dtype เข้าไปได้ดังนี้</p>
+
+<pre><code class="language-python">import sqlalchemy
+
+dtype = {'ส่วนสูง':sqlalchemy.String,
+         'น้ำหนัก':sqlalchemy.Integer,
+         'เลข':sqlalchemy.Float}
+
+pokedf.to_sql('pokemon','sqlite:///pkdex.db',if_exists='replace',dtype=dtype)
+df = pd.read_sql_table('pokemon','sqlite:///pkdex.db')
+print(df.values)
+</code></pre>
+
+<p>ได้</p>
+
+<pre><code class="language-javascript">[[350.0 'มิโลคารอส' '6.2' 162]
+ [352.0 'คาคุเรออน' '1.0' 22]]
+</code></pre>
+
+<p>เวลาอ่านข้อมูลจาก sql ด้วย pd.read_sql_table() ก็มีตัวเลือกเสริมมากมายเพื่ออำนวยความสะดวกในการการกำหนดลักษณะการอ่าน  เช่น index_col ใช้กำหนดคอลัมน์ที่จะเป็นดัชนี ถ้าหากไม่กำหนดอะไรไปก็จะไม่มีคอลัมน์ไหนกลายเป็นดัชนี แล้วเป็นตัวเลข 0,1,2 ไป</p>
+
+<pre><code class="language-python">pk = {'สายพันธุ์':['ฮินบาส','โปวาเลิน','คาเงะโบวซึ'],
+      'ส่วนสูง':[0.6,0.3,0.6],
+      'น้ำหนัก':[7.4,0.8,2.3]}
+pokedf = pd.DataFrame(pk,pd.Series([349,351,353],name='เลข'))
+pokedf.to_sql('pokemon','sqlite:///pkdex.db',if_exists='replace')
+
+print(pd.read_sql_table('pokemon','sqlite:///pkdex.db'))
+print(pd.read_sql_table('pokemon','sqlite:///pkdex.db',index_col='เลข'))
+print(pd.read_sql_table('pokemon','sqlite:///pkdex.db',index_col='สายพันธุ์'))
+</code></pre>
+
+<p>ได้</p>
+
+<pre><code> เลข	สายพันธุ์	ส่วนสูง	น้ำหนัก
+0	349	ฮินบาส	0.6	7.4
+1	351	โปวาเลิน	0.3	0.8
+2	353	คาเงะโบวซึ	0.6	2.3
+</code></pre>
+
+<pre><code> สายพันธุ์	ส่วนสูง น้ำหนัก เลข	 	 	 
+349	ฮินบาส	0.6	7.4
+351	โปวาเลิน	0.3	0.8
+353	คาเงะโบวซึ	0.6	2.3
+</code></pre>
+
+<pre><code>
+ 	 เลข	ส่วนสูง	น้ำหนัก
+สายพันธุ์	 	 	 
+ฮินบาส	349	0.6	7.4
+โปวาเลิน	351	0.3	0.8
+คาเงะโบวซึ	353	0.6	2.3
+</code></pre>
+
+<p>ส่วนการเลือกเอาข้อมูลเฉพาะแค่บางคอลัมน์ทำได้โดยใส่ตัวเลือกเสริม columns</p>
+
+<pre><code class="language-python">pk = {'สายพันธุ์':['ยูเรเดิล','อาโนปธ์','อาร์มัลโด'],
+      'ส่วนสูง':[1.5,0.7,1.5],
+      'น้ำหนัก':[60.4,12.5,68.2]}
+pokedf = pd.DataFrame(pk,index=[346,347,348])
+pokedf.to_sql('pokemon','sqlite:///pkdex.db',if_exists='replace')
+
+print(pd.read_sql_table('pokemon','sqlite:///pkdex.db',columns=['index','สายพันธุ์']))
+print(pd.read_sql_table('pokemon','sqlite:///pkdex.db',columns=['index','สายพันธุ์'],index_col='index'))
+</code></pre>
+
+<p>ได้</p>
+
+<pre><code> 	index	สายพันธุ์
+0	346	ยูเรเดิล
+1	347	อาโนปธ์
+2	348	อาร์มัลโด
+</code></pre>
+
+<pre><code>	 	สายพันธุ์
+index	 
+346		ยูเรเดิล
+347		อาโนปธ์
+348		อาร์มัลโดแต่ 
+</code></pre>
+
+<p>pd.read_sql_table() นั้นไม่สามารถกำหนดเงื่อนไขให้ข้อมูลออกมาเฉพาะบางแถวได้ จะอ่านข้อมูลออกมาทุกแถวเสมอ (เหมือนการใส่ where ในโค้ด sql)</p>
+
+<p>ฟังก์ชันอีกตัวที่ใช้สำหรับอ่านข้อมูลคือ pd.read_sql_query() ซึ่งใช้เขียนโค้ด sql เพื่อสั่งอ่านข้อมูลเข้ามาโดยตรง  การจะใช้ฟังก์ชันนี้ได้จึงต้องรู้โค้ด sql ด้วยทำให้อาจใช้ยากกว่า แต่ข้อดีคือเขียนได้ยืดหยุ่นกว่า สามารถเขียน where เพื่อกำหนดเงื่อนไขได้ หรือเขียน order by เพื่อเรียงลำดับข้อมูลได้  การกำหนดคอลัมน์ที่จะใช้เป็นดัชนีก็ทำได้ด้วยการใส่ index_col เช่นกัน</p>
+
+<p>ตัวอย่าง</p>
+
+<pre><code class="language-python">pk = {'สายพันธุ์':['จูเพ็ตตา','โยมาวารุ','ซามาโยวรุ','โทรปิอุส'],
+      'ส่วนสูง':[1.1,0.8,1.6,2],
+      'น้ำหนัก':[12.5,35,30.6,100]}
+pokedf = pd.DataFrame(pk,index=[354,355,356,357])
+pokedf.to_sql('pokemon','sqlite:///pkdex.db',if_exists='replace')
+
+sql = 'select * from pokemon where น้ำหนัก&gt;32'
+print(pd.read_sql_query(sql,'sqlite:///pkdex.db'))
+sql = 'select สายพันธุ์,น้ำหนัก from pokemon order by น้ำหนัก desc'
+print(pd.read_sql_query(sql,'sqlite:///pkdex.db'))
+sql = 'select * from pokemon'
+print(pd.read_sql_query(sql,'sqlite:///pkdex.db',index_col='index'))
+</code></pre>
+
+<p>ได้</p>
+
+<pre><code> 	index	สายพันธุ์	ส่วนสูง	น้ำหนัก
+0	355	โยมาวารุ	0.8	35.0
+1	357	โทรปิอุส	2.0	100.0
+</code></pre>
+
+<pre><code>  	สายพันธุ์	น้ำหนัก
+0	โทรปิอุส	100.0
+1	โยมาวารุ	35.0
+2	ซามาโยวรุ	30.6
+3	จูเพ็ตตา	12.5 
+</code></pre>
+
+<pre><code>
+ 	สายพันธุ์	ส่วนสูง	น้ำหนัก
+index	 	 	 
+354	จูเพ็ตตา	1.1	12.5
+355	โยมาวารุ	0.8	35.0
+356	ซามาโยวรุ	1.6	30.6
+357	โทรปิอุส	2.0	100.0
+</code></pre>
+
+<p>หากใน โค้ดมีการใช้เครื่องหมายคำถาม ? ซึ่งแทนตัวพารามิเตอร์ สามารถใส่ค่าลงไปได้โดยเติมลิสต์ของพารามิเตอร์ที่ต้องการแทนใส่ในคีย์เวิร์ด params เช่น</p>
+
+<pre><code class="language-python">pk = {'สายพันธุ์':['ชิรีน','อับโซล','โซนาโน'],
+      'ส่วนสูง':[0.6,1.2,0.6],
+      'น้ำหนัก':[1,47,14]}
+pokedf = pd.DataFrame(pk,pd.Series([358,359,360],name='เลข'))
+pokedf.to_sql('pokemon','sqlite:///pkdex.db',if_exists='replace')
+
+sql = 'select * from pokemon where สายพันธุ์==?'
+print(pd.read_sql_query(sql,'sqlite:///pkdex.db',params=['ชิรีน']))
+</code></pre>
+
+<p>ได้</p>
+
+<pre><code>		 เลข	สายพันธุ์	ส่วนสูง	น้ำหนัก
+0		358		ชิรีน		0.6	1
+</code></pre>
+
+<p>หรือใส่ในรูปของตัวแปรที่ชื่อขึ้นต้นด้วยโคลอน : ก็ได้ กรณีนี้ให้ใส่ params เป็นดิกชันนารี เช่น</p>
+
+<pre><code class="language-python">sql = 'select * from pokemon where เลข=:lek'
+print(pd.read_sql_query(sql,'sqlite:///pkdex.db',params={'lek': 359}))
+</code></pre>
+
+<p>ได้</p>
+
+<pre><code> 	เลข	สายพันธุ์	ส่วนสูง	น้ำหนัก
+0	359	อับโซล	1.2		47
+</code></pre>
+
+<p>นอกจากนี้มีฟังก์ชัน <code>pd.read_sql()</code> ซึ่งอาจใช้เพื่อแทน <code>pd.read_sql_table()</code> หรือ <code>pd.read_sql_query()</code> ได้</p>
+
+<p>โดย <code>pd.read_sql()</code> จะดูจากค่าที่ใส่ไปเองว่าควรจะเรียก <code>pd.read_sql_table()</code> หรือ pd.read_sql_query() ดังนั้นในทางปฏิบัติแล้วถ้าไม่อยากเขียนยาวจะใช้<code>pd.read_sql()</code>อย่างเดียวตลอดก็ได้</p>
+
+<p>ตัวอย่าง</p>
+
+<pre><code class="language-python">pk = {'สายพันธุ์':['ยุกิวาราชิ','โอนิโกริ','ทามะซาราชิ'],
+      'ส่วนสูง':[0.7,1.5,0.8],
+      'น้ำหนัก':[16.8,256.5,39.5]}
+pokedf = pd.DataFrame(pk,pd.Series([361,362,363],name='เลข'))
+pokedf.to_sql('pokemon','sqlite:///pkdex.db',if_exists='replace')
+
+print(pd.read_sql('pokemon','sqlite:///pkdex.db',columns=['เลข','สายพันธุ์']))
+sql = 'select * from pokemon where น้ำหนัก&lt;40'
+
+print(pd.read_sql(sql,'sqlite:///pkdex.db'))
+</code></pre>
+
+<p>ได้</p>
+
+<pre><code> 	เลข	สายพันธุ์
+0	361	ยุกิวาราชิ
+1	362	โอนิโกริ
+2	363	ทามะซาราชิ
+
+</code></pre>
+
+<pre><code> 	เลข	สายพันธุ์		ส่วนสูง	น้ำหนัก
+0	361	ยุกิวาราชิ		0.7		16.8
+1	363	ทามะซาราชิ	0.8		39.5
+
+</code></pre>
+
+<p>เช่นเดียวกับ .to_sql() ฟังก์ชัน pd.read_sql_table(), pd.read_sql_query() และ pd.read_sql() เองก็เดิมทีควรใช้กับ engine ของ sqlalchemy เช่นกัน การเขียนแบบตัวอย่างที่ยกมาจึงเป็นแค่การเขียนย่อ</p>
+
+<p>หากเขียนเต็มๆตั้งแต่สร้าง engine ของ sqlalchemy ก็อาจเขียนได้แบบนี้</p>
+
+<pre><code class="language-python">import sqlalchemy
+
+engine = sqlalchemy.create_engine('sqlite:///pkdex.db')
+print(pd.read_sql('pokemon',engine))
+</code></pre>
+
+<p>นอกจากนี้ pd.read_sql_query() หรือ pd.read_sql() สามารถใช้กับมอดูล sqlite3 ได้ด้วย ดังนั้นจึงอาจเขียนแบบนี้</p>
+
+<pre><code class="language-python">import sqlite3
+
+conn = sqlite3.connect('pkdex.db')
+print(pd.read_sql('select * from pokemon',conn))
+conn.close()
+</code></pre>
+
+<p>เพียงแต่ .to_sql() กับ df.read_sql_table จะใช้ได้กับ sqlalchemy เท่านั้น ใช้กับ sqlite3 ไม่ได้</p>
+
+<p>อ้างอิง</p>
+
+<p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_sql.html" target="_blank">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_sql.html</a><br />
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql_table.html" target="_blank">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql_table.html</a><br />
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql_query.html" target="_blank">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql_query.html</a><br />
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql.html" target="_blank">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql.html</a><br />
+<a href="https://www.cjavapy.com/article/143" target="_blank">https://www.cjavapy.com/article/143</a><br />
+<a href="https://qiita.com/orengeo/items/36e8809e07be7c1b145e" target="_blank">https://qiita.com/orengeo/items/36e8809e07be7c1b145e</a></p>
+
+<blockquote>
+<p>Reference : <a href="https://phyblas.hinaboshi.com/yancham20" target="_blank">https://phyblas.hinaboshi.com/yancham20</a></p>
+</blockquote>
+
+    </div>
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/coding/tags/database/">Database</a>
+  
+  <a class="badge badge-light" href="/coding/tags/sql/">SQL</a>
+  
+  <a class="badge badge-light" href="/coding/tags/sqlalchemy/">sqlalchemy</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="https://dragon-library.github.io/coding/">Little Dragon</a></h5>
+      <h6 class="card-subtitle">Professor of Artificial Intelligence</h6>
+      <p class="card-text" itemprop="description">My research interests include distributed robotics, mobile computing and programmable matter.</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="/coding/#contact" >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/GeorgeCushen" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ" target="_blank" rel="noopener">
+              <i class="ai ai-google-scholar"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://github.com/gcushen" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+      <div class="article-widget">
+        <div class="hr-light"></div>
+        <h3>Related</h3>
+        <ul>
+          
+          <li><a href="/coding/post/python/tutorials/manage-sql-sqlalchemy/">จัดการฐานข้อมูล SQL ด้วย sqlalchemy</a></li>
+          
+        </ul>
+      </div>
+      
+    
+
+    
+    <div class="article-widget">
+      
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item box">
+    <div class="meta-nav meta-next" >Previous <br>
+    <a href="/coding/post/python/tutorials/change-output-pandas-in-jupyter/" rel="prev">ปรับเปลี่ยนการแสดงผล pandas ใน jupyter</a></div>
+  </div>
+  
+  <br>
+  <br>
+</div>
+
+    </div>
+    
+
+    
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+    <script src="/coding/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/python.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/coding/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/coding/js/academia.min.e4fc229c2f28284fc2dfa5b66a52b765.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        
+        <p>
+          
+          Powered by
+          <a href="https://themefisher.com" target="_blank" rel="noopener">themefisher</a> for
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-inline network-icon text-right">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/Twitter" target="_blank" rel="noopener" title="DM Me"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="skype:echo123?call"  title="Skype Me"><i class="fab fa-skype" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://keybase.io/" target="_blank" rel="noopener" title="Chat on Keybase"><i class="fab fa-keybase" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://discourse.gohugo.io" target="_blank" rel="noopener" title="Discuss on Forum"><i class="fas fa-comments" aria-hidden="true"></i></a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

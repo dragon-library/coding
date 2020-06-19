@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>File Handling on Library</title>
+    <link>https://dragon-library.github.io/coding/tags/file-handling/</link>
+    <description>Recent content in File Handling on Library</description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 07 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="https://dragon-library.github.io/coding/tags/file-handling/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>File Handling Functions Explained.</title>
+      <link>https://dragon-library.github.io/coding/post/python/tutorials/file-handling-functions/</link>
+      <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/post/python/tutorials/file-handling-functions/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/size/w2000/2020/05/Python-File-Handling-1.png&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;welcome&#34;&gt;Welcome&lt;/h2&gt;
+
+&lt;p&gt;Hi! If you want to learn how to work with files in Python, then this article is for you. Working with files is an important skill that every Python developer should learn, so let&amp;rsquo;s get started.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;In this article, you will learn:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;How to open a file.&lt;/li&gt;
+&lt;li&gt;How to read a file.&lt;/li&gt;
+&lt;li&gt;How to create a file.&lt;/li&gt;
+&lt;li&gt;How to modify a file.&lt;/li&gt;
+&lt;li&gt;How to close a file.&lt;/li&gt;
+&lt;li&gt;How to open files for multiple operations.&lt;/li&gt;
+&lt;li&gt;How to work with file object methods.&lt;/li&gt;
+&lt;li&gt;How to delete files.&lt;/li&gt;
+&lt;li&gt;How to work with context managers and why they are useful.&lt;/li&gt;
+&lt;li&gt;How to handle exceptions that could be raised when you work with files.&lt;/li&gt;
+&lt;li&gt;and more!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Let&amp;rsquo;s begin! 🔅&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;working-with-files-basic-syntax&#34;&gt;Working with Files: Basic Syntax&lt;/h2&gt;
+
+&lt;p&gt;One of the most important functions that you will need to use as you work with files in Python is  &lt;code&gt;**open()**&lt;/code&gt;&lt;strong&gt;,&lt;/strong&gt;  a built-in function that opens a file and allows your program to use it and work with it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;This is the basic syntax&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-48.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;💡  &lt;strong&gt;Tip:&lt;/strong&gt;  These are the two most commonly used arguments to call this function. There are six additional optional arguments. To learn more about them, please read  &lt;a href=&#34;https://docs.python.org/3/library/functions.html#open&#34; target=&#34;_blank&#34;&gt;this article&lt;/a&gt;  in the documentation.&lt;/p&gt;
+
+&lt;h3 id=&#34;first-parameter-file&#34;&gt;First Parameter: File&lt;/h3&gt;
+
+&lt;p&gt;The first parameter of the  &lt;code&gt;open()&lt;/code&gt;  function is  &lt;code&gt;**file**&lt;/code&gt;, the absolute or relative path to the file that you are trying to work with.&lt;/p&gt;
+
+&lt;p&gt;We usually use a relative path, which indicates where the file is located relative to the location of the script (Python file) that is calling the  &lt;code&gt;open()&lt;/code&gt;  function.&lt;/p&gt;
+
+&lt;p&gt;For example, the path in this function call:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;open(&amp;quot;names.txt&amp;quot;) # The relative path is &amp;quot;names.txt&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Only contains the name of the file. This can be used when the file that you are trying to open is in the same directory or folder as the Python script, like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-7.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;But if the file is within a nested folder, like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-9.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The names.txt file is in the &amp;laquo;data&amp;raquo; folder&lt;/p&gt;
+
+&lt;p&gt;Then we need to use a specific path to tell the function that the file is within another folder.&lt;/p&gt;
+
+&lt;p&gt;In this example, this would be the path:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;open(&amp;quot;data/names.txt&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice that we are writing  &lt;code&gt;data/&lt;/code&gt;  first (the name of the folder followed by a  &lt;code&gt;/&lt;/code&gt;) and then  &lt;code&gt;names.txt&lt;/code&gt;  (the name of the file with the extension).&lt;/p&gt;
+
+&lt;p&gt;💡  &lt;strong&gt;Tip:&lt;/strong&gt; The three letters  &lt;code&gt;.txt&lt;/code&gt;  that follow the dot in  &lt;code&gt;names.txt&lt;/code&gt;  is the &amp;laquo;extension&amp;raquo; of the file, or its type. In this case,  &lt;code&gt;.txt&lt;/code&gt;  indicates that it&amp;rsquo;s a text file.&lt;/p&gt;
+
+&lt;h3 id=&#34;second-parameter-mode&#34;&gt;Second Parameter: Mode&lt;/h3&gt;
+
+&lt;p&gt;The second parameter of the  &lt;code&gt;open()&lt;/code&gt;  function is the  &lt;code&gt;**mode**&lt;/code&gt;, a string with one character. That single character basically tells Python what you are planning to do with the file in your program.&lt;/p&gt;
+
+&lt;p&gt;Modes available are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Read (&lt;code&gt;&amp;quot;r&amp;quot;&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Append (&lt;code&gt;&amp;quot;a&amp;quot;&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Write (&lt;code&gt;&amp;quot;w&amp;quot;&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Create (&lt;code&gt;&amp;quot;x&amp;quot;&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can also choose to open the file in:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Text mode (&lt;code&gt;&amp;quot;t&amp;quot;&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Binary mode (&lt;code&gt;&amp;quot;b&amp;quot;&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To use text or binary mode, you would need to add these characters to the main mode. For example:  &lt;code&gt;&amp;quot;wb&amp;quot;&lt;/code&gt;  means writing in binary mode.&lt;/p&gt;
+
+&lt;p&gt;💡  &lt;strong&gt;Tip:&lt;/strong&gt;  The default modes are read (&lt;code&gt;&amp;quot;r&amp;quot;&lt;/code&gt;) and text (&lt;code&gt;&amp;quot;t&amp;quot;&lt;/code&gt;), which means &amp;laquo;open for reading text&amp;raquo; (&lt;code&gt;&amp;quot;rt&amp;quot;&lt;/code&gt;), so you don&amp;rsquo;t need to specify them in  &lt;code&gt;**open()**&lt;/code&gt;  if you want to use them because they are assigned by default. You can simply write  &lt;code&gt;open(&amp;lt;file&amp;gt;)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Why Modes?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;It really makes sense for Python to grant only certain permissions based what you are planning to do with the file, right? Why should Python allow your program to do more than necessary? This is basically why modes exist.&lt;/p&gt;
+
+&lt;p&gt;Think about it — allowing a program to do more than necessary can problematic. For example, if you only need to read the content of a file, it can be dangerous to allow your program to modify it unexpectedly, which could potentially introduce bugs.&lt;/p&gt;
+
+&lt;h2 id=&#34;how-to-read-a-file&#34;&gt;How to Read a File&lt;/h2&gt;
+
+&lt;p&gt;Now that you know more about the arguments that the  &lt;code&gt;**open()**&lt;/code&gt;  function takes, let&amp;rsquo;s see how you can open a file and store it in a variable to use it in your program.&lt;/p&gt;
+
+&lt;p&gt;This is the basic syntax:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-41.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We are simply assigning the value returned to a variable. For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;names_file = open(&amp;quot;data/names.txt&amp;quot;, &amp;quot;r&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I know you might be asking: what type of value is returned by  &lt;code&gt;**open()**&lt;/code&gt;?&lt;/p&gt;
+
+&lt;p&gt;Well,  &lt;strong&gt;a&lt;/strong&gt;  &lt;strong&gt;file object&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s talk a little bit about them.&lt;/p&gt;
+
+&lt;h3 id=&#34;file-objects&#34;&gt;File Objects&lt;/h3&gt;
+
+&lt;p&gt;According to the  &lt;a href=&#34;https://docs.python.org/3/glossary.html#term-file-object&#34; target=&#34;_blank&#34;&gt;Python Documentation&lt;/a&gt;, a  &lt;strong&gt;file object&lt;/strong&gt;  is:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;An object exposing a file-oriented API (with methods such as read() or write()) to an underlying resource.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This is basically telling us that a file object is an object that lets us work and interact with existing files in our Python program.&lt;/p&gt;
+
+&lt;p&gt;File objects have attributes, such as:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;name&lt;/strong&gt;: the name of the file.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;closed&lt;/strong&gt;:  &lt;code&gt;True&lt;/code&gt;  if the file is closed.  &lt;code&gt;False&lt;/code&gt;  otherwise.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mode&lt;/strong&gt;: the mode used to open the file.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-57.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;f = open(&amp;quot;data/names.txt&amp;quot;, &amp;quot;a&amp;quot;)
+print(f.mode) # Output: &amp;quot;a&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now let&amp;rsquo;s see how you can access the content of a file through a file object.&lt;/p&gt;
+
+&lt;h3 id=&#34;methods-to-read-a-file&#34;&gt;Methods to Read a File&lt;/h3&gt;
+
+&lt;p&gt;For us to be able to work file objects, we need to have a way to &amp;laquo;interact&amp;raquo; with them in our program and that is exactly what methods do. Let&amp;rsquo;s see some of them.&lt;/p&gt;
+
+&lt;h3 id=&#34;read&#34;&gt;&lt;strong&gt;Read()&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;The first method that you need to learn about is  &lt;strong&gt;&lt;code&gt;read()&lt;/code&gt;&lt;/strong&gt;,  which  &lt;strong&gt;returns the entire content of the file as a string.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-11.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here we have an example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;f = open(&amp;quot;data/names.txt&amp;quot;)
+print(f.read())
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The output is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Nora
+Gino
+Timmy
+William
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can use the  &lt;code&gt;type()&lt;/code&gt;  function to confirm that the value returned by  &lt;code&gt;f.read()&lt;/code&gt;  is a string:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-pytohn&#34;&gt;print(type(f.read()))
+
+# Output
+&amp;lt;class &#39;str&#39;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Yes, it&amp;rsquo;s a string!&lt;/p&gt;
+
+&lt;p&gt;In this case, the entire file was printed because we did not specify a maximum number of bytes, but we can do this as well.&lt;/p&gt;
+
+&lt;p&gt;Here we have an example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;f = open(&amp;quot;data/names.txt&amp;quot;)
+print(f.read(3))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The value returned is limited to this number of bytes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Nor
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;📌  &lt;strong&gt;Important:&lt;/strong&gt;  You need to  &lt;strong&gt;close&lt;/strong&gt; a file after the task has been completed to free the resources associated to the file. To do this, you need to call the  &lt;code&gt;**close()**&lt;/code&gt;  method, like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-22.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;readline-vs-readlines&#34;&gt;Readline() vs. Readlines()&lt;/h3&gt;
+
+&lt;p&gt;You can read a file line by line with these two methods. They are slightly different, so let&amp;rsquo;s see them in detail.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;**readline()**&lt;/code&gt;  reads  &lt;strong&gt;one line&lt;/strong&gt; of the file until it reaches the end of that line. A trailing newline character (&lt;code&gt;\n&lt;/code&gt;) is kept in the string.&lt;/p&gt;
+
+&lt;p&gt;💡  &lt;strong&gt;Tip:&lt;/strong&gt;  Optionally, you can pass the size, the maximum number of characters that you want to include in the resulting string.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-19.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;f = open(&amp;quot;data/names.txt&amp;quot;)
+print(f.readline())
+f.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The output is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Nora
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is the first line of the file.&lt;/p&gt;
+
+&lt;p&gt;In contrast,  &lt;code&gt;**readlines()**&lt;/code&gt;  returns a  &lt;strong&gt;list with all the lines&lt;/strong&gt;  of the file as individual elements (strings). This is the syntax:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-21.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;f = open(&amp;quot;data/names.txt&amp;quot;)
+print(f.readlines())
+f.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The output is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;[&#39;Nora\n&#39;, &#39;Gino\n&#39;, &#39;Timmy\n&#39;, &#39;William&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice that there is a  &lt;code&gt;\n&lt;/code&gt;  (newline character) at the end of each string, except the last one.&lt;/p&gt;
+
+&lt;p&gt;💡  &lt;strong&gt;Tip:&lt;/strong&gt;  You can get the same list with  &lt;code&gt;list(f)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can work with this list in your program by assigning it to a variable or using it in a loop:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;f = open(&amp;quot;data/names.txt&amp;quot;)
+
+for line in f.readlines():
+    # Do something with each line
+    
+f.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We can also iterate over  &lt;code&gt;f&lt;/code&gt;  directly (the file object) in a loop:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;f = open(&amp;quot;data/names.txt&amp;quot;, &amp;quot;r&amp;quot;)
+
+for line in f:
+	# Do something with each line
+
+f.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Those are the main methods used to read file objects. Now let&amp;rsquo;s see how you can create files.&lt;/p&gt;
+
+&lt;h2 id=&#34;how-to-create-a-file&#34;&gt;How to Create a File&lt;/h2&gt;
+
+&lt;p&gt;If you need to create a file &amp;laquo;dynamically&amp;raquo; using Python, you can do it with the  &lt;code&gt;&amp;quot;x&amp;quot;&lt;/code&gt;  mode.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s see how. This is the basic syntax:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-58.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s an example. This is my current working directory:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-29.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If I run this line of code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;f = open(&amp;quot;new_file.txt&amp;quot;, &amp;quot;x&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A new file with that name is created:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-30.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;With this mode, you can create a file and then write to it dynamically using methods that you will learn in just a few moments.&lt;/p&gt;
+
+&lt;p&gt;💡  &lt;strong&gt;Tip:&lt;/strong&gt;  The file will be initially empty until you modify it.&lt;/p&gt;
+
+&lt;p&gt;A curious thing is that if you try to run this line again and a file with that name already exists, you will see this error:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Traceback (most recent call last):
+  File &amp;quot;&amp;lt;path&amp;gt;&amp;quot;, line 8, in &amp;lt;module&amp;gt;
+    f = open(&amp;quot;new_file.txt&amp;quot;, &amp;quot;x&amp;quot;)
+FileExistsError: [Errno 17] File exists: &#39;new_file.txt&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;According to the  &lt;a href=&#34;https://docs.python.org/3/library/exceptions.html#FileExistsError&#34; target=&#34;_blank&#34;&gt;Python Documentation&lt;/a&gt;, this exception (runtime error) is:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Raised when trying to create a file or directory which already exists.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Now that you know how to create a file, let&amp;rsquo;s see how you can modify it.&lt;/p&gt;
+
+&lt;h2 id=&#34;how-to-modify-a-file&#34;&gt;How to Modify a File&lt;/h2&gt;
+
+&lt;p&gt;To modify (write to) a file, you need to use the  &lt;code&gt;**write()**&lt;/code&gt;  method. You have two ways to do it (append or write) based on the mode that you choose to open it with. Let&amp;rsquo;s see them in detail.&lt;/p&gt;
+
+&lt;h3 id=&#34;append&#34;&gt;Append&lt;/h3&gt;
+
+&lt;p&gt;&amp;laquo;Appending&amp;raquo; means adding something to the end of another thing. The  &lt;code&gt;&amp;quot;a&amp;quot;&lt;/code&gt;  mode allows you to open a file to append some content to it.&lt;/p&gt;
+
+&lt;p&gt;For example, if we have this file:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-43.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And we want to add a new line to it, we can open it using the  &lt;code&gt;**&amp;quot;a&amp;quot;**&lt;/code&gt;  mode (append) and then, call the  &lt;code&gt;**write()**&lt;/code&gt;  method, passing the content that we want to append as argument.&lt;/p&gt;
+
+&lt;p&gt;This is the basic syntax to call the  &lt;code&gt;**write()**&lt;/code&gt;  method:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-52.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s an example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;f = open(&amp;quot;data/names.txt&amp;quot;, &amp;quot;a&amp;quot;)
+f.write(&amp;quot;\nNew Line&amp;quot;)
+f.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;💡  &lt;strong&gt;Tip:&lt;/strong&gt;  Notice that I&amp;rsquo;m adding  &lt;code&gt;\n&lt;/code&gt;  before the line to indicate that I want the new line to appear as a separate line, not as a continuation of the existing line.&lt;/p&gt;
+
+&lt;p&gt;This is the file now, after running the script:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-45.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;💡  &lt;strong&gt;Tip:&lt;/strong&gt;  The new line might not be displayed in the file until &lt;strong&gt;&lt;code&gt;f.close()&lt;/code&gt;&lt;/strong&gt;  runs.&lt;/p&gt;
+
+&lt;h3 id=&#34;write&#34;&gt;Write&lt;/h3&gt;
+
+&lt;p&gt;Sometimes, you may want to delete the content of a file and replace it entirely with new content. You can do this with the  &lt;code&gt;**write()**&lt;/code&gt;  method if you open the file with the  &lt;code&gt;**&amp;quot;w&amp;quot;**&lt;/code&gt;  mode.&lt;/p&gt;
+
+&lt;p&gt;Here we have this text file:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-43.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If I run this script:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;f = open(&amp;quot;data/names.txt&amp;quot;, &amp;quot;w&amp;quot;)
+f.write(&amp;quot;New Content&amp;quot;)
+f.close()
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is the result:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-46.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As you can see, opening a file with the  &lt;code&gt;**&amp;quot;w&amp;quot;**&lt;/code&gt;  mode and then writing to it replaces the existing content.&lt;/p&gt;
+
+&lt;p&gt;💡  &lt;strong&gt;Tip:&lt;/strong&gt;  The  &lt;code&gt;**write()**&lt;/code&gt;  method returns the number of characters written.&lt;/p&gt;
+
+&lt;p&gt;If you want to write several lines at once, you can use the  &lt;code&gt;**writelines()**&lt;/code&gt;  method, which takes a list of strings. Each string represents a line to be added to the file.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s an example. This is the initial file:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-43.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If we run this script:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;f = open(&amp;quot;data/names.txt&amp;quot;, &amp;quot;a&amp;quot;)
+f.writelines([&amp;quot;\nline1&amp;quot;, &amp;quot;\nline2&amp;quot;, &amp;quot;\nline3&amp;quot;])
+f.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The lines are added to the end of the file:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-47.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;open-file-for-multiple-operations&#34;&gt;Open File For Multiple Operations&lt;/h3&gt;
+
+&lt;p&gt;Now you know how to create, read, and write to a file, but what if you want to do more than one thing in the same program? Let&amp;rsquo;s see what happens if we try to do this with the modes that you have learned so far:&lt;/p&gt;
+
+&lt;p&gt;If you open a file in  &lt;code&gt;&amp;quot;r&amp;quot;&lt;/code&gt;  mode (read), and then try to write to it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;f = open(&amp;quot;data/names.txt&amp;quot;)
+f.write(&amp;quot;New Content&amp;quot;) # Trying to write
+f.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You will get this error:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Traceback (most recent call last):
+  File &amp;quot;&amp;lt;path&amp;gt;&amp;quot;, line 9, in &amp;lt;module&amp;gt;
+    f.write(&amp;quot;New Content&amp;quot;)
+io.UnsupportedOperation: not writable
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Similarly, if you open a file in  &lt;code&gt;&amp;quot;w&amp;quot;&lt;/code&gt;  mode (write), and then try to read it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;f = open(&amp;quot;data/names.txt&amp;quot;, &amp;quot;w&amp;quot;)
+print(f.readlines()) # Trying to read
+f.write(&amp;quot;New Content&amp;quot;)
+f.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You will see this error:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Traceback (most recent call last):
+  File &amp;quot;&amp;lt;path&amp;gt;&amp;quot;, line 14, in &amp;lt;module&amp;gt;
+    print(f.readlines())
+io.UnsupportedOperation: not readable
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The same will occur with the  &lt;code&gt;&amp;quot;a&amp;quot;&lt;/code&gt;  (append) mode.&lt;/p&gt;
+
+&lt;p&gt;How can we solve this? To be able to read a file and perform another operation in the same program, you need to add the  &lt;code&gt;&amp;quot;+&amp;quot;&lt;/code&gt;  symbol to the mode, like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;f = open(&amp;quot;data/names.txt&amp;quot;, &amp;quot;w+&amp;quot;) # Read + Write
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;f = open(&amp;quot;data/names.txt&amp;quot;, &amp;quot;a+&amp;quot;) # Read + Append
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;f = open(&amp;quot;data/names.txt&amp;quot;, &amp;quot;r+&amp;quot;) # Read + Write
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Very useful, right? This is probably what you will use in your programs, but be sure to include only the modes that you need to avoid potential bugs.&lt;/p&gt;
+
+&lt;p&gt;Sometimes files are no longer needed. Let&amp;rsquo;s see how you can delete files using Python.&lt;/p&gt;
+
+&lt;h2 id=&#34;how-to-delete-files&#34;&gt;How to Delete Files&lt;/h2&gt;
+
+&lt;p&gt;To remove a file using Python, you need to import a module called  &lt;code&gt;**os**&lt;/code&gt;  which contains functions that interact with your operating system.&lt;/p&gt;
+
+&lt;p&gt;💡 &lt;strong&gt;Tip:&lt;/strong&gt;  A  &lt;strong&gt;module&lt;/strong&gt; is a Python file with related variables, functions, and classes.&lt;/p&gt;
+
+&lt;p&gt;Particularly, you need the  &lt;code&gt;**remove()**&lt;/code&gt;  function. This function takes the path to the file as argument and deletes the file automatically.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-56.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s see an example. We want to remove the file called  &lt;code&gt;sample_file.txt&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-34.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To do it, we write this code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import os
+os.remove(&amp;quot;sample_file.txt&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The first line:  &lt;code&gt;import os&lt;/code&gt;  is called an &amp;laquo;import statement&amp;raquo;. This statement is written at the top of your file and it gives you access to the functions defined in the  &lt;code&gt;os&lt;/code&gt;  module.&lt;/li&gt;
+&lt;li&gt;The second line:  &lt;code&gt;os.remove(&amp;quot;sample_file.txt&amp;quot;)&lt;/code&gt;  removes the file specified.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;💡  &lt;strong&gt;Tip:&lt;/strong&gt;  you can use an absolute or a relative path.&lt;/p&gt;
+
+&lt;p&gt;Now that you know how to delete files, let&amp;rsquo;s see an interesting tool&amp;hellip; Context Managers!&lt;/p&gt;
+
+&lt;h2 id=&#34;meet-context-managers&#34;&gt;Meet Context Managers&lt;/h2&gt;
+
+&lt;p&gt;Context Managers are Python constructs that will make your life much easier. By using them, you don&amp;rsquo;t need to remember to close a file at the end of your program and you have access to the file in the particular part of the program that you choose.&lt;/p&gt;
+
+&lt;h3 id=&#34;syntax&#34;&gt;Syntax&lt;/h3&gt;
+
+&lt;p&gt;This is an example of a context manager used to work with files:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.freecodecamp.org/news/content/images/2020/05/image-33.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;💡  &lt;strong&gt;Tip:&lt;/strong&gt; The body of the context manager has to be indented, just like we indent loops, functions, and classes. If the code is not indented, it will not be considered part of the context manager.&lt;/p&gt;
+
+&lt;p&gt;When the body of the context manager has been completed, the file closes automatically.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;with open(&amp;quot;&amp;lt;path&amp;gt;&amp;quot;, &amp;quot;&amp;lt;mode&amp;gt;&amp;quot;) as &amp;lt;var&amp;gt;:
+    # Working with the file...
+
+# The file is closed here!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;example&#34;&gt;Example&lt;/h3&gt;
+
+&lt;p&gt;Here&amp;rsquo;s an example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;with open(&amp;quot;data/names.txt&amp;quot;, &amp;quot;r+&amp;quot;) as f:
+    print(f.readlines()) 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This context manager opens the  &lt;code&gt;names.txt&lt;/code&gt;  file for read/write operations and assigns that file object to the variable  &lt;code&gt;f&lt;/code&gt;. This variable is used in the body of the context manager to refer to the file object.&lt;/p&gt;
+
+&lt;h3 id=&#34;trying-to-read-it-again&#34;&gt;Trying to Read it Again&lt;/h3&gt;
+
+&lt;p&gt;After the body has been completed, the file is automatically closed, so it can&amp;rsquo;t be read without opening it again. But wait! We have a line that tries to read it again, right here below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;with open(&amp;quot;data/names.txt&amp;quot;, &amp;quot;r+&amp;quot;) as f:
+    print(f.readlines())
+
+print(f.readlines()) # Trying to read the file again, outside of the context manager
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let&amp;rsquo;s see what happens:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Traceback (most recent call last):
+  File &amp;quot;&amp;lt;path&amp;gt;&amp;quot;, line 21, in &amp;lt;module&amp;gt;
+    print(f.readlines())
+ValueError: I/O operation on closed file.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This error is thrown because we are trying to read a closed file. Awesome, right? The context manager does all the heavy work for us, it is readable, and concise.&lt;/p&gt;
+
+&lt;h2 id=&#34;how-to-handle-exceptions-when-working-with-files&#34;&gt;How to Handle Exceptions When Working With Files&lt;/h2&gt;
+
+&lt;p&gt;When you&amp;rsquo;re working with files, errors can occur. Sometimes you may not have the necessary permissions to modify or access a file, or a file might not even exist. As a programmer, you need to foresee these circumstances and handle them in your program to avoid sudden crashes that could definitely affect the user experience.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s see some of the most common exceptions (runtime errors) that you might find when you work with files:&lt;/p&gt;
+
+&lt;h3 id=&#34;filenotfounderror&#34;&gt;FileNotFoundError&lt;/h3&gt;
+
+&lt;p&gt;According to the  &lt;a href=&#34;https://docs.python.org/3/library/exceptions.html#FileNotFoundError&#34; target=&#34;_blank&#34;&gt;Python Documentation&lt;/a&gt;, this exception is:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Raised when a file or directory is requested but doesn’t exist.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;For example, if the file that you&amp;rsquo;re trying to open doesn&amp;rsquo;t exist in your current working directory:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;f = open(&amp;quot;names.txt&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You will see this error:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Traceback (most recent call last):
+  File &amp;quot;&amp;lt;path&amp;gt;&amp;quot;, line 8, in &amp;lt;module&amp;gt;
+    f = open(&amp;quot;names.txt&amp;quot;)
+FileNotFoundError: [Errno 2] No such file or directory: &#39;names.txt&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let&amp;rsquo;s break this error down this line by line:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;File &amp;quot;&amp;lt;path&amp;gt;&amp;quot;, line 8, in &amp;lt;module&amp;gt;&lt;/code&gt;. This line tells you that the error was raised when the code on the file located in  &lt;code&gt;&amp;lt;path&amp;gt;&lt;/code&gt;  was running. Specifically, when  &lt;code&gt;line 8&lt;/code&gt;  was executed in  &lt;code&gt;&amp;lt;module&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;f = open(&amp;quot;names.txt&amp;quot;)&lt;/code&gt;. This is the line that caused the error.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;FileNotFoundError: [Errno 2] No such file or directory: &#39;names.txt&#39;&lt;/code&gt;  . This line says that a  &lt;code&gt;FileNotFoundError&lt;/code&gt;  exception was raised because the file or directory  &lt;code&gt;names.txt&lt;/code&gt;  doesn&amp;rsquo;t exist.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;💡  &lt;strong&gt;Tip:&lt;/strong&gt; Python is very descriptive with the error messages, right? This is a huge advantage during the process of debugging.&lt;/p&gt;
+
+&lt;h3 id=&#34;permissionerror&#34;&gt;PermissionError&lt;/h3&gt;
+
+&lt;p&gt;This is another common exception when working with files. According to the  &lt;a href=&#34;https://docs.python.org/3/library/exceptions.html#PermissionError&#34; target=&#34;_blank&#34;&gt;Python Documentation&lt;/a&gt;, this exception is:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Raised when trying to run an operation without the adequate access rights - for example filesystem permissions.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This exception is raised when you are trying to read or modify a file that don&amp;rsquo;t have permission to access. If you try to do so, you will see this error:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Traceback (most recent call last):
+  File &amp;quot;&amp;lt;path&amp;gt;&amp;quot;, line 8, in &amp;lt;module&amp;gt;
+    f = open(&amp;quot;&amp;lt;file_path&amp;gt;&amp;quot;)
+PermissionError: [Errno 13] Permission denied: &#39;data&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;isadirectoryerror&#34;&gt;IsADirectoryError&lt;/h3&gt;
+
+&lt;p&gt;According to the  &lt;a href=&#34;https://docs.python.org/3/library/exceptions.html#IsADirectoryError&#34; target=&#34;_blank&#34;&gt;Python Documentation&lt;/a&gt;, this exception is:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Raised when a file operation is requested on a directory.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This particular exception is raised when you try to open or work on a directory instead of a file, so be really careful with the path that you pass as argument.&lt;/p&gt;
+
+&lt;h3 id=&#34;how-to-handle-exceptions&#34;&gt;How to Handle Exceptions&lt;/h3&gt;
+
+&lt;p&gt;To handle these exceptions, you can use a  &lt;strong&gt;try/except&lt;/strong&gt;  statement. With this statement, you can &amp;laquo;tell&amp;raquo; your program what to do in case something unexpected happens.&lt;/p&gt;
+
+&lt;p&gt;This is the basic syntax:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;try:
+	# Try to run this code
+except &amp;lt;type_of_exception&amp;gt;:
+	# If an exception of this type is raised, stop the process and jump to this block
+    
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here you can see an example with  &lt;code&gt;FileNotFoundError&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;try:
+    f = open(&amp;quot;names.txt&amp;quot;)
+except FileNotFoundError:
+    print(&amp;quot;The file doesn&#39;t exist&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This basically says:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Try to open the file  &lt;code&gt;names.txt&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;If a  &lt;code&gt;FileNotFoundError&lt;/code&gt;  is thrown, don&amp;rsquo;t crash! Simply print a descriptive statement for the user.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;💡  &lt;strong&gt;Tip:&lt;/strong&gt;  You can choose how to handle the situation by writing the appropriate code in the  &lt;code&gt;except&lt;/code&gt;  block. Perhaps you could create a new file if it doesn&amp;rsquo;t exist already.&lt;/p&gt;
+
+&lt;p&gt;To close the file automatically after the task (regardless of whether an exception was raised or not in the  &lt;code&gt;try&lt;/code&gt;  block) you can add the  &lt;code&gt;finally&lt;/code&gt;  block.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;try:
+	# Try to run this code
+except &amp;lt;exception&amp;gt;:
+	# If this exception is raised, stop the process immediately and jump to this block
+finally: 
+	# Do this after running the code, even if an exception was raised
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is an example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;try:
+    f = open(&amp;quot;names.txt&amp;quot;)
+except FileNotFoundError:
+    print(&amp;quot;The file doesn&#39;t exist&amp;quot;)
+finally:
+    f.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;There are many ways to customize the try/except/finally statement and you can even add an  &lt;code&gt;else&lt;/code&gt;  block to run a block of code only if no exceptions were raised in the  &lt;code&gt;try&lt;/code&gt;  block.&lt;/p&gt;
+
+&lt;p&gt;💡 &lt;strong&gt;Tip:&lt;/strong&gt;  To learn more about exception handling in Python, you may like to read my article:  &lt;a href=&#34;https://www.freecodecamp.org/news/exception-handling-python/&#34; target=&#34;_blank&#34;&gt;&amp;laquo;How to Handle Exceptions in Python: A Detailed Visual Introduction&amp;raquo;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;in-summary&#34;&gt;In Summary&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You can create, read, write, and delete files using Python.&lt;/li&gt;
+&lt;li&gt;File objects have their own set of methods that you can use to work with them in your program.&lt;/li&gt;
+&lt;li&gt;Context Managers help you work with files and manage them by closing them automatically when a task has been completed.&lt;/li&gt;
+&lt;li&gt;Exception handling is key in Python. Common exceptions when you are working with files include  &lt;code&gt;FileNotFoundError&lt;/code&gt;,  &lt;code&gt;PermissionError&lt;/code&gt;  and  &lt;code&gt;IsADirectoryError&lt;/code&gt;. They can be handled using try/except/else/finally.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Reference : &lt;a href=&#34;https://www.freecodecamp.org/news/python-write-to-file-open-read-append-and-other-file-handling-functions-explained/&#34; target=&#34;_blank&#34;&gt;freeCodeCamp&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academia 4.3.1">
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Little Dragon">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="There are many options for development environments for Python, and I&rsquo;m often asked which one I use in my own work. My answer sometimes surprises people: my preferred environment is IPython plus a text editor (in my case, Emacs or Atom depending on my mood). IPython (short for Interactive Python) was started in 2001 by Fernando Perez as an enhanced Python interpreter, and has since grown into a project aiming to provide, in Perez&rsquo;s words, &laquo;Tools for the entire life cycle of research computing.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://dragon-library.github.io/coding/tutorials/data-science-handbook/1.ipython/main/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#c7254e">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:400,700|Sarabun|Roboto&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/coding/css/academia.min.ff05a21b53038f9dccb7f30aedbfb6d7.css">
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="manifest" href="/coding/site.webmanifest">
+  <link rel="icon" type="image/png" href="/coding/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/coding/img/icon-192.png">
+
+  <link rel="canonical" href="https://dragon-library.github.io/coding/tutorials/data-science-handbook/1.ipython/main/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Library">
+  <meta property="og:url" content="https://dragon-library.github.io/coding/tutorials/data-science-handbook/1.ipython/main/">
+  <meta property="og:title" content="1. IPython - Beyond Normal Python | Library">
+  <meta property="og:description" content="There are many options for development environments for Python, and I&rsquo;m often asked which one I use in my own work. My answer sometimes surprises people: my preferred environment is IPython plus a text editor (in my case, Emacs or Atom depending on my mood). IPython (short for Interactive Python) was started in 2001 by Fernando Perez as an enhanced Python interpreter, and has since grown into a project aiming to provide, in Perez&rsquo;s words, &laquo;Tools for the entire life cycle of research computing."><meta property="og:image" content="https://dragon-library.github.io/coding/img/icon-192.png">
+  <meta property="twitter:image" content="https://dragon-library.github.io/coding/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2020-06-18T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2020-06-19T01:41:59&#43;07:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>1. IPython - Beyond Normal Python | Library</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/coding/">Library</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/coding/python/"><span>Python</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/coding/tutorials/"><span>Tutorials</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/coding/book/"><span>Book</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/courses/"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" id="search-query" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/coding/tutorials/data-science-handbook/intro/_index/">DS Handbook</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/intro/00.00-preface/">Preface</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/coding/tutorials/data-science-handbook/1.ipython/main/">1. IPython</a>
+    <ul class="nav docs-sidenav">
+      
+      <li class="active">
+        <a href="/coding/tutorials/data-science-handbook/1.ipython/main/">Beyond Normal</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/1.ipython/01.01-help-and-documentation/">Help and Documentation</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/1.ipython/01.02-shell-keyboard-shortcuts/">Keyboard Shortcuts</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/coding/tutorials/data-science-handbook/3.pandas/intro/">3. Pandas</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/intro/">Introducing</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.02-data-indexing-and-selection/">Data Indexing and Selection</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.03-operations-in-pandas/">Operating on Data</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.04-missing-values/">Handling Missing Data</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.05-hierarchical-indexing/">Hierarchical Indexing</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.06-concat-and-append/">Concat and Append</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.07-merge-and-join/">Merge and Join</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.08-aggregation-and-grouping/">Grouping</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.09-pivot-tables/">Pivot Tables</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.10-working-with-strings/">String Operations</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.11-working-with-time-series/03.11-working-with-time-series/">Time Series</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.12-performance-eval-and-query/">eval() and query()</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.13-further-resources/">Further Resources</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article" itemscope itemtype="http://schema.org/Article">
+
+        <div class="docs-article-container">
+          <h1 itemprop="name">1. IPython - Beyond Normal Python</h1>
+
+          <div class="article-style" itemprop="articleBody">
+            
+
+<p>There are many options for development environments for Python, and I&rsquo;m often asked which one I use in my own work.
+My answer sometimes surprises people: my preferred environment is <a href="http://ipython.org/" target="_blank">IPython</a> plus a text editor (in my case, Emacs or Atom depending on my mood).
+IPython (short for <em>Interactive Python</em>) was started in 2001 by Fernando Perez as an enhanced Python interpreter, and has since grown into a project aiming to provide, in Perez&rsquo;s words, &laquo;Tools for the entire life cycle of research computing.&raquo;
+If Python is the engine of our data science task, you might think of IPython as the interactive control panel.</p>
+
+<p>As well as being a useful interactive interface to Python, IPython also provides a number of useful syntactic additions to the language; we&rsquo;ll cover the most useful of these additions here.
+In addition, IPython is closely tied with the <a href="http://jupyter.org" target="_blank">Jupyter project</a>, which provides a browser-based notebook that is useful for development, collaboration, sharing, and even publication of data science results.
+The IPython notebook is actually a special case of the broader Jupyter notebook structure, which encompasses notebooks for Julia, R, and other programming languages.
+As an example of the usefulness of the notebook format, look no further than the page you are reading: the entire manuscript for this book was composed as a set of IPython notebooks.</p>
+
+<p>IPython is about using Python effectively for interactive scientific and data-intensive computing.
+This chapter will start by stepping through some of the IPython features that are useful to the practice of data science, focusing especially on the syntax it offers beyond the standard features of Python.
+Next, we will go into a bit more depth on some of the more useful &laquo;magic commands&raquo; that can speed-up common tasks in creating and using data science code.
+Finally, we will touch on some of the features of the notebook that make it useful in understanding data and sharing results.</p>
+
+<h2 id="shell-or-notebook">Shell or Notebook?</h2>
+
+<p>There are two primary means of using IPython that we&rsquo;ll discuss in this chapter: the IPython shell and the IPython notebook.
+The bulk of the material in this chapter is relevant to both, and the examples will switch between them depending on what is most convenient.
+In the few sections that are relevant to just one or the other, we will explicitly state that fact.
+Before we start, some words on how to launch the IPython shell and IPython notebook.</p>
+
+<h3 id="launching-the-ipython-shell">Launching the IPython Shell</h3>
+
+<p>This chapter, like most of this book, is not designed to be absorbed passively.
+I recommend that as you read through it, you follow along and experiment with the tools and syntax we cover: the muscle-memory you build through doing this will be far more useful than the simple act of reading about it.
+Start by launching the IPython interpreter by typing <strong><code>ipython</code></strong> on the command-line; alternatively, if you&rsquo;ve installed a distribution like Anaconda or EPD, there may be a launcher specific to your system (we&rsquo;ll discuss this more fully in <a href="01.01-Help-And-Documentation.ipynb" target="_blank">Help and Documentation in IPython</a>).</p>
+
+<p>Once you do this, you should see a prompt like the following:</p>
+
+<pre><code>IPython 4.0.1 -- An enhanced Interactive Python.
+?         -&gt; Introduction and overview of IPython's features.
+%quickref -&gt; Quick reference.
+help      -&gt; Python's own help system.
+object?   -&gt; Details about 'object', use 'object??' for extra details.
+In [1]:
+</code></pre>
+
+<p>With that, you&rsquo;re ready to follow along.</p>
+
+<h3 id="launching-the-jupyter-notebook">Launching the Jupyter Notebook</h3>
+
+<p>The Jupyter notebook is a browser-based graphical interface to the IPython shell, and builds on it a rich set of dynamic display capabilities.
+As well as executing Python/IPython statements, the notebook allows the user to include formatted text, static and dynamic visualizations, mathematical equations, JavaScript widgets, and much more.
+Furthermore, these documents can be saved in a way that lets other people open them and execute the code on their own systems.</p>
+
+<p>Though the IPython notebook is viewed and edited through your web browser window, it must connect to a running Python process in order to execute code.
+This process (known as a &laquo;kernel&raquo;) can be started by running the following command in your system shell:</p>
+
+<pre><code>$ jupyter notebook
+</code></pre>
+
+<p>This command will launch a local web server that will be visible to your browser.
+It immediately spits out a log showing what it is doing; that log will look something like this:</p>
+
+<pre><code>$ jupyter notebook
+[NotebookApp] Serving notebooks from local directory: /Users/jakevdp/PythonDataScienceHandbook
+[NotebookApp] 0 active kernels 
+[NotebookApp] The IPython Notebook is running at: http://localhost:8888/
+[NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+</code></pre>
+
+<p>Upon issuing the command, your default browser should automatically open and navigate to the listed local URL;
+the exact address will depend on your system.
+If the browser does not open automatically, you can open a window and manually open this address (<em><a href="http://localhost:8888/" target="_blank">http://localhost:8888/</a></em> in this example).</p>
+
+          </div>
+
+          
+
+
+
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item box ">
+    <div class="meta-nav meta-prev">Previous <br>
+    <a href="/coding/tutorials/data-science-handbook/intro/00.00-preface/" rel="next">Preface</a></div>
+  </div>
+  
+  
+  
+  <div class="post-nav-item box">
+    <div class="meta-nav meta-next" >Next <br>
+    <a href="/coding/tutorials/data-science-handbook/1.ipython/01.01-help-and-documentation/" rel="prev">Help and Documentation</a></div>
+  </div>
+  
+  <br>
+  <br>
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          Last updated on Jun 19, 2020
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        
+        <p>
+          
+          Powered by
+          <a href="https://themefisher.com" target="_blank" rel="noopener">themefisher</a> for
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-inline network-icon text-right">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/Twitter" target="_blank" rel="noopener" title="DM Me"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="skype:echo123?call"  title="Skype Me"><i class="fab fa-skype" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://keybase.io/" target="_blank" rel="noopener" title="Chat on Keybase"><i class="fab fa-keybase" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://discourse.gohugo.io" target="_blank" rel="noopener" title="Discuss on Forum"><i class="fas fa-comments" aria-hidden="true"></i></a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </main>
+  </div>
+</div>
+
+
+      
+
+    
+    
+    
+    <script src="/coding/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/python.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/coding/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/coding/js/academia.min.e4fc229c2f28284fc2dfa5b66a52b765.js"></script>
+
+    
+
+
+
+
+
+
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academia 4.3.1">
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Little Dragon">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="One strength of Python is its relative ease in handling and manipulating string data. Pandas builds on this and provides a comprehensive set of vectorized string operations that become an essential piece of the type of munging required when working with (read: cleaning up) real-world data. In this section, we&rsquo;ll walk through some of the Pandas string operations, and then take a look at using them to partially clean up a very messy dataset of recipes collected from the Internet.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://dragon-library.github.io/coding/tutorials/data-science-handbook/3.pandas/03.10-working-with-strings/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#c7254e">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:400,700|Sarabun|Roboto&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/coding/css/academia.min.ff05a21b53038f9dccb7f30aedbfb6d7.css">
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="manifest" href="/coding/site.webmanifest">
+  <link rel="icon" type="image/png" href="/coding/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/coding/img/icon-192.png">
+
+  <link rel="canonical" href="https://dragon-library.github.io/coding/tutorials/data-science-handbook/3.pandas/03.10-working-with-strings/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Library">
+  <meta property="og:url" content="https://dragon-library.github.io/coding/tutorials/data-science-handbook/3.pandas/03.10-working-with-strings/">
+  <meta property="og:title" content="Vectorized String Operations | Library">
+  <meta property="og:description" content="One strength of Python is its relative ease in handling and manipulating string data. Pandas builds on this and provides a comprehensive set of vectorized string operations that become an essential piece of the type of munging required when working with (read: cleaning up) real-world data. In this section, we&rsquo;ll walk through some of the Pandas string operations, and then take a look at using them to partially clean up a very messy dataset of recipes collected from the Internet."><meta property="og:image" content="https://dragon-library.github.io/coding/img/icon-192.png">
+  <meta property="twitter:image" content="https://dragon-library.github.io/coding/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2020-06-18T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2020-06-19T01:41:59&#43;07:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>Vectorized String Operations | Library</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/coding/">Library</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/python/"><span>Python</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/coding/tutorials/"><span>Tutorials</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/coding/book/"><span>Book</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/courses/"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" id="search-query" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/coding/tutorials/data-science-handbook/intro/_index/">DS Handbook</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/intro/00.00-preface/">Preface</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/coding/tutorials/data-science-handbook/1.ipython/main/">1. IPython</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/1.ipython/main/">Beyond Normal</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/1.ipython/01.01-help-and-documentation/">Help and Documentation</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/1.ipython/01.02-shell-keyboard-shortcuts/">Keyboard Shortcuts</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/coding/tutorials/data-science-handbook/3.pandas/intro/">3. Pandas</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/intro/">Introducing</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.02-data-indexing-and-selection/">Data Indexing and Selection</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.03-operations-in-pandas/">Operating on Data</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.04-missing-values/">Handling Missing Data</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.05-hierarchical-indexing/">Hierarchical Indexing</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.06-concat-and-append/">Concat and Append</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.07-merge-and-join/">Merge and Join</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.08-aggregation-and-grouping/">Grouping</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.09-pivot-tables/">Pivot Tables</a>
+      </li>
+      
+      <li class="active">
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.10-working-with-strings/">String Operations</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.11-working-with-time-series/03.11-working-with-time-series/">Time Series</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.12-performance-eval-and-query/">eval() and query()</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/data-science-handbook/3.pandas/03.13-further-resources/">Further Resources</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#introducing-pandas-string-operations">Introducing Pandas String Operations</a></li>
+<li><a href="#tables-of-pandas-string-methods">Tables of Pandas String Methods</a>
+<ul>
+<li><a href="#methods-similar-to-python-string-methods">Methods similar to Python string methods</a></li>
+<li><a href="#methods-using-regular-expressions">Methods using regular expressions</a></li>
+<li><a href="#miscellaneous-methods">Miscellaneous methods</a>
+<ul>
+<li><a href="#vectorized-item-access-and-slicing">Vectorized item access and slicing</a></li>
+<li><a href="#indicator-variables">Indicator variables</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#example-recipe-database">Example: Recipe Database</a>
+<ul>
+<li><a href="#a-simple-recipe-recommender">A simple recipe recommender</a></li>
+<li><a href="#going-further-with-recipes">Going further with recipes</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article" itemscope itemtype="http://schema.org/Article">
+
+        <div class="docs-article-container">
+          <h1 itemprop="name">Vectorized String Operations</h1>
+
+          <div class="article-style" itemprop="articleBody">
+            
+
+<p>One strength of Python is its relative ease in handling and manipulating string data.
+Pandas builds on this and provides a comprehensive set of <em>vectorized string operations</em> that become an essential piece of the type of munging required when working with (read: cleaning up) real-world data.
+In this section, we&rsquo;ll walk through some of the Pandas string operations, and then take a look at using them to partially clean up a very messy dataset of recipes collected from the Internet.</p>
+
+<h2 id="introducing-pandas-string-operations">Introducing Pandas String Operations</h2>
+
+<p>We saw in previous sections how tools like NumPy and Pandas generalize arithmetic operations so that we can easily and quickly perform the same operation on many array elements. For example:</p>
+
+<pre><code class="language-python">import numpy as np
+x = np.array([2, 3, 5, 7, 11, 13])
+x * 2
+</code></pre>
+
+<pre><code>array([ 4,  6, 10, 14, 22, 26])
+</code></pre>
+
+<p>This <em>vectorization</em> of operations simplifies the syntax of operating on arrays of data: we no longer have to worry about the size or shape of the array, but just about what operation we want done.
+For arrays of strings, NumPy does not provide such simple access, and thus you&rsquo;re stuck using a more verbose loop syntax:</p>
+
+<pre><code class="language-python">data = ['peter', 'Paul', 'MARY', 'gUIDO']
+[s.capitalize() for s in data]
+</code></pre>
+
+<pre><code>['Peter', 'Paul', 'Mary', 'Guido']
+</code></pre>
+
+<p>This is perhaps sufficient to work with some data, but it will break if there are any missing values.
+For example:</p>
+
+<pre><code class="language-python">data = ['peter', 'Paul', None, 'MARY', 'gUIDO']
+[s.capitalize() for s in data]
+</code></pre>
+
+<pre><code>---------------------------------------------------------------------------
+
+AttributeError                            Traceback (most recent call last)
+
+&lt;ipython-input-3-fc1d891ab539&gt; in &lt;module&gt;()
+      1 data = ['peter', 'Paul', None, 'MARY', 'gUIDO']
+----&gt; 2 [s.capitalize() for s in data]
+
+
+&lt;ipython-input-3-fc1d891ab539&gt; in &lt;listcomp&gt;(.0)
+      1 data = ['peter', 'Paul', None, 'MARY', 'gUIDO']
+----&gt; 2 [s.capitalize() for s in data]
+
+
+AttributeError: 'NoneType' object has no attribute 'capitalize'
+</code></pre>
+
+<p>Pandas includes features to address both this need for vectorized string operations and for correctly handling missing data via the <code>str</code> attribute of Pandas Series and Index objects containing strings.
+So, for example, suppose we create a Pandas Series with this data:</p>
+
+<pre><code class="language-python">import pandas as pd
+names = pd.Series(data)
+names
+</code></pre>
+
+<pre><code>0    peter
+1     Paul
+2     None
+3     MARY
+4    gUIDO
+dtype: object
+</code></pre>
+
+<p>We can now call a single method that will capitalize all the entries, while skipping over any missing values:</p>
+
+<pre><code class="language-python">names.str.capitalize()
+</code></pre>
+
+<pre><code>0    Peter
+1     Paul
+2     None
+3     Mary
+4    Guido
+dtype: object
+</code></pre>
+
+<p>Using tab completion on this <code>str</code> attribute will list all the vectorized string methods available to Pandas.</p>
+
+<h2 id="tables-of-pandas-string-methods">Tables of Pandas String Methods</h2>
+
+<p>If you have a good understanding of string manipulation in Python, most of Pandas string syntax is intuitive enough that it&rsquo;s probably sufficient to just list a table of available methods; we will start with that here, before diving deeper into a few of the subtleties.
+The examples in this section use the following series of names:</p>
+
+<pre><code class="language-python">monte = pd.Series(['Graham Chapman', 'John Cleese', 'Terry Gilliam',
+                   'Eric Idle', 'Terry Jones', 'Michael Palin'])
+</code></pre>
+
+<h3 id="methods-similar-to-python-string-methods">Methods similar to Python string methods</h3>
+
+<p>Nearly all Python&rsquo;s built-in string methods are mirrored by a Pandas vectorized string method. Here is a list of Pandas <code>str</code> methods that mirror Python string methods:</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>len()</code></td>
+<td><code>lower()</code></td>
+<td><code>translate()</code></td>
+<td><code>islower()</code></td>
+</tr>
+
+<tr>
+<td><code>ljust()</code></td>
+<td><code>upper()</code></td>
+<td><code>startswith()</code></td>
+<td><code>isupper()</code></td>
+</tr>
+
+<tr>
+<td><code>rjust()</code></td>
+<td><code>find()</code></td>
+<td><code>endswith()</code></td>
+<td><code>isnumeric()</code></td>
+</tr>
+
+<tr>
+<td><code>center()</code></td>
+<td><code>rfind()</code></td>
+<td><code>isalnum()</code></td>
+<td><code>isdecimal()</code></td>
+</tr>
+
+<tr>
+<td><code>zfill()</code></td>
+<td><code>index()</code></td>
+<td><code>isalpha()</code></td>
+<td><code>split()</code></td>
+</tr>
+
+<tr>
+<td><code>strip()</code></td>
+<td><code>rindex()</code></td>
+<td><code>isdigit()</code></td>
+<td><code>rsplit()</code></td>
+</tr>
+
+<tr>
+<td><code>rstrip()</code></td>
+<td><code>capitalize()</code></td>
+<td><code>isspace()</code></td>
+<td><code>partition()</code></td>
+</tr>
+
+<tr>
+<td><code>lstrip()</code></td>
+<td><code>swapcase()</code></td>
+<td><code>istitle()</code></td>
+<td><code>rpartition()</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>Notice that these have various return values. Some, like <code>lower()</code>, return a series of strings:</p>
+
+<pre><code class="language-python">monte.str.lower()
+</code></pre>
+
+<pre><code>0    graham chapman
+1       john cleese
+2     terry gilliam
+3         eric idle
+4       terry jones
+5     michael palin
+dtype: object
+</code></pre>
+
+<p>But some others return numbers:</p>
+
+<pre><code class="language-python">monte.str.len()
+</code></pre>
+
+<pre><code>0    14
+1    11
+2    13
+3     9
+4    11
+5    13
+dtype: int64
+</code></pre>
+
+<p>Or Boolean values:</p>
+
+<pre><code class="language-python">monte.str.startswith('T')
+</code></pre>
+
+<pre><code>0    False
+1    False
+2     True
+3    False
+4     True
+5    False
+dtype: bool
+</code></pre>
+
+<p>Still others return lists or other compound values for each element:</p>
+
+<pre><code class="language-python">monte.str.split()
+</code></pre>
+
+<pre><code>0    [Graham, Chapman]
+1       [John, Cleese]
+2     [Terry, Gilliam]
+3         [Eric, Idle]
+4       [Terry, Jones]
+5     [Michael, Palin]
+dtype: object
+</code></pre>
+
+<p>We&rsquo;ll see further manipulations of this kind of series-of-lists object as we continue our discussion.</p>
+
+<h3 id="methods-using-regular-expressions">Methods using regular expressions</h3>
+
+<p>In addition, there are several methods that accept regular expressions to examine the content of each string element, and follow some of the API conventions of Python&rsquo;s built-in <code>re</code> module:</p>
+
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>match()</code></td>
+<td>Call <code>re.match()</code> on each element, returning a boolean.</td>
+</tr>
+
+<tr>
+<td><code>extract()</code></td>
+<td>Call <code>re.match()</code> on each element, returning matched groups as strings.</td>
+</tr>
+
+<tr>
+<td><code>findall()</code></td>
+<td>Call <code>re.findall()</code> on each element</td>
+</tr>
+
+<tr>
+<td><code>replace()</code></td>
+<td>Replace occurrences of pattern with some other string</td>
+</tr>
+
+<tr>
+<td><code>contains()</code></td>
+<td>Call <code>re.search()</code> on each element, returning a boolean</td>
+</tr>
+
+<tr>
+<td><code>count()</code></td>
+<td>Count occurrences of pattern</td>
+</tr>
+
+<tr>
+<td><code>split()</code></td>
+<td>Equivalent to <code>str.split()</code>, but accepts regexps</td>
+</tr>
+
+<tr>
+<td><code>rsplit()</code></td>
+<td>Equivalent to <code>str.rsplit()</code>, but accepts regexps</td>
+</tr>
+</tbody>
+</table>
+
+<p>With these, you can do a wide range of interesting operations.
+For example, we can extract the first name from each by asking for a contiguous group of characters at the beginning of each element:</p>
+
+<pre><code class="language-python">monte.str.extract('([A-Za-z]+)', expand=False)
+</code></pre>
+
+<pre><code>0     Graham
+1       John
+2      Terry
+3       Eric
+4      Terry
+5    Michael
+dtype: object
+</code></pre>
+
+<p>Or we can do something more complicated, like finding all names that start and end with a consonant, making use of the start-of-string (<code>^</code>) and end-of-string (<code>$</code>) regular expression characters:</p>
+
+<pre><code class="language-python">monte.str.findall(r'^[^AEIOU].*[^aeiou]$')
+</code></pre>
+
+<pre><code>0    [Graham Chapman]
+1                  []
+2     [Terry Gilliam]
+3                  []
+4       [Terry Jones]
+5     [Michael Palin]
+dtype: object
+</code></pre>
+
+<p>The ability to concisely apply regular expressions across <code>Series</code> or <code>Dataframe</code> entries opens up many possibilities for analysis and cleaning of data.</p>
+
+<h3 id="miscellaneous-methods">Miscellaneous methods</h3>
+
+<p>Finally, there are some miscellaneous methods that enable other convenient operations:</p>
+
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>get()</code></td>
+<td>Index each element</td>
+</tr>
+
+<tr>
+<td><code>slice()</code></td>
+<td>Slice each element</td>
+</tr>
+
+<tr>
+<td><code>slice_replace()</code></td>
+<td>Replace slice in each element with passed value</td>
+</tr>
+
+<tr>
+<td><code>cat()</code></td>
+<td>Concatenate strings</td>
+</tr>
+
+<tr>
+<td><code>repeat()</code></td>
+<td>Repeat values</td>
+</tr>
+
+<tr>
+<td><code>normalize()</code></td>
+<td>Return Unicode form of string</td>
+</tr>
+
+<tr>
+<td><code>pad()</code></td>
+<td>Add whitespace to left, right, or both sides of strings</td>
+</tr>
+
+<tr>
+<td><code>wrap()</code></td>
+<td>Split long strings into lines with length less than a given width</td>
+</tr>
+
+<tr>
+<td><code>join()</code></td>
+<td>Join strings in each element of the Series with passed separator</td>
+</tr>
+
+<tr>
+<td><code>get_dummies()</code></td>
+<td>extract dummy variables as a dataframe</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="vectorized-item-access-and-slicing">Vectorized item access and slicing</h4>
+
+<p>The <code>get()</code> and <code>slice()</code> operations, in particular, enable vectorized element access from each array.
+For example, we can get a slice of the first three characters of each array using <code>str.slice(0, 3)</code>.
+Note that this behavior is also available through Python&rsquo;s normal indexing syntax–for example, <code>df.str.slice(0, 3)</code> is equivalent to <code>df.str[0:3]</code>:</p>
+
+<pre><code class="language-python">monte.str[0:3]
+</code></pre>
+
+<pre><code>0    Gra
+1    Joh
+2    Ter
+3    Eri
+4    Ter
+5    Mic
+dtype: object
+</code></pre>
+
+<p>Indexing via <code>df.str.get(i)</code> and <code>df.str[i]</code> is likewise similar.</p>
+
+<p>These <code>get()</code> and <code>slice()</code> methods also let you access elements of arrays returned by <code>split()</code>.
+For example, to extract the last name of each entry, we can combine <code>split()</code> and <code>get()</code>:</p>
+
+<pre><code class="language-python">monte.str.split().str.get(-1)
+</code></pre>
+
+<pre><code>0    Chapman
+1     Cleese
+2    Gilliam
+3       Idle
+4      Jones
+5      Palin
+dtype: object
+</code></pre>
+
+<h4 id="indicator-variables">Indicator variables</h4>
+
+<p>Another method that requires a bit of extra explanation is the <code>get_dummies()</code> method.
+This is useful when your data has a column containing some sort of coded indicator.
+For example, we might have a dataset that contains information in the form of codes, such as A=&laquo;born in America,&raquo; B=&laquo;born in the United Kingdom,&raquo; C=&laquo;likes cheese,&raquo; D=&laquo;likes spam&raquo;:</p>
+
+<pre><code class="language-python">full_monte = pd.DataFrame({'name': monte,
+                           'info': ['B|C|D', 'B|D', 'A|C',
+                                    'B|D', 'B|C', 'B|C|D']})
+full_monte
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>info</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>B|C|D</td>
+      <td>Graham Chapman</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>B|D</td>
+      <td>John Cleese</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>A|C</td>
+      <td>Terry Gilliam</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>B|D</td>
+      <td>Eric Idle</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>B|C</td>
+      <td>Terry Jones</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>B|C|D</td>
+      <td>Michael Palin</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>The <code>get_dummies()</code> routine lets you quickly split-out these indicator variables into a <code>DataFrame</code>:</p>
+
+<pre><code class="language-python">full_monte['info'].str.get_dummies('|')
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>With these operations as building blocks, you can construct an endless range of string processing procedures when cleaning your data.</p>
+
+<p>We won&rsquo;t dive further into these methods here, but I encourage you to read through <a href="http://pandas.pydata.org/pandas-docs/stable/text.html" target="_blank">&laquo;Working with Text Data&raquo;</a> in the Pandas online documentation, or to refer to the resources listed in <a href="03.13-Further-Resources.ipynb" target="_blank">Further Resources</a>.</p>
+
+<h2 id="example-recipe-database">Example: Recipe Database</h2>
+
+<p>These vectorized string operations become most useful in the process of cleaning up messy, real-world data.
+Here I&rsquo;ll walk through an example of that, using an open recipe database compiled from various sources on the Web.
+Our goal will be to parse the recipe data into ingredient lists, so we can quickly find a recipe based on some ingredients we have on hand.</p>
+
+<p>The scripts used to compile this can be found at <a href="https://github.com/fictivekin/openrecipes" target="_blank">https://github.com/fictivekin/openrecipes</a>, and the link to the current version of the database is found there as well.</p>
+
+<p>As of Spring 2016, this database is about 30 MB, and can be downloaded and unzipped with these commands:</p>
+
+<pre><code class="language-python"># !curl -O http://openrecipes.s3.amazonaws.com/recipeitems-latest.json.gz
+# !gunzip recipeitems-latest.json.gz
+</code></pre>
+
+<p>The database is in JSON format, so we will try <code>pd.read_json</code> to read it:</p>
+
+<pre><code class="language-python">try:
+    recipes = pd.read_json('recipeitems-latest.json')
+except ValueError as e:
+    print(&quot;ValueError:&quot;, e)
+</code></pre>
+
+<pre><code>ValueError: Trailing data
+</code></pre>
+
+<p>Oops! We get a <code>ValueError</code> mentioning that there is &laquo;trailing data.&raquo;
+Searching for the text of this error on the Internet, it seems that it&rsquo;s due to using a file in which <em>each line</em> is itself a valid JSON, but the full file is not.
+Let&rsquo;s check if this interpretation is true:</p>
+
+<pre><code class="language-python">with open('recipeitems-latest.json') as f:
+    line = f.readline()
+pd.read_json(line).shape
+</code></pre>
+
+<pre><code>(2, 12)
+</code></pre>
+
+<p>Yes, apparently each line is a valid JSON, so we&rsquo;ll need to string them together.
+One way we can do this is to actually construct a string representation containing all these JSON entries, and then load the whole thing with <code>pd.read_json</code>:</p>
+
+<pre><code class="language-python"># read the entire file into a Python array
+with open('recipeitems-latest.json', 'r') as f:
+    # Extract each line
+    data = (line.strip() for line in f)
+    # Reformat so each line is the element of a list
+    data_json = &quot;[{0}]&quot;.format(','.join(data))
+# read the result as a JSON
+recipes = pd.read_json(data_json)
+</code></pre>
+
+<pre><code class="language-python">recipes.shape
+</code></pre>
+
+<pre><code>(173278, 17)
+</code></pre>
+
+<p>We see there are nearly 200,000 recipes, and 17 columns.
+Let&rsquo;s take a look at one row to see what we have:</p>
+
+<pre><code class="language-python">recipes.iloc[0]
+</code></pre>
+
+<pre><code>_id                                {'$oid': '5160756b96cc62079cc2db15'}
+cookTime                                                          PT30M
+creator                                                             NaN
+dateModified                                                        NaN
+datePublished                                                2013-03-11
+description           Late Saturday afternoon, after Marlboro Man ha...
+image                 http://static.thepioneerwoman.com/cooking/file...
+ingredients           Biscuits\n3 cups All-purpose Flour\n2 Tablespo...
+name                                    Drop Biscuits and Sausage Gravy
+prepTime                                                          PT10M
+recipeCategory                                                      NaN
+recipeInstructions                                                  NaN
+recipeYield                                                          12
+source                                                  thepioneerwoman
+totalTime                                                           NaN
+ts                                             {'$date': 1365276011104}
+url                   http://thepioneerwoman.com/cooking/2013/03/dro...
+Name: 0, dtype: object
+</code></pre>
+
+<p>There is a lot of information there, but much of it is in a very messy form, as is typical of data scraped from the Web.
+In particular, the ingredient list is in string format; we&rsquo;re going to have to carefully extract the information we&rsquo;re interested in.
+Let&rsquo;s start by taking a closer look at the ingredients:</p>
+
+<pre><code class="language-python">recipes.ingredients.str.len().describe()
+</code></pre>
+
+<pre><code>count    173278.000000
+mean        244.617926
+std         146.705285
+min           0.000000
+25%         147.000000
+50%         221.000000
+75%         314.000000
+max        9067.000000
+Name: ingredients, dtype: float64
+</code></pre>
+
+<p>The ingredient lists average 250 characters long, with a minimum of 0 and a maximum of nearly 10,000 characters!</p>
+
+<p>Just out of curiousity, let&rsquo;s see which recipe has the longest ingredient list:</p>
+
+<pre><code class="language-python">recipes.name[np.argmax(recipes.ingredients.str.len())]
+</code></pre>
+
+<pre><code>'Carrot Pineapple Spice &amp;amp; Brownie Layer Cake with Whipped Cream &amp;amp; Cream Cheese Frosting and Marzipan Carrots'
+</code></pre>
+
+<p>That certainly looks like an involved recipe.</p>
+
+<p>We can do other aggregate explorations; for example, let&rsquo;s see how many of the recipes are for breakfast food:</p>
+
+<pre><code class="language-python">recipes.description.str.contains('[Bb]reakfast').sum()
+</code></pre>
+
+<pre><code>3524
+</code></pre>
+
+<p>Or how many of the recipes list cinnamon as an ingredient:</p>
+
+<pre><code class="language-python">recipes.ingredients.str.contains('[Cc]innamon').sum()
+</code></pre>
+
+<pre><code>10526
+</code></pre>
+
+<p>We could even look to see whether any recipes misspell the ingredient as &laquo;cinamon&raquo;:</p>
+
+<pre><code class="language-python">recipes.ingredients.str.contains('[Cc]inamon').sum()
+</code></pre>
+
+<pre><code>11
+</code></pre>
+
+<p>This is the type of essential data exploration that is possible with Pandas string tools.
+It is data munging like this that Python really excels at.</p>
+
+<h3 id="a-simple-recipe-recommender">A simple recipe recommender</h3>
+
+<p>Let&rsquo;s go a bit further, and start working on a simple recipe recommendation system: given a list of ingredients, find a recipe that uses all those ingredients.
+While conceptually straightforward, the task is complicated by the heterogeneity of the data: there is no easy operation, for example, to extract a clean list of ingredients from each row.
+So we will cheat a bit: we&rsquo;ll start with a list of common ingredients, and simply search to see whether they are in each recipe&rsquo;s ingredient list.
+For simplicity, let&rsquo;s just stick with herbs and spices for the time being:</p>
+
+<pre><code class="language-python">spice_list = ['salt', 'pepper', 'oregano', 'sage', 'parsley',
+              'rosemary', 'tarragon', 'thyme', 'paprika', 'cumin']
+</code></pre>
+
+<p>We can then build a Boolean <code>DataFrame</code> consisting of True and False values, indicating whether this ingredient appears in the list:</p>
+
+<pre><code class="language-python">import re
+spice_df = pd.DataFrame(dict((spice, recipes.ingredients.str.contains(spice, re.IGNORECASE))
+                             for spice in spice_list))
+spice_df.head()
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>cumin</th>
+      <th>oregano</th>
+      <th>paprika</th>
+      <th>parsley</th>
+      <th>pepper</th>
+      <th>rosemary</th>
+      <th>sage</th>
+      <th>salt</th>
+      <th>tarragon</th>
+      <th>thyme</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Now, as an example, let&rsquo;s say we&rsquo;d like to find a recipe that uses parsley, paprika, and tarragon.
+We can compute this very quickly using the <code>query()</code> method of <code>DataFrame</code>s, discussed in <a href="03.12-Performance-Eval-and-Query.ipynb" target="_blank">High-Performance Pandas: <code>eval()</code> and <code>query()</code></a>:</p>
+
+<pre><code class="language-python">selection = spice_df.query('parsley &amp; paprika &amp; tarragon')
+len(selection)
+</code></pre>
+
+<pre><code>10
+</code></pre>
+
+<p>We find only 10 recipes with this combination; let&rsquo;s use the index returned by this selection to discover the names of the recipes that have this combination:</p>
+
+<pre><code class="language-python">recipes.name[selection.index]
+</code></pre>
+
+<pre><code>2069      All cremat with a Little Gem, dandelion and wa...
+74964                         Lobster with Thermidor butter
+93768      Burton's Southern Fried Chicken with White Gravy
+113926                     Mijo's Slow Cooker Shredded Beef
+137686                     Asparagus Soup with Poached Eggs
+140530                                 Fried Oyster Po’boys
+158475                Lamb shank tagine with herb tabbouleh
+158486                 Southern fried chicken in buttermilk
+163175            Fried Chicken Sliders with Pickles + Slaw
+165243                        Bar Tartine Cauliflower Salad
+Name: name, dtype: object
+</code></pre>
+
+<p>Now that we have narrowed down our recipe selection by a factor of almost 20,000, we are in a position to make a more informed decision about what we&rsquo;d like to cook for dinner.</p>
+
+<h3 id="going-further-with-recipes">Going further with recipes</h3>
+
+<p>Hopefully this example has given you a bit of a flavor (ba-dum!) for the types of data cleaning operations that are efficiently enabled by Pandas string methods.
+Of course, building a very robust recipe recommendation system would require a <em>lot</em> more work!
+Extracting full ingredient lists from each recipe would be an important piece of the task; unfortunately, the wide variety of formats used makes this a relatively time-consuming process.
+This points to the truism that in data science, cleaning and munging of real-world data often comprises the majority of the work, and Pandas provides the tools that can help you do this efficiently.</p>
+
+          </div>
+
+          
+
+
+
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item box ">
+    <div class="meta-nav meta-prev">Previous <br>
+    <a href="/coding/tutorials/data-science-handbook/3.pandas/03.09-pivot-tables/" rel="next">Pivot Tables</a></div>
+  </div>
+  
+  
+  
+  <div class="post-nav-item box">
+    <div class="meta-nav meta-next" >Next <br>
+    <a href="/coding/tutorials/data-science-handbook/3.pandas/03.11-working-with-time-series/03.11-working-with-time-series/" rel="prev">Time Series</a></div>
+  </div>
+  
+  <br>
+  <br>
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          Last updated on Jun 19, 2020
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        
+        <p>
+          
+          Powered by
+          <a href="https://themefisher.com" target="_blank" rel="noopener">themefisher</a> for
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-inline network-icon text-right">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/Twitter" target="_blank" rel="noopener" title="DM Me"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="skype:echo123?call"  title="Skype Me"><i class="fab fa-skype" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://keybase.io/" target="_blank" rel="noopener" title="Chat on Keybase"><i class="fab fa-keybase" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://discourse.gohugo.io" target="_blank" rel="noopener" title="Discuss on Forum"><i class="fas fa-comments" aria-hidden="true"></i></a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </main>
+  </div>
+</div>
+
+
+      
+
+    
+    
+    
+    <script src="/coding/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/python.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/coding/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/coding/js/academia.min.e4fc229c2f28284fc2dfa5b66a52b765.js"></script>
+
+    
+
+
+
+
+
+
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

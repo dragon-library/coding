@@ -1,46 +1,85 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories | e-Library</title>
-    <link>https://dragon-library.github.io/docs/categories/</link>
-      <atom:link href="https://dragon-library.github.io/docs/categories/index.xml" rel="self" type="application/rss+xml" />
-    <description>Categories</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Dragon©2020</copyright><lastBuildDate>Sat, 16 May 2020 00:00:00 +0000</lastBuildDate>
-    <image>
-      <url>https://dragon-library.github.io/docs/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
-      <title>Categories</title>
-      <link>https://dragon-library.github.io/docs/categories/</link>
-    </image>
+    <title>Categories on Library</title>
+    <link>https://dragon-library.github.io/coding/categories/</link>
+    <description>Recent content in Categories on Library</description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="https://dragon-library.github.io/coding/categories/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
-      <title>Book Review</title>
-      <link>https://dragon-library.github.io/docs/category/book-review/</link>
-      <pubDate>Sat, 16 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://dragon-library.github.io/docs/category/book-review/</guid>
+      <title>Pandas</title>
+      <link>https://dragon-library.github.io/coding/categories/pandas/</link>
+      <pubDate>Tue, 02 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/categories/pandas/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>business</title>
-      <link>https://dragon-library.github.io/docs/category/business/</link>
-      <pubDate>Sat, 16 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://dragon-library.github.io/docs/category/business/</guid>
+      <title>Tutorials</title>
+      <link>https://dragon-library.github.io/coding/categories/tutorials/</link>
+      <pubDate>Tue, 02 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/categories/tutorials/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Productivity</title>
-      <link>https://dragon-library.github.io/docs/category/productivity/</link>
-      <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://dragon-library.github.io/docs/category/productivity/</guid>
+      <title>Python</title>
+      <link>https://dragon-library.github.io/coding/categories/python/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/categories/python/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>python</title>
-      <link>https://dragon-library.github.io/docs/category/python/</link>
-      <pubDate>Sun, 10 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://dragon-library.github.io/docs/category/python/</guid>
+      <title>Example</title>
+      <link>https://dragon-library.github.io/coding/categories/example/</link>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/categories/example/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web Development</title>
+      <link>https://dragon-library.github.io/coding/categories/web-development/</link>
+      <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/categories/web-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Articles</title>
+      <link>https://dragon-library.github.io/coding/categories/articles/</link>
+      <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/categories/articles/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Series</title>
+      <link>https://dragon-library.github.io/coding/categories/series/</link>
+      <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/categories/series/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CSS</title>
+      <link>https://dragon-library.github.io/coding/categories/css/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/categories/css/</guid>
       <description></description>
     </item>
     

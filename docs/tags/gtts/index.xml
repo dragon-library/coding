@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gTTS on Library</title>
+    <link>https://dragon-library.github.io/coding/tags/gtts/</link>
+    <description>Recent content in gTTS on Library</description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 28 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="https://dragon-library.github.io/coding/tags/gtts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google Text-to-Speech.</title>
+      <link>https://dragon-library.github.io/coding/post/google-text-to-speech/</link>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/post/google-text-to-speech/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;featured.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;doc: &lt;a href=&#34;https://gtts.readthedocs.io/en/latest/module.html&#34; target=&#34;_blank&#34;&gt;https://gtts.readthedocs.io/en/latest/module.html&lt;/a&gt;&lt;br /&gt;
+install: &lt;code&gt;pip install gTTS&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;author: Prasert Kanawattanachai&lt;br /&gt;
+YouTube: &lt;a href=&#34;https://www.youtube.com/prasertcbs&#34; target=&#34;_blank&#34;&gt;https://www.youtube.com/prasertcbs&lt;/a&gt;&lt;br /&gt;
+Chulalongkorn Business School&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/SmdVSqSg0B0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+from IPython.display import Audio
+import gtts
+from gtts import gTTS
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;รห-สภาษา&#34;&gt;รหัสภาษา&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;gtts.lang.tts_langs(tld=&#39;com&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;{&#39;af&#39;: &#39;Afrikaans&#39;,
+ &#39;sq&#39;: &#39;Albanian&#39;,
+ &#39;ar&#39;: &#39;Arabic&#39;,
+ &#39;hy&#39;: &#39;Armenian&#39;,
+ &#39;bn&#39;: &#39;Bengali&#39;,
+ &#39;bs&#39;: &#39;Bosnian&#39;,
+ &#39;ca&#39;: &#39;Catalan&#39;,
+ &#39;hr&#39;: &#39;Croatian&#39;,
+ &#39;cs&#39;: &#39;Czech&#39;,
+ &#39;da&#39;: &#39;Danish&#39;,
+ &#39;nl&#39;: &#39;Dutch&#39;,
+ &#39;en&#39;: &#39;English&#39;,
+ &#39;eo&#39;: &#39;Esperanto&#39;,
+ &#39;et&#39;: &#39;Estonian&#39;,
+ &#39;tl&#39;: &#39;Filipino&#39;,
+ &#39;fi&#39;: &#39;Finnish&#39;,
+ &#39;fr&#39;: &#39;French&#39;,
+ &#39;de&#39;: &#39;German&#39;,
+ &#39;el&#39;: &#39;Greek&#39;,
+ &#39;gu&#39;: &#39;Gujarati&#39;,
+ &#39;hi&#39;: &#39;Hindi&#39;,
+ &#39;hu&#39;: &#39;Hungarian&#39;,
+ &#39;is&#39;: &#39;Icelandic&#39;,
+ &#39;id&#39;: &#39;Indonesian&#39;,
+ &#39;it&#39;: &#39;Italian&#39;,
+ &#39;ja&#39;: &#39;Japanese&#39;,
+ &#39;jw&#39;: &#39;Javanese&#39;,
+ &#39;kn&#39;: &#39;Kannada&#39;,
+ &#39;km&#39;: &#39;Khmer&#39;,
+ &#39;ko&#39;: &#39;Korean&#39;,
+ &#39;la&#39;: &#39;Latin&#39;,
+ &#39;lv&#39;: &#39;Latvian&#39;,
+ &#39;mk&#39;: &#39;Macedonian&#39;,
+ &#39;ml&#39;: &#39;Malayalam&#39;,
+ &#39;mr&#39;: &#39;Marathi&#39;,
+ &#39;my&#39;: &#39;Myanmar (Burmese)&#39;,
+ &#39;ne&#39;: &#39;Nepali&#39;,
+ &#39;no&#39;: &#39;Norwegian&#39;,
+ &#39;pl&#39;: &#39;Polish&#39;,
+ &#39;pt&#39;: &#39;Portuguese&#39;,
+ &#39;ro&#39;: &#39;Romanian&#39;,
+ &#39;ru&#39;: &#39;Russian&#39;,
+ &#39;sr&#39;: &#39;Serbian&#39;,
+ &#39;si&#39;: &#39;Sinhala&#39;,
+ &#39;sk&#39;: &#39;Slovak&#39;,
+ &#39;es&#39;: &#39;Spanish&#39;,
+ &#39;su&#39;: &#39;Sundanese&#39;,
+ &#39;sw&#39;: &#39;Swahili&#39;,
+ &#39;sv&#39;: &#39;Swedish&#39;,
+ &#39;ta&#39;: &#39;Tamil&#39;,
+ &#39;te&#39;: &#39;Telugu&#39;,
+ &#39;th&#39;: &#39;Thai&#39;,
+ &#39;tr&#39;: &#39;Turkish&#39;,
+ &#39;uk&#39;: &#39;Ukrainian&#39;,
+ &#39;ur&#39;: &#39;Urdu&#39;,
+ &#39;vi&#39;: &#39;Vietnamese&#39;,
+ &#39;cy&#39;: &#39;Welsh&#39;,
+ &#39;zh-cn&#39;: &#39;Chinese (Mandarin/China)&#39;,
+ &#39;zh-tw&#39;: &#39;Chinese (Mandarin/Taiwan)&#39;,
+ &#39;en-us&#39;: &#39;English (US)&#39;,
+ &#39;en-ca&#39;: &#39;English (Canada)&#39;,
+ &#39;en-uk&#39;: &#39;English (UK)&#39;,
+ &#39;en-gb&#39;: &#39;English (UK)&#39;,
+ &#39;en-au&#39;: &#39;English (Australia)&#39;,
+ &#39;en-gh&#39;: &#39;English (Ghana)&#39;,
+ &#39;en-in&#39;: &#39;English (India)&#39;,
+ &#39;en-ie&#39;: &#39;English (Ireland)&#39;,
+ &#39;en-nz&#39;: &#39;English (New Zealand)&#39;,
+ &#39;en-ng&#39;: &#39;English (Nigeria)&#39;,
+ &#39;en-ph&#39;: &#39;English (Philippines)&#39;,
+ &#39;en-za&#39;: &#39;English (South Africa)&#39;,
+ &#39;en-tz&#39;: &#39;English (Tanzania)&#39;,
+ &#39;fr-ca&#39;: &#39;French (Canada)&#39;,
+ &#39;fr-fr&#39;: &#39;French (France)&#39;,
+ &#39;pt-br&#39;: &#39;Portuguese (Brazil)&#39;,
+ &#39;pt-pt&#39;: &#39;Portuguese (Portugal)&#39;,
+ &#39;es-es&#39;: &#39;Spanish (Spain)&#39;,
+ &#39;es-us&#39;: &#39;Spanish (United States)&#39;}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;การใช-gtts&#34;&gt;การใช้ gTTS&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt;tts = gTTS(&#39;hello&#39;, lang=&#39;en&#39;)
+tts.save(&#39;speech.mp3&#39;)
+
+tts = gTTS(&#39;สวัสดีครับ&#39;, lang=&#39;th&#39;)
+tts.save(&#39;speech.mp3&#39;)
+
+tts = gTTS(&#39;ถึงม้วยดินสิ้นฟ้ามหาสมุทร ไม่สิ้นสุดความรักสมัครสมาน&#39;, lang=&#39;th&#39;)
+tts.save(&#39;speech.mp3&#39;)
+
+tts = gTTS(&#39;こんにちは&#39;, lang=&#39;ja&#39;)
+tts.save(&#39;speech.mp3&#39;)
+
+tts = gTTS(&#39;非常感谢你&#39;, lang=&#39;zh-cn&#39;)
+tts.save(&#39;speech.mp3&#39;)
+
+tts = gTTS(&#39;北，南，东，西&#39;, lang=&#39;zh-cn&#39;)
+tts.save(&#39;speech.mp3&#39;)
+
+tts = gTTS(&#39;la vita è bella&#39;, lang=&#39;it&#39;)
+tts.save(&#39;speech_it.mp3&#39;)
+Audio(&#39;speech_it.mp3&#39;, autoplay=True)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;การเป-ดเล-นไฟล-เส-ยงโดยตรงบน-jupyter-notebook&#34;&gt;การเปิดเล่นไฟล์เสียงโดยตรงบน Jupyter Notebook&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-py&#34;&gt; Audio(&#39;speech.mp3&#39;, autoplay=True)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

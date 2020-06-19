@@ -1,94 +1,274 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags | e-Library</title>
-    <link>https://dragon-library.github.io/docs/tags/</link>
-      <atom:link href="https://dragon-library.github.io/docs/tags/index.xml" rel="self" type="application/rss+xml" />
-    <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Dragon©2020</copyright><lastBuildDate>Sat, 16 May 2020 00:00:00 +0000</lastBuildDate>
-    <image>
-      <url>https://dragon-library.github.io/docs/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
-      <title>Tags</title>
-      <link>https://dragon-library.github.io/docs/tags/</link>
-    </image>
+    <title>Tags on Library</title>
+    <link>https://dragon-library.github.io/coding/tags/</link>
+    <description>Recent content in Tags on Library</description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="https://dragon-library.github.io/coding/tags/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
-      <title>Principles</title>
-      <link>https://dragon-library.github.io/docs/tag/principles/</link>
-      <pubDate>Sat, 16 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://dragon-library.github.io/docs/tag/principles/</guid>
+      <title>database</title>
+      <link>https://dragon-library.github.io/coding/tags/database/</link>
+      <pubDate>Tue, 02 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/database/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>toyota</title>
-      <link>https://dragon-library.github.io/docs/tag/toyota/</link>
-      <pubDate>Sat, 16 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://dragon-library.github.io/docs/tag/toyota/</guid>
+      <title>Jupyter</title>
+      <link>https://dragon-library.github.io/coding/tags/jupyter/</link>
+      <pubDate>Tue, 02 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/jupyter/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Learning how to Learn</title>
-      <link>https://dragon-library.github.io/docs/tag/learning-how-to-learn/</link>
-      <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://dragon-library.github.io/docs/tag/learning-how-to-learn/</guid>
+      <title>SQL</title>
+      <link>https://dragon-library.github.io/coding/tags/sql/</link>
+      <pubDate>Tue, 02 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/sql/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>beginner</title>
-      <link>https://dragon-library.github.io/docs/tag/beginner/</link>
-      <pubDate>Sun, 10 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://dragon-library.github.io/docs/tag/beginner/</guid>
+      <title>sqlalchemy</title>
+      <link>https://dragon-library.github.io/coding/tags/sqlalchemy/</link>
+      <pubDate>Tue, 02 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/sqlalchemy/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>collection</title>
-      <link>https://dragon-library.github.io/docs/tag/collection/</link>
-      <pubDate>Sun, 10 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://dragon-library.github.io/docs/tag/collection/</guid>
+      <title>Cheat Sheet</title>
+      <link>https://dragon-library.github.io/coding/tags/cheat-sheet/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/cheat-sheet/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>dictionary</title>
-      <link>https://dragon-library.github.io/docs/tag/dictionary/</link>
-      <pubDate>Tue, 05 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://dragon-library.github.io/docs/tag/dictionary/</guid>
+      <title>Google Translate</title>
+      <link>https://dragon-library.github.io/coding/tags/google-translate/</link>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/google-translate/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>beginning</title>
-      <link>https://dragon-library.github.io/docs/tag/beginning/</link>
-      <pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>https://dragon-library.github.io/docs/tag/beginning/</guid>
+      <title>gTTS</title>
+      <link>https://dragon-library.github.io/coding/tags/gtts/</link>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/gtts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Text to Speech</title>
+      <link>https://dragon-library.github.io/coding/tags/text-to-speech/</link>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/text-to-speech/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Flask</title>
+      <link>https://dragon-library.github.io/coding/tags/flask/</link>
+      <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/flask/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cheatsheet</title>
+      <link>https://dragon-library.github.io/coding/tags/cheatsheet/</link>
+      <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/cheatsheet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google sheet</title>
+      <link>https://dragon-library.github.io/coding/tags/google-sheet/</link>
+      <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/google-sheet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Package Index</title>
+      <link>https://dragon-library.github.io/coding/tags/package-index/</link>
+      <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/package-index/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web Scraping</title>
+      <link>https://dragon-library.github.io/coding/tags/web-scraping/</link>
+      <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/web-scraping/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>File Handling</title>
+      <link>https://dragon-library.github.io/coding/tags/file-handling/</link>
+      <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/file-handling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>freeCodeCamp</title>
+      <link>https://dragon-library.github.io/coding/tags/freecodecamp/</link>
+      <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/freecodecamp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Beginner</title>
+      <link>https://dragon-library.github.io/coding/tags/beginner/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/beginner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>List</title>
+      <link>https://dragon-library.github.io/coding/tags/list/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/list/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Regular Expressions</title>
+      <link>https://dragon-library.github.io/coding/tags/regular-expressions/</link>
+      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/regular-expressions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Virtual Environments</title>
+      <link>https://dragon-library.github.io/coding/tags/virtual-environments/</link>
+      <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/virtual-environments/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>String</title>
+      <link>https://dragon-library.github.io/coding/tags/string/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/string/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Function</title>
+      <link>https://dragon-library.github.io/coding/tags/function/</link>
+      <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/function/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lambda Expressions</title>
+      <link>https://dragon-library.github.io/coding/tags/lambda-expressions/</link>
+      <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/lambda-expressions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Front-end</title>
+      <link>https://dragon-library.github.io/coding/tags/front-end/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/front-end/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Source Themes</title>
-      <link>https://dragon-library.github.io/docs/tag/source-themes/</link>
+      <link>https://dragon-library.github.io/coding/tags/source-themes/</link>
       <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>https://dragon-library.github.io/docs/tag/source-themes/</guid>
+      
+      <guid>https://dragon-library.github.io/coding/tags/source-themes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Deep Learning</title>
-      <link>https://dragon-library.github.io/docs/tag/deep-learning/</link>
+      <link>https://dragon-library.github.io/coding/tags/deep-learning/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://dragon-library.github.io/docs/tag/deep-learning/</guid>
+      
+      <guid>https://dragon-library.github.io/coding/tags/deep-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Demo</title>
-      <link>https://dragon-library.github.io/docs/tag/demo/</link>
+      <link>https://dragon-library.github.io/coding/tags/demo/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://dragon-library.github.io/docs/tag/demo/</guid>
+      
+      <guid>https://dragon-library.github.io/coding/tags/demo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>human</title>
+      <link>https://dragon-library.github.io/coding/tags/human/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/human/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>robotics</title>
+      <link>https://dragon-library.github.io/coding/tags/robotics/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/robotics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>academia</title>
+      <link>https://dragon-library.github.io/coding/tags/academia/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tags/academia/</guid>
       <description></description>
     </item>
     

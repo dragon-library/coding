@@ -3,513 +3,913 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-deus/review-1/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tutorials/data-science-handbook/intro/_index/</loc>
+    <lastmod>2020-06-19T01:41:59+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/review-1/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tutorials/quickguide/</loc>
+    <lastmod>2020-06-19T02:13:55+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-deus/deus-1/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/deus/review-1/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/bill-gates/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/review-1/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/deus/deus-1/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/example/example1/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/gates/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/bill-gates/bill-gate-1/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/bill-gates/bill-gate-2/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/courses/example/example1/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-deus/review-2/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/courses/example.1/example3/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/review-2/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/courses/example.2/example3/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-deus/deus-2/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/courses/example.1/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/sapiens-1/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/courses/example.2/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-deus/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/courses/example/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/example/example2/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tutorials/data-science-handbook/intro/00.00-preface/</loc>
+    <lastmod>2020-06-19T01:41:59+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/example/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/gates/bill-gate-1/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/bill-gates/bill-gate-3/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/gates/bill-gate-2/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/review-3/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/deus/review-2/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-deus/deus-3/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/review-2/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/sapiens-2/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/deus/deus-2/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/bill-gates/bill-gate-4/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/sapiens-1/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/sapiens-3/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/deus/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-deus/deus-4/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/courses/example.2/example4/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/bill-gates/bill-gate-5/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/courses/example/example2/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/sapiens-4/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/courses/example.1/example4/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-deus/deus-5/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/gates/bill-gate-3/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/bill-gates/bill-gate-6/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/review-3/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/sapiens-5/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/deus/deus-3/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-deus/deus-6/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/sapiens-2/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/bill-gates/bill-gate-7/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/gates/bill-gate-4/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/sapiens-6/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/sapiens-3/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-deus/deus-7/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/deus/deus-4/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/bill-gates/bill-gate-8/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/gates/bill-gate-5/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/sapiens-7/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/sapiens-4/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-deus/deus-8/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/deus/deus-5/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/bill-gates/bill-gate-9/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/gates/bill-gate-6/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/sapiens-8/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/sapiens-5/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-deus/deus-9/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/deus/deus-6/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/bill-gates/bill-gate-10/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/gates/bill-gate-7/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-deus/deus-10/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/sapiens-6/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/sapiens-9/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/deus/deus-7/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/bill-gates/bill-gate-11/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/gates/bill-gate-8/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/sapiens-11/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/sapiens-7/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/sapiens-10/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/deus/deus-8/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-deus/deus-11/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/gates/bill-gate-9/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/bill-gates/bill-gate-12/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/sapiens-8/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/sapiens-12/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/deus/deus-9/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-deus/deus-12/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/gates/bill-gate-10/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/sapiens-13/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/deus/deus-10/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/sapiens-14/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/sapiens-9/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/sapiens-15/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/gates/bill-gate-11/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/sapiens-16/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/sapiens-11/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/sapiens-17/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/sapiens-10/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/sapiens-18/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/deus/deus-11/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/sapiens-19/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/gates/bill-gate-12/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/homo-sapiens/sapiens-20/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/sapiens-12/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/</loc>
-    <lastmod>2020-05-18T23:08:11+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/deus/deus-12/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/talk/example/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/sapiens-13/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/authors/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/sapiens-14/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/category/book-review/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/sapiens-15/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/category/business/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/sapiens-16/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/categories/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/sapiens-17/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/author/little-dragon/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/sapiens-18/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/tag/principles/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/sapiens-19/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/tags/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/book/sapiens/sapiens-20/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/tag/toyota/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tutorials/data-science-handbook/1.ipython/main/</loc>
+    <lastmod>2020-06-19T01:41:59+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/post/review-principles/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tutorials/data-science-handbook/1.ipython/01.01-help-and-documentation/</loc>
+    <lastmod>2020-06-19T01:41:59+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/post/toyota-reveals-future-strategy/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tutorials/data-science-handbook/1.ipython/01.02-shell-keyboard-shortcuts/</loc>
+    <lastmod>2020-06-19T01:41:59+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/tag/learning-how-to-learn/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tutorials/data-science-handbook/3.pandas/intro/</loc>
+    <lastmod>2020-06-19T01:41:59+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/category/productivity/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tutorials/data-science-handbook/3.pandas/03.02-data-indexing-and-selection/</loc>
+    <lastmod>2020-06-19T01:41:59+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/post/learning-how/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tutorials/data-science-handbook/3.pandas/03.03-operations-in-pandas/</loc>
+    <lastmod>2020-06-19T01:41:59+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/tag/beginner/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tutorials/data-science-handbook/3.pandas/03.04-missing-values/</loc>
+    <lastmod>2020-06-19T01:41:59+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/tag/collection/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tutorials/data-science-handbook/3.pandas/03.05-hierarchical-indexing/</loc>
+    <lastmod>2020-06-19T01:41:59+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/post/collections/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tutorials/data-science-handbook/3.pandas/03.06-concat-and-append/</loc>
+    <lastmod>2020-06-19T01:41:59+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/category/python/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tutorials/data-science-handbook/3.pandas/03.07-merge-and-join/</loc>
+    <lastmod>2020-06-19T01:41:59+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/tag/dictionary/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tutorials/data-science-handbook/3.pandas/03.08-aggregation-and-grouping/</loc>
+    <lastmod>2020-06-19T01:41:59+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/post/dict_tutorial/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tutorials/data-science-handbook/3.pandas/03.09-pivot-tables/</loc>
+    <lastmod>2020-06-19T01:41:59+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/tag/beginning/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tutorials/data-science-handbook/3.pandas/03.10-working-with-strings/</loc>
+    <lastmod>2020-06-19T01:41:59+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/post/notebook/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tutorials/data-science-handbook/3.pandas/03.11-working-with-time-series/03.11-working-with-time-series/</loc>
+    <lastmod>2020-06-19T01:41:59+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/post/writing-technical-content/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tutorials/data-science-handbook/3.pandas/03.12-performance-eval-and-query/</loc>
+    <lastmod>2020-06-19T01:41:59+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/publication-type/3/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tutorials/data-science-handbook/3.pandas/03.13-further-resources/</loc>
+    <lastmod>2020-06-19T01:41:59+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/publication/preprint/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/talk/coding/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/publication_types/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/</loc>
+    <lastmod>2020-06-19T02:13:55+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/tag/source-themes/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/talk/qualitative/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/post/dictionary/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/talk/synthesizing/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/slides/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/authors/admin/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/slides/example/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/authors/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/post/terms/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/categories/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/terms/</loc>
-    <lastmod>2020-05-18T23:08:11+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tags/database/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/tag/deep-learning/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tags/jupyter/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/tag/demo/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/categories/pandas/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/project/external-project/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tags/sql/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/project/internal-project/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tags/sqlalchemy/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/project/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tags/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/publication-type/2/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/categories/tutorials/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/publication/journal-article/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/post/python/tutorials/read-write-database-sql/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/author/robert-ford/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/post/python/tutorials/change-output-pandas-in-jupyter/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/publication-type/1/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/tags/cheat-sheet/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/publication/conference-paper/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/post/python/tutorials/pandas-cheat-sheet/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/book/</loc>
-    <lastmod>2020-05-18T01:36:49+07:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/categories/python/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/post/</loc>
-    <lastmod>2019-05-06T17:54:11+01:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/post/python/tutorials/manage-sql-sqlalchemy/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/publication/</loc>
-    <lastmod>2019-05-06T17:54:11+01:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/categories/example/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dragon-library.github.io/docs/talk/</loc>
-    <lastmod>2019-05-06T17:54:11+01:00</lastmod>
+    <loc>https://dragon-library.github.io/coding/post/google-text-to-speech/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/google-translate/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/google-translate/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/gtts/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/text-to-speech/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/flask/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/python/tutorials/flask-101/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/categories/web-development/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/categories/articles/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/cheatsheet/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/google-sheet/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/python/tutorials/cheatsheet/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/python/example/python-control-google-sheet/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/package-index/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/python/tutorials/package_index/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/python/example/web-scraping-series-1/python-web-scraping-part-4/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/categories/series/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/web-scraping/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/file-handling/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/python/tutorials/file-handling-functions/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/freecodecamp/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/beginner/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/python/tutorials/beginner_to_pro/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/list/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/regular-expressions/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/python/tutorials/regular-expressions/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/python/tutorials/beginner_handbook/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/python/example/web-scraping-series-1/python-web-scraping-part-3/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/python/example/web-scraping-series-1/python-web-scraping-part-2/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/python/example/web-scraping-series-1/python-web-scraping-part-1/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/python/tutorials/list_append/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/python/tutorials/python-lists-explained/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/python/tutorials/virtual-environments/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/virtual-environments/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/python/tutorials/string-strip-method/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/string/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/function/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/python/tutorials/python-function-guide/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/lambda-expressions/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/python/tutorials/lambda-expressions/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/python/tutorials/regular-expressions-explained/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/categories/css/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/front-end/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/css-handbook/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/publication_types/3/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/publication/preprint/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/publication_types/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/source-themes/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/jupyter/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/slides/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/slides/example/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/python/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/python/tutorials/zero_to_hero/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/project/artificial-intelligence/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/deep-learning/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/project/deep-learning/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/demo/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/project/external-project/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/human/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/project/internal-project/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/project/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/project/robotics/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/robotics/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/project/skin-cancer-ai/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/snail/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tags/academia/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/getting-started/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/publication_types/2/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/publication/journal-article/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/authors/robert-ford/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/publication_types/1/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/publication/conference-paper/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/book/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/courses/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/publication/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/python/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/python/example/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/post/python/tutorials/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/talk/</loc>
+    <lastmod>2020-06-18T02:48:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dragon-library.github.io/coding/tutorials/</loc>
+    <lastmod>2020-06-19T22:04:55+07:00</lastmod>
   </url>
   
 </urlset>
