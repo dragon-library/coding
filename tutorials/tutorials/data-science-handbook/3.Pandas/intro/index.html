@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academia 4.3.1">
+  <meta name="generator" content="Hugo 0.59.1" />
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Little Dragon">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="At the very basic level, Pandas objects can be thought of as enhanced versions of NumPy structured arrays in which the rows and columns are identified with labels rather than simple integer indices. As we will see during the course of this chapter, Pandas provides a host of useful tools, methods, and functionality on top of the basic data structures, but nearly everything that follows will require an understanding of what these structures are.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://dragon-library.github.io/coding/tutorials/tutorials/data-science-handbook/3.pandas/intro/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#c7254e">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit:400,700|Sarabun|Lato&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/coding/tutorials/css/academia.min.9453d48f98ba52352a59cb7968daa3ef.css">
+
+  
+
+  
+  
+  
+
+  
+
+  <link rel="manifest" href="/coding/tutorials/site.webmanifest">
+  <link rel="icon" type="image/png" href="/coding/tutorials/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/coding/tutorials/img/icon-192.png">
+
+  <link rel="canonical" href="https://dragon-library.github.io/coding/tutorials/tutorials/data-science-handbook/3.pandas/intro/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Library">
+  <meta property="og:url" content="https://dragon-library.github.io/coding/tutorials/tutorials/data-science-handbook/3.pandas/intro/">
+  <meta property="og:title" content="3. Introducing Pandas Objects | Library">
+  <meta property="og:description" content="At the very basic level, Pandas objects can be thought of as enhanced versions of NumPy structured arrays in which the rows and columns are identified with labels rather than simple integer indices. As we will see during the course of this chapter, Pandas provides a host of useful tools, methods, and functionality on top of the basic data structures, but nearly everything that follows will require an understanding of what these structures are."><meta property="og:image" content="https://dragon-library.github.io/coding/tutorials/img/icon-192.png">
+  <meta property="twitter:image" content="https://dragon-library.github.io/coding/tutorials/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2020-06-18T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2020-06-23T00:32:06&#43;07:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>3. Introducing Pandas Objects | Library</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/coding/tutorials/">Library</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/tutorials/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/tutorials/python/"><span>Python</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/tutorials/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/coding/tutorials/tutorials/"><span>Tutorials</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/tutorials/project/"><span>Project</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/tutorials/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="/coding/tutorials/book/"><span>Book</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/tutorials/courses/"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/coding/tutorials/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" id="search-query" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/coding/tutorials/tutorials/data-science-handbook/intro/_index/">DS Handbook</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/coding/tutorials/tutorials/data-science-handbook/intro/00.00-preface/">Preface</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/coding/tutorials/tutorials/data-science-handbook/1.ipython/main/">1. IPython</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/coding/tutorials/tutorials/data-science-handbook/1.ipython/main/">Beyond Normal</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/tutorials/data-science-handbook/1.ipython/01.01-help-and-documentation/">Help and Documentation</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/tutorials/data-science-handbook/1.ipython/01.02-shell-keyboard-shortcuts/">Keyboard Shortcuts</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/coding/tutorials/tutorials/data-science-handbook/3.pandas/intro/">3. Pandas</a>
+    <ul class="nav docs-sidenav">
+      
+      <li class="active">
+        <a href="/coding/tutorials/tutorials/data-science-handbook/3.pandas/intro/">Introducing</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/tutorials/data-science-handbook/3.pandas/03.02-data-indexing-and-selection/">Data Indexing and Selection</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/tutorials/data-science-handbook/3.pandas/03.03-operations-in-pandas/">Operating on Data</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/tutorials/data-science-handbook/3.pandas/03.04-missing-values/">Handling Missing Data</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/tutorials/data-science-handbook/3.pandas/03.05-hierarchical-indexing/">Hierarchical Indexing</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/tutorials/data-science-handbook/3.pandas/03.06-concat-and-append/">Concat and Append</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/tutorials/data-science-handbook/3.pandas/03.07-merge-and-join/">Merge and Join</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/tutorials/data-science-handbook/3.pandas/03.08-aggregation-and-grouping/">Grouping</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/tutorials/data-science-handbook/3.pandas/03.09-pivot-tables/">Pivot Tables</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/tutorials/data-science-handbook/3.pandas/03.10-working-with-strings/">String Operations</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/tutorials/data-science-handbook/3.pandas/03.11-working-with-time-series/03.11-working-with-time-series/">Time Series</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/tutorials/data-science-handbook/3.pandas/03.12-performance-eval-and-query/">eval() and query()</a>
+      </li>
+      
+      <li >
+        <a href="/coding/tutorials/tutorials/data-science-handbook/3.pandas/03.13-further-resources/">Further Resources</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#the-pandas-series-object">The Pandas Series Object</a>
+<ul>
+<li><a href="#series-as-generalized-numpy-array"><code>Series</code> as generalized NumPy array</a></li>
+<li><a href="#series-as-specialized-dictionary">Series as specialized dictionary</a></li>
+<li><a href="#constructing-series-objects">Constructing Series objects</a></li>
+</ul></li>
+<li><a href="#the-pandas-dataframe-object">The Pandas DataFrame Object</a>
+<ul>
+<li><a href="#dataframe-as-a-generalized-numpy-array">DataFrame as a generalized NumPy array</a></li>
+<li><a href="#dataframe-as-specialized-dictionary">DataFrame as specialized dictionary</a></li>
+<li><a href="#constructing-dataframe-objects">Constructing DataFrame objects</a>
+<ul>
+<li><a href="#from-a-single-series-object">From a single Series object</a></li>
+<li><a href="#from-a-list-of-dicts">From a list of dicts</a></li>
+<li><a href="#from-a-dictionary-of-series-objects">From a dictionary of Series objects</a></li>
+<li><a href="#from-a-two-dimensional-numpy-array">From a two-dimensional NumPy array</a></li>
+<li><a href="#from-a-numpy-structured-array">From a NumPy structured array</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#the-pandas-index-object">The Pandas Index Object</a>
+<ul>
+<li><a href="#index-as-immutable-array">Index as immutable array</a></li>
+<li><a href="#index-as-ordered-set">Index as ordered set</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article" itemscope itemtype="http://schema.org/Article">
+
+        <div class="docs-article-container">
+          <h1 itemprop="name">3. Introducing Pandas Objects</h1>
+
+          <div class="article-style" itemprop="articleBody">
+            
+
+<p>At the very basic level, Pandas objects can be thought of as enhanced versions of NumPy structured arrays in which the rows and columns are identified with labels rather than simple integer indices.
+As we will see during the course of this chapter, Pandas provides a host of useful tools, methods, and functionality on top of the basic data structures, but nearly everything that follows will require an understanding of what these structures are.
+Thus, before we go any further, let&rsquo;s introduce these three fundamental Pandas data structures: the <code>Series</code>, <code>DataFrame</code>, and <code>Index</code>.</p>
+
+<p>We will start our code sessions with the standard NumPy and Pandas imports:</p>
+
+<pre><code class="language-python">import numpy as np
+import pandas as pd
+</code></pre>
+
+<h2 id="the-pandas-series-object">The Pandas Series Object</h2>
+
+<p>A Pandas <code>Series</code> is a one-dimensional array of indexed data.
+It can be created from a list or array as follows:</p>
+
+<pre><code class="language-python">data = pd.Series([0.25, 0.5, 0.75, 1.0])
+data
+</code></pre>
+
+<pre><code>0    0.25
+1    0.50
+2    0.75
+3    1.00
+dtype: float64
+</code></pre>
+
+<p>As we see in the output, the <code>Series</code> wraps both a sequence of values and a sequence of indices, which we can access with the <code>values</code> and <code>index</code> attributes.
+The <code>values</code> are simply a familiar NumPy array:</p>
+
+<pre><code class="language-python">data.values
+</code></pre>
+
+<pre><code>array([ 0.25,  0.5 ,  0.75,  1.  ])
+</code></pre>
+
+<p>The <code>index</code> is an array-like object of type <code>pd.Index</code>, which we&rsquo;ll discuss in more detail momentarily.</p>
+
+<pre><code class="language-python">data.index
+</code></pre>
+
+<pre><code>RangeIndex(start=0, stop=4, step=1)
+</code></pre>
+
+<p>Like with a NumPy array, data can be accessed by the associated index via the familiar Python square-bracket notation:</p>
+
+<pre><code class="language-python">data[1]
+</code></pre>
+
+<pre><code>0.5
+</code></pre>
+
+<pre><code class="language-python">data[1:3]
+</code></pre>
+
+<pre><code>1    0.50
+2    0.75
+dtype: float64
+</code></pre>
+
+<p>As we will see, though, the Pandas <code>Series</code> is much more general and flexible than the one-dimensional NumPy array that it emulates.</p>
+
+<h3 id="series-as-generalized-numpy-array"><code>Series</code> as generalized NumPy array</h3>
+
+<p>From what we&rsquo;ve seen so far, it may look like the <code>Series</code> object is basically interchangeable with a one-dimensional NumPy array.
+The essential difference is the presence of the index: while the Numpy Array has an <em>implicitly defined</em> integer index used to access the values, the Pandas <code>Series</code> has an <em>explicitly defined</em> index associated with the values.</p>
+
+<p>This explicit index definition gives the <code>Series</code> object additional capabilities. For example, the index need not be an integer, but can consist of values of any desired type.
+For example, if we wish, we can use strings as an index:</p>
+
+<pre><code class="language-python">data = pd.Series([0.25, 0.5, 0.75, 1.0],
+                 index=['a', 'b', 'c', 'd'])
+data
+</code></pre>
+
+<pre><code>a    0.25
+b    0.50
+c    0.75
+d    1.00
+dtype: float64
+</code></pre>
+
+<p>And the item access works as expected:</p>
+
+<pre><code class="language-python">data['b']
+</code></pre>
+
+<pre><code>0.5
+</code></pre>
+
+<p>We can even use non-contiguous or non-sequential indices:</p>
+
+<pre><code class="language-python">data = pd.Series([0.25, 0.5, 0.75, 1.0],
+                 index=[2, 5, 3, 7])
+data
+</code></pre>
+
+<pre><code>2    0.25
+5    0.50
+3    0.75
+7    1.00
+dtype: float64
+</code></pre>
+
+<pre><code class="language-python">data[5]
+</code></pre>
+
+<pre><code>0.5
+</code></pre>
+
+<h3 id="series-as-specialized-dictionary">Series as specialized dictionary</h3>
+
+<p>In this way, you can think of a Pandas <code>Series</code> a bit like a specialization of a Python dictionary.
+A dictionary is a structure that maps arbitrary keys to a set of arbitrary values, and a <code>Series</code> is a structure which maps typed keys to a set of typed values.
+This typing is important: just as the type-specific compiled code behind a NumPy array makes it more efficient than a Python list for certain operations, the type information of a Pandas <code>Series</code> makes it much more efficient than Python dictionaries for certain operations.</p>
+
+<p>The <code>Series</code>-as-dictionary analogy can be made even more clear by constructing a <code>Series</code> object directly from a Python dictionary:</p>
+
+<pre><code class="language-python">population_dict = {'California': 38332521,
+                   'Texas': 26448193,
+                   'New York': 19651127,
+                   'Florida': 19552860,
+                   'Illinois': 12882135}
+population = pd.Series(population_dict)
+population
+</code></pre>
+
+<pre><code>California    38332521
+Florida       19552860
+Illinois      12882135
+New York      19651127
+Texas         26448193
+dtype: int64
+</code></pre>
+
+<p>By default, a <code>Series</code> will be created where the index is drawn from the sorted keys.
+From here, typical dictionary-style item access can be performed:</p>
+
+<pre><code class="language-python">population['California']
+</code></pre>
+
+<pre><code>38332521
+</code></pre>
+
+<p>Unlike a dictionary, though, the <code>Series</code> also supports array-style operations such as slicing:</p>
+
+<pre><code class="language-python">population['California':'Illinois']
+</code></pre>
+
+<pre><code>California    38332521
+Florida       19552860
+Illinois      12882135
+dtype: int64
+</code></pre>
+
+<p>We&rsquo;ll discuss some of the quirks of Pandas indexing and slicing in <a href="03.02-Data-Indexing-and-Selection.ipynb" target="_blank">Data Indexing and Selection</a>.</p>
+
+<h3 id="constructing-series-objects">Constructing Series objects</h3>
+
+<p>We&rsquo;ve already seen a few ways of constructing a Pandas <code>Series</code> from scratch; all of them are some version of the following:</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; pd.Series(data, index=index)
+</code></pre>
+
+<p>where <code>index</code> is an optional argument, and <code>data</code> can be one of many entities.</p>
+
+<p>For example, <code>data</code> can be a list or NumPy array, in which case <code>index</code> defaults to an integer sequence:</p>
+
+<pre><code class="language-python">pd.Series([2, 4, 6])
+</code></pre>
+
+<pre><code>0    2
+1    4
+2    6
+dtype: int64
+</code></pre>
+
+<p><code>data</code> can be a scalar, which is repeated to fill the specified index:</p>
+
+<pre><code class="language-python">pd.Series(5, index=[100, 200, 300])
+</code></pre>
+
+<pre><code>100    5
+200    5
+300    5
+dtype: int64
+</code></pre>
+
+<p><code>data</code> can be a dictionary, in which <code>index</code> defaults to the sorted dictionary keys:</p>
+
+<pre><code class="language-python">pd.Series({2:'a', 1:'b', 3:'c'})
+</code></pre>
+
+<pre><code>1    b
+2    a
+3    c
+dtype: object
+</code></pre>
+
+<p>In each case, the index can be explicitly set if a different result is preferred:</p>
+
+<pre><code class="language-python">pd.Series({2:'a', 1:'b', 3:'c'}, index=[3, 2])
+</code></pre>
+
+<pre><code>3    c
+2    a
+dtype: object
+</code></pre>
+
+<p>Notice that in this case, the <code>Series</code> is populated only with the explicitly identified keys.</p>
+
+<h2 id="the-pandas-dataframe-object">The Pandas DataFrame Object</h2>
+
+<p>The next fundamental structure in Pandas is the <code>DataFrame</code>.
+Like the <code>Series</code> object discussed in the previous section, the <code>DataFrame</code> can be thought of either as a generalization of a NumPy array, or as a specialization of a Python dictionary.
+We&rsquo;ll now take a look at each of these perspectives.</p>
+
+<h3 id="dataframe-as-a-generalized-numpy-array">DataFrame as a generalized NumPy array</h3>
+
+<p>If a <code>Series</code> is an analog of a one-dimensional array with flexible indices, a <code>DataFrame</code> is an analog of a two-dimensional array with both flexible row indices and flexible column names.
+Just as you might think of a two-dimensional array as an ordered sequence of aligned one-dimensional columns, you can think of a <code>DataFrame</code> as a sequence of aligned <code>Series</code> objects.
+Here, by &laquo;aligned&raquo; we mean that they share the same index.</p>
+
+<p>To demonstrate this, let&rsquo;s first construct a new <code>Series</code> listing the area of each of the five states discussed in the previous section:</p>
+
+<pre><code class="language-python">area_dict = {'California': 423967, 'Texas': 695662, 'New York': 141297,
+             'Florida': 170312, 'Illinois': 149995}
+area = pd.Series(area_dict)
+area
+</code></pre>
+
+<pre><code>California    423967
+Florida       170312
+Illinois      149995
+New York      141297
+Texas         695662
+dtype: int64
+</code></pre>
+
+<p>Now that we have this along with the <code>population</code> Series from before, we can use a dictionary to construct a single two-dimensional object containing this information:</p>
+
+<pre><code class="language-python">states = pd.DataFrame({'population': population,
+                       'area': area})
+states
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>area</th>
+      <th>population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>California</th>
+      <td>423967</td>
+      <td>38332521</td>
+    </tr>
+    <tr>
+      <th>Florida</th>
+      <td>170312</td>
+      <td>19552860</td>
+    </tr>
+    <tr>
+      <th>Illinois</th>
+      <td>149995</td>
+      <td>12882135</td>
+    </tr>
+    <tr>
+      <th>New York</th>
+      <td>141297</td>
+      <td>19651127</td>
+    </tr>
+    <tr>
+      <th>Texas</th>
+      <td>695662</td>
+      <td>26448193</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Like the <code>Series</code> object, the <code>DataFrame</code> has an <code>index</code> attribute that gives access to the index labels:</p>
+
+<pre><code class="language-python">states.index
+</code></pre>
+
+<pre><code>Index(['California', 'Florida', 'Illinois', 'New York', 'Texas'], dtype='object')
+</code></pre>
+
+<p>Additionally, the <code>DataFrame</code> has a <code>columns</code> attribute, which is an <code>Index</code> object holding the column labels:</p>
+
+<pre><code class="language-python">states.columns
+</code></pre>
+
+<pre><code>Index(['area', 'population'], dtype='object')
+</code></pre>
+
+<p>Thus the <code>DataFrame</code> can be thought of as a generalization of a two-dimensional NumPy array, where both the rows and columns have a generalized index for accessing the data.</p>
+
+<h3 id="dataframe-as-specialized-dictionary">DataFrame as specialized dictionary</h3>
+
+<p>Similarly, we can also think of a <code>DataFrame</code> as a specialization of a dictionary.
+Where a dictionary maps a key to a value, a <code>DataFrame</code> maps a column name to a <code>Series</code> of column data.
+For example, asking for the <code>'area'</code> attribute returns the <code>Series</code> object containing the areas we saw earlier:</p>
+
+<pre><code class="language-python">states['area']
+</code></pre>
+
+<pre><code>California    423967
+Florida       170312
+Illinois      149995
+New York      141297
+Texas         695662
+Name: area, dtype: int64
+</code></pre>
+
+<p>Notice the potential point of confusion here: in a two-dimesnional NumPy array, <code>data[0]</code> will return the first <em>row</em>. For a <code>DataFrame</code>, <code>data['col0']</code> will return the first <em>column</em>.
+Because of this, it is probably better to think about <code>DataFrame</code>s as generalized dictionaries rather than generalized arrays, though both ways of looking at the situation can be useful.
+We&rsquo;ll explore more flexible means of indexing <code>DataFrame</code>s in <a href="03.02-Data-Indexing-and-Selection.ipynb" target="_blank">Data Indexing and Selection</a>.</p>
+
+<h3 id="constructing-dataframe-objects">Constructing DataFrame objects</h3>
+
+<p>A Pandas <code>DataFrame</code> can be constructed in a variety of ways.
+Here we&rsquo;ll give several examples.</p>
+
+<h4 id="from-a-single-series-object">From a single Series object</h4>
+
+<p>A <code>DataFrame</code> is a collection of <code>Series</code> objects, and a single-column <code>DataFrame</code> can be constructed from a single <code>Series</code>:</p>
+
+<pre><code class="language-python">pd.DataFrame(population, columns=['population'])
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>California</th>
+      <td>38332521</td>
+    </tr>
+    <tr>
+      <th>Florida</th>
+      <td>19552860</td>
+    </tr>
+    <tr>
+      <th>Illinois</th>
+      <td>12882135</td>
+    </tr>
+    <tr>
+      <th>New York</th>
+      <td>19651127</td>
+    </tr>
+    <tr>
+      <th>Texas</th>
+      <td>26448193</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4 id="from-a-list-of-dicts">From a list of dicts</h4>
+
+<p>Any list of dictionaries can be made into a <code>DataFrame</code>.
+We&rsquo;ll use a simple list comprehension to create some data:</p>
+
+<pre><code class="language-python">data = [{'a': i, 'b': 2 * i}
+        for i in range(3)]
+pd.DataFrame(data)
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Even if some keys in the dictionary are missing, Pandas will fill them in with <code>NaN</code> (i.e., &laquo;not a number&raquo;) values:</p>
+
+<pre><code class="language-python">pd.DataFrame([{'a': 1, 'b': 2}, {'b': 3, 'c': 4}])
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>2</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NaN</td>
+      <td>3</td>
+      <td>4.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4 id="from-a-dictionary-of-series-objects">From a dictionary of Series objects</h4>
+
+<p>As we saw before, a <code>DataFrame</code> can be constructed from a dictionary of <code>Series</code> objects as well:</p>
+
+<pre><code class="language-python">pd.DataFrame({'population': population,
+              'area': area})
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>area</th>
+      <th>population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>California</th>
+      <td>423967</td>
+      <td>38332521</td>
+    </tr>
+    <tr>
+      <th>Florida</th>
+      <td>170312</td>
+      <td>19552860</td>
+    </tr>
+    <tr>
+      <th>Illinois</th>
+      <td>149995</td>
+      <td>12882135</td>
+    </tr>
+    <tr>
+      <th>New York</th>
+      <td>141297</td>
+      <td>19651127</td>
+    </tr>
+    <tr>
+      <th>Texas</th>
+      <td>695662</td>
+      <td>26448193</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4 id="from-a-two-dimensional-numpy-array">From a two-dimensional NumPy array</h4>
+
+<p>Given a two-dimensional array of data, we can create a <code>DataFrame</code> with any specified column and index names.
+If omitted, an integer index will be used for each:</p>
+
+<pre><code class="language-python">pd.DataFrame(np.random.rand(3, 2),
+             columns=['foo', 'bar'],
+             index=['a', 'b', 'c'])
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>foo</th>
+      <th>bar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>a</th>
+      <td>0.865257</td>
+      <td>0.213169</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>0.442759</td>
+      <td>0.108267</td>
+    </tr>
+    <tr>
+      <th>c</th>
+      <td>0.047110</td>
+      <td>0.905718</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4 id="from-a-numpy-structured-array">From a NumPy structured array</h4>
+
+<p>We covered structured arrays in <a href="02.09-Structured-Data-NumPy.ipynb" target="_blank">Structured Data: NumPy&rsquo;s Structured Arrays</a>.
+A Pandas <code>DataFrame</code> operates much like a structured array, and can be created directly from one:</p>
+
+<pre><code class="language-python">A = np.zeros(3, dtype=[('A', 'i8'), ('B', 'f8')])
+A
+</code></pre>
+
+<pre><code>array([(0, 0.0), (0, 0.0), (0, 0.0)], 
+      dtype=[('A', '&lt;i8'), ('B', '&lt;f8')])
+</code></pre>
+
+<pre><code class="language-python">pd.DataFrame(A)
+</code></pre>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="the-pandas-index-object">The Pandas Index Object</h2>
+
+<p>We have seen here that both the <code>Series</code> and <code>DataFrame</code> objects contain an explicit <em>index</em> that lets you reference and modify data.
+This <code>Index</code> object is an interesting structure in itself, and it can be thought of either as an <em>immutable array</em> or as an <em>ordered set</em> (technically a multi-set, as <code>Index</code> objects may contain repeated values).
+Those views have some interesting consequences in the operations available on <code>Index</code> objects.
+As a simple example, let&rsquo;s construct an <code>Index</code> from a list of integers:</p>
+
+<pre><code class="language-python">ind = pd.Index([2, 3, 5, 7, 11])
+ind
+</code></pre>
+
+<pre><code>Int64Index([2, 3, 5, 7, 11], dtype='int64')
+</code></pre>
+
+<h3 id="index-as-immutable-array">Index as immutable array</h3>
+
+<p>The <code>Index</code> in many ways operates like an array.
+For example, we can use standard Python indexing notation to retrieve values or slices:</p>
+
+<pre><code class="language-python">ind[1]
+</code></pre>
+
+<pre><code>3
+</code></pre>
+
+<pre><code class="language-python">ind[::2]
+</code></pre>
+
+<pre><code>Int64Index([2, 5, 11], dtype='int64')
+</code></pre>
+
+<p><code>Index</code> objects also have many of the attributes familiar from NumPy arrays:</p>
+
+<pre><code class="language-python">print(ind.size, ind.shape, ind.ndim, ind.dtype)
+</code></pre>
+
+<pre><code>5 (5,) 1 int64
+</code></pre>
+
+<p>One difference between <code>Index</code> objects and NumPy arrays is that indices are immutable–that is, they cannot be modified via the normal means:</p>
+
+<pre><code class="language-python">ind[1] = 0
+</code></pre>
+
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-34-40e631c82e8a&gt; in &lt;module&gt;()
+----&gt; 1 ind[1] = 0
+
+
+/Users/jakevdp/anaconda/lib/python3.5/site-packages/pandas/indexes/base.py in __setitem__(self, key, value)
+   1243 
+   1244     def __setitem__(self, key, value):
+-&gt; 1245         raise TypeError(&quot;Index does not support mutable operations&quot;)
+   1246 
+   1247     def __getitem__(self, key):
+
+
+TypeError: Index does not support mutable operations
+</code></pre>
+
+<p>This immutability makes it safer to share indices between multiple <code>DataFrame</code>s and arrays, without the potential for side effects from inadvertent index modification.</p>
+
+<h3 id="index-as-ordered-set">Index as ordered set</h3>
+
+<p>Pandas objects are designed to facilitate operations such as joins across datasets, which depend on many aspects of set arithmetic.
+The <code>Index</code> object follows many of the conventions used by Python&rsquo;s built-in <code>set</code> data structure, so that unions, intersections, differences, and other combinations can be computed in a familiar way:</p>
+
+<pre><code class="language-python">indA = pd.Index([1, 3, 5, 7, 9])
+indB = pd.Index([2, 3, 5, 7, 11])
+</code></pre>
+
+<pre><code class="language-python">indA &amp; indB  # intersection
+</code></pre>
+
+<pre><code>Int64Index([3, 5, 7], dtype='int64')
+</code></pre>
+
+<pre><code class="language-python">indA | indB  # union
+</code></pre>
+
+<pre><code>Int64Index([1, 2, 3, 5, 7, 9, 11], dtype='int64')
+</code></pre>
+
+<pre><code class="language-python">indA ^ indB  # symmetric difference
+</code></pre>
+
+<pre><code>Int64Index([1, 2, 9, 11], dtype='int64')
+</code></pre>
+
+<p>These operations may also be accessed via object methods, for example <code>indA.intersection(indB)</code>.</p>
+
+          </div>
+
+          
+
+
+
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item box ">
+    <div class="meta-nav meta-prev">&lt;&lt; previous <br>
+    <a href="/coding/tutorials/tutorials/data-science-handbook/1.ipython/01.02-shell-keyboard-shortcuts/" rel="next">Keyboard Shortcuts</a></div>
+  </div>
+  
+   
+  
+  <div class="post-nav-item box">
+    <div class="meta-nav meta-next" >next &gt;&gt; <br>
+    <a href="/coding/tutorials/tutorials/data-science-handbook/3.pandas/03.02-data-indexing-and-selection/" rel="prev">Data Indexing and Selection</a></div>
+  </div>
+  
+  <br>
+  <br>
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          Last updated on Jun 23, 2020
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        
+        <p>
+          
+          Powered by
+          <a href="https://themefisher.com" target="_blank" rel="noopener">themefisher</a> for
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-inline network-icon text-right">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/Twitter" target="_blank" rel="noopener" title="DM Me"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="skype:echo123?call"  title="Skype Me"><i class="fab fa-skype" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://keybase.io/" target="_blank" rel="noopener" title="Chat on Keybase"><i class="fab fa-keybase" aria-hidden="true"></i></a>
+          </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://discourse.gohugo.io" target="_blank" rel="noopener" title="Discuss on Forum"><i class="fas fa-comments" aria-hidden="true"></i></a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </main>
+  </div>
+</div>
+
+
+      
+
+    
+    
+    
+    <script src="/coding/tutorials/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/python.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/coding/tutorials/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/coding/tutorials/js/academia.min.e4fc229c2f28284fc2dfa5b66a52b765.js"></script>
+
+    
+
+
+
+
+
+
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

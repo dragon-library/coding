@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Library</title>
+    <link>https://dragon-library.github.io/coding/tutorials/tags/</link>
+    <description>Recent content in Tags on Library</description>
+    <generator>Source Themes academia (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 19 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	    <atom:link href="https://dragon-library.github.io/coding/tutorials/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Django</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/django/</link>
+      <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ticket</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/ticket/</link>
+      <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/ticket/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WebApp</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/webapp/</link>
+      <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/webapp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>database</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/database/</link>
+      <pubDate>Tue, 02 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jupyter</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/jupyter/</link>
+      <pubDate>Tue, 02 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/jupyter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQL</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/sql/</link>
+      <pubDate>Tue, 02 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/sql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sqlalchemy</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/sqlalchemy/</link>
+      <pubDate>Tue, 02 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/sqlalchemy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cheat Sheet</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/cheat-sheet/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/cheat-sheet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google Translate</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/google-translate/</link>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/google-translate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gTTS</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/gtts/</link>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/gtts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Text to Speech</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/text-to-speech/</link>
+      <pubDate>Thu, 28 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/text-to-speech/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Flask</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/flask/</link>
+      <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/flask/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cheatsheet</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/cheatsheet/</link>
+      <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/cheatsheet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google sheet</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/google-sheet/</link>
+      <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/google-sheet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Package Index</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/package-index/</link>
+      <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/package-index/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web Scraping</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/web-scraping/</link>
+      <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/web-scraping/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>File Handling</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/file-handling/</link>
+      <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/file-handling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>freeCodeCamp</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/freecodecamp/</link>
+      <pubDate>Thu, 07 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/freecodecamp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Beginner</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/beginner/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/beginner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>List</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/list/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/list/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Regular Expressions</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/regular-expressions/</link>
+      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/regular-expressions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Virtual Environments</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/virtual-environments/</link>
+      <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/virtual-environments/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>String</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/string/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/string/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Function</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/function/</link>
+      <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/function/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lambda Expressions</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/lambda-expressions/</link>
+      <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/lambda-expressions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Front-end</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/front-end/</link>
+      <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/front-end/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Source Themes</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/source-themes/</link>
+      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/source-themes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deep Learning</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/deep-learning/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/deep-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Demo</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/demo/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/demo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>human</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/human/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/human/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>robotics</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/robotics/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/robotics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>academia</title>
+      <link>https://dragon-library.github.io/coding/tutorials/tags/academia/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://dragon-library.github.io/coding/tutorials/tags/academia/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
